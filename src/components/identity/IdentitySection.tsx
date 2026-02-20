@@ -29,16 +29,16 @@ export function IdentitySection() {
     });
 
     return (
-        <section ref={containerRef} id="about" className="relative min-h-screen py-32 px-6">
+        <section ref={containerRef} id="about" className="relative min-h-screen py-20 md:py-32 px-6">
             <div className="container mx-auto max-w-6xl">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-20"
+                    className="mb-12 md:mb-20"
                 >
                     <span className="text-primary font-bold tracking-[0.3em] uppercase block mb-4 italic">Hero Journey</span>
-                    <h2 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-600 drop-shadow-md">
+                    <h2 className="text-4xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-600 drop-shadow-md">
                         브랜드의 서사.
                     </h2>
                 </motion.div>

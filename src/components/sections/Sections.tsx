@@ -15,12 +15,12 @@ export function TechStack() {
     return (
         <section id="skills" className="py-32 px-6">
             <div className="container mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-20 gap-6">
                     <div>
                         <span className="text-secondary font-bold tracking-[0.3em] uppercase block mb-4">Professional Tools</span>
-                        <h2 className="text-5xl md:text-7xl font-bold text-white">Software Stack.</h2>
+                        <h2 className="text-4xl md:text-7xl font-bold text-white">Software Stack.</h2>
                     </div>
-                    <p className="text-gray-500 max-w-sm text-right">
+                    <p className="text-gray-500 max-w-sm text-left md:text-right text-sm md:text-base">
                         프로젝트의 완성도를 결정짓는 <br />
                         감각적이고 전문적인 디자인 도구들
                     </p>
@@ -64,8 +64,8 @@ export function ContactSection() {
                         viewport={{ once: true }}
                         className="relative z-10"
                     >
-                        <h2 className="text-4xl md:text-6xl font-black mb-8 text-white">당신의 제품에 <br /> 새로운 감각을.</h2>
-                        <p className="text-gray-400 text-lg mb-12">
+                        <h2 className="text-3xl md:text-6xl font-black mb-6 md:mb-8 text-white leading-tight">당신의 제품에 <br /> 새로운 감각을.</h2>
+                        <p className="text-gray-400 text-base md:text-lg mb-10 md:mb-12">
                             지금 바로 상담 가능합니다. 대표님의 비즈니스에 <br className="hidden md:block" />
                             압도적인 시각적 임팩트를 더해보세요.
                         </p>
@@ -79,7 +79,7 @@ export function ContactSection() {
                             </a>
                         </div>
 
-                        <div className="mt-20 flex justify-center gap-10 text-gray-500 text-sm font-bold tracking-widest uppercase">
+                        <div className="mt-12 md:mt-20 flex flex-wrap justify-center gap-6 md:gap-10 text-gray-500 text-[10px] md:text-sm font-bold tracking-widest uppercase">
                             <a href="#" className="hover:text-primary transition-colors">Instagram</a>
                             <a href="#" className="hover:text-primary transition-colors">Blog</a>
                             <a href="#" className="hover:text-primary transition-colors">Youtube</a>

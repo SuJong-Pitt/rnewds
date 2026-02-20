@@ -28,14 +28,14 @@ export function ProjectShowcase() {
     }, []);
 
     return (
-        <section id="projects" className="py-32 px-6 bg-gradient-to-b from-transparent to-[#05001a]">
+        <section id="projects" className="py-20 md:py-32 px-6 bg-gradient-to-b from-transparent to-[#05001a]">
             <div className="container mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24 gap-6">
                     <div className="text-left">
                         <span className="text-primary font-bold tracking-[0.3em] uppercase block mb-4 italic">Portfolio</span>
-                        <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-white">최근 프로젝트.</h2>
+                        <h2 className="text-4xl md:text-7xl font-black tracking-tighter text-white">최근 프로젝트.</h2>
                     </div>
-                    <div className="text-gray-500 max-w-sm text-right font-medium">
+                    <div className="text-gray-500 max-w-sm text-left md:text-right font-medium text-sm md:text-base md:translate-y-[-10px]">
                         압도적인 퀄리티로 완성된 <br />
                         R:new Design Studio의 결과물입니다.
                     </div>
