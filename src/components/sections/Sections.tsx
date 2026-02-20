@@ -51,38 +51,69 @@ export function TechStack() {
     );
 }
 
+import { ContactVisual } from "@/components/3d/ContactVisual";
+import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
+
 export function ContactSection() {
     return (
-        <section id="contact" className="py-32 px-6">
-            <div className="container mx-auto max-w-4xl">
-                <div className="glass-morphism rounded-[50px] p-12 md:p-20 text-center relative overflow-hidden border-white/10">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5"></div>
+        <section id="contact" className="py-24 md:py-40 px-6 relative overflow-hidden">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none opacity-20">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[160px]"></div>
+            </div>
+
+            <div className="container mx-auto max-w-5xl relative z-10">
+                <div className="text-center space-y-12">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="space-y-6"
+                    >
+                        <span className="text-primary font-bold tracking-[0.4em] uppercase text-xs md:text-sm block">Get in Touch</span>
+                        <h2 className="text-4xl md:text-7xl font-black text-white leading-[1.1] tracking-tight">
+                            당신의 제품도 <br />
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">완판템이 될 수 있습니다.</span>
+                        </h2>
+                    </motion.div>
+
+                    {/* 3D Visual Area */}
+                    <div className="h-[300px] md:h-[450px] w-full flex items-center justify-center">
+                        <Canvas shadows camera={{ position: [0, 2, 8], fov: 35 }} dpr={[1, 2]}>
+                            <Suspense fallback={null}>
+                                <ContactVisual />
+                            </Suspense>
+                        </Canvas>
+                    </div>
 
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="relative z-10"
+                        transition={{ delay: 0.2 }}
+                        className="space-y-12"
                     >
-                        <h2 className="text-3xl md:text-6xl font-black mb-6 md:mb-8 text-white leading-tight">당신의 제품에 <br /> 새로운 감각을.</h2>
-                        <p className="text-gray-400 text-base md:text-lg mb-10 md:mb-12">
-                            지금 바로 상담 가능합니다. 대표님의 비즈니스에 <br className="hidden md:block" />
-                            압도적인 시각적 임팩트를 더해보세요.
-                        </p>
-
-                        <div className="flex flex-col md:flex-row gap-6 justify-center">
-                            <a href="mailto:contact@rnew.design" className="px-12 py-5 bg-white text-black font-bold rounded-full hover:scale-105 transition-all">
-                                이메일 문의하기
-                            </a>
-                            <a href="#" className="px-12 py-5 glass-morphism border-white/20 font-bold rounded-full hover:bg-white/10 transition-all text-white">
-                                오픈카톡 상담
-                            </a>
+                        <div className="space-y-4">
+                            <p className="text-gray-400 text-lg md:text-2xl font-medium max-w-2xl mx-auto leading-relaxed">
+                                20년 경력 전문가의 시선으로 <br />
+                                제품의 잠재력을 최대로 끌어올려 드립니다.
+                            </p>
                         </div>
 
-                        <div className="mt-12 md:mt-20 flex flex-wrap justify-center gap-6 md:gap-10 text-gray-500 text-[10px] md:text-sm font-bold tracking-widest uppercase">
-                            <a href="#" className="hover:text-primary transition-colors">Instagram</a>
-                            <a href="#" className="hover:text-primary transition-colors">Blog</a>
-                            <a href="#" className="hover:text-primary transition-colors">Youtube</a>
+                        <div className="flex flex-col items-center gap-8">
+                            <a
+                                href="https://open.kakao.com/..." // 실제 링크로 대체 가능
+                                className="group relative px-12 py-8 md:px-20 md:py-10 bg-primary hover:bg-primary/90 text-white rounded-2xl md:rounded-[30px] transition-all duration-500 hover:scale-105 shadow-[0_30px_60px_-15px_rgba(162,89,255,0.4)] active:scale-95 flex flex-col items-center gap-2"
+                            >
+                                <span className="text-xl md:text-3xl font-black tracking-tight">프리미엄 상세페이지 전략 상담받기</span>
+                                <span className="text-primary-foreground/60 text-xs md:text-sm font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">Let&apos;s Build Your Masterpiece →</span>
+                            </a>
+
+                            <div className="flex flex-wrap justify-center gap-8 md:gap-16 text-gray-600 text-[10px] md:text-xs font-black tracking-[0.3em] uppercase">
+                                <a href="#" className="hover:text-primary transition-colors border-b border-transparent hover:border-primary/30 pb-1">Instagram</a>
+                                <a href="#" className="hover:text-primary transition-colors border-b border-transparent hover:border-primary/30 pb-1">Naver Blog</a>
+                                <a href="#" className="hover:text-primary transition-colors border-b border-transparent hover:border-primary/30 pb-1">Behance</a>
+                            </div>
                         </div>
                     </motion.div>
                 </div>

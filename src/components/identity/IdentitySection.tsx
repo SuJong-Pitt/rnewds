@@ -29,54 +29,59 @@ export function IdentitySection() {
     });
 
     return (
-        <section ref={containerRef} id="about" className="relative min-h-screen py-20 md:py-32 px-6">
-            <div className="container mx-auto max-w-6xl">
+        <section ref={containerRef} id="about" className="relative min-h-screen py-24 md:py-40 px-6">
+            <div className="container mx-auto max-w-4xl relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-12 md:mb-20"
+                    className="text-center mb-24"
                 >
-                    <span className="text-primary font-bold tracking-[0.3em] uppercase block mb-4 italic">Hero Journey</span>
-                    <h2 className="text-4xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-600 drop-shadow-md">
-                        브랜드의 서사.
+                    <span className="text-primary font-bold tracking-[0.4em] uppercase block mb-4 italic text-xs md:text-sm">Hero Journey</span>
+                    <h2 className="text-5xl md:text-8xl font-black bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-gray-600 leading-tight">
+                        디자인의 가치, <br /> 브랜드의 서사.
                     </h2>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-10">
-                    <div className="space-y-24">
+                <div className="relative">
+                    {/* Centered Timeline Line */}
+                    <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-primary/50 via-gray-800 to-transparent -translate-x-1/2 hidden md:block"></div>
+
+                    <div className="space-y-16 md:space-y-32">
                         {experiences.map((exp, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, x: -50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: index * 0.2 }}
                                 viewport={{ once: true, margin: "-100px" }}
-                                className="relative pl-12 border-l border-gray-800 p-8"
+                                className={`relative flex flex-col ${index % 2 === 0 ? 'md:items-start' : 'md:items-end'} w-full`}
                             >
-                                <div className="absolute left-[-5px] top-0 w-2.5 h-2.5 bg-primary rounded-full shadow-[0_0_10px_#a78bfa]"></div>
-                                <span className="text-sm font-mono text-primary mb-2 block tracking-widest text-shadow-md">{exp.phase}</span>
-                                <h3 className="text-3xl font-bold mb-2 text-white drop-shadow-lg">{exp.title}</h3>
-                                <h4 className="text-xl text-gray-400 mb-6 font-semibold italic">{exp.subtitle}</h4>
-                                <p className="text-gray-300 leading-relaxed max-w-md font-medium text-shadow-sm">
-                                    {exp.desc}
-                                </p>
-                                <div className="flex gap-2 mt-6">
-                                    {exp.tags.map(tag => (
-                                        <span key={tag} className="px-3 py-1 bg-white/5 rounded-full text-[10px] uppercase font-bold text-gray-400 tracking-tighter border border-white/5">
-                                            #{tag}
-                                        </span>
-                                    ))}
+                                {/* Timeline Dot */}
+                                <div className="absolute left-1/2 top-0 w-4 h-4 bg-primary rounded-full -translate-x-1/2 shadow-[0_0_20px_#a259ff] z-20 hidden md:block"></div>
+
+                                <div className={`w-full md:w-[45%] glass-morphism p-8 md:p-12 rounded-[40px] border-white/10 hover:border-primary/30 transition-all duration-500 group relative overflow-hidden ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
+                                    {/* Ambient Glow */}
+                                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all"></div>
+
+                                    <span className="text-xs font-mono text-primary mb-3 block tracking-widest font-bold">{exp.phase}</span>
+                                    <h3 className="text-3xl md:text-4xl font-black mb-3 text-white tracking-tight">{exp.title}</h3>
+                                    <h4 className="text-lg md:text-xl text-gray-400 mb-8 font-semibold italic opacity-80">{exp.subtitle}</h4>
+
+                                    <p className="text-gray-400 leading-relaxed font-medium text-sm md:text-base">
+                                        {exp.desc}
+                                    </p>
+
+                                    <div className={`flex flex-wrap gap-2 mt-10 ${index % 2 === 0 ? 'justify-start' : 'md:justify-end'}`}>
+                                        {exp.tags.map(tag => (
+                                            <span key={tag} className="px-4 py-1.5 bg-white/5 rounded-full text-[10px] md:text-xs uppercase font-bold text-gray-500 tracking-wider border border-white/5 hover:border-primary/20 transition-colors">
+                                                #{tag}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}
-                    </div>
-
-                    <div className="sticky top-1/4 h-[50vh] hidden md:block">
-                        <div className="w-full h-full glass-morphism rounded-[40px] flex items-center justify-center relative overflow-hidden group">
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                            <IdentityVisual progress={scrollYProgress.get()} />
-                        </div>
                     </div>
                 </div>
             </div>
