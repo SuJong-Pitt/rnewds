@@ -51,78 +51,68 @@ export function TechStack() {
     );
 }
 
-import { StrategyVisual } from "@/components/3d/StrategyVisual";
+import { StrategyBackground } from "@/components/3d/StrategyBackground";
 import { ContactVisual } from "@/components/3d/ContactVisual";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 
 export function StrategySection() {
     return (
-        <section id="strategy" className="py-24 md:py-40 px-6 relative">
-            {/* Ambient Background Glow */}
-            <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <section id="strategy" className="py-24 md:py-48 px-6 relative min-h-screen flex items-center overflow-hidden">
+            {/* 3D Layered Background */}
+            <div className="absolute inset-0 z-0 pointer-events-none opacity-60">
+                <Canvas shadows dpr={[1, 2]}>
+                    <Suspense fallback={null}>
+                        <StrategyBackground />
+                    </Suspense>
+                </Canvas>
+            </div>
 
-            <div className="container mx-auto max-w-7xl">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
-                    {/* Left: 3D Visual */}
-                    <div className="h-[400px] md:h-[600px] w-full glass-morphism rounded-[60px] relative overflow-hidden group">
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5"></div>
-                        <Canvas shadows camera={{ position: [0, 0, 10], fov: 35 }}>
-                            <Suspense fallback={null}>
-                                <StrategyVisual />
-                            </Suspense>
-                        </Canvas>
+            <div className="container mx-auto max-w-5xl relative z-10 text-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="space-y-12"
+                >
+                    <header className="space-y-4">
+                        <span className="text-muted font-bold tracking-[0.4em] uppercase text-xs md:text-sm block">Strategic Approach</span>
+                        <h2 className="text-4xl md:text-7xl font-black text-white leading-[1.2] tracking-tight">
+                            단순한 디자인이 아닙니다. <br />
+                            <span className="text-secondary neon-text drop-shadow-[0_0_25px_rgba(62,216,255,0.4)]">고객의 심리를 꿰뚫는</span> <br />
+                            비주얼 전략입니다.
+                        </h2>
+                    </header>
 
-                        {/* Interactive Hint */}
-                        <div className="absolute bottom-10 left-10 flex items-center gap-3 opacity-30 group-hover:opacity-100 transition-opacity duration-500">
-                            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                            <span className="text-[10px] font-bold tracking-widest text-primary uppercase">Move mouse to investigate</span>
-                        </div>
-                    </div>
+                    <p className="text-gray-400 text-lg md:text-2xl leading-relaxed font-semibold max-w-3xl mx-auto">
+                        Adobe 툴 마스터리(Ps, Ai, Pr)와 UI/UX 논리로, <br className="hidden md:block" />
+                        <span className="text-white border-b border-primary/30 pb-1">스크롤이 멈추지 않는 설득의 여정을 설계합니다.</span>
+                    </p>
 
-                    {/* Right: Content */}
-                    <div className="space-y-12">
+                    <div className="grid md:grid-cols-2 gap-8 pt-12">
                         <motion.div
-                            initial={{ opacity: 0, x: 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className="space-y-6"
+                            whileHover={{ y: -10 }}
+                            className="p-10 rounded-[40px] glass-morphism border-white/5 text-left group"
                         >
-                            <span className="text-secondary font-bold tracking-[0.4em] uppercase text-xs md:text-sm block italic">Strategic Approach</span>
-                            <h2 className="text-4xl md:text-6xl font-black text-white leading-[1.2] tracking-tight">
-                                단순한 디자인이 아닙니다. <br />
-                                <span className="text-secondary neon-text">고객의 심리를 꿰뚫는</span> <br />
-                                비주얼 전략입니다.
-                            </h2>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                            className="space-y-8"
-                        >
-                            <p className="text-gray-400 text-lg md:text-2xl leading-relaxed font-medium">
-                                Adobe 툴 마스터리(Ps, Ai, Pr)와 UI/UX 논리로, <br className="hidden md:block" />
-                                <span className="text-white underline decoration-secondary/30 underline-offset-8">스크롤이 멈추지 않는 설득의 여정을 설계합니다.</span>
+                            <div className="text-primary font-black text-4xl mb-6">01.</div>
+                            <h3 className="text-2xl font-bold mb-4 text-white">심리 기반 설계</h3>
+                            <p className="text-gray-500 text-sm md:text-base leading-relaxed font-medium">
+                                고객이 반응하는 색채와 레이아웃을 데이터로 <br /> 배치하여 구매 전환율을 극대화합니다.
                             </p>
+                        </motion.div>
 
-                            <div className="grid grid-cols-2 gap-6 pt-8">
-                                <div className="p-6 glass-morphism rounded-3xl border-white/5">
-                                    <div className="text-primary font-black text-2xl mb-2">01.</div>
-                                    <div className="text-white font-bold mb-1">심리 기반 설계</div>
-                                    <div className="text-gray-500 text-xs leading-relaxed">고객이 반응하는 색채와 레이아웃을 데이터로 배치합니다.</div>
-                                </div>
-                                <div className="p-6 glass-morphism rounded-3xl border-white/5">
-                                    <div className="text-secondary font-black text-2xl mb-2">02.</div>
-                                    <div className="text-white font-bold mb-1">도구적 통찰</div>
-                                    <div className="text-gray-500 text-xs leading-relaxed">최신 그래픽 툴을 활용해 압도적인 시각적 임팩트를 구현합니다.</div>
-                                </div>
-                            </div>
+                        <motion.div
+                            whileHover={{ y: -10 }}
+                            className="p-10 rounded-[40px] glass-morphism border-white/5 text-left group"
+                        >
+                            <div className="text-secondary font-black text-4xl mb-6">02.</div>
+                            <h3 className="text-2xl font-bold mb-4 text-white">도구적 통찰</h3>
+                            <p className="text-gray-500 text-sm md:text-base leading-relaxed font-medium">
+                                최신 그래픽 툴을 활용해 압도적인 시각적 임팩트로 <br /> 브랜드의 신뢰도를 즉각적으로 상승시킵니다.
+                            </p>
                         </motion.div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
