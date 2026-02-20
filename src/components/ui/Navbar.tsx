@@ -2,13 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Skills", href: "#skills" },
-    { name: "Contact", href: "#contact" },
+    { name: "About", href: "/about" },
+    { name: "Projects", href: "/#projects" },
+    { name: "Skills", href: "/#skills" },
+    { name: "Contact", href: "/#contact" },
 ];
 
 export function Navbar() {
@@ -39,16 +40,18 @@ export function Navbar() {
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
                 {/* Logo with 3D Embossing Effect */}
-                <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    className="text-xl md:text-2xl font-black tracking-tighter z-50"
-                >
-                    <span className="bg-clip-text text-transparent bg-gradient-to-br from-white via-gray-400 to-gray-700 drop-shadow-lg">
-                        R:new
-                    </span>
-                    <span className="text-primary ml-1 neon-text">Design Studio</span>
-                </motion.div>
+                <Link href="/" className="z-50">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        className="text-xl md:text-2xl font-black tracking-tighter cursor-pointer"
+                    >
+                        <span className="bg-clip-text text-transparent bg-gradient-to-br from-white via-gray-400 to-gray-700 drop-shadow-lg">
+                            R:new
+                        </span>
+                        <span className="text-primary ml-1 neon-text">Design Studio</span>
+                    </motion.div>
+                </Link>
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex gap-10 items-center">

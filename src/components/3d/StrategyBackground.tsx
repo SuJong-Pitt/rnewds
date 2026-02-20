@@ -7,6 +7,7 @@ import * as THREE from "three";
 
 function Bubble({ position, color, scale, speed }: any) {
     const meshRef = useRef<THREE.Mesh>(null);
+    if (!position) return null;
     const initialY = position[1];
 
     useFrame((state) => {
