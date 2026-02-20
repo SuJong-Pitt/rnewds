@@ -5,7 +5,7 @@ import { SceneCanvas } from "@/components/3d/SceneCanvas";
 import { Navbar } from "@/components/ui/Navbar";
 import { IdentitySection } from "@/components/identity/IdentitySection";
 import { ProjectShowcase } from "@/components/projects/ProjectShowcase";
-import { TechStack, ContactSection } from "@/components/sections/Sections";
+import { TechStack, StrategySection, ContactSection } from "@/components/sections/Sections";
 
 export default function Home() {
     return (
@@ -80,7 +80,10 @@ export default function Home() {
                 {/* Section 4: Tech Stack */}
                 <TechStack />
 
-                {/* Section 5: Contact */}
+                {/* Section 5: Strategy Approach */}
+                <StrategySection />
+
+                {/* Section 6: Contact */}
                 <ContactSection />
 
                 {/* Footer */}
