@@ -75,17 +75,15 @@ export function DataLayers() {
 
     return (
         <group ref={groupRef} rotation={[Math.PI / 6, -Math.PI / 4, 0]}>
-            {[...Array(15)].map((_, i) => (
-                <mesh key={i} position={[0, i * 0.4 - 3, 0]}>
+            {[...Array(8)].map((_, i) => (
+                <mesh key={i} position={[0, i * 0.8 - 3, 0]}>
                     <boxGeometry args={[6, 0.05, 4]} />
                     <meshPhysicalMaterial
                         transparent
-                        opacity={0.1 + (i / 15) * 0.2}
+                        opacity={0.3 + (i / 8) * 0.4}
                         color="#A259FF"
                         metalness={0.9}
                         roughness={0.1}
-                        transmission={0.5}
-                        thickness={1}
                     />
                 </mesh>
             ))}
@@ -99,7 +97,7 @@ export function LogicVisual() {
             {/* Left side: Aesthetics (Organic/Abstract) */}
             <Float speed={5} rotationIntensity={2} floatIntensity={2}>
                 <mesh position={[-4, 0, 0]}>
-                    <sphereGeometry args={[1.5, 64, 64]} />
+                    <sphereGeometry args={[1.5, 32, 32]} />
                     <MeshDistortMaterial
                         color="#FF0080"
                         speed={3}
@@ -110,23 +108,7 @@ export function LogicVisual() {
             </Float>
 
             {/* Right side: Logic (Geometric/Calculated) */}
-            <mesh position={[4, 0, 0]}>
-                <boxGeometry args={[2.5, 2.5, 2.5]} />
-                <meshStandardMaterial color="#ffffff" wireframe />
 
-                {/* Dimension Lines */}
-                <group>
-                    <line>
-                        <bufferGeometry attach="geometry">
-                            <float32BufferAttribute
-                                attach="attributes-position"
-                                args={[new Float32Array([-2, 1.5, 0, 2, 1.5, 0]), 3]}
-                            />
-                        </bufferGeometry>
-                        <lineBasicMaterial color="#A259FF" />
-                    </line>
-                </group>
-            </mesh>
 
             {/* Connection Arrow */}
             <mesh position={[0, 0, 0]} rotation={[0, 0, -Math.PI / 2]}>

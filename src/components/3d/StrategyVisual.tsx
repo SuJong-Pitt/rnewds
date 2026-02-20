@@ -90,16 +90,13 @@ function Magnifier() {
 
             {/* Accurate Convex Lens */}
             <mesh ref={lensRef} position={[0, 0, 0.05]} scale={[1, 1, 0.15]}>
-                <sphereGeometry args={[1.25, 64, 64]} />
+                <sphereGeometry args={[1.25, 32, 32]} />
                 <meshPhysicalMaterial
                     transparent
-                    transmission={1}
-                    thickness={2}
+                    opacity={0.3}
                     roughness={0.02}
-                    ior={1.5}
+                    metalness={0.1}
                     color="#f0f5ff"
-                    attenuationDistance={0.5}
-                    attenuationColor="#ffffff"
                 />
             </mesh>
 

@@ -9,14 +9,13 @@ export function SceneCanvas() {
     return (
         <div className="fixed inset-0 z-0 pointer-events-none">
             <Canvas
-                shadows
                 camera={{ position: [0, 0, 5], fov: 45 }}
                 gl={{
                     antialias: true,
                     alpha: true,
                     powerPreference: "high-performance"
                 }}
-                dpr={[1, 2]}
+                dpr={[1, 1.5]}
             >
                 <Suspense fallback={null}>
                     <DesignerAmbient />

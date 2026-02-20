@@ -44,7 +44,7 @@ export function AboutHero() {
                     transition={{ delay: 0.4 }}
                     className="text-gray-400 text-base md:text-xl max-w-2xl mx-auto font-medium"
                 >
-                    애플의 미학을 넘어, 건축적인 정교함과 체계적인 기획으로 <br className="hidden md:block" />
+                    단순한 아름다움을 넘어, 건축적인 정교함과 체계적인 기획으로 <br className="hidden md:block" />
                     당신의 비즈니스를 위한 최적의 설계를 제안합니다.
                 </motion.p>
             </div>

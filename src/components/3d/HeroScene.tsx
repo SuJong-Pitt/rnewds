@@ -59,7 +59,7 @@ function ColorFragment({ position, color, speed, scale, index }: any) {
 
 export function HeroScene() {
     const groupRef = useRef<THREE.Group>(null);
-    const fragmentsCount = 20;
+    const fragmentsCount = 12;
 
     const fragments = useMemo(() => {
         const colors = ["#ff0080", "#00d2ff", "#7c3aed", "#fbbf24", "#ffffff"];
@@ -96,6 +96,7 @@ export function HeroScene() {
                 scale={25}
                 blur={2.5}
                 far={10}
+                resolution={128}
                 color="#000000"
             />
 
