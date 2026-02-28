@@ -184,6 +184,7 @@ export default function Home() {
                         <div>
                             <h5 className="font-bold mb-6 text-slate-400 uppercase tracking-widest text-xs">Support</h5>
                             <ul className="space-y-4 text-sm font-medium text-slate-500">
+                                <li><a href="/admin/login" className="hover:text-blue-500 transition-colors">Admin Login</a></li>
                                 <li><a href="#" className="hover:text-blue-500 transition-colors">Privacy Policy</a></li>
                             </ul>
                         </div>
