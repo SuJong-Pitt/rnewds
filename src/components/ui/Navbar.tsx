@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const navLinks = [
     { name: "About", href: "/about" },
@@ -18,108 +19,94 @@ export function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
+            setScrolled(window.scrollY > 20);
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Prevent scrolling when mobile menu is open
-    useEffect(() => {
-        if (isMenuOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "unset";
-        }
-    }, [isMenuOpen]);
-
     return (
         <nav
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled || isMenuOpen ? "py-4 bg-[#030014]/90 backdrop-blur-xl border-b border-white/10" : "py-8 bg-transparent"
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled || isMenuOpen ? "py-4 bg-white/70 backdrop-blur-xl border-b border-slate-200/50" : "py-6 bg-transparent"
                 }`}
         >
-            <div className="container mx-auto px-6 flex justify-between items-center">
-                {/* Logo with 3D Embossing Effect */}
-                <Link href="/" className="z-50">
+            <div className="container mx-auto px-6 flex justify-between items-center max-w-7xl">
+                {/* Logo */}
+                <Link href="/" className="z-50 group">
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
+                        initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="text-xl md:text-2xl font-black tracking-tighter cursor-pointer"
+                        className="text-xl font-bold tracking-tight flex items-center gap-2"
                     >
-                        <span className="bg-clip-text text-transparent bg-gradient-to-br from-white via-gray-400 to-gray-700 drop-shadow-lg">
-                            R:new
-                        </span>
-                        <span className="text-primary ml-1 neon-text">Design Studio</span>
+                        <div className="w-9 h-9 bg-slate-900 group-hover:bg-blue-600 transition-colors rounded-xl flex items-center justify-center text-white text-[12px] font-black shadow-lg shadow-slate-900/10">R</div>
+                        <span className="text-slate-900 hidden sm:block">R:new <span className="text-slate-400 font-medium">Design Studio</span></span>
+                        <span className="text-slate-900 sm:hidden">R:new</span>
                     </motion.div>
                 </Link>
 
-                {/* Desktop Menu */}
-                <div className="hidden md:flex gap-10 items-center">
-                    {navLinks.map((link, index) => (
-                        <motion.a
+                {/* Central Links (Desktop) */}
+                <div className="hidden md:flex gap-1 bg-slate-100/50 p-1 rounded-2xl border border-slate-200/50 backdrop-blur-sm">
+                    {navLinks.map((link) => (
+                        <Link
                             key={link.name}
                             href={link.href}
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            className="text-sm font-medium text-gray-400 hover:text-white transition-colors tracking-widest uppercase"
+                            className="text-sm font-medium text-slate-500 hover:text-slate-900 transition-all px-4 py-2 rounded-xl hover:bg-white hover:shadow-sm"
                         >
                             {link.name}
-                        </motion.a>
+                        </Link>
                     ))}
-                    <motion.button
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        onClick={() => window.location.href = "/admin/login"}
-                        className="px-5 py-2 glass-morphism rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white/10 transition-all"
-                    >
-                        Admin
-                    </motion.button>
                 </div>
 
-                {/* Mobile Menu Toggle */}
+                {/* Right Actions */}
+                <div className="hidden md:flex items-center gap-4">
+                    <Button variant="default" className="rounded-xl px-6 font-bold btn-gradient h-10 border-none shadow-md">
+                        문의하기
+                    </Button>
+                </div>
+
+                {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden z-50 p-2 text-white"
+                    className="md:hidden z-50 p-2 text-slate-900"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
-                    {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                    {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
 
-                {/* Mobile Menu Drawer */}
+                {/* Mobile Navigation Overlay */}
                 <AnimatePresence>
                     {isMenuOpen && (
                         <motion.div
-                            initial={{ opacity: 0, x: "100%" }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: "100%" }}
-                            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                            className="fixed inset-0 top-0 left-0 w-full h-screen bg-[#030014] flex flex-col items-center justify-center gap-8 z-40"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
+                            className="fixed inset-x-0 top-0 h-[80vh] bg-white border-b border-slate-200 z-40 flex flex-col items-center justify-center gap-8 shadow-2xl rounded-b-3xl"
                         >
                             {navLinks.map((link, index) => (
-                                <motion.a
+                                <motion.div
                                     key={link.name}
-                                    href={link.href}
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: index * 0.1 }}
-                                    onClick={() => setIsMenuOpen(false)}
-                                    className="text-2xl font-bold text-gray-400 hover:text-primary transition-colors tracking-[0.2em] uppercase"
                                 >
-                                    {link.name}
-                                </motion.a>
+                                    <Link
+                                        href={link.href}
+                                        className="text-3xl font-bold text-slate-900 hover:text-blue-600 transition-colors"
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </motion.div>
                             ))}
-                            <motion.button
+                            <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.4 }}
-                                onClick={() => {
-                                    window.location.href = "/admin/login";
-                                    setIsMenuOpen(false);
-                                }}
-                                className="mt-4 px-8 py-3 bg-primary/20 border border-primary/50 rounded-full text-primary font-bold uppercase tracking-widest"
+                                className="flex flex-col w-full px-12 gap-4 mt-4"
                             >
-                                Admin Login
-                            </motion.button>
+                                <Button size="lg" className="w-full rounded-2xl py-6 font-bold btn-gradient border-none h-auto">
+                                    시작하기
+                                </Button>
+                            </motion.div>
                         </motion.div>
                     )}
                 </AnimatePresence>

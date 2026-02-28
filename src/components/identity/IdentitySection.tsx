@@ -1,88 +1,107 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll } from "framer-motion";
-import { IdentityVisual } from "@/components/3d/IdentityVisual";
+import { motion } from "framer-motion";
+import { CheckCircle2, UserCheck, Zap, Heart } from "lucide-react";
 
-const experiences = [
+const steps = [
     {
-        phase: "Phase 1",
-        title: "UI/UX Specialist",
-        subtitle: "사용자의 흐름을 설계하는 논리",
-        desc: "단순히 예쁜 것이 아니라, 팔리는 디자인을 하기 위해 웹 기획과 사용자 심리를 연구했습니다. 논리적인 레이아웃의 기반이 됩니다.",
-        tags: ["User Logic", "Flow", "Strategic"]
+        icon: <UserCheck size={24} />,
+        title: "사용자 심리 분석",
+        desc: "단순히 예쁜 디자인을 넘어 구매로 이어지는 설득의 논리를 설계합니다.",
     },
     {
-        phase: "Phase 2",
-        title: "Detail Page Master",
-        subtitle: "상세페이지의 정점",
-        desc: "실물과 구분이 안 되는 고퀄리티 렌더링과 설계를 통해, 고객의 구매 전환율을 극대화하는 최종 결과물을 만들어냅니다.",
-        tags: ["Mastery", "Conversion", "Photorealistic"]
-    }
+        icon: <Zap size={24} />,
+        title: "압도적 시각 임팩트",
+        desc: "스크롤을 멈추게 하는 강력한 첫인상과 고해상도 그래픽을 구현합니다.",
+    },
+    {
+        icon: <Heart size={24} />,
+        title: "브랜드 서사 구축",
+        desc: "당신의 핵심 가치를 가장 매력적인 방식으로 전달합니다.",
+    },
 ];
 
 export function IdentitySection() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "end start"]
-    });
-
     return (
-        <section ref={containerRef} id="about" className="relative min-h-screen py-24 md:py-40 px-6">
-            <div className="container mx-auto max-w-4xl relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-24"
-                >
-                    <span className="text-primary font-bold tracking-[0.4em] uppercase block mb-4 italic text-xs md:text-sm">Hero Journey</span>
-                    <h2 className="text-5xl md:text-8xl font-black bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-gray-600 leading-tight">
-                        디자인의 가치, <br /> 브랜드의 서사.
-                    </h2>
-                </motion.div>
+        <section id="about" className="py-24 md:py-40 px-6 bg-slate-50 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-50/50 to-transparent -z-10" />
 
-                <div className="relative">
-                    {/* Centered Timeline Line */}
-                    <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-primary/50 via-gray-800 to-transparent -translate-x-1/2 hidden md:block"></div>
+            <div className="container mx-auto max-w-7xl">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                    <div>
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-600 font-bold text-xs uppercase tracking-widest mb-6"
+                        >
+                            Our Strategy
+                        </motion.div>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 }}
+                            className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-8"
+                        >
+                            데이터로 설계하고, <br />
+                            감각으로 완성합니다.
+                        </motion.h2>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                            className="text-lg md:text-xl text-slate-500 leading-relaxed font-medium mb-12 max-w-xl"
+                        >
+                            R:new Design Studio는 시장 데이터와 사용자 심리 분석에 기반하여 시각적 정점에 도달한 상세페이지를 제안합니다. 우리가 만드는 모든 디자인에는 이유가 있습니다.
+                        </motion.p>
 
-                    <div className="space-y-16 md:space-y-32">
-                        {experiences.map((exp, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: index * 0.2 }}
-                                viewport={{ once: true, margin: "-100px" }}
-                                className={`relative flex flex-col ${index % 2 === 0 ? 'md:items-start' : 'md:items-end'} w-full`}
-                            >
-                                {/* Timeline Dot */}
-                                <div className="absolute left-1/2 top-0 w-4 h-4 bg-primary rounded-full -translate-x-1/2 shadow-[0_0_20px_#a259ff] z-20 hidden md:block"></div>
-
-                                <div className={`w-full md:w-[45%] glass-morphism p-8 md:p-12 rounded-[40px] border-white/10 hover:border-primary/30 transition-all duration-500 group relative overflow-hidden ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
-                                    {/* Ambient Glow */}
-                                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all"></div>
-
-                                    <span className="text-xs font-mono text-primary mb-3 block tracking-widest font-bold">{exp.phase}</span>
-                                    <h3 className="text-3xl md:text-4xl font-black mb-3 text-white tracking-tight">{exp.title}</h3>
-                                    <h4 className="text-lg md:text-xl text-gray-400 mb-8 font-semibold italic opacity-80">{exp.subtitle}</h4>
-
-                                    <p className="text-gray-400 leading-relaxed font-medium text-sm md:text-base">
-                                        {exp.desc}
-                                    </p>
-
-                                    <div className={`flex flex-wrap gap-2 mt-10 ${index % 2 === 0 ? 'justify-start' : 'md:justify-end'}`}>
-                                        {exp.tags.map(tag => (
-                                            <span key={tag} className="px-4 py-1.5 bg-white/5 rounded-full text-[10px] md:text-xs uppercase font-bold text-gray-500 tracking-wider border border-white/5 hover:border-primary/20 transition-colors">
-                                                #{tag}
-                                            </span>
-                                        ))}
+                        <div className="space-y-8">
+                            {steps.map((step, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.3 + i * 0.1 }}
+                                    className="flex items-start gap-4"
+                                >
+                                    <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-slate-200 flex items-center justify-center text-blue-600 shrink-0">
+                                        {step.icon}
                                     </div>
-                                </div>
-                            </motion.div>
-                        ))}
+                                    <div>
+                                        <h4 className="text-xl font-bold text-slate-900 mb-2">{step.title}</h4>
+                                        <p className="text-slate-500 leading-relaxed font-medium">{step.desc}</p>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
+
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="relative"
+                    >
+                        {/* Mock Graphical Element (Inbox-Zero like side graphic) */}
+                        <div className="relative aspect-square rounded-[40px] bg-gradient-to-br from-blue-600 to-indigo-600 p-8 flex items-center justify-center shadow-[0_40px_100px_rgba(37,99,235,0.2)]">
+                            <div className="absolute inset-0 bg-white/10 backdrop-blur-3xl rounded-[40px] border border-white/20"></div>
+                            <div className="relative flex flex-col items-center justify-center text-white p-12 text-center">
+                                <span className="text-7xl font-black mb-6 drop-shadow-2xl">R:new</span>
+                                <div className="h-1 w-24 bg-white/50 rounded-full mb-8"></div>
+                                <p className="text-xl font-bold opacity-90 leading-relaxed italic">
+                                    "Detail is not just a part of design, <br /> it is the core of persuasion."
+                                </p>
+                            </div>
+
+                            {/* Floating decorative elements */}
+                            <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse"></div>
+                            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse delay-1000"></div>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

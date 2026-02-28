@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { motion } from "framer-motion";
-import { ArrowLeft, Loader2, Calendar, Tag, ExternalLink } from "lucide-react";
-import { SceneCanvas } from "@/components/3d/SceneCanvas";
+import { ArrowLeft, Loader2, Calendar, Tag, ExternalLink, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function ProjectDetail() {
     const { id } = useParams();
@@ -32,134 +32,148 @@ export default function ProjectDetail() {
 
     if (loading) {
         return (
-            <div className="min-h-screen bg-background flex items-center justify-center">
-                <Loader2 className="w-12 h-12 text-primary animate-spin" />
+            <div className="min-h-screen bg-white flex items-center justify-center">
+                <Loader2 className="w-12 h-12 text-blue-600 animate-spin" />
             </div>
         );
     }
 
     if (!project) {
         return (
-            <div className="min-h-screen bg-background flex flex-col items-center justify-center text-center p-6">
-                <h1 className="text-4xl font-black mb-4">Project Not Found</h1>
-                <p className="text-gray-500 mb-8">존재하지 않거나 삭제된 프로젝트입니다. 🐟</p>
-                <button
+            <div className="min-h-screen bg-white flex flex-col items-center justify-center text-center p-6">
+                <h1 className="text-4xl font-bold text-slate-900 mb-4 tracking-tight">Project Not Found</h1>
+                <p className="text-slate-500 mb-8 font-medium">존재하지 않거나 삭제된 프로젝트입니다. 🐟</p>
+                <Button
                     onClick={() => router.push("/")}
-                    className="px-8 py-3 bg-primary text-black font-bold rounded-full"
+                    className="rounded-xl px-8 h-12 btn-gradient border-none font-bold"
                 >
                     Back to Home
-                </button>
+                </Button>
             </div>
         );
     }
 
     return (
-        <main className="relative min-h-screen bg-background text-white overflow-x-hidden">
-            {/* 3D Background - Subtle version */}
-            <div className="fixed inset-0 opacity-30 pointer-events-none">
-                <SceneCanvas />
-            </div>
-
+        <main className="relative min-h-screen bg-white text-slate-900 overflow-x-hidden selection:bg-blue-100 selection:text-blue-900">
             <div className="relative z-10">
                 {/* Navigation */}
-                <nav className="p-8">
+                <nav className="p-8 max-w-7xl mx-auto flex items-center justify-between">
                     <button
                         onClick={() => router.back()}
-                        className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors group"
+                        className="flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors group"
                     >
                         <ArrowLeft className="group-hover:-translate-x-2 transition-transform" />
                         <span className="text-xs font-bold uppercase tracking-[0.2em]">Close Project</span>
                     </button>
+
+                    <div className="w-9 h-9 bg-slate-900 rounded-xl flex items-center justify-center text-white text-[12px] font-black">R</div>
                 </nav>
 
                 {/* Hero Section */}
-                <section className="container mx-auto px-6 pt-10 pb-32">
-                    <div className="grid lg:grid-cols-2 gap-20 items-end mb-20">
+                <section className="container mx-auto px-6 pt-10 pb-32 max-w-7xl">
+                    <div className="grid lg:grid-cols-2 gap-20 items-center mb-10">
                         <motion.div
-                            initial={{ opacity: 0, x: -50 }}
+                            initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8 }}
+                            transition={{ duration: 0.6 }}
                         >
                             <div className="flex items-center gap-4 mb-8">
-                                <span className="px-4 py-1.5 bg-primary/10 border border-primary/20 text-primary text-[10px] font-black uppercase tracking-widest rounded-full">
+                                <span className="px-4 py-1.5 bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-black uppercase tracking-widest rounded-full">
                                     Featured Masterpiece
                                 </span>
-                                <span className="text-gray-600 font-mono text-xs">/ {new Date(project.created_at).getFullYear()}</span>
+                                <span className="text-slate-400 font-bold text-xs">/ {new Date(project.created_at).getFullYear()}</span>
                             </div>
-                            <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-10">
+                            <h1 className="text-5xl md:text-8xl font-bold tracking-tight leading-[1.0] mb-10 text-slate-900">
                                 {project.title}
                             </h1>
-                            <p className="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-xl">
+                            <p className="text-xl md:text-2xl text-slate-500 leading-relaxed font-medium">
                                 {project.description}
                             </p>
                         </motion.div>
 
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
+                            initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.8 }}
                             className="relative"
                         >
-                            <div className="aspect-[4/3] rounded-[60px] overflow-hidden glass-morphism border-white/10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]">
+                            <div className="aspect-[4/3] rounded-[48px] overflow-hidden border border-slate-100 bg-slate-50 shadow-[0_40px_100px_rgba(0,0,0,0.05)]">
                                 <img
                                     src={project.image_url}
                                     alt={project.title}
-                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-[2000ms]"
+                                    className="w-full h-full object-cover"
                                 />
                             </div>
-                            {/* Floating highlight */}
-                            <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-[80px]"></div>
+                            <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-50/50 rounded-full blur-[80px] -z-10"></div>
                         </motion.div>
                     </div>
 
-                    <div className="h-[1px] w-full bg-gradient-to-r from-white/10 via-white/5 to-transparent mb-20"></div>
+                    <div className="h-[1px] w-full bg-slate-100 mb-20 mt-20"></div>
 
-                    {/* Detailed Content Grid (Customizable further) */}
-                    <div className="grid md:grid-cols-3 gap-12">
-                        <div className="space-y-4">
-                            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest block">The Brief</span>
-                            <p className="text-gray-400 text-sm leading-relaxed">
+                    {/* Meta Data Grid */}
+                    <div className="grid md:grid-cols-3 gap-16">
+                        <div className="space-y-6">
+                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">The Brief</span>
+                            <p className="text-slate-600 font-medium leading-relaxed">
                                 데이터의 설계로 비즈니스의 가치를 증명합니다. <br />
                                 R:new Design Studio만의 시각적 임팩트를 통해 고객의 전환율을 극대화한 사례입니다.
                             </p>
                         </div>
-                        <div className="space-y-4">
-                            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest block">Services Provided</span>
-                            <ul className="text-white text-sm font-bold space-y-2">
-                                <li className="flex items-center gap-2"><Tag size={12} className="text-primary" /> Visual Strategy</li>
-                                <li className="flex items-center gap-2"><Tag size={12} className="text-primary" /> 3D Rendering</li>
-                                <li className="flex items-center gap-2"><Tag size={12} className="text-primary" /> UI/UX Design</li>
+                        <div className="space-y-6">
+                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Project Services</span>
+                            <ul className="text-slate-900 font-bold space-y-3">
+                                <li className="flex items-center gap-3"><Tag size={16} className="text-blue-600" /> Visual Strategy</li>
+                                <li className="flex items-center gap-3"><Tag size={16} className="text-blue-600" /> Web Architecture</li>
+                                <li className="flex items-center gap-3"><Tag size={16} className="text-blue-600" /> UX/UI Optimization</li>
                             </ul>
                         </div>
-                        <div className="space-y-4">
-                            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest block">Project Timeline</span>
-                            <div className="flex items-center gap-2 text-white font-bold">
-                                <Calendar size={16} className="text-gray-500" />
-                                <span>Completed in {new Date(project.created_at).toLocaleDateString()}</span>
+                        <div className="space-y-6">
+                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Project Timeline</span>
+                            <div className="flex items-center gap-3 text-slate-900 font-bold">
+                                <Calendar size={20} className="text-slate-300" />
+                                <span>Completed in {new Date(project.created_at).toLocaleDateString("ko-KR")}</span>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* High-res Image Display */}
-                <section className="py-20 px-6">
-                    <div className="container mx-auto">
-                        <div className="rounded-[80px] overflow-hidden glass-morphism border-white/5 p-4">
-                            <img src={project.image_url} alt="Detail" className="w-full rounded-[60px]" />
-                        </div>
+                {/* Full Width Image Display */}
+                <section className="py-20 px-6 bg-slate-50">
+                    <div className="container mx-auto max-w-7xl">
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="rounded-[64px] overflow-hidden border border-slate-200 p-4 bg-white shadow-xl"
+                        >
+                            <img src={project.image_url} alt="Project High-res View" className="w-full rounded-[48px] object-cover" />
+                        </motion.div>
                     </div>
                 </section>
 
-                {/* Footer Link */}
-                <section className="py-40 text-center">
-                    <h2 className="text-4xl font-bold mb-10">당신의 프로젝트도 <br /> 명작으로 바뀔 수 있습니다.</h2>
-                    <button
-                        onClick={() => router.push("/#contact")}
-                        className="px-12 py-5 bg-white text-black font-black rounded-full hover:scale-110 active:scale-95 transition-all flex items-center gap-3 mx-auto"
+                {/* Final CTA */}
+                <section className="py-40 text-center container mx-auto px-6 max-w-3xl">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-4xl md:text-7xl font-bold mb-12 tracking-tight text-slate-900 leading-[1.1]"
                     >
-                        Start Your Project <ExternalLink size={18} />
-                    </button>
+                        당신의 가치를 만드는 <br /> 마지막 퍼즐 조각.
+                    </motion.h2>
+                    <Button
+                        onClick={() => router.push("/#contact")}
+                        size="lg"
+                        className="rounded-2xl px-14 py-8 text-xl font-bold btn-gradient border-none h-auto shadow-[0_20px_50px_rgba(37,99,235,0.2)]"
+                    >
+                        상담 신청하기 <ArrowRight size={20} className="ml-3" />
+                    </Button>
                 </section>
+
+                {/* Simple Footer Overlay */}
+                <footer className="py-20 border-t border-slate-100 text-center text-slate-400 text-[10px] tracking-[0.4em] uppercase font-bold bg-white">
+                    &copy; 2024 R:new Design Studio. All Rights Reserved.
+                </footer>
             </div>
         </main>
     );
