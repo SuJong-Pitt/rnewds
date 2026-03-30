@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -36,10 +37,10 @@ export function Navbar() {
                     <motion.div
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="text-xl font-bold tracking-tight flex items-center gap-2"
+                        className="text-xl font-bold tracking-tight flex items-center gap-3"
                     >
                         <div className="w-9 h-9 bg-slate-900 group-hover:bg-blue-600 transition-colors rounded-xl flex items-center justify-center text-white text-[12px] font-black shadow-lg shadow-slate-900/10">R</div>
-                        <span className="text-slate-900 hidden sm:block">R:new <span className="text-slate-400 font-medium">Design Studio</span></span>
+                        <span className="text-slate-900 hidden sm:block">R:new <span className="text-slate-400 font-medium whitespace-nowrap">Design Studio</span></span>
                         <span className="text-slate-900 sm:hidden">R:new</span>
                     </motion.div>
                 </Link>

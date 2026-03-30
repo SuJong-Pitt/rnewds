@@ -81,13 +81,13 @@ export function ProjectShowcase() {
                                         onClick={() => router.push(`/projects/${project.id}`)}
                                         className="group cursor-pointer"
                                     >
-                                        <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-slate-100 border border-slate-200 transition-all duration-700 group-hover:border-blue-200 group-hover:shadow-[0_20px_50px_rgba(37,99,235,0.1)]">
+                                        <div className="relative aspect-square md:aspect-[4/3] overflow-hidden rounded-2xl md:rounded-3xl bg-slate-100 border border-slate-200 transition-all duration-700 group-hover:border-blue-200 group-hover:shadow-[0_20px_50px_rgba(37,99,235,0.1)]">
                                             <img
                                                 src={project.image_url}
                                                 alt={project.title}
                                                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                                             />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
                                             <div className="absolute bottom-8 left-8 right-8">
                                                 <div className="flex items-center justify-between mb-4">
