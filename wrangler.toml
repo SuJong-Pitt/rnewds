@@ -1,0 +1,11 @@
+name = "rnewds"
+compatibility_date = "2024-03-30"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "rnew-db"
+database_id = "16055f35-ab77-4092-a59d-545edb812e50"
+
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "rnew-assets"

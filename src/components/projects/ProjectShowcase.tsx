@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { supabase } from "@/lib/supabase";
 import { Loader2, Sparkles, ArrowUpRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -13,13 +12,14 @@ export function ProjectShowcase() {
 
     useEffect(() => {
         const fetchProjects = async () => {
-            const { data, error } = await supabase
-                .from("projects")
-                .select("*")
-                .order("created_at", { ascending: false });
-
-            if (!error && data) {
-                setProjects(data);
+            try {
+                const res = await fetch("/api/projects");
+                const data = await res.json();
+                if (Array.isArray(data)) {
+                    setProjects(data);
+                }
+            } catch (error) {
+                console.error("Fetch projects error:", error);
             }
             setLoading(false);
         };

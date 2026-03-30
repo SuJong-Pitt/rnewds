@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { supabase } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Lock, ArrowLeft, Mail, Key } from "lucide-react";
@@ -19,16 +18,22 @@ export default function AdminLogin() {
         setLoading(true);
         setError(null);
 
-        const { error } = await supabase.auth.signInWithPassword({
-            email,
-            password,
-        });
+        try {
+            const res = await fetch("/api/auth/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password })
+            });
 
-        if (error) {
+            const data = await res.json();
+
+            if (!res.ok) throw new Error(data.error || "Login failed");
+
+            // Redirect on success
+            router.push("/admin/dashboard");
+        } catch (error: any) {
             setError(error.message);
             setLoading(false);
-        } else {
-            router.push("/admin/dashboard");
         }
     };
 
@@ -50,7 +55,7 @@ export default function AdminLogin() {
                             Studio Admin
                         </h1>
                         <p className="text-slate-400 text-xs uppercase tracking-widest font-bold">
-                            R:new Design Studio
+                            R:new Design Studio &copy; Management
                         </p>
                     </div>
 

@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { supabase } from "@/lib/supabase";
 import { motion } from "framer-motion";
 import { ArrowLeft, Loader2, Calendar, Tag, ExternalLink, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -15,14 +14,15 @@ export default function ProjectDetail() {
 
     useEffect(() => {
         const fetchProject = async () => {
-            const { data, error } = await supabase
-                .from("projects")
-                .select("*")
-                .eq("id", id)
-                .single();
-
-            if (!error && data) {
-                setProject(data);
+            try {
+                const res = await fetch(`/api/projects?id=${id}`);
+                if (!res.ok) throw new Error("Fetch failed");
+                const data = await res.json();
+                if (data && !data.error) {
+                    setProject(Array.isArray(data) ? data[0] : data);
+                }
+            } catch (error) {
+                console.error("Fetch project error:", error);
             }
             setLoading(false);
         };

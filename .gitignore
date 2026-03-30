@@ -35,3 +35,10 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Note: .agent and .agentignore are NOT ignored to preserve AI workflows and skills.
+
+# Cloudflare
+.wrangler/
+
+# Diagnostic Scripts
+debug-cf.ts
+tmp-setup-admin.ts
