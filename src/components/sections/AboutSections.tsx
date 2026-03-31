@@ -133,7 +133,7 @@ export function PhilosophySection() {
 
 export function ProcessSection() {
     const steps = [
-        { icon: <BarChart3Icon size={24} />, title: "Data Analysis", label: "01", desc: "시장 데이터와 소비자 심리를 심층 분석합니다." },
+        { icon: <BarChart3Icon size={24} />, title: "Data Analysis", label: "01", desc: "비즈니스 데이터와 소비자 심리를 심층 분석합니다." },
         { icon: <LayersIcon size={24} />, title: "Architecture", label: "02", desc: "논리적 정보 설계로 최적의 동선을 구축합니다." },
         { icon: <LightbulbIcon size={24} />, title: "Visualizing", label: "03", desc: "압도적 고퀄리티 그래픽으로 가치를 형상화합니다." },
         { icon: <ZapIcon size={24} />, title: "Optimization", label: "04", desc: "상호작용 데이터를 기반으로 끊임없이 개선합니다." }

@@ -54,7 +54,7 @@ export function IdentitySection() {
                             transition={{ delay: 0.2 }}
                             className="text-lg md:text-xl text-slate-500 leading-relaxed font-medium mb-12 max-w-xl"
                         >
-                            R:new Design Studio는 시장 데이터와 사용자 심리 분석에 기반하여 시각적 정점에 도달한 상세페이지를 제안합니다. 우리가 만드는 모든 디자인에는 이유가 있습니다.
+                            R:new Design Studio는 전문 데이터와 사용자 심리 분석에 기반하여 시각적 정점에 도달한 상세페이지를 제안합니다. 우리가 만드는 모든 디자인에는 이유가 있습니다.
                         </motion.p>
 
                         <div className="space-y-8">

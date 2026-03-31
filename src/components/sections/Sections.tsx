@@ -220,7 +220,7 @@ export function StrategySection() {
                             viewport={{ once: true }}
                             className="text-3xl md:text-5xl lg:text-6xl font-heading font-black leading-[1.2] tracking-tighter"
                         >
-                            시장의 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-400 animate-gradient-x bg-[length:200%_auto] italic">기준</span>이 되는 <br />
+                            전문분야의 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-400 animate-gradient-x bg-[length:200%_auto] italic">기준</span>이 되는 <br />
                             유일한 전략, R:new입니다.
                         </motion.h2>
                     </header>
@@ -314,7 +314,7 @@ export function ContactSection() {
                                 </h2>
 
                                 <p className="text-lg md:text-2xl text-slate-500 font-light max-w-lg leading-relaxed break-keep tracking-tight">
-                                    시장을 관통하는 기획을 제안합니다. <br className="hidden md:block" />
+                                    해당 전문분야를 관통하는 기획을 제안합니다. <br className="hidden md:block" />
                                     결과로 증명하는 <span className="text-slate-950 font-medium italic underline decoration-blue-100 underline-offset-4 decoration-4">R:new</span> 와 함께하세요.
                                 </p>
                             </div>

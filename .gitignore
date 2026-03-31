@@ -42,3 +42,4 @@ lerna-debug.log*
 # Diagnostic Scripts
 debug-cf.ts
 tmp-setup-admin.ts
+.agent

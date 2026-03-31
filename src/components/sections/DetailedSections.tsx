@@ -32,8 +32,8 @@ export function ExpertiseSection() {
                             </h2>
                             <p className="text-lg md:text-xl text-slate-400 font-light leading-relaxed tracking-tight">
                                 "단순한 제작이 아닌 <span className="text-white font-medium">매출의 설계</span>를 합니다. <br className="hidden md:block" />
-                                15년간 시장에서 쌓아온 실전 감각으로 <br className="hidden md:block" />
-                                당신의 제품을 시장의 압도적 주인공으로 만듭니다."
+                                15년간 비즈니스 현장에서 쌓아온 실전 감각으로 <br className="hidden md:block" />
+                                당신의 제품을 해당 분야의 압도적 주인공으로 만듭니다."
                             </p>
                         </div>
 
