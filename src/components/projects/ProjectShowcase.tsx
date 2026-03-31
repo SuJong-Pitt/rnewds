@@ -30,7 +30,7 @@ export function ProjectShowcase() {
     return (
         <section
             id="projects"
-            className="py-32 md:py-64 px-6 bg-slate-50 overflow-hidden relative antialiased"
+            className="section-padding-large bg-slate-50 overflow-hidden relative antialiased"
         >
             {/* 1. Atmospheric Branding Layer (Watermark & Grid) */}
             <div className="absolute inset-x-0 -top-20 -bottom-20 z-0 opacity-[0.03] select-none pointer-events-none flex items-center justify-center">
@@ -45,7 +45,7 @@ export function ProjectShowcase() {
                 style={{ backgroundImage: 'linear-gradient(#2563eb 0.5px, transparent 0.5px), linear-gradient(90deg, #2563eb 0.5px, transparent 0.5px)', backgroundSize: '120px 120px' }}></div>
 
             <div className="container mx-auto max-w-7xl relative z-10">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 md:mb-40 gap-12">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 md:mb-40 gap-10 md:gap-12">
                     <div className="max-w-3xl space-y-12">
                         <div className="space-y-8">
                             <motion.div
@@ -63,7 +63,7 @@ export function ProjectShowcase() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8 }}
-                                className="text-3xl md:text-5xl lg:text-[3.6rem] font-heading font-black text-slate-950 tracking-[-0.05em] leading-[1.1] antialiased"
+                                className="text-[2rem] md:text-5xl lg:text-[3.6rem] font-heading font-black text-slate-950 tracking-[-0.05em] leading-[1.1] antialiased text-balance"
                             >
                                 <span className="block mb-2 text-transparent bg-clip-text bg-gradient-to-br from-slate-950 via-slate-800 to-slate-950">최상의 결과물로</span>
                                 <span className="relative inline-block italic">
@@ -80,7 +80,7 @@ export function ProjectShowcase() {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="text-slate-500 max-w-sm text-lg md:text-xl font-light leading-relaxed tracking-tight break-keep border-l-4 border-blue-500/20 pl-10 mb-6"
+                        className="text-slate-500 max-w-sm text-base md:text-xl font-light leading-relaxed tracking-tight break-keep border-l-4 border-blue-500/20 pl-8 md:pl-10 mb-6 text-balance"
                     >
                         단순한 포트폴리오를 넘어 <span className="text-slate-900 font-medium">비즈니스 성장을 견인</span>한 <br className="hidden md:block" />
                         R:new Design Studio의 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 font-bold italic">마스터피스</span>입니다.
@@ -105,7 +105,7 @@ export function ProjectShowcase() {
                                         onClick={() => router.push(`/projects/${project.id}`)}
                                         className="group cursor-pointer"
                                     >
-                                        <div className="relative aspect-square md:aspect-[3/4] overflow-hidden rounded-[50px] bg-slate-100 border border-slate-200/50 transition-all duration-700 shadow-[0_20px_50px_rgba(0,0,0,0.02)] group-hover:shadow-[0_40px_120px_rgba(37,99,235,0.15)]">
+                                        <div className="relative aspect-square md:aspect-[3/4] overflow-hidden rounded-[40px] md:rounded-[50px] bg-slate-100 border border-slate-200/50 transition-all duration-700 shadow-[0_20px_50px_rgba(0,0,0,0.02)] group-hover:shadow-[0_40px_120px_rgba(37,99,235,0.15)]">
                                             <img
                                                 src={project.image_url}
                                                 alt={project.title}
@@ -113,22 +113,22 @@ export function ProjectShowcase() {
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-700"></div>
 
-                                            <div className="absolute bottom-12 left-12 right-12 z-10 transform group-hover:-translate-y-2 transition-transform duration-700">
-                                                <div className="flex items-center justify-between mb-8">
+                                            <div className="absolute bottom-8 md:bottom-12 left-8 md:left-12 right-8 md:right-12 z-10 transform group-hover:-translate-y-2 transition-transform duration-700">
+                                                <div className="flex items-center justify-between mb-6 md:mb-8">
                                                     <div className="flex items-center gap-4">
                                                         <div className="w-2.5 h-2.5 bg-blue-500 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.5)]"></div>
-                                                        <span className="text-[11px] font-black text-blue-400 tracking-[0.5em] uppercase">
+                                                        <span className="text-[10px] md:text-[11px] font-black text-blue-400 tracking-[0.5em] uppercase">
                                                             Premium Archive
                                                         </span>
                                                     </div>
-                                                    <div className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-500 transition-all duration-700 shadow-xl">
-                                                        <ArrowUpRight className="text-white" size={28} />
+                                                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-500 transition-all duration-700 shadow-xl">
+                                                        <ArrowUpRight className="text-white" size={24} />
                                                     </div>
                                                 </div>
-                                                <h3 className="text-4xl font-black text-white mb-4 tracking-tighter leading-tight">
+                                                <h3 className="text-2xl md:text-4xl font-black text-white mb-2 md:mb-4 tracking-tighter leading-tight">
                                                     {project.title}
                                                 </h3>
-                                                <p className="text-lg text-slate-300 line-clamp-2 leading-relaxed font-light tracking-tight opacity-0 group-hover:opacity-100 transition-all duration-700 break-keep">
+                                                <p className="text-sm md:text-lg text-slate-300 line-clamp-2 leading-relaxed font-light tracking-tight opacity-0 group-hover:opacity-100 transition-all duration-700 break-keep">
                                                     {project.description}
                                                 </p>
                                             </div>
@@ -136,33 +136,33 @@ export function ProjectShowcase() {
                                     </motion.div>
                                 ))
                             ) : (
-                                <div className="col-span-full p-20 md:p-40 rounded-[80px] md:rounded-[100px] border border-slate-200/50 bg-white/40 backdrop-blur-3xl flex flex-col items-center justify-center text-center relative overflow-hidden shadow-[0_60px_150px_rgba(0,0,0,0.04)]">
+                                <div className="col-span-full p-12 md:p-40 rounded-[60px] md:rounded-[100px] border border-slate-200/50 bg-white/40 backdrop-blur-3xl flex flex-col items-center justify-center text-center relative overflow-hidden shadow-[0_60px_150px_rgba(0,0,0,0.04)]">
                                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-indigo-500/[0.02]"></div>
 
                                     {/* Architectural Markers */}
                                     <div className="absolute top-12 left-1/2 -translate-x-1/2 flex items-center gap-8 opacity-20 pointer-events-none select-none">
                                         <span className="text-[10px] font-mono tracking-[1em] uppercase">GALLERY_01</span>
-                                        <div className="w-20 h-px bg-slate-900"></div>
+                                        <div className="w-10 md:w-20 h-px bg-slate-900"></div>
                                         <span className="text-[10px] font-mono tracking-[1em] uppercase">ARCHITECTURE_VAULT</span>
                                     </div>
 
-                                    <div className="relative mb-16">
+                                    <div className="relative mb-8 md:mb-16">
                                         <div className="absolute inset-0 rounded-full bg-blue-500/10 blur-[60px] scale-150"></div>
-                                        <div className="relative w-32 h-32 md:w-48 md:h-48 bg-slate-950 rounded-[50px] flex items-center justify-center shadow-[0_40px_80px_rgba(0,0,0,0.5)] ring-1 ring-white/20">
-                                            <Box className="text-blue-500 w-16 h-16 md:w-24 md:h-24" strokeWidth={1} />
-                                            <div className="absolute -top-4 -right-4 w-12 h-12 bg-white/10 backdrop-blur-xl rounded-2xl flex items-center justify-center border border-white/20">
-                                                <ShieldCheck className="text-blue-400 w-6 h-6" />
+                                        <div className="relative w-24 h-24 md:w-48 md:h-48 bg-slate-950 rounded-[32px] md:rounded-[50px] flex items-center justify-center shadow-[0_40px_80px_rgba(0,0,0,0.5)] ring-1 ring-white/20">
+                                            <Box className="text-blue-500 w-12 h-12 md:w-24 md:h-24" strokeWidth={1} />
+                                            <div className="absolute -top-3 -right-3 w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-xl rounded-xl md:rounded-2xl flex items-center justify-center border border-white/20">
+                                                <ShieldCheck className="text-blue-400 w-5 h-5 md:w-6 md:h-6" />
                                             </div>
                                         </div>
                                     </div>
 
-                                    <h3 className="text-4xl md:text-7xl font-black mb-10 text-slate-950 tracking-tighter leading-tight relative">
+                                    <h3 className="text-3xl md:text-7xl font-black mb-6 md:mb-10 text-slate-950 tracking-tighter leading-tight relative text-balance">
                                         Project Vault <br />
-                                        <span className="text-[0.4em] font-mono font-medium tracking-[0.8em] text-blue-600 block mt-4 italic">IN PROGRESS</span>
-                                        <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-20 h-1.5 bg-blue-600 rounded-full shadow-[0_0_20px_rgba(37,99,235,0.3)]"></div>
+                                        <span className="text-[0.4em] font-mono font-medium tracking-[0.4em] md:tracking-[0.8em] text-blue-600 block mt-2 md:mt-4 italic">IN PROGRESS</span>
+                                        <div className="absolute -bottom-4 md:-bottom-6 left-1/2 -translate-x-1/2 w-16 md:w-20 h-1 md:h-1.5 bg-blue-600 rounded-full shadow-[0_0_20px_rgba(37,99,235,0.3)]"></div>
                                     </h3>
 
-                                    <p className="text-slate-500 max-w-2xl mx-auto text-xl md:text-3xl font-light leading-relaxed tracking-tight break-keep pt-6 opacity-80">
+                                    <p className="text-slate-500 max-w-2xl mx-auto text-base md:text-3xl font-light leading-relaxed tracking-tight break-keep pt-4 md:pt-6 opacity-80 text-balance">
                                         현재 R:new Studio 만의 <span className="text-slate-950 font-medium">독창적인 마스터피스</span>들을 <br className="hidden md:block" />
                                         정밀하게 보관 및 준비하고 있습니다. 곧 압도적인 결과물로 찾아뵙겠습니다.
                                     </p>

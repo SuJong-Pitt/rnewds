@@ -13,7 +13,7 @@ const fadeInUp = {
 
 export function ExpertiseSection() {
     return (
-        <section className="py-20 md:py-40 px-6 bg-slate-950 text-white relative overflow-hidden">
+        <section className="section-padding bg-slate-950 text-white relative overflow-hidden">
             <div className="container mx-auto max-w-7xl relative z-10">
                 <div className="grid lg:grid-cols-2 gap-20 md:gap-32 items-center">
                     <motion.div {...fadeInUp} className="space-y-12 md:space-y-20">
@@ -26,11 +26,11 @@ export function ExpertiseSection() {
                                 <div className="w-px h-3 bg-white/10"></div>
                                 <span className="font-bold text-[10px] uppercase tracking-widest md:tracking-[0.4em] text-white/90">Pedigree Archive</span>
                             </div>
-                            <h2 className="text-2xl md:text-5xl font-heading font-black leading-[1.1] tracking-tighter">
+                            <h2 className="text-3xl md:text-5xl font-heading font-black leading-[1.1] tracking-tighter text-balance">
                                 MD 디자이너 <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-400 animate-gradient-x bg-[length:200%_auto]">실무 15년.</span>
                             </h2>
-                            <p className="text-lg md:text-xl text-slate-400 font-light leading-relaxed tracking-tight">
+                            <p className="text-base md:text-xl text-slate-400 font-light leading-relaxed tracking-tight text-balance">
                                 "단순한 제작이 아닌 <span className="text-white font-medium">매출의 설계</span>를 합니다. <br className="hidden md:block" />
                                 15년간 비즈니스 현장에서 쌓아온 실전 감각으로 <br className="hidden md:block" />
                                 당신의 제품을 해당 분야의 압도적 주인공으로 만듭니다."
@@ -99,13 +99,13 @@ export function ValuePointsSection() {
     ];
 
     return (
-        <section className="py-32 md:py-64 px-6 bg-slate-50 overflow-hidden relative">
+        <section className="section-padding-large bg-slate-50 overflow-hidden relative">
             <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_70%_20%,rgba(37,99,235,0.03),transparent_70%)] pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 w-1/2 h-full bg-[radial-gradient(circle_at_30%_80%,rgba(37,99,235,0.02),transparent_70%)] pointer-events-none"></div>
 
             <div className="container mx-auto max-w-7xl relative z-10">
-                <motion.div {...fadeInUp} className="text-center mb-24 md:mb-40">
-                    <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50/50 backdrop-blur-md border border-blue-100 text-blue-600 shadow-sm mb-12 mx-auto whitespace-nowrap">
+                <motion.div {...fadeInUp} className="text-center mb-20 md:mb-40">
+                    <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50/50 backdrop-blur-md border border-blue-100 text-blue-600 shadow-sm mb-10 mx-auto whitespace-nowrap">
                         <span className="flex items-center gap-2">
                             <span className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-pulse shadow-[0_0_8px_rgba(37,99,235,0.4)]"></span>
                             <span className="font-bold text-[9px] uppercase tracking-[0.2em] opacity-70">Logic</span>
@@ -113,11 +113,11 @@ export function ValuePointsSection() {
                         <div className="w-px h-3 bg-blue-200"></div>
                         <span className="font-bold text-[10px] uppercase tracking-widest md:tracking-[0.4em]">The Core Essence</span>
                     </div>
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-slate-950 tracking-tighter leading-[1.1] mb-12">
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-slate-950 tracking-tighter leading-[1.1] mb-10 text-balance">
                         매출을 완성하는 <br />
                         <span className="text-blue-600 italic px-1">4가지 본질.</span>
                     </h2>
-                    <div className="w-24 h-[1px] bg-blue-200 mx-auto opacity-50"></div>
+                    <div className="w-20 h-[1px] bg-blue-200 mx-auto opacity-50"></div>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-14">
@@ -130,19 +130,19 @@ export function ValuePointsSection() {
                             transition={{ delay: i * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
                             className="p-8 md:p-14 rounded-[60px] bg-white/40 backdrop-blur-xl border border-white shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(37,99,235,0.06)] hover:border-blue-100 transition-all duration-700 group relative overflow-hidden flex flex-col h-full"
                         >
-                            <div className="absolute -right-4 top-0 text-[120px] md:text-[160px] font-black text-slate-900/[0.03] select-none pointer-events-none font-heading italic leading-none group-hover:text-blue-500/[0.05] transition-colors duration-700">
+                            <div className="absolute -right-4 top-0 text-[100px] md:text-[160px] font-black text-slate-900/[0.03] select-none pointer-events-none font-heading italic leading-none group-hover:text-blue-500/[0.05] transition-colors duration-700">
                                 {String(i + 1).padStart(2, '0')}
                             </div>
 
-                            <div className="w-16 h-16 md:w-20 md:h-20 rounded-3xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-blue-600 mb-12 md:mb-16 group-hover:bg-slate-950 group-hover:text-white transition-all duration-700 relative z-10 transform group-hover:scale-110 group-hover:rotate-6">
+                            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-blue-600 mb-8 md:mb-16 group-hover:bg-slate-950 group-hover:text-white transition-all duration-700 relative z-10 transform group-hover:scale-110 group-hover:rotate-6">
                                 {point.icon}
                             </div>
 
                             <div className="relative z-10 flex-grow">
-                                <h3 className="text-2xl md:text-3xl font-black mb-6 text-slate-900 leading-[1.1] tracking-tighter group-hover:text-blue-600 transition-colors">
+                                <h3 className="text-xl md:text-3xl font-black mb-4 md:mb-6 text-slate-900 leading-[1.1] tracking-tighter group-hover:text-blue-600 transition-colors">
                                     {point.title}
                                 </h3>
-                                <p className="text-slate-400 text-base md:text-xl font-light leading-relaxed tracking-tight group-hover:text-slate-500 transition-colors break-keep">
+                                <p className="text-sm md:text-xl text-slate-400 font-light leading-relaxed tracking-tight group-hover:text-slate-500 transition-colors break-keep text-balance">
                                     {point.desc}
                                 </p>
                             </div>
@@ -167,7 +167,7 @@ export function ProcessSection() {
     ];
 
     return (
-        <section className="py-24 md:py-48 px-6 bg-slate-950 text-white overflow-hidden relative">
+        <section className="section-padding bg-slate-950 text-white overflow-hidden relative">
             {/* 1. Atmospheric Volumetric Lighting (Luxury Background Deep Space) */}
             <motion.div 
                 animate={{ x: [0, 100, 0], y: [0, 50, 0], scale: [1, 1.2, 1] }}
@@ -199,10 +199,10 @@ export function ProcessSection() {
                         <div className="w-px h-3 bg-white/10"></div>
                         <span className="font-bold text-[10px] uppercase tracking-widest md:tracking-[0.4em] text-white/90">Architectural Process</span>
                     </div>
-                    <h2 className="text-3xl md:text-[3.5rem] font-heading font-black text-white tracking-tighter leading-tight relative inline-block">
+                    <h2 className="text-3xl md:text-[3.5rem] font-heading font-black text-white tracking-tighter leading-tight relative inline-block text-balance">
                         명작이 탄생하는 <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 italic px-1 animate-gradient-x bg-[length:200%_auto]">6단계의 치밀한 공정.</span>
-                        <div className="absolute -right-12 -top-6 text-[100px] font-black text-white/5 -z-10 select-none">06</div>
+                        <div className="absolute -right-12 -top-6 text-[80px] md:text-[100px] font-black text-white/5 -z-10 select-none">06</div>
                     </h2>
                 </motion.div>
 
@@ -227,15 +227,15 @@ export function ProcessSection() {
                                 </div>
                             )}
 
-                            <div className="bg-white/[0.03] backdrop-blur-3xl p-8 md:p-14 rounded-[48px] border border-white/5 group-hover:border-white/20 transition-all duration-700 relative overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.1)] group-hover:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
+                            <div className="bg-white/[0.03] backdrop-blur-3xl p-7 md:p-14 rounded-[40px] md:rounded-[48px] border border-white/5 group-hover:border-white/20 transition-all duration-700 relative overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.1)] group-hover:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
                                 {/* Gradient Hover Background (Spectral) */}
                                 <div className={`absolute inset-0 bg-gradient-to-br ${step.glow} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700`}></div>
                                 
-                                <div className="flex justify-between items-start mb-16 relative z-10">
+                                <div className="flex justify-between items-start mb-10 md:mb-16 relative z-10">
                                     {/* Orbital Icon Glow */}
                                     <div className="relative">
                                         <div className={`absolute inset-0 rounded-2xl blur-2xl ${step.bg} opacity-0 group-hover:opacity-40 transition-opacity duration-700 scale-150`}></div>
-                                        <div className={`relative w-16 h-16 md:w-20 md:h-20 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center ${step.color} group-hover:bg-slate-950 group-hover:text-white transition-all duration-500 shadow-sm group-hover:-rotate-6`}>
+                                        <div className={`relative w-14 h-14 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center ${step.color} group-hover:bg-slate-950 group-hover:text-white transition-all duration-500 shadow-sm group-hover:-rotate-6`}>
                                             {step.icon}
                                         </div>
                                     </div>
@@ -243,11 +243,11 @@ export function ProcessSection() {
                                         {String(i + 1).padStart(2, '0')}
                                     </div>
                                 </div>
-                                <div className="relative z-10 space-y-6">
-                                    <h3 className="text-2xl md:text-4xl font-black text-white tracking-tighter leading-tight group-hover:translate-x-2 transition-transform duration-500">
+                                <div className="relative z-10 space-y-4 md:space-y-6">
+                                    <h3 className="text-xl md:text-4xl font-black text-white tracking-tighter leading-tight group-hover:translate-x-2 transition-transform duration-500 text-balance">
                                         {step.title}
                                     </h3>
-                                    <p className="text-slate-400 text-base md:text-xl font-light leading-relaxed tracking-tight group-hover:text-slate-200 transition-colors break-keep">
+                                    <p className="text-sm md:text-xl text-slate-400 font-light leading-relaxed tracking-tight group-hover:text-slate-200 transition-colors break-keep text-balance">
                                         {step.desc}
                                     </p>
                                 </div>
@@ -313,7 +313,7 @@ export function PricingSection() {
     ];
 
     return (
-        <section id="pricing" className="py-24 md:py-48 px-6 bg-slate-50 relative overflow-hidden">
+        <section id="pricing" className="section-padding bg-slate-50 relative overflow-hidden">
             {/* Architectural Background */}
             <div className="absolute inset-0 opacity-[0.03] select-none pointer-events-none flex items-center justify-center -z-10">
                 <span className="text-[15vw] font-black text-slate-900 tracking-tighter leading-none italic uppercase">ELITE_PRICING</span>
@@ -324,10 +324,10 @@ export function PricingSection() {
                     <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-bold text-[10px] uppercase tracking-widest md:tracking-[0.4em] mb-8 mx-auto whitespace-nowrap shadow-sm">
                         Strategic Investment
                     </div>
-                    <h2 className="text-3xl md:text-[4rem] font-heading font-black text-slate-950 tracking-tighter leading-tight relative">
+                    <h2 className="text-3xl md:text-[4rem] font-heading font-black text-slate-950 tracking-tighter leading-tight relative text-balance">
                         옵션별 <span className="text-blue-600 italic px-1 underline decoration-blue-100 decoration-8 underline-offset-4">가격 안내.</span>
                     </h2>
-                    <p className="text-slate-500 mt-8 text-lg md:text-xl font-light max-w-2xl mx-auto break-keep">
+                    <p className="text-slate-500 mt-6 md:mt-8 text-base md:text-xl font-light max-w-2xl mx-auto break-keep text-balance">
                         압도적인 결과물로 비즈니스의 지위를 격상시킵니다. <br className="hidden md:block" />
                         당신의 한계를 넘어설 세 가지 하이엔드 솔루션입니다.
                     </p>
@@ -341,7 +341,7 @@ export function PricingSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: i * 0.1 }}
-                            className={`relative p-8 md:p-14 rounded-[60px] bg-white border ${plan.isPopular ? "border-blue-200 shadow-[0_40px_100px_rgba(37,99,235,0.1)] ring-1 ring-blue-500/10" : "border-slate-100 shadow-[0_30px_70px_rgba(0,0,0,0.03)]"} group overflow-hidden transition-all duration-700 hover:-translate-y-4`}
+                            className={`relative p-7 md:p-14 rounded-[50px] md:rounded-[60px] bg-white border ${plan.isPopular ? "border-blue-200 shadow-[0_40px_100px_rgba(37,99,235,0.1)] ring-1 ring-blue-500/10" : "border-slate-100 shadow-[0_30px_70px_rgba(0,0,0,0.03)]"} group overflow-hidden transition-all duration-700 hover:-translate-y-4`}
                         >
                             {/* Decorative Label for Popular */}
                             {plan.isPopular && (

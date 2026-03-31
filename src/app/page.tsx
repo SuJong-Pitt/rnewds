@@ -22,7 +22,7 @@ export default function Home() {
             <Navbar />
 
             {/* Hero Section - Elite Strategic Design */}
-            <section className="relative pt-28 pb-20 md:pt-48 md:pb-40 overflow-hidden px-6">
+            <section className="relative section-padding-large overflow-hidden">
                 {/* Minimalist Premium Background */}
                 <div className="absolute inset-0 z-0 bg-white pointer-events-none">
                     {/* Brand Abstract Background Layer */}
@@ -58,7 +58,7 @@ export default function Home() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-black tracking-tight text-slate-950 mb-12 leading-[1.1] md:leading-[1.05]"
+                            className="text-[2.5rem] sm:text-6xl md:text-7xl lg:text-8xl font-heading font-black tracking-tight text-slate-950 mb-10 leading-[1.1] md:leading-[1.05] text-balance"
                         >
                             가치를 기획하고 <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 bg-[length:200%_auto] animate-gradient-x italic px-1">매출</span>로 증명합니다.
@@ -68,7 +68,7 @@ export default function Home() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.2 }}
-                            className="text-lg md:text-2xl text-slate-500 font-light leading-relaxed mb-16 max-w-3xl break-keep tracking-tight px-4"
+                            className="text-base md:text-2xl text-slate-500 font-light leading-relaxed mb-12 md:mb-16 max-w-3xl break-keep tracking-tight px-4 text-balance"
                         >
                             압도적인 분석적 기획과 독보적인 비주얼 설계로 <br className="hidden md:block" />
                             브랜드의 지위를 격상시키고 실질적인 성장을 견인합니다.
@@ -78,10 +78,10 @@ export default function Home() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.3 }}
-                            className="flex justify-center mb-32 md:mb-48"
+                            className="flex justify-center mb-24 md:mb-48"
                         >
                             <Link href="/#projects">
-                                <Button size="lg" className="rounded-full px-12 py-8 text-lg font-bold bg-slate-950 text-white hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-950/20 text-center">
+                                <Button size="lg" className="rounded-full px-8 md:px-12 py-6 md:py-8 text-base md:text-lg font-bold bg-slate-950 text-white hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-950/20 text-center">
                                     전체 포트폴리오
                                     <ArrowRight size={20} className="ml-3" />
                                 </Button>
@@ -139,7 +139,7 @@ export default function Home() {
 
             {/* Final Footer */}
             {/* Redesigned Premium Footer */}
-            <footer className="pt-32 pb-16 bg-slate-950 text-white rounded-t-[40px] md:rounded-t-[80px] relative overflow-hidden">
+            <footer className="pt-20 md:pt-32 pb-12 bg-slate-950 text-white rounded-t-[40px] md:rounded-t-[80px] relative overflow-hidden">
                 {/* Visual Depth Elements */}
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05] pointer-events-none"></div>
                 <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>

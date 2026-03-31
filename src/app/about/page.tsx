@@ -30,8 +30,8 @@ export default function AboutPage() {
                 <TrustSection />
 
                 {/* Footer */}
-                <footer className="py-24 border-t border-slate-100 bg-white relative overflow-hidden">
-                    <div className="container mx-auto px-8 max-w-7xl relative z-10 flex flex-col md:flex-row justify-between items-center gap-10">
+                <footer className="section-padding bg-white border-t border-slate-100 relative overflow-hidden">
+                    <div className="container mx-auto px-6 max-w-7xl relative z-10 flex flex-col md:flex-row justify-between items-center gap-10">
                         <div className="flex flex-col items-center md:items-start gap-4">
                             <div className="flex items-center gap-3">
                                 <div className="w-8 h-8 bg-slate-950 rounded-lg flex items-center justify-center text-white text-xs font-black">R</div>

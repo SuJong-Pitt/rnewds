@@ -63,7 +63,7 @@ const skills = [
 
 export function TechStack() {
     return (
-        <section id="skills" className="py-24 md:py-40 px-6 bg-[#fcfdfe] overflow-hidden relative">
+        <section id="skills" className="section-padding bg-[#fcfdfe] overflow-hidden relative">
             {/* 1. Atmospheric Glowing Blobs (Fill the spatial void with luxury multi-color lighting) */}
             <motion.div
                 animate={{
@@ -113,7 +113,7 @@ export function TechStack() {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-3xl md:text-5xl lg:text-6xl font-heading font-black tracking-tighter text-slate-900 leading-[1.05]"
+                            className="text-[2.25rem] md:text-5xl lg:text-6xl font-heading font-black tracking-tighter text-slate-900 leading-[1.05] text-balance"
                         >
                             시선을 사로잡는 <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 italic px-1 underline decoration-blue-100 decoration-8 underline-offset-4">압도적 결과물.</span>
@@ -140,7 +140,7 @@ export function TechStack() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                             viewport={{ once: true }}
-                            className="p-6 md:p-14 rounded-[48px] bg-white/70 backdrop-blur-3xl border border-white shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_45px_90px_rgba(37,99,235,0.15)] hover:border-slate-200 transition-all duration-700 group relative overflow-hidden flex flex-col"
+                            className="p-5 md:p-14 rounded-[40px] md:rounded-[48px] bg-white/70 backdrop-blur-3xl border border-white shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_45px_90px_rgba(37,99,235,0.15)] hover:border-slate-200 transition-all duration-700 group relative overflow-hidden flex flex-col"
                         >
                             {/* colored orbital glow effect */}
                             <div className={`absolute -right-20 -top-20 w-52 h-52 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 blur-[100px] ${skill.bg} opacity-10`}></div>
@@ -162,9 +162,9 @@ export function TechStack() {
                                 </div>
                             </div>
 
-                            <div className="flex-grow space-y-5 relative z-10">
-                                <h3 className="text-3xl md:text-5xl font-black text-slate-950 tracking-tighter group-hover:translate-x-3 transition-transform duration-500">{skill.name}</h3>
-                                <p className="text-slate-500 text-base md:text-xl leading-relaxed font-light tracking-tight group-hover:text-slate-800 transition-colors break-keep">
+                            <div className="flex-grow space-y-4 md:space-y-5 relative z-10">
+                                <h3 className="text-2xl md:text-5xl font-black text-slate-950 tracking-tighter group-hover:translate-x-3 transition-transform duration-500">{skill.name}</h3>
+                                <p className="text-sm md:text-xl text-slate-500 font-light leading-relaxed tracking-tight group-hover:text-slate-800 transition-colors break-keep text-balance">
                                     {skill.desc}
                                 </p>
                             </div>
@@ -197,7 +197,7 @@ export function TechStack() {
 
 export function StrategySection() {
     return (
-        <section id="strategy" className="py-20 md:py-32 px-6 bg-slate-950 text-white relative overflow-hidden rounded-[40px] md:rounded-[60px] mx-4 md:mx-10 my-20">
+        <section id="strategy" className="py-16 md:py-32 px-6 bg-slate-950 text-white relative overflow-hidden rounded-[32px] md:rounded-[60px] mx-4 md:mx-10 my-16 md:my-20">
             {/* Studio Overlay - Minimalist */}
             <div className="absolute inset-0 opacity-[0.05] select-none pointer-events-none">
                 {/* Simplified background for clarity */}
@@ -218,14 +218,14 @@ export function StrategySection() {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-3xl md:text-5xl lg:text-6xl font-heading font-black leading-[1.2] tracking-tighter"
+                            className="text-2xl md:text-5xl lg:text-6xl font-heading font-black leading-[1.2] tracking-tighter text-balance"
                         >
                             전문분야의 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-400 animate-gradient-x bg-[length:200%_auto] italic">기준</span>이 되는 <br />
                             유일한 전략, R:new입니다.
                         </motion.h2>
                     </header>
 
-                    <p className="text-slate-400 text-xl md:text-3xl leading-[1.6] font-light max-w-4xl mx-auto tracking-tight">
+                    <p className="text-slate-400 text-lg md:text-3xl leading-[1.6] font-light max-w-4xl mx-auto tracking-tight text-balance">
                         압도적인 툴 전문성과 UI/UX 최우선 논리를 결합하여 <br className="hidden md:block" />
                         <span className="text-white font-medium border-b-2 border-blue-500/30 pb-1 italic px-1">고객의 스크롤을 멈추고 지갑을 열게</span> 만듭니다.
                     </p>
@@ -241,12 +241,12 @@ export function StrategySection() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.3 + i * 0.1, duration: 0.8 }}
-                                className="p-8 md:p-16 rounded-[60px] bg-white/5 border border-white/10 text-left hover:bg-white/10 transition-all duration-700 group relative overflow-hidden"
+                                className="p-6 md:p-16 rounded-[40px] md:rounded-[60px] bg-white/5 border border-white/10 text-left hover:bg-white/10 transition-all duration-700 group relative overflow-hidden"
                             >
                                 <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-                                <div className="text-blue-500 font-black text-5xl mb-10 tracking-tighter">{item.step}.</div>
-                                <h3 className="text-3xl md:text-4xl font-black mb-6 tracking-tighter">{item.title}</h3>
-                                <p className="text-slate-400 text-base md:text-lg leading-relaxed font-light tracking-tight group-hover:text-slate-300 transition-colors">
+                                <div className="text-blue-500 font-black text-4xl md:text-5xl mb-6 md:mb-10 tracking-tighter">{item.step}.</div>
+                                <h3 className="text-2xl md:text-4xl font-black mb-4 md:mb-6 tracking-tighter">{item.title}</h3>
+                                <p className="text-sm md:text-lg text-slate-400 font-light leading-relaxed tracking-tight group-hover:text-slate-300 transition-colors text-balance">
                                     {item.desc}
                                 </p>
                             </motion.div>
@@ -265,7 +265,7 @@ export function ContactSection() {
     ];
 
     return (
-        <section id="contact" className="py-24 md:py-40 px-6 bg-white overflow-hidden relative">
+        <section id="contact" className="section-padding bg-white overflow-hidden relative">
             <div className="container mx-auto max-w-7xl relative">
                 {/* 1. Atmospheric Volumetric Light & Watermark (Fill the empty space with luxury context) */}
                 <div className="absolute inset-x-0 -top-20 -bottom-20 z-0 opacity-[0.03] select-none pointer-events-none flex items-center justify-center">
@@ -290,7 +290,7 @@ export function ContactSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                    className="relative z-10 p-8 md:p-24 lg:p-32 rounded-[60px] md:rounded-[80px] bg-slate-50 border border-slate-100 shadow-[0_40px_100px_rgba(0,0,0,0.03)] group"
+                    className="relative z-10 p-6 md:p-24 lg:p-32 rounded-[40px] md:rounded-[80px] bg-slate-50 border border-slate-100 shadow-[0_40px_100px_rgba(0,0,0,0.03)] group"
                 >
                     {/* Architectural Coordinate Labels */}
                     <div className="absolute top-10 left-10 text-[9px] font-mono text-slate-300 tracking-[0.4em] uppercase select-none hidden md:block">ARCHITECTURE_FLOW / 00,00_CONTACT</div>
@@ -308,12 +308,12 @@ export function ContactSection() {
                                     Elevate Your Performance
                                 </motion.div>
 
-                                <h2 className="text-2xl md:text-5xl lg:text-6xl font-heading font-black text-slate-950 tracking-tighter leading-[1.1]">
+                                <h2 className="text-[1.75rem] md:text-5xl lg:text-6xl font-heading font-black text-slate-950 tracking-tighter leading-[1.1] text-balance">
                                     가치를 증명하는 <br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-[length:200%_auto] animate-gradient-x italic px-1">압도적 비주얼의 힘.</span>
                                 </h2>
 
-                                <p className="text-lg md:text-2xl text-slate-500 font-light max-w-lg leading-relaxed break-keep tracking-tight">
+                                <p className="text-base md:text-2xl text-slate-500 font-light max-w-lg leading-relaxed break-keep tracking-tight text-balance">
                                     해당 전문분야를 관통하는 기획을 제안합니다. <br className="hidden md:block" />
                                     결과로 증명하는 <span className="text-slate-950 font-medium italic underline decoration-blue-100 underline-offset-4 decoration-4">R:new</span> 와 함께하세요.
                                 </p>
@@ -327,12 +327,12 @@ export function ContactSection() {
                                         whileInView={{ opacity: 1, scale: 1 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: i * 0.1 }}
-                                        className="p-8 rounded-[32px] bg-white shadow-[0_10px_40px_rgba(37,99,235,0.02)] border border-slate-100 flex items-start gap-4 group/item hover:border-blue-100 transition-all duration-500"
+                                        className="p-6 md:p-8 rounded-[24px] md:rounded-[32px] bg-white shadow-[0_10px_40px_rgba(37,99,235,0.02)] border border-slate-100 flex items-start gap-4 group/item hover:border-blue-100 transition-all duration-500"
                                     >
-                                        <div className={`mt-1 ${benefit.color} ${benefit.bg} w-8 min-w-[32px] h-8 rounded-xl flex items-center justify-center transition-transform group-hover/item:scale-110`}>
+                                        <div className={`mt-1 ${benefit.color} ${benefit.bg} w-7 min-w-[28px] md:w-8 md:min-w-[32px] h-7 md:h-8 rounded-lg md:rounded-xl flex items-center justify-center transition-transform group-hover/item:scale-110`}>
                                             {benefit.icon}
                                         </div>
-                                        <span className="text-slate-600 text-base md:text-lg font-medium leading-tight tracking-tight break-keep">{benefit.text}</span>
+                                        <span className="text-slate-600 text-sm md:text-lg font-medium leading-tight tracking-tight break-keep">{benefit.text}</span>
                                     </motion.div>
                                 ))}
                             </div>
@@ -343,10 +343,10 @@ export function ContactSection() {
                             <div className="absolute -inset-10 bg-blue-500/10 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
 
                             <div className="w-full space-y-12">
-                                <Button size="lg" className="rounded-full px-6 py-8 md:px-16 md:py-12 text-xl md:text-3xl font-black bg-slate-950 hover:bg-blue-600 text-white border-none h-auto group/btn w-full shadow-[0_30px_70px_rgba(37,99,235,0.15)] relative overflow-hidden transition-all duration-500">
-                                    <span className="relative z-10 flex items-center justify-center gap-6">
+                                <Button size="lg" className="rounded-full px-6 py-6 md:px-16 md:py-12 text-lg md:text-3xl font-black bg-slate-950 hover:bg-blue-600 text-white border-none h-auto group/btn w-full shadow-[0_30px_70px_rgba(37,99,235,0.15)] relative overflow-hidden transition-all duration-500">
+                                    <span className="relative z-10 flex items-center justify-center gap-4 md:gap-6">
                                         프로젝트 문의하기
-                                        <ArrowRight size={32} className="transition-transform group-hover/btn:translate-x-4 duration-500" />
+                                        <ArrowRight size={24} className="md:w-8 md:h-8 transition-transform group-hover/btn:translate-x-4 duration-500" />
                                     </span>
                                     {/* Colorful Hover Background */}
                                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-1000"></div>
