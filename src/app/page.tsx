@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import Image from "next/image";
 import { Navbar } from "@/components/ui/Navbar";
 import { Button } from "@/components/ui/button";
@@ -8,7 +9,8 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import {
     ExpertiseSection,
     ValuePointsSection,
-    ProcessSection
+    ProcessSection,
+    PricingSection
 } from "@/components/sections/DetailedSections";
 import { ProjectShowcase } from "@/components/projects/ProjectShowcase";
 import { TechStack, ContactSection } from "@/components/sections/Sections";
@@ -79,16 +81,20 @@ export default function Home() {
                             transition={{ duration: 1, delay: 0.3 }}
                             className="flex flex-col sm:flex-row items-center gap-8 mb-32 md:mb-48"
                         >
-                            <Button size="lg" className="rounded-full px-12 py-8 text-lg font-bold bg-slate-950 text-white hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-950/20">
-                                전체 포트폴리오
-                                <ArrowRight size={20} className="ml-3" />
-                            </Button>
-                            <button className="text-slate-900 font-bold text-lg hover:text-blue-600 transition-colors flex items-center gap-3 group underline-offset-8 hover:underline decoration-blue-200">
-                                <span className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover:border-blue-200 transition-all">
-                                    <Sparkles size={16} className="text-blue-500 group-hover:scale-110 transition-transform" />
-                                </span>
-                                프로젝트 문의하기
-                            </button>
+                            <Link href="/#projects">
+                                <Button size="lg" className="rounded-full px-12 py-8 text-lg font-bold bg-slate-950 text-white hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-950/20">
+                                    전체 포트폴리오
+                                    <ArrowRight size={20} className="ml-3" />
+                                </Button>
+                            </Link>
+                            <Link href="/#contact">
+                                <button className="text-slate-900 font-bold text-lg hover:text-blue-600 transition-colors flex items-center gap-3 group underline-offset-8 hover:underline decoration-blue-200">
+                                    <span className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover:border-blue-200 transition-all">
+                                        <Sparkles size={16} className="text-blue-500 group-hover:scale-110 transition-transform" />
+                                    </span>
+                                    프로젝트 문의하기
+                                </button>
+                            </Link>
                         </motion.div>
                     </div>
 
@@ -117,6 +123,7 @@ export default function Home() {
             <ExpertiseSection />
             <ValuePointsSection />
             <ProcessSection />
+            <PricingSection />
 
             {/* Evidence & Portfolio */}
             <ProjectShowcase />
@@ -170,7 +177,7 @@ export default function Home() {
                                 </h5>
                                 <ul className="space-y-5 text-base font-medium">
                                     <li><a href="/about" className="text-slate-400 hover:text-blue-400 transition-all hover:translate-x-1 inline-block">About Studio</a></li>
-                                    <li><a href="#projects" className="text-slate-400 hover:text-blue-400 transition-all hover:translate-x-1 inline-block">Work Portfolio</a></li>
+                                    <li><Link href="/#projects" className="text-slate-400 hover:text-blue-400 transition-all hover:translate-x-1 inline-block">Work Portfolio</Link></li>
                                 </ul>
                             </div>
                             <div className="space-y-8">

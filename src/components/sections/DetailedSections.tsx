@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { MessageCircle, Zap, Layers, Target, Clock, FileText, PenTool, CheckCircle2, Sparkles, Layout, MousePointer2 } from "lucide-react";
+import { MessageCircle, Zap, Layers, Target, Clock, FileText, PenTool, CheckCircle2, Sparkles, Layout, MousePointer2, Palette } from "lucide-react";
 
 const fadeInUp = {
     initial: { opacity: 0, y: 30 },
@@ -243,6 +243,203 @@ export function ProcessSection() {
                             </div>
                         </motion.div>
                     ))}
+                </div>
+            </div>
+        </section>
+    );
+}
+
+export function PricingSection() {
+    const plans = [
+        {
+            name: "STANDARD",
+            price: "30,000",
+            target: "배너, 이벤트페이지 디자인",
+            specs: "(가로 1000픽셀 이하, 세로 1,000픽셀 이하 기준)",
+            features: [
+                "클릭 유도 인트로/이벤트 배너",
+                "카피라이팅 진단 서비스 포함",
+                "작업일 최대 2일",
+                "수정 횟수 2회"
+            ],
+            color: "from-slate-400 to-slate-600",
+            glow: "bg-slate-400/10",
+            isPopular: false
+        },
+        {
+            name: "DELUXE",
+            price: "150,000",
+            target: "기획안이 있고 디자인만 필요하신 경우",
+            specs: "(가로 860픽셀, 세로 1만 픽셀/5섹션 기준)",
+            features: [
+                "제품 핵심 소구점 시각화",
+                "레퍼런스 최적화 디자인",
+                "작업일 최대 5일",
+                "수정 횟수 무제한"
+            ],
+            color: "from-blue-500 to-indigo-600",
+            glow: "bg-blue-500/20",
+            isPopular: true
+        },
+        {
+            name: "PREMIUM",
+            price: "300,000",
+            target: "기획 + 디자인",
+            specs: "(가로 860픽셀, 세로 1만 4천 픽셀/7섹션 기준)",
+            features: [
+                "기획부터 디자인까지 올인원",
+                "전통적 맥락의 서사 설계",
+                "작업일 최대 7일",
+                "수정 횟수 무제한"
+            ],
+            color: "from-purple-500 to-indigo-700",
+            glow: "bg-purple-500/20",
+            isPopular: false
+        }
+    ];
+
+    return (
+        <section id="pricing" className="py-24 md:py-48 px-6 bg-slate-50 relative overflow-hidden">
+            {/* Architectural Background */}
+            <div className="absolute inset-0 opacity-[0.03] select-none pointer-events-none flex items-center justify-center -z-10">
+                <span className="text-[15vw] font-black text-slate-900 tracking-tighter leading-none italic uppercase">ELITE_PRICING</span>
+            </div>
+            
+            <div className="container mx-auto max-w-7xl relative z-10">
+                <motion.div {...fadeInUp} className="text-center mb-24 md:mb-32">
+                    <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-bold text-[10px] uppercase tracking-[0.4em] mb-8 mx-auto whitespace-nowrap shadow-sm">
+                        Strategic Investment
+                    </div>
+                    <h2 className="text-3xl md:text-[4rem] font-heading font-black text-slate-950 tracking-tighter leading-tight relative">
+                        옵션별 <span className="text-blue-600 italic px-1 underline decoration-blue-100 decoration-8 underline-offset-4">가격 안내.</span>
+                    </h2>
+                    <p className="text-slate-500 mt-8 text-lg md:text-xl font-light max-w-2xl mx-auto break-keep">
+                        압도적인 결과물로 비즈니스의 지위를 격상시킵니다. <br className="hidden md:block" />
+                        당신의 한계를 넘어설 세 가지 하이엔드 솔루션입니다.
+                    </p>
+                </motion.div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-10">
+                    {plans.map((plan, i) => (
+                        <motion.div
+                            key={plan.name}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: i * 0.1 }}
+                            className={`relative p-10 md:p-14 rounded-[60px] bg-white border ${plan.isPopular ? "border-blue-200 shadow-[0_40px_100px_rgba(37,99,235,0.1)] ring-1 ring-blue-500/10" : "border-slate-100 shadow-[0_30px_70px_rgba(0,0,0,0.03)]"} group overflow-hidden transition-all duration-700 hover:-translate-y-4`}
+                        >
+                            {/* Decorative Label for Popular */}
+                            {plan.isPopular && (
+                                <div className="absolute top-10 right-10 flex items-center gap-2 px-3 py-1 bg-blue-600 text-white rounded-full text-[9px] font-black tracking-widest italic z-20 shadow-lg">
+                                    <Sparkles size={10} className="text-blue-200" />
+                                    BEST VALUE
+                                </div>
+                            )}
+
+                            {/* Volumetric Glow */}
+                            <div className={`absolute -top-20 -right-20 w-64 h-64 ${plan.glow} blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000`}></div>
+
+                            <div className="relative z-10 space-y-12">
+                                <div className="space-y-4">
+                                    <h3 className={`text-sm font-black tracking-[0.4em] text-transparent bg-clip-text bg-gradient-to-r ${plan.color}`}>{plan.name}</h3>
+                                    <div className="flex items-baseline gap-2">
+                                        <span className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter">{plan.price}</span>
+                                        <span className="text-lg font-bold text-slate-400 tracking-tighter">원</span>
+                                    </div>
+                                    <div className="pt-4 border-t border-slate-100">
+                                        <p className="text-lg md:text-xl font-bold text-slate-900 leading-tight break-keep mb-2">{plan.target}</p>
+                                        <p className="text-xs md:text-sm font-light text-slate-400 break-keep">{plan.specs}</p>
+                                    </div>
+                                </div>
+
+                                <ul className="space-y-6 pt-6">
+                                    {plan.features.map((feature, j) => (
+                                        <li key={j} className="flex items-start gap-4 text-slate-600 group/item">
+                                            <div className="mt-2 w-2 h-2 rounded-full bg-blue-500/20 group-hover/item:bg-blue-600 transition-all shadow-[0_0_10px_rgba(37,99,235,0)] group-hover/item:shadow-[0_0_10px_rgba(37,99,235,0.5)]" />
+                                            <span className="text-base md:text-xl font-light tracking-tight break-keep group-hover/item:text-slate-950 transition-colors">{feature}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                {/* Sophisticated Bottom Accent */}
+                                <div className="pt-10 flex justify-between items-center opacity-30 group-hover:opacity-100 transition-opacity duration-1000">
+                                    <div className="w-12 h-px bg-slate-200 group-hover:w-20 group-hover:bg-blue-300 transition-all duration-700"></div>
+                                    <Sparkles size={14} className="text-blue-500" />
+                                    <div className="w-12 h-px bg-slate-200 group-hover:w-20 group-hover:bg-blue-300 transition-all duration-700"></div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+
+                {/* Additional Benefits & Note */}
+                <div className="mt-20 md:mt-32 grid md:grid-cols-2 gap-10 items-stretch">
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="p-12 md:p-16 rounded-[60px] bg-slate-950 text-white border border-white/5 relative overflow-hidden group shadow-2xl"
+                    >
+                        {/* Luxury Accents */}
+                        <div className="absolute top-0 right-0 w-40 h-40 bg-blue-600/10 blur-[60px] group-hover:bg-blue-600/20 transition-all duration-1000"></div>
+                        
+                        <div className="relative z-10 space-y-12">
+                            <h4 className="text-2xl md:text-4xl font-black tracking-tighter">패키지별 <span className="text-blue-400 italic">공통점.</span></h4>
+                            <ul className="space-y-6">
+                                {[
+                                    "모든 패키지는 난이도 및 길이에 따라 비용이 상이할 수 있습니다.",
+                                    "GIF 작업 원하실 시 추가 별도 비용이 발생할 수 있습니다.",
+                                    "작업 후 작업물은 포트폴리오로 이용될 수 있으며, 원치 않으시면 미리 말씀해 주세요."
+                                ].map((text, i) => (
+                                    <li key={i} className="flex items-start gap-4 text-slate-400 group/text transition-all duration-300">
+                                        <div className="mt-2 w-1.5 h-1.5 rounded-full bg-blue-500 group-hover/text:scale-150 transition-all" />
+                                        <span className="text-lg md:text-xl font-light leading-relaxed group-hover/text:text-white transition-colors">{text}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="p-12 md:p-16 rounded-[60px] bg-white border border-blue-100 shadow-[0_40px_100px_rgba(37,99,235,0.05)] relative overflow-hidden group flex flex-col justify-center"
+                    >
+                        <div className="absolute top-0 right-0 p-8">
+                            <Sparkles size={40} className="text-blue-100 animate-pulse" />
+                        </div>
+
+                        <div className="relative z-10 space-y-12">
+                            <header className="space-y-4">
+                                <span className="text-blue-600 font-black tracking-widest text-xs uppercase">Benefit Exclusive</span>
+                                <h4 className="text-3xl md:text-5xl font-black text-slate-950 tracking-tighter italic">추가 혜택</h4>
+                            </header>
+                            
+                            <div className="space-y-4">
+                                <div className="p-8 rounded-[40px] bg-blue-50/50 border border-blue-100 flex items-center gap-6 group/benefit hover:bg-blue-600 hover:border-blue-600 transition-all duration-500">
+                                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-blue-600 shadow-sm group-hover/benefit:scale-110 transition-transform">
+                                        <Layers size={24} />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <p className="text-[10px] font-bold text-blue-500 uppercase tracking-widest group-hover/benefit:text-blue-100">For Reviewers</p>
+                                        <p className="text-lg md:text-xl font-bold text-slate-900 group-hover/benefit:text-white">리뷰 작성 시 피그마 원본 파일 제공</p>
+                                    </div>
+                                </div>
+
+                                <div className="p-8 rounded-[40px] bg-slate-50 border border-slate-100 flex items-center gap-6 group/benefit hover:bg-slate-950 hover:border-slate-950 transition-all duration-500">
+                                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-slate-900 shadow-sm group-hover/benefit:scale-110 transition-transform">
+                                        <Palette size={24} />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest group-hover/benefit:text-slate-500">For Professionalism</p>
+                                        <p className="text-lg md:text-xl font-bold text-slate-900 group-hover/benefit:text-white">DELUXE 이상 전용 연출컷 서비스</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
