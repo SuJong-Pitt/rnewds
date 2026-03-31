@@ -92,16 +92,7 @@ export function Navbar() {
                                     </Link>
                                 </motion.div>
                             ))}
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.4 }}
-                                className="flex flex-col w-full px-12 gap-4 mt-4"
-                            >
-                                <Button size="lg" className="w-full rounded-2xl py-6 font-bold btn-gradient border-none h-auto">
-                                    시작하기
-                                </Button>
-                            </motion.div>
+
                         </motion.div>
                     )}
                 </AnimatePresence>

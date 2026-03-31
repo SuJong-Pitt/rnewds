@@ -104,7 +104,7 @@ export function TechStack() {
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-slate-950 text-white font-bold text-[10px] uppercase tracking-[0.4em] mb-8 shadow-2xl"
+                            className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-slate-950 text-white font-bold text-[10px] uppercase tracking-widest md:tracking-[0.4em] mb-8 shadow-2xl"
                         >
                             <Sparkles size={12} className="text-yellow-400 animate-pulse" />
                             Elite Design Architecture
@@ -140,7 +140,7 @@ export function TechStack() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                             viewport={{ once: true }}
-                            className="p-10 md:p-14 rounded-[48px] bg-white/70 backdrop-blur-3xl border border-white shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_45px_90px_rgba(37,99,235,0.15)] hover:border-slate-200 transition-all duration-700 group relative overflow-hidden flex flex-col"
+                            className="p-6 md:p-14 rounded-[48px] bg-white/70 backdrop-blur-3xl border border-white shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_45px_90px_rgba(37,99,235,0.15)] hover:border-slate-200 transition-all duration-700 group relative overflow-hidden flex flex-col"
                         >
                             {/* colored orbital glow effect */}
                             <div className={`absolute -right-20 -top-20 w-52 h-52 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 blur-[100px] ${skill.bg} opacity-10`}></div>
@@ -210,7 +210,7 @@ export function StrategySection() {
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
-                            className="text-blue-400 font-bold tracking-[0.5em] uppercase text-[10px] md:text-xs block opacity-70"
+                            className="text-blue-400 font-bold tracking-widest md:tracking-[0.5em] uppercase text-[10px] md:text-xs block opacity-70"
                         >
                             Aesthetic Architecture
                         </motion.span>
@@ -241,7 +241,7 @@ export function StrategySection() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.3 + i * 0.1, duration: 0.8 }}
-                                className="p-12 md:p-16 rounded-[60px] bg-white/5 border border-white/10 text-left hover:bg-white/10 transition-all duration-700 group relative overflow-hidden"
+                                className="p-8 md:p-16 rounded-[60px] bg-white/5 border border-white/10 text-left hover:bg-white/10 transition-all duration-700 group relative overflow-hidden"
                             >
                                 <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                                 <div className="text-blue-500 font-black text-5xl mb-10 tracking-tighter">{item.step}.</div>
@@ -269,7 +269,7 @@ export function ContactSection() {
             <div className="container mx-auto max-w-7xl relative">
                 {/* 1. Atmospheric Volumetric Light & Watermark (Fill the empty space with luxury context) */}
                 <div className="absolute inset-x-0 -top-20 -bottom-20 z-0 opacity-[0.03] select-none pointer-events-none flex items-center justify-center">
-                    <span className="text-[20vw] font-black text-slate-900 tracking-tighter leading-none italic uppercase">CONTACT</span>
+                    <span className="text-[12vw] md:text-[20vw] font-black text-slate-900 tracking-tighter leading-none italic uppercase">CONTACT</span>
                 </div>
 
                 {/* Multi-Color Atmospheric Blobs */}
@@ -290,11 +290,11 @@ export function ContactSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                    className="relative z-10 p-12 md:p-24 lg:p-32 rounded-[60px] md:rounded-[80px] bg-slate-50 border border-slate-100 shadow-[0_40px_100px_rgba(0,0,0,0.03)] group"
+                    className="relative z-10 p-8 md:p-24 lg:p-32 rounded-[60px] md:rounded-[80px] bg-slate-50 border border-slate-100 shadow-[0_40px_100px_rgba(0,0,0,0.03)] group"
                 >
                     {/* Architectural Coordinate Labels */}
-                    <div className="absolute top-10 left-10 text-[9px] font-mono text-slate-300 tracking-[0.4em] uppercase select-none">ARCHITECTURE_FLOW / 00,00_CONTACT</div>
-                    <div className="absolute bottom-10 right-10 text-[9px] font-mono text-slate-300 tracking-[0.4em] uppercase select-none">R:NEW_DESIGN_STUDIO / R2026</div>
+                    <div className="absolute top-10 left-10 text-[9px] font-mono text-slate-300 tracking-[0.4em] uppercase select-none hidden md:block">ARCHITECTURE_FLOW / 00,00_CONTACT</div>
+                    <div className="absolute bottom-10 right-10 text-[9px] font-mono text-slate-300 tracking-[0.4em] uppercase select-none hidden md:block">R:NEW_DESIGN_STUDIO / R2026</div>
 
                     <div className="grid lg:grid-cols-2 gap-20 items-center">
                         <div className="space-y-12">
@@ -303,12 +303,12 @@ export function ContactSection() {
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
-                                    className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-bold text-[10px] uppercase tracking-[0.4em]"
+                                    className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-bold text-[10px] uppercase tracking-widest md:tracking-[0.4em]"
                                 >
                                     Elevate Your Performance
                                 </motion.div>
 
-                                <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-slate-950 tracking-tighter leading-[1.1]">
+                                <h2 className="text-2xl md:text-5xl lg:text-6xl font-heading font-black text-slate-950 tracking-tighter leading-[1.1]">
                                     가치를 증명하는 <br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-[length:200%_auto] animate-gradient-x italic px-1">압도적 비주얼의 힘.</span>
                                 </h2>
@@ -343,7 +343,7 @@ export function ContactSection() {
                             <div className="absolute -inset-10 bg-blue-500/10 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
 
                             <div className="w-full space-y-12">
-                                <Button size="lg" className="rounded-full px-12 py-10 md:px-16 md:py-12 text-xl md:text-3xl font-black bg-slate-950 hover:bg-blue-600 text-white border-none h-auto group/btn w-full shadow-[0_30px_70px_rgba(37,99,235,0.15)] relative overflow-hidden transition-all duration-500">
+                                <Button size="lg" className="rounded-full px-6 py-8 md:px-16 md:py-12 text-xl md:text-3xl font-black bg-slate-950 hover:bg-blue-600 text-white border-none h-auto group/btn w-full shadow-[0_30px_70px_rgba(37,99,235,0.15)] relative overflow-hidden transition-all duration-500">
                                     <span className="relative z-10 flex items-center justify-center gap-6">
                                         프로젝트 문의하기
                                         <ArrowRight size={32} className="transition-transform group-hover/btn:translate-x-4 duration-500" />
@@ -370,7 +370,7 @@ export function ContactSection() {
 
                                     <div className="pt-10 border-t border-slate-200 flex flex-col items-center lg:items-end gap-3">
                                         <span className="text-[10px] font-black text-blue-500 tracking-[0.4em] uppercase italic">Direct Collaboration</span>
-                                        <div className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 tracking-tighter flex items-center gap-4 hover:scale-[1.02] transition-transform duration-500 cursor-pointer select-all select-none underline decoration-slate-100 underline-offset-8 decoration-8">
+                                        <div className="text-xl md:text-3xl lg:text-4xl font-black text-slate-900 tracking-tighter flex items-center gap-4 hover:scale-[1.02] transition-transform duration-500 cursor-pointer select-all select-none underline decoration-slate-100 underline-offset-8 decoration-8 break-all">
                                             mihail777@naver.com
                                         </div>
                                     </div>

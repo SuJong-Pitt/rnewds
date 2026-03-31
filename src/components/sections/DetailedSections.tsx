@@ -24,7 +24,7 @@ export function ExpertiseSection() {
                                     <span className="font-bold text-[9px] uppercase tracking-[0.2em] opacity-70">Expertise</span>
                                 </span>
                                 <div className="w-px h-3 bg-white/10"></div>
-                                <span className="font-bold text-[10px] uppercase tracking-[0.4em] text-white/90">Pedigree Archive</span>
+                                <span className="font-bold text-[10px] uppercase tracking-widest md:tracking-[0.4em] text-white/90">Pedigree Archive</span>
                             </div>
                             <h2 className="text-2xl md:text-5xl font-heading font-black leading-[1.1] tracking-tighter">
                                 MD 디자이너 <br />
@@ -111,7 +111,7 @@ export function ValuePointsSection() {
                             <span className="font-bold text-[9px] uppercase tracking-[0.2em] opacity-70">Logic</span>
                         </span>
                         <div className="w-px h-3 bg-blue-200"></div>
-                        <span className="font-bold text-[10px] uppercase tracking-[0.4em]">The Core Essence</span>
+                        <span className="font-bold text-[10px] uppercase tracking-widest md:tracking-[0.4em]">The Core Essence</span>
                     </div>
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-slate-950 tracking-tighter leading-[1.1] mb-12">
                         매출을 완성하는 <br />
@@ -128,7 +128,7 @@ export function ValuePointsSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                            className="p-12 md:p-14 rounded-[60px] bg-white/40 backdrop-blur-xl border border-white shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(37,99,235,0.06)] hover:border-blue-100 transition-all duration-700 group relative overflow-hidden flex flex-col h-full"
+                            className="p-8 md:p-14 rounded-[60px] bg-white/40 backdrop-blur-xl border border-white shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(37,99,235,0.06)] hover:border-blue-100 transition-all duration-700 group relative overflow-hidden flex flex-col h-full"
                         >
                             <div className="absolute -right-4 top-0 text-[120px] md:text-[160px] font-black text-slate-900/[0.03] select-none pointer-events-none font-heading italic leading-none group-hover:text-blue-500/[0.05] transition-colors duration-700">
                                 {String(i + 1).padStart(2, '0')}
@@ -197,7 +197,7 @@ export function ProcessSection() {
                             <span className="font-bold text-[9px] uppercase tracking-[0.2em] opacity-70">Flow</span>
                         </span>
                         <div className="w-px h-3 bg-white/10"></div>
-                        <span className="font-bold text-[10px] uppercase tracking-[0.4em] text-white/90">Architectural Process</span>
+                        <span className="font-bold text-[10px] uppercase tracking-widest md:tracking-[0.4em] text-white/90">Architectural Process</span>
                     </div>
                     <h2 className="text-3xl md:text-[3.5rem] font-heading font-black text-white tracking-tighter leading-tight relative inline-block">
                         명작이 탄생하는 <br />
@@ -227,7 +227,7 @@ export function ProcessSection() {
                                 </div>
                             )}
 
-                            <div className="bg-white/[0.03] backdrop-blur-3xl p-12 md:p-14 rounded-[48px] border border-white/5 group-hover:border-white/20 transition-all duration-700 relative overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.1)] group-hover:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
+                            <div className="bg-white/[0.03] backdrop-blur-3xl p-8 md:p-14 rounded-[48px] border border-white/5 group-hover:border-white/20 transition-all duration-700 relative overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.1)] group-hover:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
                                 {/* Gradient Hover Background (Spectral) */}
                                 <div className={`absolute inset-0 bg-gradient-to-br ${step.glow} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700`}></div>
                                 
@@ -321,7 +321,7 @@ export function PricingSection() {
             
             <div className="container mx-auto max-w-7xl relative z-10">
                 <motion.div {...fadeInUp} className="text-center mb-24 md:mb-32">
-                    <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-bold text-[10px] uppercase tracking-[0.4em] mb-8 mx-auto whitespace-nowrap shadow-sm">
+                    <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-bold text-[10px] uppercase tracking-widest md:tracking-[0.4em] mb-8 mx-auto whitespace-nowrap shadow-sm">
                         Strategic Investment
                     </div>
                     <h2 className="text-3xl md:text-[4rem] font-heading font-black text-slate-950 tracking-tighter leading-tight relative">
@@ -341,7 +341,7 @@ export function PricingSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: i * 0.1 }}
-                            className={`relative p-10 md:p-14 rounded-[60px] bg-white border ${plan.isPopular ? "border-blue-200 shadow-[0_40px_100px_rgba(37,99,235,0.1)] ring-1 ring-blue-500/10" : "border-slate-100 shadow-[0_30px_70px_rgba(0,0,0,0.03)]"} group overflow-hidden transition-all duration-700 hover:-translate-y-4`}
+                            className={`relative p-8 md:p-14 rounded-[60px] bg-white border ${plan.isPopular ? "border-blue-200 shadow-[0_40px_100px_rgba(37,99,235,0.1)] ring-1 ring-blue-500/10" : "border-slate-100 shadow-[0_30px_70px_rgba(0,0,0,0.03)]"} group overflow-hidden transition-all duration-700 hover:-translate-y-4`}
                         >
                             {/* Decorative Label for Popular */}
                             {plan.isPopular && (
