@@ -18,9 +18,13 @@ export function ExpertiseSection() {
                 <div className="grid lg:grid-cols-2 gap-20 md:gap-32 items-center">
                     <motion.div {...fadeInUp} className="space-y-12 md:space-y-20">
                         <div className="space-y-6 md:space-y-8">
-                            <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-bold text-[10px] uppercase tracking-[0.1em] md:tracking-[0.3em] whitespace-nowrap">
-                                <Sparkles size={12} />
-                                Expertise Pedigree
+                            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-blue-400 shadow-2xl">
+                                <span className="flex items-center gap-2">
+                                    <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(59,130,246,0.5)]"></span>
+                                    <span className="font-bold text-[9px] uppercase tracking-[0.2em] opacity-70">Expertise</span>
+                                </span>
+                                <div className="w-px h-3 bg-white/10"></div>
+                                <span className="font-bold text-[10px] uppercase tracking-[0.4em] text-white/90">Pedigree Archive</span>
                             </div>
                             <h2 className="text-2xl md:text-5xl font-heading font-black leading-[1.1] tracking-tighter">
                                 MD 디자이너 <br />
@@ -101,8 +105,13 @@ export function ValuePointsSection() {
 
             <div className="container mx-auto max-w-7xl relative z-10">
                 <motion.div {...fadeInUp} className="text-center mb-24 md:mb-40">
-                    <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-bold text-[10px] uppercase tracking-[0.1em] md:tracking-[0.4em] mb-12 text-center mx-auto whitespace-nowrap">
-                        The Core Logic
+                    <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50/50 backdrop-blur-md border border-blue-100 text-blue-600 shadow-sm mb-12 mx-auto whitespace-nowrap">
+                        <span className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-pulse shadow-[0_0_8px_rgba(37,99,235,0.4)]"></span>
+                            <span className="font-bold text-[9px] uppercase tracking-[0.2em] opacity-70">Logic</span>
+                        </span>
+                        <div className="w-px h-3 bg-blue-200"></div>
+                        <span className="font-bold text-[10px] uppercase tracking-[0.4em]">The Core Essence</span>
                     </div>
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-slate-950 tracking-tighter leading-[1.1] mb-12">
                         매출을 완성하는 <br />
@@ -182,8 +191,13 @@ export function ProcessSection() {
 
             <div className="container mx-auto max-w-7xl relative z-10">
                 <motion.div {...fadeInUp} className="text-center mb-24 md:mb-32">
-                    <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-bold text-[10px] uppercase tracking-[0.1em] md:tracking-[0.4em] mb-8 mx-auto whitespace-nowrap">
-                        Architecture Flow
+                    <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-blue-400 shadow-2xl mb-12 mx-auto whitespace-nowrap">
+                        <span className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(59,130,246,0.5)]"></span>
+                            <span className="font-bold text-[9px] uppercase tracking-[0.2em] opacity-70">Flow</span>
+                        </span>
+                        <div className="w-px h-3 bg-white/10"></div>
+                        <span className="font-bold text-[10px] uppercase tracking-[0.4em] text-white/90">Architectural Process</span>
                     </div>
                     <h2 className="text-3xl md:text-[3.5rem] font-heading font-black text-white tracking-tighter leading-tight relative inline-block">
                         명작이 탄생하는 <br />
@@ -371,75 +385,6 @@ export function PricingSection() {
                             </div>
                         </motion.div>
                     ))}
-                </div>
-
-                {/* Additional Benefits & Note */}
-                <div className="mt-20 md:mt-32 grid md:grid-cols-2 gap-10 items-stretch">
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        className="p-12 md:p-16 rounded-[60px] bg-slate-950 text-white border border-white/5 relative overflow-hidden group shadow-2xl"
-                    >
-                        {/* Luxury Accents */}
-                        <div className="absolute top-0 right-0 w-40 h-40 bg-blue-600/10 blur-[60px] group-hover:bg-blue-600/20 transition-all duration-1000"></div>
-                        
-                        <div className="relative z-10 space-y-12">
-                            <h4 className="text-2xl md:text-4xl font-black tracking-tighter">패키지별 <span className="text-blue-400 italic">공통점.</span></h4>
-                            <ul className="space-y-6">
-                                {[
-                                    "모든 패키지는 난이도 및 길이에 따라 비용이 상이할 수 있습니다.",
-                                    "GIF 작업 원하실 시 추가 별도 비용이 발생할 수 있습니다.",
-                                    "작업 후 작업물은 포트폴리오로 이용될 수 있으며, 원치 않으시면 미리 말씀해 주세요."
-                                ].map((text, i) => (
-                                    <li key={i} className="flex items-start gap-4 text-slate-400 group/text transition-all duration-300">
-                                        <div className="mt-2 w-1.5 h-1.5 rounded-full bg-blue-500 group-hover/text:scale-150 transition-all" />
-                                        <span className="text-lg md:text-xl font-light leading-relaxed group-hover/text:text-white transition-colors">{text}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        className="p-12 md:p-16 rounded-[60px] bg-white border border-blue-100 shadow-[0_40px_100px_rgba(37,99,235,0.05)] relative overflow-hidden group flex flex-col justify-center"
-                    >
-                        <div className="absolute top-0 right-0 p-8">
-                            <Sparkles size={40} className="text-blue-100 animate-pulse" />
-                        </div>
-
-                        <div className="relative z-10 space-y-12">
-                            <header className="space-y-4">
-                                <span className="text-blue-600 font-black tracking-widest text-xs uppercase">Benefit Exclusive</span>
-                                <h4 className="text-3xl md:text-5xl font-black text-slate-950 tracking-tighter italic">추가 혜택</h4>
-                            </header>
-                            
-                            <div className="space-y-4">
-                                <div className="p-8 rounded-[40px] bg-blue-50/50 border border-blue-100 flex items-center gap-6 group/benefit hover:bg-blue-600 hover:border-blue-600 transition-all duration-500">
-                                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-blue-600 shadow-sm group-hover/benefit:scale-110 transition-transform">
-                                        <Layers size={24} />
-                                    </div>
-                                    <div className="space-y-1">
-                                        <p className="text-[10px] font-bold text-blue-500 uppercase tracking-widest group-hover/benefit:text-blue-100">For Reviewers</p>
-                                        <p className="text-lg md:text-xl font-bold text-slate-900 group-hover/benefit:text-white">리뷰 작성 시 피그마 원본 파일 제공</p>
-                                    </div>
-                                </div>
-
-                                <div className="p-8 rounded-[40px] bg-slate-50 border border-slate-100 flex items-center gap-6 group/benefit hover:bg-slate-950 hover:border-slate-950 transition-all duration-500">
-                                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-slate-900 shadow-sm group-hover/benefit:scale-110 transition-transform">
-                                        <Palette size={24} />
-                                    </div>
-                                    <div className="space-y-1">
-                                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest group-hover/benefit:text-slate-500">For Professionalism</p>
-                                        <p className="text-lg md:text-xl font-bold text-slate-900 group-hover/benefit:text-white">DELUXE 이상 전용 연출컷 서비스</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
                 </div>
             </div>
         </section>

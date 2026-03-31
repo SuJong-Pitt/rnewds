@@ -58,12 +58,6 @@ export function Navbar() {
                     ))}
                 </div>
 
-                {/* Right Actions */}
-                <div className="hidden md:flex items-center gap-4">
-                    <Button variant="default" className="rounded-xl px-6 font-bold btn-gradient h-10 border-none shadow-md">
-                        문의하기
-                    </Button>
-                </div>
 
                 {/* Mobile Menu Button */}
                 <button

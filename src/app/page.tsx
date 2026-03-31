@@ -9,8 +9,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import {
     ExpertiseSection,
     ValuePointsSection,
-    ProcessSection,
-    PricingSection
+    ProcessSection
 } from "@/components/sections/DetailedSections";
 import { ProjectShowcase } from "@/components/projects/ProjectShowcase";
 import { TechStack, ContactSection } from "@/components/sections/Sections";
@@ -79,21 +78,13 @@ export default function Home() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.3 }}
-                            className="flex flex-col sm:flex-row items-center gap-8 mb-32 md:mb-48"
+                            className="flex justify-center mb-32 md:mb-48"
                         >
                             <Link href="/#projects">
-                                <Button size="lg" className="rounded-full px-12 py-8 text-lg font-bold bg-slate-950 text-white hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-950/20">
+                                <Button size="lg" className="rounded-full px-12 py-8 text-lg font-bold bg-slate-950 text-white hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-950/20 text-center">
                                     전체 포트폴리오
                                     <ArrowRight size={20} className="ml-3" />
                                 </Button>
-                            </Link>
-                            <Link href="/#contact">
-                                <button className="text-slate-900 font-bold text-lg hover:text-blue-600 transition-colors flex items-center gap-3 group underline-offset-8 hover:underline decoration-blue-200">
-                                    <span className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover:border-blue-200 transition-all">
-                                        <Sparkles size={16} className="text-blue-500 group-hover:scale-110 transition-transform" />
-                                    </span>
-                                    프로젝트 문의하기
-                                </button>
                             </Link>
                         </motion.div>
                     </div>
@@ -104,11 +95,26 @@ export default function Home() {
                         transition={{ duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
                         className="relative w-full max-w-6xl mx-auto"
                     >
-                        {/* Decorative Tag */}
-                        <div className="absolute -top-10 left-1/2 -translate-x-1/2 flex items-center gap-4 text-slate-300 pointer-events-none mb-4 whitespace-nowrap opacity-50 font-black tracking-[1em] text-[10px] md:text-xs">
-                            <div className="w-10 h-[1px] bg-slate-200"></div>
-                            STUDIO SHOWCASE
-                            <div className="w-10 h-[1px] bg-slate-200"></div>
+                        {/* Architectural Luxe Tag */}
+                        <div className="absolute -top-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-30 pointer-events-none mb-6">
+                            <motion.div 
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1, delay: 0.8 }}
+                                className="px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md border border-slate-200/50 shadow-[0_10px_20px_rgba(0,0,0,0.02)] flex items-center gap-4"
+                            >
+                                <span className="flex items-center gap-2">
+                                    <span className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-pulse shadow-[0_0_8px_rgba(37,99,235,0.6)]"></span>
+                                    <span className="text-[9px] font-black tracking-[0.2em] text-slate-400 uppercase italic">Active</span>
+                                </span>
+                                <div className="w-[1px] h-3 bg-slate-200"></div>
+                                <span className="text-[10px] md:text-[11px] font-black text-slate-950 uppercase tracking-[0.6em] whitespace-nowrap pl-1">
+                                    Studio Archive
+                                </span>
+                            </motion.div>
+                            <div className="text-[8px] font-mono tracking-[0.8em] text-slate-300 uppercase opacity-60">
+                                ELITE_VAULT_01
+                            </div>
                         </div>
 
                         <div className="relative z-10">
@@ -123,7 +129,6 @@ export default function Home() {
             <ExpertiseSection />
             <ValuePointsSection />
             <ProcessSection />
-            <PricingSection />
 
             {/* Evidence & Portfolio */}
             <ProjectShowcase />
