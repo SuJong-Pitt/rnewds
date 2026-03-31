@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { MessageCircle, HelpCircle, UserCheck, Zap, Layers, Target, Clock, FileText, CreditCard, PenTool, CheckCircle2, ArrowRight, Sparkles, Box, Layout, MousePointer2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { MessageCircle, Zap, Layers, Target, Clock, FileText, PenTool, CheckCircle2, Sparkles, Layout, MousePointer2 } from "lucide-react";
 
 const fadeInUp = {
     initial: { opacity: 0, y: 30 },
@@ -12,24 +11,18 @@ const fadeInUp = {
     transition: { duration: 0.6 }
 };
 
-
 export function ExpertiseSection() {
     return (
         <section className="py-20 md:py-40 px-6 bg-slate-950 text-white relative overflow-hidden">
-            {/* Studio Overlay - Minimalist */}
-            <div className="absolute inset-0 opacity-[0.05] select-none pointer-events-none">
-                {/* Simplified background for clarity */}
-            </div>
-
             <div className="container mx-auto max-w-7xl relative z-10">
                 <div className="grid lg:grid-cols-2 gap-20 md:gap-32 items-center">
                     <motion.div {...fadeInUp} className="space-y-12 md:space-y-20">
                         <div className="space-y-6 md:space-y-8">
-                            <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-bold text-[10px] uppercase tracking-[0.3em]">
+                            <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-bold text-[10px] uppercase tracking-[0.1em] md:tracking-[0.3em] whitespace-nowrap">
                                 <Sparkles size={12} />
                                 Expertise Pedigree
                             </div>
-                            <h2 className="text-3xl md:text-6xl font-heading font-black leading-[1.1] tracking-tighter">
+                            <h2 className="text-2xl md:text-5xl font-heading font-black leading-[1.1] tracking-tighter">
                                 MD 디자이너 <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-400 animate-gradient-x bg-[length:200%_auto]">실무 15년.</span>
                             </h2>
@@ -46,12 +39,11 @@ export function ExpertiseSection() {
                                 "제품의 본질을 꿰뚫는 전략적 카피라이팅"
                             ].map((text, i) => (
                                 <div key={i} className="flex items-center gap-4 text-base md:text-lg font-light text-slate-300">
-                                    <div className="w-1 h-1 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></div>
+                                    <div className="w-1 h-1 rounded-full bg-blue-50 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></div>
                                     <span>{text}</span>
                                 </div>
                             ))}
                         </div>
-
                     </motion.div>
 
                     <motion.div
@@ -103,36 +95,50 @@ export function ValuePointsSection() {
     ];
 
     return (
-        <section className="py-20 md:py-40 px-6 bg-slate-50 overflow-hidden relative">
-            {/* Studio Overlay - Minimalist */}
-            <div className="absolute top-20 right-0 opacity-[0.02] text-[200px] font-black select-none pointer-events-none"></div>
+        <section className="py-32 md:py-64 px-6 bg-slate-50 overflow-hidden relative">
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_70%_20%,rgba(37,99,235,0.03),transparent_70%)] pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-1/2 h-full bg-[radial-gradient(circle_at_30%_80%,rgba(37,99,235,0.02),transparent_70%)] pointer-events-none"></div>
 
             <div className="container mx-auto max-w-7xl relative z-10">
-                <motion.div {...fadeInUp} className="text-center mb-16 md:mb-24">
-                    <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-slate-50 border border-slate-100 text-blue-600 font-bold text-[10px] uppercase tracking-[0.3em] mb-8">
+                <motion.div {...fadeInUp} className="text-center mb-24 md:mb-40">
+                    <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-bold text-[10px] uppercase tracking-[0.1em] md:tracking-[0.4em] mb-12 text-center mx-auto whitespace-nowrap">
                         The Core Logic
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-heading font-black text-slate-900 tracking-tighter leading-[1.2]">
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-slate-950 tracking-tighter leading-[1.1] mb-12">
                         매출을 완성하는 <br />
-                        <span className="text-blue-600 italic">4가지 본질.</span>
+                        <span className="text-blue-600 italic px-1">4가지 본질.</span>
                     </h2>
+                    <div className="w-24 h-[1px] bg-blue-200 mx-auto opacity-50"></div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-14">
                     {points.map((point, i) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: i * 0.1, duration: 0.8 }}
-                            className="p-10 md:p-14 rounded-[50px] bg-slate-50/50 border border-slate-100 hover:border-blue-200 hover:bg-white hover:shadow-3xl hover:shadow-blue-500/5 transition-all duration-500 group"
+                            transition={{ delay: i * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                            className="p-12 md:p-14 rounded-[60px] bg-white/40 backdrop-blur-xl border border-white shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(37,99,235,0.06)] hover:border-blue-100 transition-all duration-700 group relative overflow-hidden flex flex-col h-full"
                         >
-                            <div className="w-16 h-16 md:w-20 md:h-20 rounded-3xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-blue-600 mb-10 md:mb-14 group-hover:bg-slate-900 group-hover:text-white transition-all duration-500">
+                            <div className="absolute -right-4 top-0 text-[120px] md:text-[160px] font-black text-slate-900/[0.03] select-none pointer-events-none font-heading italic leading-none group-hover:text-blue-500/[0.05] transition-colors duration-700">
+                                {String(i + 1).padStart(2, '0')}
+                            </div>
+
+                            <div className="w-16 h-16 md:w-20 md:h-20 rounded-3xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-blue-600 mb-12 md:mb-16 group-hover:bg-slate-950 group-hover:text-white transition-all duration-700 relative z-10 transform group-hover:scale-110 group-hover:rotate-6">
                                 {point.icon}
                             </div>
-                            <h3 className="text-2xl md:text-3xl font-black mb-6 text-slate-900 leading-tight tracking-tighter">{point.title}</h3>
-                            <p className="text-slate-500 text-base md:text-lg font-light leading-relaxed tracking-tight group-hover:text-slate-600">{point.desc}</p>
+
+                            <div className="relative z-10 flex-grow">
+                                <h3 className="text-2xl md:text-3xl font-black mb-6 text-slate-900 leading-[1.1] tracking-tighter group-hover:text-blue-600 transition-colors">
+                                    {point.title}
+                                </h3>
+                                <p className="text-slate-400 text-base md:text-xl font-light leading-relaxed tracking-tight group-hover:text-slate-500 transition-colors break-keep">
+                                    {point.desc}
+                                </p>
+                            </div>
+
+                            <div className="mt-12 w-0 group-hover:w-full h-[1px] bg-blue-100 transition-all duration-1000 origin-left"></div>
                         </motion.div>
                     ))}
                 </div>
@@ -143,34 +149,50 @@ export function ValuePointsSection() {
 
 export function ProcessSection() {
     const steps = [
-        { icon: <MessageCircle />, title: "심층 상담 및 진단", desc: "제품 소구점 파악 & 마케팅 방향 진단" },
-        { icon: <FileText />, title: "전략적 기획안 설계", desc: "논리적 설득 구조 & 기회 제안 (피그마)" },
-        { icon: <Zap />, title: "압도적 크리에이션", desc: "시선을 사로잡는 고퀄리티 디자인 착수" },
-        { icon: <CheckCircle2 />, title: "정밀 피드백 및 보정", desc: "고객 지향적 수정을 통한 완성도 극대화" },
-        { icon: <Layers />, title: "마스터피스 전달", desc: "최적화된 최종 파일 패키지 전달" },
-        { icon: <Clock />, title: "전환율 성과 팔로업", desc: "릴리즈 후 성과 모니터링 및 추가 제안" }
+        { icon: <MessageCircle />, title: "심층 상담 및 진단", desc: "제품 소구점 파악 & 마케팅 방향 진단", color: "text-blue-400", bg: "bg-blue-600", shadow: "shadow-blue-500/20", glow: "from-blue-600/20" },
+        { icon: <FileText />, title: "전략적 기획안 설계", desc: "논리적 설득 구조 & 기회 제안 (피그마)", color: "text-indigo-400", bg: "bg-indigo-600", shadow: "shadow-indigo-500/20", glow: "from-indigo-600/20" },
+        { icon: <Zap />, title: "압도적 크리에이션", desc: "시선을 사로잡는 고퀄리티 디자인 착수", color: "text-purple-400", bg: "bg-purple-600", shadow: "shadow-purple-500/20", glow: "from-purple-600/20" },
+        { icon: <CheckCircle2 />, title: "정밀 피드백 및 보정", desc: "고객 지향적 수정을 통한 완성도 극대화", color: "text-rose-400", bg: "bg-rose-600", shadow: "shadow-rose-500/20", glow: "from-rose-600/20" },
+        { icon: <Layers />, title: "마스터피스 전달", desc: "최적화된 최종 파일 패키지 전달", color: "text-orange-400", bg: "bg-orange-600", shadow: "shadow-orange-500/20", glow: "from-orange-600/20" },
+        { icon: <Clock />, title: "전환율 성과 팔로업", desc: "릴리즈 후 성과 모니터링 및 추가 제안", color: "text-cyan-400", bg: "bg-cyan-600", shadow: "shadow-cyan-500/20", glow: "from-cyan-600/20" }
     ];
 
     return (
         <section className="py-24 md:py-48 px-6 bg-slate-950 text-white overflow-hidden relative">
-            {/* Studio Technical Background */}
-            <div className="absolute inset-0 opacity-[0.03] select-none pointer-events-none">
-                <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #2563eb 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
-            </div>
+            {/* 1. Atmospheric Volumetric Lighting (Luxury Background Deep Space) */}
+            <motion.div 
+                animate={{ x: [0, 100, 0], y: [0, 50, 0], scale: [1, 1.2, 1] }}
+                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                className="absolute top-0 -left-20 w-[600px] h-[600px] bg-blue-600/5 blur-[140px] rounded-full pointer-events-none" 
+            />
+            <motion.div 
+                animate={{ x: [0, -100, 0], y: [0, 100, 0], scale: [1, 1.1, 1] }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute bottom-0 -right-20 w-[700px] h-[700px] bg-purple-600/5 blur-[160px] rounded-full pointer-events-none" 
+            />
+            <motion.div 
+                animate={{ x: [0, 50, 0], y: [0, -50, 0], scale: [1, 1.3, 1] }}
+                transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-amber-600/[0.03] blur-[110px] rounded-full pointer-events-none" 
+            />
+
+            {/* Architectural Flow Grid */}
+            <div className="absolute inset-0 opacity-[0.05] select-none pointer-events-none" 
+                 style={{ backgroundImage: 'linear-gradient(#2563eb 0.5px, transparent 0.5px), linear-gradient(90deg, #2563eb 0.5px, transparent 0.5px)', backgroundSize: '60px 60px' }}></div>
 
             <div className="container mx-auto max-w-7xl relative z-10">
                 <motion.div {...fadeInUp} className="text-center mb-24 md:mb-32">
-                    <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-bold text-[10px] uppercase tracking-[0.4em] mb-8">
+                    <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-bold text-[10px] uppercase tracking-[0.1em] md:tracking-[0.4em] mb-8 mx-auto whitespace-nowrap">
                         Architecture Flow
                     </div>
-                    <h2 className="text-4xl md:text-[4rem] font-heading font-black text-white tracking-tighter leading-tight relative inline-block">
+                    <h2 className="text-3xl md:text-[3.5rem] font-heading font-black text-white tracking-tighter leading-tight relative inline-block">
                         명작이 탄생하는 <br />
-                        <span className="text-blue-400 italic">6단계의 치밀한 공정.</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 italic px-1 animate-gradient-x bg-[length:200%_auto]">6단계의 치밀한 공정.</span>
                         <div className="absolute -right-12 -top-6 text-[100px] font-black text-white/5 -z-10 select-none">06</div>
                     </h2>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14 px-4">
                     {steps.map((step, i) => (
                         <motion.div
                             key={i}
@@ -180,28 +202,44 @@ export function ProcessSection() {
                             transition={{ delay: i * 0.1, duration: 0.8 }}
                             className="group relative"
                         >
-                            {/* Connection Indicator (Mobile Hidden) */}
-                            {i < steps.length - 1 && (
-                                <div className="hidden lg:block absolute -right-7 top-1/2 -translate-y-1/2 w-10 h-[1px] bg-white/5 z-0"></div>
+                            {/* Animated Spectral Connectors (Horizontal on LG) */}
+                            {i % 3 !== 2 && (
+                                <div className="hidden lg:block absolute -right-7 top-1/2 -translate-y-1/2 w-10 h-[1.5px] bg-gradient-to-r from-transparent via-white/10 to-transparent z-0 overflow-hidden">
+                                    <motion.div 
+                                        animate={{ x: ["-100%", "200%"] }}
+                                        transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: i * 0.3 }}
+                                        className={`w-full h-full bg-gradient-to-r from-transparent via-${step.color.split('-')[1]}-400 to-transparent`}
+                                    />
+                                </div>
                             )}
 
-                            <div className="bg-white/5 backdrop-blur-xl p-12 md:p-14 rounded-[32px] border border-white/10 group-hover:border-blue-500/30 transition-all duration-700 relative overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.02)] group-hover:shadow-[0_20px_50px_rgba(37,99,235,0.1)] group-hover:-translate-y-2">
-                                {/* Hover Glow */}
-                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.05),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div className="bg-white/[0.03] backdrop-blur-3xl p-12 md:p-14 rounded-[48px] border border-white/5 group-hover:border-white/20 transition-all duration-700 relative overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.1)] group-hover:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
+                                {/* Gradient Hover Background (Spectral) */}
+                                <div className={`absolute inset-0 bg-gradient-to-br ${step.glow} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700`}></div>
                                 
-                                <div className="flex justify-between items-start mb-14 relative z-10">
-                                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-blue-500/20 group-hover:-rotate-6">
-                                        {step.icon}
+                                <div className="flex justify-between items-start mb-16 relative z-10">
+                                    {/* Orbital Icon Glow */}
+                                    <div className="relative">
+                                        <div className={`absolute inset-0 rounded-2xl blur-2xl ${step.bg} opacity-0 group-hover:opacity-40 transition-opacity duration-700 scale-150`}></div>
+                                        <div className={`relative w-16 h-16 md:w-20 md:h-20 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center ${step.color} group-hover:bg-slate-950 group-hover:text-white transition-all duration-500 shadow-sm group-hover:-rotate-6`}>
+                                            {step.icon}
+                                        </div>
                                     </div>
-                                    <div className="text-5xl md:text-7xl font-black text-white/10 group-hover:text-blue-500/20 transition-colors tracking-tighter italic">
+                                    <div className={`text-6xl md:text-8xl font-black text-white/[0.03] ${step.color} opacity-0 group-hover:opacity-20 transition-all duration-1000 tracking-tighter italic px-2 transform group-hover:scale-110`}>
                                         {String(i + 1).padStart(2, '0')}
                                     </div>
                                 </div>
-                                
-                                <div className="relative z-10">
-                                    <h3 className="text-2xl md:text-3xl font-black mb-4 text-white tracking-tighter leading-tight group-hover:text-blue-400 transition-colors">{step.title}</h3>
-                                    <p className="text-slate-400 text-base md:text-lg font-light leading-relaxed tracking-tight group-hover:text-slate-300 transition-colors">{step.desc}</p>
+                                <div className="relative z-10 space-y-6">
+                                    <h3 className="text-2xl md:text-4xl font-black text-white tracking-tighter leading-tight group-hover:translate-x-2 transition-transform duration-500">
+                                        {step.title}
+                                    </h3>
+                                    <p className="text-slate-400 text-base md:text-xl font-light leading-relaxed tracking-tight group-hover:text-slate-200 transition-colors break-keep">
+                                        {step.desc}
+                                    </p>
                                 </div>
+
+                                {/* Flow Progress Line (Spectral) */}
+                                <div className={`mt-10 h-[1.5px] w-0 group-hover:w-full transition-all duration-1000 origin-left ${step.bg} bg-opacity-30`}></div>
                             </div>
                         </motion.div>
                     ))}
