@@ -14,7 +14,7 @@ export function ProjectShowcase() {
     // Magnetic Mouse Tracking
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
-    
+
     const springConfig = { damping: 25, stiffness: 150 };
     const springX = useSpring(mouseX, springConfig);
     const springY = useSpring(mouseY, springConfig);
@@ -48,43 +48,9 @@ export function ProjectShowcase() {
         fetchProjects();
     }, []);
 
-    // Letter Animation Variants
-    const letterVariants = {
-        hidden: { opacity: 0, y: 30, scale: 0.8, filter: "blur(4px)" },
-        visible: (i: number) => ({
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            filter: "blur(0px)",
-            transition: {
-                delay: i * 0.04,
-                duration: 0.8,
-                ease: [0.16, 1, 0.3, 1]
-            }
-        })
-    };
-
-    const AnimatedText = ({ text, className, delay = 0 }: { text: string; className: string; delay?: number }) => (
-        <>
-            {text.split("").map((char, i) => (
-                <motion.span
-                    key={i}
-                    custom={i + delay}
-                    variants={letterVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.1 }}
-                    className={`inline-block whitespace-pre ${className}`}
-                >
-                    {char}
-                </motion.span>
-            ))}
-        </>
-    );
-
     return (
-        <section 
-            id="projects" 
+        <section
+            id="projects"
             ref={sectionRef}
             className="py-32 md:py-64 px-6 bg-slate-50 overflow-hidden relative antialiased"
         >
@@ -94,11 +60,11 @@ export function ProjectShowcase() {
             </div>
 
             {/* Magnetic Mouse Glow - Premium Spatial Depth */}
-            <motion.div 
+            <motion.div
                 style={{ x: springX, y: springY, translateX: "-50%", translateY: "-50%" }}
                 className="absolute w-[600px] h-[600px] bg-gradient-to-r from-blue-500/10 via-indigo-500/5 to-transparent blur-[120px] rounded-full pointer-events-none z-0"
             />
-            
+
             {/* Multi-Color Atmospheric Blobs */}
             <motion.div
                 animate={{ x: [0, 80, 0], y: [0, 60, 0], scale: [1, 1.2, 1] }}
@@ -127,7 +93,7 @@ export function ProjectShowcase() {
                             >
                                 <div className="relative">
                                     <Sparkles size={16} className="text-blue-500" />
-                                    <motion.div 
+                                    <motion.div
                                         animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
                                         transition={{ duration: 2, repeat: Infinity }}
                                         className="absolute inset-0 bg-blue-400 rounded-full blur-sm"
@@ -136,37 +102,34 @@ export function ProjectShowcase() {
                                 <span className="font-bold text-[11px] md:text-xs uppercase tracking-[0.5em] pl-1">Case Study Hub</span>
                             </motion.div>
 
-                            <h2 className="text-3xl md:text-5xl lg:text-[3.6rem] font-heading font-black text-slate-950 tracking-[-0.05em] leading-[1.05] antialiased">
-                                <div className="block mb-3">
-                                    <AnimatedText 
-                                        text="최상의 결과물로" 
-                                        className="text-transparent bg-clip-text bg-gradient-to-br from-slate-950 via-slate-800 to-slate-950" 
-                                    />
-                                </div>
+                            <motion.h2
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                                className="text-3xl md:text-5xl lg:text-[3.6rem] font-heading font-black text-slate-950 tracking-[-0.05em] leading-[1.1] antialiased"
+                            >
+                                <span className="block mb-2 text-transparent bg-clip-text bg-gradient-to-br from-slate-950 via-slate-800 to-slate-950">최상의 결과물로</span>
                                 <span className="relative inline-block italic">
-                                    <AnimatedText 
-                                        text="가치를 증명" 
-                                        className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-700 bg-[length:200%_auto] animate-gradient-x"
-                                        delay={8}
-                                    />
+                                    <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-700 bg-[length:200%_auto] animate-gradient-x px-1">가치를 증명</span>
                                     {/* Sophisticated Architectural Underglow */}
-                                    <motion.div 
+                                    <motion.div
                                         initial={{ width: 0 }}
                                         whileInView={{ width: "100%" }}
                                         viewport={{ once: true }}
-                                        transition={{ delay: 1.2, duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+                                        transition={{ delay: 0.8, duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
                                         className="absolute -bottom-3 left-0 h-[10px] bg-blue-500/15 blur-[4px] rounded-full"
                                     />
-                                    <motion.div 
+                                    <motion.div
                                         initial={{ width: 0 }}
                                         whileInView={{ width: "100%" }}
                                         viewport={{ once: true }}
-                                        transition={{ delay: 1.3, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                                        transition={{ delay: 0.9, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                                         className="absolute -bottom-3 left-0 h-[4px] bg-gradient-to-r from-blue-400 via-indigo-400 to-transparent rounded-full"
                                     />
                                 </span>
-                                <AnimatedText text="합니다." className="ml-2" delay={18} />
-                            </h2>
+                                <span className="ml-2">합니다.</span>
+                            </motion.h2>
                         </div>
                     </div>
                     <motion.div
@@ -230,7 +193,7 @@ export function ProjectShowcase() {
                                                     {project.description}
                                                 </p>
                                             </div>
-                                            
+
                                             {/* Spectral Border Shine on Hover */}
                                             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1500 ease-in-out"></div>
                                         </div>
@@ -244,24 +207,24 @@ export function ProjectShowcase() {
                                 >
                                     {/* Glassmorphic "Masterpiece Vault" */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-indigo-500/[0.02]"></div>
-                                    
+
                                     {/* 3. The Digital Scanning Laser (WOW Factor) */}
-                                    <motion.div 
+                                    <motion.div
                                         animate={{ x: ["-100%", "200%"] }}
                                         transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
                                         className="absolute inset-y-0 w-32 bg-gradient-to-r from-transparent via-blue-500/10 to-transparent skew-x-12 pointer-events-none"
                                     />
-                                    
+
                                     {/* Architectural Markers */}
                                     <div className="absolute top-12 left-1/2 -translate-x-1/2 flex items-center gap-8 opacity-20 pointer-events-none select-none">
                                         <span className="text-[10px] font-mono tracking-[1em] uppercase">GALLERY_01</span>
                                         <div className="w-20 h-px bg-slate-900"></div>
                                         <span className="text-[10px] font-mono tracking-[1em] uppercase">ARCHITECTURE_VAULT</span>
                                     </div>
-                                    
+
                                     <div className="relative mb-16">
                                         {/* Floating Geometric Elements */}
-                                        <motion.div 
+                                        <motion.div
                                             animate={{ rotate: 360 }}
                                             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                                             className="absolute -inset-12 border border-blue-500/10 rounded-[60px]"
@@ -274,18 +237,18 @@ export function ProjectShowcase() {
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <h3 className="text-4xl md:text-7xl font-black mb-10 text-slate-950 tracking-tighter leading-tight relative">
                                         Project Vault <br />
                                         <span className="text-[0.4em] font-mono font-medium tracking-[0.8em] text-blue-600 block mt-4 opacity-100 italic">IN PROGRESS</span>
                                         <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-20 h-1.5 bg-blue-600 rounded-full shadow-[0_0_20px_rgba(37,99,235,0.5)]"></div>
                                     </h3>
-                                    
+
                                     <p className="text-slate-500 max-w-2xl mx-auto text-xl md:text-3xl font-light leading-relaxed tracking-tight break-keep pt-6 opacity-80">
                                         현재 R:new Studio 만의 <span className="text-slate-950 font-medium">독창적인 마스터피스</span>들을 <br className="hidden md:block" />
                                         정밀하게 보관 및 준비하고 있습니다. 곧 압도적인 결과물로 찾아뵙겠습니다.
                                     </p>
-                                    
+
                                     {/* Geometric Finishing */}
                                     <div className="absolute bottom-12 left-12 w-32 h-[1px] bg-slate-200"></div>
                                     <div className="absolute bottom-12 right-12 w-32 h-[1px] bg-slate-200"></div>
@@ -295,7 +258,7 @@ export function ProjectShowcase() {
                     </div>
                 )}
             </div>
-            
+
             {/* Fine Noise Texture Overlay - Global Studio Feel */}
             <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
                 style={{ backgroundImage: 'url("https://grainy-gradients.vercel.app/noise.svg")' }}></div>
