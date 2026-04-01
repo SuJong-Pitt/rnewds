@@ -111,28 +111,40 @@ export default function ProjectDetail() {
                     <div className="h-[1px] w-full bg-slate-100 mb-20 mt-20"></div>
 
                     {/* Meta Data Grid */}
-                    <div className="grid md:grid-cols-3 gap-16">
-                        <div className="space-y-6">
-                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">The Brief</span>
-                            <p className="text-slate-600 font-medium leading-relaxed">
-                                데이터의 설계로 비즈니스의 가치를 증명합니다. <br />
-                                R:new Design Studio만의 시각적 임팩트를 통해 고객의 전환율을 극대화한 사례입니다.
-                            </p>
-                        </div>
-                        <div className="space-y-6">
-                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Project Services</span>
-                            <ul className="text-slate-900 font-bold space-y-3">
-                                <li className="flex items-center gap-3"><Tag size={16} className="text-blue-600" /> Visual Strategy</li>
-                                <li className="flex items-center gap-3"><Tag size={16} className="text-blue-600" /> Web Architecture</li>
-                                <li className="flex items-center gap-3"><Tag size={16} className="text-blue-600" /> UX/UI Optimization</li>
-                            </ul>
-                        </div>
-                        <div className="space-y-6">
-                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Project Timeline</span>
-                            <div className="flex items-center gap-3 text-slate-900 font-bold">
-                                <Calendar size={20} className="text-slate-300" />
-                                <span>Completed in {new Date(project.created_at).toLocaleDateString("ko-KR")}</span>
+                    <div className="grid md:grid-cols-2 gap-16 md:gap-32">
+                        <div className="space-y-8">
+                            <span className="text-[10px] font-bold text-blue-600 uppercase tracking-[0.3em] block">The Brief</span>
+                            <div className="space-y-4">
+                                <p className="text-slate-600 font-medium leading-relaxed text-lg italic">
+                                    "데이터의 설계로 비즈니스의 가치를 증명합니다."
+                                </p>
+                                <p className="text-slate-500 leading-relaxed">
+                                    R:new Design Studio만의 시각적 임팩트를 통해 고객의 브랜드 가치를 재정의하고,
+                                    사용자 경험의 최적화를 통해 비즈니스의 실질적인 성장을 이끌어낸 프로젝트입니다.
+                                </p>
                             </div>
+                        </div>
+                        <div className="space-y-8">
+                            <span className="text-[10px] font-bold text-blue-600 uppercase tracking-[0.3em] block">Core Expertise</span>
+                            <ul className="grid grid-cols-1 gap-4">
+                                {[
+                                    { label: "Visual Strategy", desc: "Brand identity and creative direction" },
+                                    { label: "Web Architecture", desc: "Performance-focused development" },
+                                    { label: "UX/UI Optimization", desc: "Conversion-centric interface design" }
+                                ].map((service, index) => (
+                                    <li key={index} className="group cursor-default">
+                                        <div className="flex items-start gap-4 p-2 -m-2 rounded-xl hover:bg-slate-50 transition-colors">
+                                            <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 shrink-0 group-hover:scale-110 transition-transform">
+                                                <Tag size={18} />
+                                            </div>
+                                            <div>
+                                                <div className="text-slate-900 font-bold">{service.label}</div>
+                                                <div className="text-slate-400 text-xs font-medium uppercase tracking-wider">{service.desc}</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                     </div>
                 </section>

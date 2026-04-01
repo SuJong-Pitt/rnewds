@@ -27,10 +27,10 @@ export default function Home() {
                 <div className="absolute inset-0 z-0 bg-white pointer-events-none">
                     {/* Brand Abstract Background Layer */}
                     <div className="absolute inset-0 opacity-[0.6] pointer-events-none overflow-hidden h-full w-full">
-                        <Image 
-                            src="/images/premium_abstract_bg.png" 
-                            alt="Premium Brand Background" 
-                            fill 
+                        <Image
+                            src="/images/premium_abstract_bg.png"
+                            alt="Premium Brand Background"
+                            fill
                             className="object-cover opacity-40 select-none pointer-events-none"
                             priority
                         />
@@ -97,7 +97,7 @@ export default function Home() {
                     >
                         {/* Architectural Luxe Tag */}
                         <div className="absolute -top-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-30 pointer-events-none mb-6">
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: 0.8 }}
@@ -158,7 +158,7 @@ export default function Home() {
                                     <span className="text-white">프리미엄 상세페이지</span> 전문 스튜디오입니다.
                                 </p>
                             </div>
-                            
+
                             <div className="space-y-4">
                                 <h6 className="text-[10px] font-bold text-slate-600 uppercase tracking-[0.2em] flex items-center gap-2 mb-2">
                                     <span className="w-1 h-1 bg-blue-500 rounded-full animate-pulse"></span>
