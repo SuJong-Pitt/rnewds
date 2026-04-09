@@ -167,6 +167,7 @@ export default function Home() {
                                 <ul className="space-y-4 text-base font-medium">
                                     <li><a href="/about" className="text-slate-400 hover:text-blue-400 transition-all">About Studio</a></li>
                                     <li><Link href="/#projects" className="text-slate-400 hover:text-blue-400 transition-all">Work Portfolio</Link></li>
+                                    <li><Link href="/admin/login" className="text-slate-400 hover:text-blue-400 transition-all">Admin System</Link></li>
                                 </ul>
                             </div>
                         </div>

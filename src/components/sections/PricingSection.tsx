@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Check, Sparkles, Clock, RotateCcw, Layout, ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LuxuryKakaoIcon } from "@/components/ui/LuxuryKakaoIcon";
 
 const fadeInUp = {
     initial: { opacity: 0, y: 30 },
@@ -188,15 +189,15 @@ export function PricingSection() {
                                 <Button
                                     size="lg"
                                     asChild
-                                    className={`relative w-full py-7 rounded-xl text-base font-black tracking-tight overflow-hidden transition-all duration-500 hover:scale-[1.03] active:scale-95 ${plan.theme === "dark"
+                                    className={`relative w-full py-8 rounded-xl text-base font-black tracking-tight overflow-hidden transition-all duration-500 hover:scale-[1.03] active:scale-95 shadow-xl ${plan.theme === "dark"
                                             ? "bg-white text-slate-950 hover:bg-slate-100"
-                                            : "bg-slate-950 text-white hover:bg-slate-900 shadow-lg"
+                                            : "bg-slate-950 text-white hover:bg-slate-900"
                                         }`}
                                 >
                                     <a href="https://pf.kakao.com/_xaxgJdX" target="_blank" rel="noopener noreferrer">
-                                        <span className="relative z-10 flex items-center gap-3">
+                                        <span className="relative z-10 flex items-center justify-center gap-4">
+                                            <LuxuryKakaoIcon size={24} glow={false} />
                                             상담 및 프로젝트 시작
-                                            <ArrowRight size={18} />
                                         </span>
                                     </a>
                                 </Button>

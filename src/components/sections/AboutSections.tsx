@@ -193,9 +193,11 @@ export function ProcessSection() {
     );
 }
 
+import { LuxuryKakaoIcon } from "@/components/ui/LuxuryKakaoIcon";
+
 export function TrustSection() {
     return (
-        <section className="relative section-padding-large text-center bg-slate-50 overflow-hidden">
+        <section className="relative py-32 md:py-48 text-center bg-slate-50 overflow-hidden">
             {/* 1. Atmospheric Branding Layer (Watermark & Grid) */}
             <div className="absolute inset-0 z-0 opacity-[0.03] select-none pointer-events-none flex items-center justify-center overflow-hidden">
                 <span className="text-[35vw] md:text-[25vw] font-black text-slate-900 tracking-tighter leading-none italic">R:new</span>
@@ -206,8 +208,8 @@ export function TrustSection() {
                 style={{ backgroundImage: 'linear-gradient(#2563eb 0.5px, transparent 0.5px), linear-gradient(90deg, #2563eb 0.5px, transparent 0.5px)', backgroundSize: '120px 120px' }}></div>
             <div className="absolute top-0 left-0 w-full h-[500px] bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.04),transparent_70%)] pointer-events-none" />
 
-            <div className="container mx-auto max-w-7xl relative z-10">
-                <div className="max-w-6xl mx-auto space-y-20 md:space-y-32">
+            <div className="container mx-auto max-w-7xl relative z-10 px-8">
+                <div className="max-w-6xl mx-auto space-y-24 md:space-y-32">
                     <div className="space-y-12">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -224,10 +226,10 @@ export function TrustSection() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                            className="text-4xl md:text-6xl lg:text-[5rem] font-heading font-black text-slate-950 tracking-tighter leading-[1.05] text-balance"
+                            className="text-4xl md:text-6xl lg:text-8xl font-heading font-black text-slate-950 tracking-tighter leading-[0.95] text-balance"
                         >
                             디자인은 감각이 아니라, <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 italic px-2 underline decoration-blue-100 decoration-8 underline-offset-4">신뢰의 결과물</span>이어야 합니다.
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 italic px-2">신뢰의 결과물</span>이어야 합니다.
                         </motion.h2>
 
                         <motion.p
@@ -242,40 +244,49 @@ export function TrustSection() {
                         </motion.p>
                     </div>
 
-                    <div className="flex flex-col items-center justify-center gap-10 md:gap-16 pt-10">
-                        {/* 2. Elite Contact Card (Glassmorphism) */}
+                    <div className="flex flex-col items-center justify-center gap-16 pt-10">
+                        {/* Magnetic Luxury Hub */}
+                        <motion.div 
+                            className="w-full max-w-2xl relative group/hub"
+                            whileHover={{ scale: 1.02 }}
+                        >
+                            <div className="absolute -inset-20 bg-blue-500/5 blur-[120px] rounded-full opacity-0 group-hover/hub:opacity-100 transition-opacity duration-1000"></div>
+                            
+                            <a 
+                                href="https://pf.kakao.com/_xaxgJdX" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="flex flex-col items-center gap-10 group/item"
+                            >
+                                <div className="relative">
+                                    <div className="absolute inset-0 bg-yellow-400 opacity-20 blur-[50px] rounded-full scale-150 animate-pulse"></div>
+                                    <LuxuryKakaoIcon size={140} className="md:w-[180px] md:h-[180px]" />
+                                </div>
+
+                                <div className="w-full py-8 md:py-14 px-10 md:px-20 rounded-[35px] md:rounded-[60px] bg-slate-950 text-white flex items-center justify-between group-hover/item:bg-yellow-400 group-hover/item:text-slate-950 transition-all duration-700 shadow-[0_40px_100px_-20px_rgba(250,204,21,0.2)]">
+                                    <span className="text-lg sm:text-2xl md:text-5xl font-black tracking-tighter italic whitespace-nowrap">상담 및 프로젝트 시작</span>
+                                    <ArrowRightIcon size={24} className="md:w-12 md:h-12 group-hover/item:translate-x-4 transition-transform duration-700 shrink-0 ml-4" />
+                                </div>
+                            </a>
+                        </motion.div>
+
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.6 }}
-                            className="p-8 md:p-12 rounded-[40px] bg-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col md:flex-row items-center gap-10 group relative overflow-hidden"
+                            className="flex flex-col items-center text-center space-y-6 pt-10 group/mail"
                         >
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-[50px] group-hover:opacity-100 transition-opacity"></div>
-
-                            <div className="text-left space-y-2 relative z-10 w-full overflow-hidden">
-                                <span className="text-[10px] font-black text-blue-500 tracking-[0.4em] uppercase block mb-1">Direct Collaboration</span>
-                                <div className="text-xl sm:text-2xl md:text-4xl font-black text-slate-950 tracking-tighter flex items-center gap-4 transition-transform group-hover:scale-[1.02] duration-500 select-all underline decoration-slate-100 underline-offset-8 decoration-4 truncate">
-                                    mihail777@naver.com
+                            <span className="text-[10px] font-black text-blue-500 tracking-[0.5em] uppercase block">Signature Collaboration</span>
+                            
+                            <a href="mailto:admin@rnewds.com" className="relative group/text">
+                                <div className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-slate-950 tracking-tighter transition-all duration-700 prism-text group-hover/text:scale-[1.02] whitespace-nowrap">
+                                    admin@rnewds.com
                                 </div>
-                            </div>
-
-                            <div className="w-px h-16 bg-slate-100 hidden md:block"></div>
-
-                            <a href="mailto:mihail777@naver.com" className="w-16 h-16 rounded-3xl bg-slate-950 text-white flex items-center justify-center hover:bg-blue-600 hover:scale-110 active:scale-95 transition-all shadow-xl group/btn">
-                                <ArrowRightIcon size={24} className="group-hover/btn:translate-x-1 transition-transform" />
+                                <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-indigo-600 scale-x-0 group-hover/text:scale-x-100 transition-transform duration-700 origin-left"></div>
+                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-6 opacity-0 group-hover/mail:opacity-100 transition-all duration-500 translate-y-2 group-hover/mail:translate-y-0">Click to start official briefing</p>
                             </a>
                         </motion.div>
-
-                        <div className="flex flex-col sm:flex-row items-center gap-8 w-full max-w-xl mx-auto">
-                            <Button asChild size="lg" className="rounded-full px-16 py-10 text-xl font-bold bg-slate-950 hover:bg-blue-600 text-white transition-all shadow-[0_30px_70px_rgba(37,99,235,0.15)] w-full h-auto relative overflow-hidden group">
-                                <a href="https://pf.kakao.com/_xaxgJdX" target="_blank" rel="noopener noreferrer" className="relative z-10 w-full h-full flex items-center justify-center">
-                                    지금 문의하기
-                                    {/* Colorful Hover Background */}
-                                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                </a>
-                            </Button>
-                        </div>
                     </div>
                 </div>
             </div>
