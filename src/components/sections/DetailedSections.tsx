@@ -201,7 +201,7 @@ export function ValuePointsSection() {
                             <div className={`absolute top-10 right-10 text-[80px] font-heading font-black text-slate-900/[0.03] select-none pointer-events-none group-hover:${point.color} group-hover:opacity-10 transition-all duration-700 leading-none`}>
                                 {String(i + 1).padStart(2, '0')}
                             </div>
- 
+
                             <div className="relative z-10 space-y-10 flex-grow">
                                 <div className="flex items-center justify-between">
                                     <div className={`w-16 h-16 rounded-2xl bg-slate-50 ${point.color} flex items-center justify-center group-hover:bg-slate-950 group-hover:text-white transition-all duration-700 shadow-sm relative overflow-hidden`}>
@@ -212,7 +212,7 @@ export function ValuePointsSection() {
                                         {point.label}
                                     </span>
                                 </div>
- 
+
                                 <div className="space-y-5">
                                     <h3 className="text-xl md:text-3xl font-black text-slate-950 leading-[1.2] tracking-tighter break-keep group-hover:translate-x-1 transition-transform duration-500 text-balance">
                                         {point.title}
@@ -222,7 +222,7 @@ export function ValuePointsSection() {
                                     </p>
                                 </div>
                             </div>
- 
+
                             <div className={`mt-12 h-[2px] w-0 group-hover:w-full bg-gradient-to-r ${point.gradient} transition-all duration-1000 origin-left shadow-[0_0_10px_rgba(37,99,235,0.3)]`}></div>
                         </motion.div>
                     ))}

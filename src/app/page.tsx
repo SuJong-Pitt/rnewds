@@ -173,9 +173,9 @@ export default function Home() {
                     <div className="flex flex-col lg:flex-row justify-between gap-20 mb-20 items-start lg:items-center">
                         <div className="max-w-xl space-y-10">
                             <div className="space-y-6">
-                                <div className="flex items-center gap-4">
-                                    <Image src="/images/icons/logo.svg" alt="R:new Logo" width={48} height={48} className="rounded-2xl shadow-lg" />
-                                    <span className="font-heading font-black tracking-tight text-2xl md:text-3xl italic px-1">R:new Design Studio</span>
+                                <div className="flex items-center gap-5">
+                                    <Image src="/images/icons/logo.svg" alt="R:new Logo" width={52} height={52} className="rounded-2xl shadow-2xl shadow-white/5" />
+                                    <span className="font-heading font-black tracking-tighter text-3xl md:text-4xl italic text-white">R:new <span className="text-slate-500 font-medium tracking-normal not-italic ml-1">Design Studio</span></span>
                                 </div>
                                 <p className="text-slate-400 text-lg md:text-xl font-medium leading-relaxed max-w-md">
                                     데이터로 설계하고 비주얼로 압도하는 <br />

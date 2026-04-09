@@ -39,9 +39,9 @@ export function Navbar() {
                         animate={{ opacity: 1, x: 0 }}
                         className="text-xl font-bold tracking-tight flex items-center gap-3"
                     >
-                        <Image src="/images/icons/logo.svg" alt="R:new Logo" width={36} height={36} className="rounded-xl shadow-lg shadow-slate-900/10 group-hover:opacity-90 transition-opacity" priority />
-                        <span className="text-slate-900 hidden sm:block">R:new <span className="text-slate-400 font-medium whitespace-nowrap">Design Studio</span></span>
-                        <span className="text-slate-900 sm:hidden">R:new</span>
+                        <Image src="/images/icons/logo.svg" alt="R:new Logo" width={38} height={38} className="rounded-xl shadow-xl shadow-slate-950/10 group-hover:scale-105 transition-transform duration-500" priority />
+                        <span className="text-slate-950 hidden sm:block font-heading font-black tracking-tighter text-2xl italic">R:new <span className="text-slate-400 font-medium tracking-normal not-italic ml-1">Design Studio</span></span>
+                        <span className="text-slate-950 sm:hidden font-heading font-black tracking-tighter text-2xl italic">R:new</span>
                     </motion.div>
                 </Link>
 
