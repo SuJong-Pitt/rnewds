@@ -12,10 +12,10 @@ export function AboutHero() {
         <section className="relative min-h-[70vh] md:min-h-[90vh] w-full flex flex-col items-center justify-center pt-32 pb-20 md:pt-40 md:pb-24 px-6 overflow-hidden bg-white">
             {/* Visual Ambiance Layer */}
             <div className="absolute inset-0 z-0 opacity-[0.6] pointer-events-none overflow-hidden h-full w-full">
-                <Image 
-                    src="/images/vibrant_studio_workspace.png" 
-                    alt="Premium Studio Workspace" 
-                    fill 
+                <Image
+                    src="/images/vibrant_studio_workspace.png"
+                    alt="Premium Studio Workspace"
+                    fill
                     className="object-cover opacity-50 select-none pointer-events-none scale-105"
                     priority
                 />
@@ -82,7 +82,7 @@ export function PhilosophySection() {
                         </div>
                         <div className="flex items-center gap-6 py-4">
                             <div className="w-20 h-1 bg-blue-600/20 rounded-full overflow-hidden">
-                                <motion.div 
+                                <motion.div
                                     className="h-full bg-blue-600 w-1/2"
                                     animate={{ x: ["-100%", "200%"] }}
                                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
@@ -101,19 +101,19 @@ export function PhilosophySection() {
                     >
                         <div className="absolute inset-0 bg-blue-600/5 rounded-[40px] md:rounded-[60px] blur-3xl -z-10 group-hover:bg-blue-600/10 transition-colors duration-1000"></div>
                         <div className="absolute -top-6 -right-6 md:-top-10 md:-right-10 w-full h-full border border-slate-100 rounded-[40px] md:rounded-[60px] -z-10 bg-slate-50 opacity-50"></div>
-                        
+
                         <div className="w-full h-full rounded-[40px] md:rounded-[60px] relative overflow-hidden border border-slate-200 shadow-3xl shadow-slate-100 bg-white">
-                            <Image 
-                                src="/images/philosophy_masterpiece_visual.png" 
-                                alt="Philosophy Masterpiece Visual" 
-                                fill 
+                            <Image
+                                src="/images/philosophy_masterpiece_visual.png"
+                                alt="Philosophy Masterpiece Visual"
+                                fill
                                 className="object-cover transition-transform duration-1000 group-hover:scale-105 select-none pointer-events-none"
                                 sizes="(max-width: 1024px) 100vw, 50vw"
                                 priority
                             />
                             {/* Sophisticated Overlay */}
                             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent flex flex-col justify-end p-8 md:p-16">
-                                <motion.p 
+                                <motion.p
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
@@ -144,13 +144,13 @@ export function ProcessSection() {
             {/* Visual Texture */}
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05] pointer-events-none"></div>
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/5 rounded-full blur-[160px] pointer-events-none"></div>
-            
+
             <div className="container mx-auto max-w-7xl relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 md:gap-32 items-center">
                     <div className="space-y-12">
                         <div className="space-y-8">
                             <h2 className="text-blue-400 text-[10px] md:text-xs font-black tracking-[0.5em] opacity-60">Systematic Workflow</h2>
-                             <h3 className="text-3xl md:text-5xl lg:text-[4rem] font-heading font-black text-white leading-[1.05] tracking-tighter text-balance">
+                            <h3 className="text-3xl md:text-5xl lg:text-[4rem] font-heading font-black text-white leading-[1.05] tracking-tighter text-balance">
                                 투명하고 <br /> <span className="text-blue-400 italic px-1">정밀한</span> 프로세스.
                             </h3>
                             <p className="text-lg md:text-2xl text-slate-400 leading-relaxed max-w-lg font-light tracking-tight break-keep text-balance">
@@ -200,10 +200,10 @@ export function TrustSection() {
             <div className="absolute inset-0 z-0 opacity-[0.03] select-none pointer-events-none flex items-center justify-center overflow-hidden">
                 <span className="text-[35vw] md:text-[25vw] font-black text-slate-900 tracking-tighter leading-none italic">R:new</span>
             </div>
-            
+
             {/* Architectural Grid - Strategic texture */}
-            <div className="absolute inset-0 opacity-[0.04] select-none pointer-events-none" 
-                 style={{ backgroundImage: 'linear-gradient(#2563eb 0.5px, transparent 0.5px), linear-gradient(90deg, #2563eb 0.5px, transparent 0.5px)', backgroundSize: '120px 120px' }}></div>
+            <div className="absolute inset-0 opacity-[0.04] select-none pointer-events-none"
+                style={{ backgroundImage: 'linear-gradient(#2563eb 0.5px, transparent 0.5px), linear-gradient(90deg, #2563eb 0.5px, transparent 0.5px)', backgroundSize: '120px 120px' }}></div>
             <div className="absolute top-0 left-0 w-full h-[500px] bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.04),transparent_70%)] pointer-events-none" />
 
             <div className="container mx-auto max-w-7xl relative z-10">
@@ -218,7 +218,7 @@ export function TrustSection() {
                         >
                             The Ultimate Authority
                         </motion.div>
-                        
+
                         <motion.h2
                             initial={{ opacity: 0, scale: 0.98 }}
                             whileInView={{ opacity: 1, scale: 1 }}
@@ -230,7 +230,7 @@ export function TrustSection() {
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 italic px-2 underline decoration-blue-100 decoration-8 underline-offset-4">신뢰의 결과물</span>이어야 합니다.
                         </motion.h2>
 
-                        <motion.p 
+                        <motion.p
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
@@ -252,16 +252,16 @@ export function TrustSection() {
                             className="p-8 md:p-12 rounded-[40px] bg-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col md:flex-row items-center gap-10 group relative overflow-hidden"
                         >
                             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-[50px] group-hover:opacity-100 transition-opacity"></div>
-                            
+
                             <div className="text-left space-y-2 relative z-10 w-full overflow-hidden">
                                 <span className="text-[10px] font-black text-blue-500 tracking-[0.4em] uppercase block mb-1">Direct Collaboration</span>
                                 <div className="text-xl sm:text-2xl md:text-4xl font-black text-slate-950 tracking-tighter flex items-center gap-4 transition-transform group-hover:scale-[1.02] duration-500 select-all underline decoration-slate-100 underline-offset-8 decoration-4 truncate">
                                     mihail777@naver.com
                                 </div>
                             </div>
-                            
+
                             <div className="w-px h-16 bg-slate-100 hidden md:block"></div>
-                            
+
                             <a href="mailto:mihail777@naver.com" className="w-16 h-16 rounded-3xl bg-slate-950 text-white flex items-center justify-center hover:bg-blue-600 hover:scale-110 active:scale-95 transition-all shadow-xl group/btn">
                                 <ArrowRightIcon size={24} className="group-hover/btn:translate-x-1 transition-transform" />
                             </a>
@@ -279,7 +279,7 @@ export function TrustSection() {
                     </div>
                 </div>
             </div>
-            
+
             {/* Decorative bottom lines - Architectural finishing */}
             <div className="absolute bottom-0 left-0 w-full flex justify-center gap-2 mb-8 opacity-20">
                 <div className="w-32 h-[1px] bg-blue-400"></div>
