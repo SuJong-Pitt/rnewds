@@ -148,25 +148,41 @@ export function ValuePointsSection() {
                             title: "처음부터 시선을 끄는 디자인",
                             desc: "고객의 스크롤을 멈추게 만드는 압도적 첫인상을 설계합니다.",
                             icon: <MousePointer2 size={24} />,
-                            label: "Impression"
+                            label: "Impression",
+                            color: "text-blue-500",
+                            bg: "bg-blue-600",
+                            glow: "group-hover:shadow-[0_40px_100px_-20px_rgba(37,99,235,0.25)]",
+                            gradient: "from-blue-400 to-blue-600"
                         },
                         {
                             title: "계속 보게 만드는 흐름",
                             desc: "이탈 없이 끝까지 읽히는 치밀한 서사 구조를 완성합니다.",
                             icon: <Layout size={24} />,
-                            label: "Narrative"
+                            label: "Narrative",
+                            color: "text-indigo-500",
+                            bg: "bg-indigo-600",
+                            glow: "group-hover:shadow-[0_40px_100px_-20px_rgba(79,70,229,0.25)]",
+                            gradient: "from-indigo-400 to-indigo-600"
                         },
                         {
                             title: "구매하고 싶게 만드는 구성",
                             desc: "고민 없이 선택하게 만드는 논리적 설득 레이아웃을 제공합니다.",
                             icon: <Target size={24} />,
-                            label: "Logic"
+                            label: "Logic",
+                            color: "text-purple-500",
+                            bg: "bg-purple-600",
+                            glow: "group-hover:shadow-[0_40px_100px_-20px_rgba(147,51,234,0.25)]",
+                            gradient: "from-purple-400 to-purple-600"
                         },
                         {
                             title: "구매를 부르는 카피",
                             desc: "제품의 소구점을 한 번에 이해되게 전달하는 강력한 언어를 제안합니다.",
                             icon: <PenTool size={24} />,
-                            label: "Copywriting"
+                            label: "Copywriting",
+                            color: "text-rose-500",
+                            bg: "bg-rose-600",
+                            glow: "group-hover:shadow-[0_40px_100px_-20px_rgba(225,29,72,0.25)]",
+                            gradient: "from-rose-400 to-rose-600"
                         }
                     ].map((point, i) => (
                         <motion.div
@@ -175,34 +191,39 @@ export function ValuePointsSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                            className="group relative h-full flex flex-col p-8 md:p-12 rounded-[2.5rem] bg-white border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(37,99,235,0.06)] hover:border-blue-100 hover:scale-[1.02] transition-all duration-700"
+                            className={`group relative h-full flex flex-col p-8 md:p-12 rounded-[3rem] bg-white border border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.02)] ${point.glow} hover:border-blue-100 hover:scale-[1.03] transition-all duration-700 overflow-hidden`}
                         >
+                            {/* Colorful Aura Effect */}
+                            <div className={`absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br ${point.gradient} opacity-0 group-hover:opacity-[0.05] blur-[80px] transition-opacity duration-1000`}></div>
+                            <div className={`absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-to-br ${point.gradient} opacity-0 group-hover:opacity-[0.03] blur-[80px] transition-opacity duration-1000`}></div>
+
                             {/* Card Background Index */}
-                            <div className="absolute top-10 right-10 text-[80px] font-heading font-black text-slate-900/[0.03] select-none pointer-events-none group-hover:text-blue-500/[0.05] transition-colors duration-700 leading-none">
+                            <div className={`absolute top-10 right-10 text-[80px] font-heading font-black text-slate-900/[0.03] select-none pointer-events-none group-hover:${point.color} group-hover:opacity-10 transition-all duration-700 leading-none`}>
                                 {String(i + 1).padStart(2, '0')}
                             </div>
-
-                            <div className="relative z-10 space-y-8 flex-grow">
+ 
+                            <div className="relative z-10 space-y-10 flex-grow">
                                 <div className="flex items-center justify-between">
-                                    <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center group-hover:bg-slate-950 group-hover:text-white transition-all duration-500 shadow-sm">
+                                    <div className={`w-16 h-16 rounded-2xl bg-slate-50 ${point.color} flex items-center justify-center group-hover:bg-slate-950 group-hover:text-white transition-all duration-700 shadow-sm relative overflow-hidden`}>
+                                        <div className={`absolute inset-0 bg-gradient-to-r ${point.gradient} opacity-0 group-hover:opacity-20 transition-opacity`}></div>
                                         {point.icon}
                                     </div>
-                                    <span className="text-[10px] font-bold text-slate-300 uppercase tracking-[0.3em] group-hover:text-blue-400 transition-colors">
+                                    <span className={`text-[10px] font-black ${point.color} opacity-40 uppercase tracking-[0.4em] group-hover:opacity-100 transition-all duration-500 italic`}>
                                         {point.label}
                                     </span>
                                 </div>
-
-                                <div className="space-y-4">
-                                    <h3 className="text-xl md:text-2xl font-black text-slate-950 leading-[1.2] tracking-tighter break-keep">
+ 
+                                <div className="space-y-5">
+                                    <h3 className="text-xl md:text-3xl font-black text-slate-950 leading-[1.2] tracking-tighter break-keep group-hover:translate-x-1 transition-transform duration-500 text-balance">
                                         {point.title}
                                     </h3>
-                                    <p className="text-sm md:text-base text-slate-400 font-light leading-relaxed tracking-tight break-keep">
+                                    <p className="text-[15px] md:text-xl text-slate-400 font-light leading-relaxed tracking-tight break-keep group-hover:text-slate-700 transition-colors">
                                         {point.desc}
                                     </p>
                                 </div>
                             </div>
-
-                            <div className="mt-10 h-[2px] w-0 group-hover:w-full bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-1000 origin-left"></div>
+ 
+                            <div className={`mt-12 h-[2px] w-0 group-hover:w-full bg-gradient-to-r ${point.gradient} transition-all duration-1000 origin-left shadow-[0_0_10px_rgba(37,99,235,0.3)]`}></div>
                         </motion.div>
                     ))}
                 </div>
