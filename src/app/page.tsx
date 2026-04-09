@@ -36,9 +36,9 @@ export default function Home() {
             <section className="relative min-h-screen flex flex-col justify-center section-padding-large overflow-hidden bg-white">
                 {/* Very Subtle Premium Image Background (Watermark Style) */}
                 <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-[0.12]">
-                    <img 
-                        src="/images/premium_abstract_bg.png" 
-                        alt="Premium Hero Background" 
+                    <img
+                        src="/images/premium_abstract_bg.png"
+                        alt="Premium Hero Background"
                         className="w-full h-full object-cover blur-[60px] scale-110"
                     />
                 </div>
@@ -111,7 +111,7 @@ export default function Home() {
                                 <span className="opacity-60">준비된 자료가 많지 않아도 괜찮습니다.</span> <br className="hidden md:block" />
                                 <span className="text-slate-900 font-black relative group inline-block">
                                     대표님은 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 italic">상품에만 집중하세요.</span>
-                                    <motion.span 
+                                    <motion.span
                                         initial={{ width: 0 }}
                                         animate={{ width: "100%" }}
                                         transition={{ duration: 1.5, delay: 1.5 }}
@@ -121,7 +121,7 @@ export default function Home() {
                                 <span className="text-slate-700 font-medium">소비자가 사고 싶게 만드는 </span>
                                 <span className="text-slate-950 font-black border-b border-slate-950/10 pb-0.5">상세페이지를 설계합니다.</span>
                             </p>
-                            
+
                             <div className="absolute -inset-10 bg-blue-600/5 blur-[80px] -z-10 opacity-20 pointer-events-none"></div>
                         </motion.div>
 

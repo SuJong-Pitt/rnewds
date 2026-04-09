@@ -87,9 +87,11 @@ export function PricingSection() {
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                         <div className="max-w-3xl">
                             <span className="text-[10px] font-black tracking-[0.4em] text-slate-400 uppercase mb-4 block">Pricing Architecture</span>
-                            <h2 className="text-4xl md:text-7xl lg:text-8xl font-heading font-black text-slate-950 tracking-tighter leading-[0.9] mb-4">
-                                압도적 성과를 <br />
-                                위한 <span className="text-slate-300">합리적 설계.</span>
+                              <h2 className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-heading font-black text-slate-950 tracking-tighter leading-[1.1] mb-4 flex flex-col gap-1 sm:gap-2 break-keep">
+                                <span className="text-sm md:text-2xl font-light text-slate-400 tracking-normal mb-1">압도적 성과를 위한</span>
+                                <span className="text-slate-950">
+                                    합리적 <span className="text-indigo-600 italic">설계.</span>
+                                </span>
                             </h2>
                         </div>
                         <div className="max-w-md pb-2">

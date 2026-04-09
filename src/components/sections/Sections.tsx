@@ -114,9 +114,9 @@ export function TechStack() {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-[2.25rem] md:text-5xl lg:text-6xl font-heading font-black tracking-tighter text-slate-900 leading-[1.05] text-balance"
+                            className="text-3xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tighter text-slate-900 leading-[1.1] text-balance break-keep"
                         >
-                            시선을 사로잡는 <br />
+                            시선을 사로잡는 <br className="hidden sm:block" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 italic px-1 underline decoration-blue-100 decoration-8 underline-offset-4">압도적 결과물.</span>
                         </motion.h2>
                     </div>
@@ -219,9 +219,9 @@ export function StrategySection() {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-2xl md:text-5xl lg:text-6xl font-heading font-black leading-[1.2] tracking-tighter text-balance"
+                            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-black leading-[1.2] tracking-tighter text-balance break-keep"
                         >
-                            전문분야의 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-400 animate-gradient-x bg-[length:200%_auto] italic">기준</span>이 되는 <br />
+                            전문분야의 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-400 animate-gradient-x bg-[length:200%_auto] italic">기준</span>이 되는 <br className="hidden sm:block" />
                             유일한 전략, R:new입니다.
                         </motion.h2>
                     </header>
@@ -295,9 +295,9 @@ export function ContactSection() {
                             <div className="space-y-6 md:space-y-10 text-center lg:text-left">
                                 <span className="inline-block text-[10px] font-black tracking-[0.4em] text-blue-600 uppercase italic bg-blue-50/50 px-3 py-1 rounded-full w-fit mx-auto lg:mx-0">Elevate Your Performance</span>
 
-                                <h2 className="text-[2.2rem] md:text-6xl lg:text-7xl font-heading font-black text-slate-950 tracking-tighter leading-[1.2] md:leading-[1.1] text-balance break-keep">
-                                    제품이 <span className="text-blue-600">꼭 팔리길</span><br />
-                                    바라는 마음,<br className="hidden md:block" />
+                                <h2 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-heading font-black text-slate-950 tracking-tighter leading-[1.2] md:leading-[1.1] text-balance break-keep">
+                                    제품이 <span className="text-blue-600">꼭 팔리길</span><br className="hidden sm:block" />
+                                    바라는 마음,<br className="hidden sm:block" />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-[length:200%_auto] animate-gradient-x italic inline-block pb-1 lg:mt-2">결과로 보답합니다.</span>
                                 </h2>
 

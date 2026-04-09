@@ -42,9 +42,9 @@ export function IdentitySection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-8"
+                            className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tight text-slate-900 leading-[1.15] mb-8 break-keep"
                         >
-                            데이터로 설계하고, <br />
+                            데이터로 설계하고, <br className="hidden sm:block" />
                             감각으로 완성합니다.
                         </motion.h2>
                         <motion.p
