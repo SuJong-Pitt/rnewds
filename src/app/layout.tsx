@@ -23,6 +23,11 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "/",
     },
+    icons: {
+        icon: '/images/icons/logo.svg',
+        shortcut: '/images/icons/logo.svg',
+        apple: '/images/icons/logo.svg',
+    },
     openGraph: {
         title: "R:new Design Studio | 하이엔드 상세페이지 기획/디자인",
         description: "가치를 증명하는 압도적 비주얼의 힘, R:new Design Studio",

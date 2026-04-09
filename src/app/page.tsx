@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { Navbar } from "@/components/ui/Navbar";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Layers, MousePointer2, Zap, Trophy, Shield } from "lucide-react";
@@ -173,7 +174,7 @@ export default function Home() {
                         <div className="max-w-xl space-y-10">
                             <div className="space-y-6">
                                 <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white text-xl font-black shadow-lg">R</div>
+                                    <Image src="/images/icons/logo.svg" alt="R:new Logo" width={48} height={48} className="rounded-2xl shadow-lg" />
                                     <span className="font-heading font-black tracking-tight text-2xl md:text-3xl italic px-1">R:new Design Studio</span>
                                 </div>
                                 <p className="text-slate-400 text-lg md:text-xl font-medium leading-relaxed max-w-md">
