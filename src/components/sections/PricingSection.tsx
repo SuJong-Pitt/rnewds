@@ -194,7 +194,7 @@ export function PricingSection() {
                                             : "bg-slate-950 text-white hover:bg-slate-900"
                                         }`}
                                 >
-                                    <a href="https://pf.kakao.com/_xaxgJdX" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://pf.kakao.com/_xaxgJdX/chat" target="_blank" rel="noopener noreferrer">
                                         <span className="relative z-10 flex items-center justify-center gap-4">
                                             <LuxuryKakaoIcon size={24} glow={false} />
                                             상담 및 프로젝트 시작

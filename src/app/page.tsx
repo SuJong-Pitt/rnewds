@@ -32,10 +32,18 @@ export default function Home() {
             <Navbar />
 
             {/* Architectural Blueprint Hero Section */}
-            <section className="relative min-h-screen flex flex-col justify-center section-padding-large overflow-hidden bg-[#F8F9FA]">
+            <section className="relative min-h-screen flex flex-col justify-center section-padding-large overflow-hidden bg-white">
+                {/* Very Subtle Premium Image Background (Watermark Style) */}
+                <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-[0.12]">
+                    <img 
+                        src="/images/premium_abstract_bg.png" 
+                        alt="Premium Hero Background" 
+                        className="w-full h-full object-cover blur-[60px] scale-110"
+                    />
+                </div>
                 {/* Visual Depth Ornaments */}
                 <div className="absolute inset-0 z-[1] opacity-[0.02] pointer-events-none bg-[radial-gradient(#2563eb_1px,transparent_1px)] [background-size:40px_40px]"></div>
-                
+
                 {/* Atmospheric Studio Lights */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1000px] bg-[radial-gradient(circle_at_50%_40%,rgba(37,99,235,0.03),transparent_60%)] -z-10"></div>
 
@@ -56,7 +64,7 @@ export default function Home() {
                         {/* Image Matching Heading Section */}
                         <div className="flex flex-col items-center gap-1 md:gap-2 mb-12 md:mb-16">
                             {/* Line 01: Value Planning */}
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 1, delay: 0.2 }}
@@ -65,16 +73,16 @@ export default function Home() {
                                 <h2 className="text-[2rem] md:text-3xl lg:text-5xl font-heading font-medium text-slate-800 tracking-tight px-4 pb-0">
                                     가치를 기획하고
                                 </h2>
-                                <motion.div 
+                                <motion.div
                                     initial={{ width: 0 }}
                                     animate={{ width: "100%" }}
                                     transition={{ duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
                                     className="absolute bottom-0 left-0 h-[1.5px] bg-blue-500/40"
                                 />
                             </motion.div>
-                            
+
                             {/* Line 02: Result Proven */}
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, y: 40 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
@@ -83,7 +91,7 @@ export default function Home() {
                                 <h1 className="text-[2.2rem] sm:text-5xl md:text-7xl lg:text-9xl font-heading font-black tracking-tighter leading-none px-4 prism-text whitespace-nowrap">
                                     매출로 증명합니다.
                                 </h1>
-                                <motion.div 
+                                <motion.div
                                     initial={{ width: 0 }}
                                     animate={{ width: "100%" }}
                                     transition={{ duration: 1.5, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}

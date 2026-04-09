@@ -253,7 +253,7 @@ export function TrustSection() {
                             <div className="absolute -inset-20 bg-blue-500/5 blur-[120px] rounded-full opacity-0 group-hover/hub:opacity-100 transition-opacity duration-1000"></div>
                             
                             <a 
-                                href="https://pf.kakao.com/_xaxgJdX" 
+                                href="https://pf.kakao.com/_xaxgJdX/chat" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className="flex flex-col items-center gap-10 group/item"
