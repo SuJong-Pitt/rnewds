@@ -285,37 +285,39 @@ export function ContactSection() {
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="bg-white/40 backdrop-blur-xl rounded-[60px] md:rounded-[100px] border border-slate-100 p-12 md:p-32 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.05)] relative overflow-hidden"
+                    className="bg-white/40 backdrop-blur-xl rounded-[40px] md:rounded-[100px] border border-slate-100 p-8 md:p-32 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.05)] relative overflow-hidden"
                 >
                     {/* Top Lighting Effect */}
                     <div className="absolute -top-[10%] left-1/2 -translate-x-1/2 w-[60%] h-[30%] bg-blue-500/5 blur-[120px] rounded-full"></div>
 
-                    <div className="grid lg:grid-cols-2 gap-24 items-center">
-                        <div className="space-y-12">
-                            <div className="space-y-6 md:space-y-10">
-                                <span className="text-[10px] font-black tracking-[0.4em] text-blue-600 uppercase italic bg-blue-50/50 px-3 py-1 rounded-full w-fit">Elevate Your Performance</span>
+                    <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                        <div className="space-y-10 md:space-y-12">
+                            <div className="space-y-6 md:space-y-10 text-center lg:text-left">
+                                <span className="inline-block text-[10px] font-black tracking-[0.4em] text-blue-600 uppercase italic bg-blue-50/50 px-3 py-1 rounded-full w-fit mx-auto lg:mx-0">Elevate Your Performance</span>
 
-                                <h2 className="text-[2.5rem] md:text-6xl lg:text-7xl font-heading font-black text-slate-950 tracking-tighter leading-[1.05] md:leading-[1.1] text-balance break-keep">
-                                    가치를 증명하는 <br />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-[length:200%_auto] animate-gradient-x italic px-1 pb-2 inline-block">압도적 비주얼의 힘.</span>
+                                <h2 className="text-[2.2rem] md:text-6xl lg:text-7xl font-heading font-black text-slate-950 tracking-tighter leading-[1.2] md:leading-[1.1] text-balance break-keep">
+                                    제품이 <span className="text-blue-600">꼭 팔리길</span><br />
+                                    바라는 마음,<br className="hidden md:block" />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-[length:200%_auto] animate-gradient-x italic inline-block pb-1 lg:mt-2">결과로 보답합니다.</span>
                                 </h2>
 
-                                <p className="text-base md:text-xl lg:text-2xl text-slate-500 font-normal max-w-lg leading-relaxed break-keep tracking-tight text-balance">
-                                    세상의 기준이 될 당신의 비즈니스를 기록합니다. <br className="hidden md:block" />
-                                    R:new Design Studio의 <span className="text-slate-950 font-bold italic border-b-2 border-blue-100/50 pb-0.5 whitespace-nowrap">시그니처 컨설트</span>를 경험하세요.
+                                <p className="text-[15px] md:text-xl lg:text-2xl text-slate-500 font-medium max-w-lg mx-auto lg:mx-0 leading-relaxed break-keep tracking-tight text-balance">
+                                    <span className="text-blue-600 font-bold">소비자 심리</span>를 기준으로 상품이 팔리게<br className="hidden md:block" />
+                                    완벽히 정리합니다.<br className="md:hidden" /> 복잡한 고민은 내려놓고<br className="hidden md:block" />
+                                    <span className="text-slate-950 font-black italic border-b border-blue-500/30 pb-0.5 md:mt-2 md:inline-block">이제 믿고 맡기시면 됩니다.</span>
                                 </p>
                             </div>
 
-                            <div className="flex flex-col items-start gap-3 text-slate-400 font-mono text-[9px] tracking-[0.2em] uppercase opacity-40">
+                            <div className="flex flex-col items-center lg:items-start gap-3 text-slate-400 font-mono text-[9px] tracking-[0.2em] uppercase opacity-40">
                                 <span className="flex items-center gap-2">
                                     <div className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></div>
                                     R:NEW DESIGN STUDIO / OFFICIAL CHANNEL
                                 </span>
-                                <span className="pl-3.5">ESTABLISHED FOR STRATEGIC PARTNERS</span>
+                                <span className="lg:pl-3.5">ESTABLISHED FOR STRATEGIC PARTNERS</span>
                             </div>
                         </div>
 
-                        <div className="flex flex-col items-center lg:items-end w-full relative">
+                        <div className="flex flex-col items-center lg:items-end w-full relative pt-4 lg:pt-0">
                             {/* Magnetic Luxury Hub */}
                             <motion.div
                                 className="w-full max-w-md lg:max-w-xl relative group/suite"
@@ -330,15 +332,15 @@ export function ContactSection() {
                                     rel="noopener noreferrer"
                                     className="relative flex flex-col items-center lg:items-end w-full group/btn"
                                 >
-                                    <div className="relative mb-8 md:mb-12">
+                                    <div className="relative mb-6 md:mb-12">
                                         <div className="absolute inset-0 bg-yellow-400 opacity-10 blur-[50px] rounded-full scale-150 animate-pulse"></div>
-                                        <LuxuryKakaoIcon size={110} className="md:w-[140px] md:h-[140px]" />
+                                        <LuxuryKakaoIcon size={100} className="md:w-[140px] md:h-[140px]" />
                                     </div>
 
-                                    <div className="w-full h-auto py-7 md:py-12 px-8 md:px-16 rounded-[40px] md:rounded-[60px] bg-slate-950 text-white flex items-center justify-between group-hover/btn:bg-yellow-400 group-hover/btn:text-slate-950 transition-all duration-500 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] group-hover/btn:shadow-[0_40px_100px_-20px_rgba(250,204,21,0.3)]">
-                                        <span className="text-lg md:text-3xl font-black tracking-tighter whitespace-nowrap">프로젝트 문의하기</span>
-                                        <div className="w-9 h-9 md:w-14 md:h-14 rounded-full border border-white/20 group-hover/btn:border-slate-950/20 flex items-center justify-center group-hover/btn:border-slate-950 transition-all shrink-0 ml-4">
-                                            <ArrowRight size={18} className="md:w-7 md:h-7 group-hover/btn:translate-x-3 transition-transform duration-500" />
+                                    <div className="w-full h-auto py-6 md:py-12 px-6 md:px-16 rounded-[2rem] md:rounded-[60px] bg-slate-950 text-white flex items-center justify-between group-hover/btn:bg-yellow-400 group-hover/btn:text-slate-950 transition-all duration-500 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] group-hover/btn:shadow-[0_40px_100px_-20px_rgba(250,204,21,0.3)]">
+                                        <span className="text-xl md:text-3xl font-black tracking-tighter whitespace-nowrap">프로젝트 문의하기</span>
+                                        <div className="w-10 h-10 md:w-14 md:h-14 rounded-full border border-white/20 group-hover/btn:border-slate-950/20 flex items-center justify-center group-hover/btn:border-slate-950 transition-all shrink-0 ml-4">
+                                            <ArrowRight size={20} className="md:w-7 md:h-7 group-hover/btn:translate-x-3 transition-transform duration-500" />
                                         </div>
                                     </div>
                                 </a>
