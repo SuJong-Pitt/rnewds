@@ -62,7 +62,7 @@ export default function Home() {
                                 transition={{ duration: 1, delay: 0.2 }}
                                 className="relative group"
                             >
-                                <h2 className="text-xl md:text-2xl lg:text-3xl font-heading font-medium text-slate-800 tracking-tight px-4 pb-1 md:pb-2">
+                                <h2 className="text-[1.3rem] md:text-2xl lg:text-3xl font-heading font-medium text-slate-800 tracking-tight px-4 pb-1 md:pb-2">
                                     가치를 기획하고
                                 </h2>
                                 <motion.div 
@@ -80,7 +80,7 @@ export default function Home() {
                                 transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                                 className="relative py-2 md:py-4"
                             >
-                                <h1 className="text-4xl md:text-6xl lg:text-8xl font-heading font-black tracking-tighter leading-none px-6 prism-text">
+                                <h1 className="text-[2rem] sm:text-4xl md:text-6xl lg:text-8xl font-heading font-black tracking-tighter leading-none px-2 prism-text whitespace-nowrap">
                                     매출로 증명합니다.
                                 </h1>
                                 <motion.div 
