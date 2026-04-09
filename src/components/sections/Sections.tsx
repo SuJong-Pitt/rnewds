@@ -98,7 +98,7 @@ export function TechStack() {
                 style={{ backgroundImage: 'linear-gradient(#2563eb 0.5px, transparent 0.5px), linear-gradient(90deg, #2563eb 0.5px, transparent 0.5px)', backgroundSize: '100px 100px' }}></div>
 
             <div className="container mx-auto max-w-7xl relative z-10">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-20 gap-x-12 gap-y-10">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-12 gap-x-12 gap-y-10">
                     <div className="max-w-3xl">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
@@ -132,7 +132,7 @@ export function TechStack() {
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
                     {skills.map((skill, index) => (
                         <motion.div
                             key={index}
@@ -140,7 +140,7 @@ export function TechStack() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                             viewport={{ once: true }}
-                            className="p-5 md:p-14 rounded-[40px] md:rounded-[48px] bg-white/70 backdrop-blur-3xl border border-white shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_45px_90px_rgba(37,99,235,0.15)] hover:border-slate-200 transition-all duration-700 group relative overflow-hidden flex flex-col"
+                            className="p-5 md:p-10 rounded-[40px] md:rounded-[48px] bg-white/70 backdrop-blur-3xl border border-white shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_45px_90px_rgba(37,99,235,0.15)] hover:border-slate-200 transition-all duration-700 group relative overflow-hidden flex flex-col"
                         >
                             {/* colored orbital glow effect */}
                             <div className={`absolute -right-20 -top-20 w-52 h-52 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 blur-[100px] ${skill.bg} opacity-10`}></div>
@@ -197,7 +197,7 @@ export function TechStack() {
 
 export function StrategySection() {
     return (
-        <section id="strategy" className="py-16 md:py-32 px-6 bg-slate-950 text-white relative overflow-hidden rounded-[32px] md:rounded-[60px] mx-4 md:mx-10 my-16 md:my-20">
+        <section id="strategy" className="py-12 md:py-20 px-6 bg-slate-950 text-white relative overflow-hidden rounded-[32px] md:rounded-[60px] mx-4 md:mx-10 my-10 md:my-12">
             {/* Studio Overlay - Minimalist */}
             <div className="absolute inset-0 opacity-[0.05] select-none pointer-events-none">
                 {/* Simplified background for clarity */}
@@ -230,7 +230,7 @@ export function StrategySection() {
                         <span className="text-white font-medium border-b-2 border-blue-500/30 pb-1 italic px-1">고객의 스크롤을 멈추고 지갑을 열게</span> 만듭니다.
                     </p>
 
-                    <div className="grid md:grid-cols-2 gap-10 pt-16">
+                    <div className="grid md:grid-cols-2 gap-8 pt-10">
                         {[
                             { step: "01", title: "구매 심리 아키텍처", desc: "사용자가 반응하는 최적의 시각적 동선을 설계하여 구매 전환까지의 저항을 제로화합니다." },
                             { step: "02", title: "브랜드 권위 구축", desc: "제품이 가진 독보적 가치를 상위 1%의 시각적 언어로 번역해 브랜드의 지위를 격상시킵니다." }
@@ -296,7 +296,7 @@ export function ContactSection() {
                     <div className="absolute top-10 left-10 text-[9px] font-mono text-slate-300 tracking-[0.4em] uppercase select-none hidden md:block">ARCHITECTURE_FLOW / 00,00_CONTACT</div>
                     <div className="absolute bottom-10 right-10 text-[9px] font-mono text-slate-300 tracking-[0.4em] uppercase select-none hidden md:block">R:NEW_DESIGN_STUDIO / R2026</div>
 
-                    <div className="grid lg:grid-cols-2 gap-20 items-center">
+                    <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
                         <div className="space-y-12">
                             <div className="space-y-8">
                                 <motion.div
@@ -343,13 +343,13 @@ export function ContactSection() {
                             <div className="absolute -inset-10 bg-blue-500/10 blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
 
                             <div className="w-full space-y-12">
-                                <Button size="lg" className="rounded-full px-6 py-6 md:px-16 md:py-12 text-lg md:text-3xl font-black bg-slate-950 hover:bg-blue-600 text-white border-none h-auto group/btn w-full shadow-[0_30px_70px_rgba(37,99,235,0.15)] relative overflow-hidden transition-all duration-500">
-                                    <span className="relative z-10 flex items-center justify-center gap-4 md:gap-6">
+                                <Button asChild size="lg" className="rounded-full px-6 py-6 md:px-16 md:py-12 text-lg md:text-3xl font-black bg-slate-950 hover:bg-blue-600 text-white border-none h-auto group/btn w-full shadow-[0_30px_70px_rgba(37,99,235,0.15)] relative overflow-hidden transition-all duration-500">
+                                    <a href="https://pf.kakao.com/_xaxgJdX" target="_blank" rel="noopener noreferrer" className="relative z-10 flex items-center justify-center gap-4 md:gap-6">
                                         프로젝트 문의하기
                                         <ArrowRight size={24} className="md:w-8 md:h-8 transition-transform group-hover/btn:translate-x-4 duration-500" />
-                                    </span>
-                                    {/* Colorful Hover Background */}
-                                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-1000"></div>
+                                        {/* Colorful Hover Background */}
+                                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-1000"></div>
+                                    </a>
                                 </Button>
 
                                 <div className="space-y-10">
@@ -360,7 +360,7 @@ export function ContactSection() {
                                             </div>
                                             <span className="text-[10px] font-black text-slate-400 tracking-[0.2em] uppercase italic group-hover/social:text-pink-600 transition-colors">instagram</span>
                                         </a>
-                                        <a href="#" className="flex flex-col items-center gap-3 group/social">
+                                        <a href="https://pf.kakao.com/_xaxgJdX" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 group/social">
                                             <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-slate-400 group-hover/social:bg-yellow-400 group-hover/social:text-slate-900 transition-all duration-500 shadow-sm group-hover/social:shadow-yellow-500/20 group-hover/social:-translate-y-2">
                                                 <MessageCircle size={24} />
                                             </div>

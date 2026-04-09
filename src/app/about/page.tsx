@@ -43,7 +43,13 @@ export default function AboutPage() {
                         </div>
                         <div className="flex items-center gap-10">
                             {["instagram", "kakaotalk", "email"].map((link) => (
-                                <a key={link} href="#" className="text-[10px] font-black text-slate-400 hover:text-blue-600 tracking-[0.3em] transition-colors italic lowercase">
+                                <a 
+                                    key={link} 
+                                    href={link === "kakaotalk" ? "https://pf.kakao.com/_xaxgJdX" : "#"} 
+                                    target={link === "kakaotalk" ? "_blank" : undefined}
+                                    rel={link === "kakaotalk" ? "noopener noreferrer" : undefined}
+                                    className="text-[10px] font-black text-slate-400 hover:text-blue-600 tracking-[0.3em] transition-colors italic lowercase"
+                                >
                                     {link}
                                 </a>
                             ))}

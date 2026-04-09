@@ -268,10 +268,12 @@ export function TrustSection() {
                         </motion.div>
 
                         <div className="flex flex-col sm:flex-row items-center gap-8 w-full max-w-xl mx-auto">
-                            <Button size="lg" className="rounded-full px-16 py-10 text-xl font-bold bg-slate-950 hover:bg-blue-600 text-white transition-all shadow-[0_30px_70px_rgba(37,99,235,0.15)] w-full h-auto relative overflow-hidden group">
-                                <span className="relative z-10">지금 문의하기</span>
-                                {/* Colorful Hover Background */}
-                                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <Button asChild size="lg" className="rounded-full px-16 py-10 text-xl font-bold bg-slate-950 hover:bg-blue-600 text-white transition-all shadow-[0_30px_70px_rgba(37,99,235,0.15)] w-full h-auto relative overflow-hidden group">
+                                <a href="https://pf.kakao.com/_xaxgJdX" target="_blank" rel="noopener noreferrer" className="relative z-10 w-full h-full flex items-center justify-center">
+                                    지금 문의하기
+                                    {/* Colorful Hover Background */}
+                                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                </a>
                             </Button>
                         </div>
                     </div>

@@ -95,13 +95,13 @@
     filter: brightness(1.1);
   }
 
-  /* Premium Section Spacing */
+  /* Premium Section Spacing - Reduced as per user request */
   .section-padding {
-    @apply py-20 md:py-40 px-6;
+    @apply py-12 md:py-24 px-6;
   }
 
   .section-padding-large {
-    @apply py-24 md:py-56 px-6;
+    @apply py-16 md:py-32 px-6;
   }
 
   /* Sophisticated Mask for Mobile Overlays */

@@ -174,11 +174,13 @@ export default function ProjectDetail() {
                         당신의 가치를 만드는 <br /> 마지막 퍼즐 조각.
                     </motion.h2>
                     <Button
-                        onClick={() => router.push("/#contact")}
+                        asChild
                         size="lg"
                         className="rounded-2xl px-14 py-8 text-xl font-bold btn-gradient border-none h-auto shadow-[0_20px_50px_rgba(37,99,235,0.2)]"
                     >
-                        상담 신청하기 <ArrowRight size={20} className="ml-3" />
+                        <a href="https://pf.kakao.com/_xaxgJdX" target="_blank" rel="noopener noreferrer">
+                            상담 신청하기 <ArrowRight size={20} className="ml-3" />
+                        </a>
                     </Button>
                 </section>
 

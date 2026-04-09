@@ -13,6 +13,8 @@ import {
 } from "@/components/sections/DetailedSections";
 import { ProjectShowcase } from "@/components/projects/ProjectShowcase";
 import { TechStack, ContactSection } from "@/components/sections/Sections";
+import { PricingSection } from "@/components/sections/PricingSection";
+
 
 import { PortfolioMockup } from "@/components/ui/PortfolioMockup";
 
@@ -68,7 +70,7 @@ export default function Home() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.2 }}
-                            className="text-base md:text-2xl text-slate-500 font-light leading-relaxed mb-12 md:mb-16 max-w-3xl break-keep tracking-tight px-4 text-balance"
+                            className="text-base md:text-2xl text-slate-500 font-light leading-relaxed mb-8 md:mb-10 max-w-3xl break-keep tracking-tight px-4 text-balance"
                         >
                             압도적인 분석적 기획과 독보적인 비주얼 설계로 <br className="hidden md:block" />
                             브랜드의 지위를 격상시키고 실질적인 성장을 견인합니다.
@@ -78,7 +80,7 @@ export default function Home() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.3 }}
-                            className="flex justify-center mb-24 md:mb-48"
+                            className="flex justify-center mb-16 md:mb-24"
                         >
                             <Link href="/#projects">
                                 <Button size="lg" className="rounded-full px-8 md:px-12 py-6 md:py-8 text-base md:text-lg font-bold bg-slate-950 text-white hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-950/20 text-center">
@@ -134,8 +136,12 @@ export default function Home() {
             <ProjectShowcase />
             <TechStack />
 
+            {/* Pricing Section */}
+            <PricingSection />
+
             {/* Conversion */}
             <ContactSection />
+
 
             {/* Final Footer */}
             {/* Redesigned Premium Footer */}
@@ -204,7 +210,7 @@ export default function Home() {
                             </p>
                         </div>
                         <div className="flex items-center gap-10">
-                            <a href="#" className="group flex flex-col items-center gap-1">
+                            <a href="https://pf.kakao.com/_xaxgJdX" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-1">
                                 <span className="text-[10px] font-black text-slate-600 group-hover:text-yellow-500 tracking-[0.2em] transition-colors italic">kakao</span>
                                 <div className="h-[2px] w-0 bg-yellow-500 group-hover:w-full transition-all duration-300"></div>
                             </a>

@@ -15,8 +15,8 @@ export function ExpertiseSection() {
     return (
         <section className="section-padding bg-slate-950 text-white relative overflow-hidden">
             <div className="container mx-auto max-w-7xl relative z-10">
-                <div className="grid lg:grid-cols-2 gap-20 md:gap-32 items-center">
-                    <motion.div {...fadeInUp} className="space-y-12 md:space-y-20">
+                <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
+                    <motion.div {...fadeInUp} className="space-y-8 md:space-y-12">
                         <div className="space-y-6 md:space-y-8">
                             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-blue-400 shadow-2xl">
                                 <span className="flex items-center gap-2">
@@ -104,7 +104,7 @@ export function ValuePointsSection() {
             <div className="absolute bottom-0 left-0 w-1/2 h-full bg-[radial-gradient(circle_at_30%_80%,rgba(37,99,235,0.02),transparent_70%)] pointer-events-none"></div>
 
             <div className="container mx-auto max-w-7xl relative z-10">
-                <motion.div {...fadeInUp} className="text-center mb-20 md:mb-40">
+                <motion.div {...fadeInUp} className="text-center mb-12 md:mb-20">
                     <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50/50 backdrop-blur-md border border-blue-100 text-blue-600 shadow-sm mb-10 mx-auto whitespace-nowrap">
                         <span className="flex items-center gap-2">
                             <span className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-pulse shadow-[0_0_8px_rgba(37,99,235,0.4)]"></span>
@@ -169,29 +169,29 @@ export function ProcessSection() {
     return (
         <section className="section-padding bg-slate-950 text-white overflow-hidden relative">
             {/* 1. Atmospheric Volumetric Lighting (Luxury Background Deep Space) */}
-            <motion.div 
+            <motion.div
                 animate={{ x: [0, 100, 0], y: [0, 50, 0], scale: [1, 1.2, 1] }}
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                className="absolute top-0 -left-20 w-[600px] h-[600px] bg-blue-600/5 blur-[140px] rounded-full pointer-events-none" 
+                className="absolute top-0 -left-20 w-[600px] h-[600px] bg-blue-600/5 blur-[140px] rounded-full pointer-events-none"
             />
-            <motion.div 
+            <motion.div
                 animate={{ x: [0, -100, 0], y: [0, 100, 0], scale: [1, 1.1, 1] }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute bottom-0 -right-20 w-[700px] h-[700px] bg-purple-600/5 blur-[160px] rounded-full pointer-events-none" 
+                className="absolute bottom-0 -right-20 w-[700px] h-[700px] bg-purple-600/5 blur-[160px] rounded-full pointer-events-none"
             />
-            <motion.div 
+            <motion.div
                 animate={{ x: [0, 50, 0], y: [0, -50, 0], scale: [1, 1.3, 1] }}
                 transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-amber-600/[0.03] blur-[110px] rounded-full pointer-events-none" 
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-amber-600/[0.03] blur-[110px] rounded-full pointer-events-none"
             />
 
             {/* Architectural Flow Grid */}
-            <div className="absolute inset-0 opacity-[0.05] select-none pointer-events-none" 
-                 style={{ backgroundImage: 'linear-gradient(#2563eb 0.5px, transparent 0.5px), linear-gradient(90deg, #2563eb 0.5px, transparent 0.5px)', backgroundSize: '60px 60px' }}></div>
+            <div className="absolute inset-0 opacity-[0.05] select-none pointer-events-none"
+                style={{ backgroundImage: 'linear-gradient(#2563eb 0.5px, transparent 0.5px), linear-gradient(90deg, #2563eb 0.5px, transparent 0.5px)', backgroundSize: '60px 60px' }}></div>
 
             <div className="container mx-auto max-w-7xl relative z-10">
-                <motion.div {...fadeInUp} className="text-center mb-24 md:mb-32">
-                    <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-blue-400 shadow-2xl mb-12 mx-auto whitespace-nowrap">
+                <motion.div {...fadeInUp} className="text-center mb-12 md:mb-16">
+                    <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-blue-400 shadow-2xl mb-8 mx-auto whitespace-nowrap">
                         <span className="flex items-center gap-2">
                             <span className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(59,130,246,0.5)]"></span>
                             <span className="font-bold text-[9px] uppercase tracking-[0.2em] opacity-70">Flow</span>
@@ -201,12 +201,12 @@ export function ProcessSection() {
                     </div>
                     <h2 className="text-3xl md:text-[3.5rem] font-heading font-black text-white tracking-tighter leading-tight relative inline-block text-balance">
                         명작이 탄생하는 <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 italic px-1 animate-gradient-x bg-[length:200%_auto]">6단계의 치밀한 공정.</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 italic px-1 animate-gradient-x bg-[length:200%_auto]">6단계의 세부적인 설계.</span>
                         <div className="absolute -right-12 -top-6 text-[80px] md:text-[100px] font-black text-white/5 -z-10 select-none">06</div>
                     </h2>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14 px-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4">
                     {steps.map((step, i) => (
                         <motion.div
                             key={i}
@@ -219,7 +219,7 @@ export function ProcessSection() {
                             {/* Animated Spectral Connectors (Horizontal on LG) */}
                             {i % 3 !== 2 && (
                                 <div className="hidden lg:block absolute -right-7 top-1/2 -translate-y-1/2 w-10 h-[1.5px] bg-gradient-to-r from-transparent via-white/10 to-transparent z-0 overflow-hidden">
-                                    <motion.div 
+                                    <motion.div
                                         animate={{ x: ["-100%", "200%"] }}
                                         transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: i * 0.3 }}
                                         className={`w-full h-full bg-gradient-to-r from-transparent via-${step.color.split('-')[1]}-400 to-transparent`}
@@ -230,7 +230,7 @@ export function ProcessSection() {
                             <div className="bg-white/[0.03] backdrop-blur-3xl p-7 md:p-14 rounded-[40px] md:rounded-[48px] border border-white/5 group-hover:border-white/20 transition-all duration-700 relative overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.1)] group-hover:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
                                 {/* Gradient Hover Background (Spectral) */}
                                 <div className={`absolute inset-0 bg-gradient-to-br ${step.glow} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700`}></div>
-                                
+
                                 <div className="flex justify-between items-start mb-10 md:mb-16 relative z-10">
                                     {/* Orbital Icon Glow */}
                                     <div className="relative">
@@ -318,7 +318,7 @@ export function PricingSection() {
             <div className="absolute inset-0 opacity-[0.03] select-none pointer-events-none flex items-center justify-center -z-10">
                 <span className="text-[15vw] font-black text-slate-900 tracking-tighter leading-none italic uppercase">ELITE_PRICING</span>
             </div>
-            
+
             <div className="container mx-auto max-w-7xl relative z-10">
                 <motion.div {...fadeInUp} className="text-center mb-24 md:mb-32">
                     <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-bold text-[10px] uppercase tracking-widest md:tracking-[0.4em] mb-8 mx-auto whitespace-nowrap shadow-sm">
