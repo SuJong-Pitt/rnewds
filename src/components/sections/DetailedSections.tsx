@@ -135,9 +135,10 @@ export function ValuePointsSection() {
                         매출을 완성하는 <br />
                         <span className="text-blue-600 italic px-1">4가지 필연적 전략.</span>
                     </h2>
-                    <p className="text-slate-500 text-base md:text-xl font-light max-w-2xl mx-auto mb-16 break-keep">
-                        상품의 장점을 쉽게 보여주고, 궁금한 내용을 정리하며, <br className="hidden md:block" />
-                        결국 고객이 사고 싶게 설명합니다.
+                    <p className="text-slate-500 text-base md:text-2xl font-light max-w-3xl mx-auto mb-16 break-keep leading-relaxed">
+                        제품이 잘 팔리길 바라는 <span className="text-slate-950 font-medium">대표님의 진심</span>을, <br className="hidden md:block" />
+                        <span className="text-blue-600 font-bold border-b-2 border-blue-500/20 pb-0.5 whitespace-nowrap">소비자 심리</span>를 기준으로 가장 완벽하게 정리합니다. <br />
+                        <span className="text-slate-400 italic mt-2 block">당신의 제품은 결과로 증명될 것입니다.</span>
                     </p>
                 </motion.div>
 
