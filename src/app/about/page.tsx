@@ -65,7 +65,7 @@ export default function AboutPage() {
                                 &copy; 2026 r:new design studio. all rights reserved.
                             </p>
                             <div className="flex items-center gap-10">
-                                <a href="https://pf.kakao.com/_xaxgJdX" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-1">
+                                <a href="https://pf.kakao.com/_xaxgJdX/chat" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-1">
                                     <span className="text-[10px] font-black text-slate-600 group-hover:text-yellow-500 tracking-[0.2em] transition-colors italic">kakao</span>
                                     <div className="h-[2px] w-0 bg-yellow-500 group-hover:w-full transition-all duration-300"></div>
                                 </a>

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowLeft, Loader2, Calendar, Tag, ExternalLink, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LuxuryKakaoIcon } from "@/components/ui/LuxuryKakaoIcon";
 
 export default function ProjectDetail() {
     const { id } = useParams();
@@ -165,24 +166,50 @@ export default function ProjectDetail() {
                 </section>
 
                 {/* Final CTA */}
-                <section className="py-40 text-center container mx-auto px-6 max-w-3xl">
+                <section className="py-32 md:py-56 text-center container mx-auto px-6 max-w-5xl relative">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[50%] bg-blue-50/50 blur-[120px] -z-10"></div>
+                    
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="mb-12 flex justify-center"
+                    >
+                        <LuxuryKakaoIcon size={120} className="md:w-[160px] md:h-[160px]" />
+                    </motion.div>
+
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-7xl font-bold mb-12 tracking-tight text-slate-900 leading-[1.1]"
+                        className="text-3xl md:text-7xl font-bold mb-16 tracking-tight text-slate-900 leading-[1.1] text-balance break-keep"
                     >
-                        당신의 가치를 만드는 <br /> 마지막 퍼즐 조각.
+                        당신의 가치를 만드는 <br className="hidden md:block" /> <span className="text-blue-600">마지막 퍼즐 조각</span>, R:new.
                     </motion.h2>
-                    <Button
-                        asChild
-                        size="lg"
-                        className="rounded-2xl px-14 py-8 text-xl font-bold btn-gradient border-none h-auto shadow-[0_20px_50px_rgba(37,99,235,0.2)]"
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="flex justify-center"
                     >
-                        <a href="https://pf.kakao.com/_xaxgJdX" target="_blank" rel="noopener noreferrer">
-                            상담 신청하기 <ArrowRight size={20} className="ml-3" />
+                        <a
+                            href="https://pf.kakao.com/_xaxgJdX/chat"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group relative flex items-center justify-between gap-8 md:gap-16 px-8 md:px-16 py-6 md:py-10 bg-slate-950 text-white rounded-full hover:bg-yellow-400 hover:text-slate-950 transition-all duration-500 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_45px_90px_-20px_rgba(250,204,21,0.4)]"
+                        >
+                            <span className="text-lg md:text-3xl font-black tracking-tighter">카톡 상담으로 프로젝트 시작하기</span>
+                            <div className="w-10 h-10 md:w-16 md:h-16 rounded-full border border-white/20 group-hover:border-slate-950/20 flex items-center justify-center transition-all group-hover:rotate-45">
+                                <ArrowRight size={20} className="md:w-8 md:h-8" />
+                            </div>
                         </a>
-                    </Button>
+                    </motion.div>
+
+                    <p className="mt-16 text-slate-400 text-xs md:text-sm font-bold tracking-[0.3em] uppercase">
+                        Consultation available 24/7 via KakaoTalk
+                    </p>
                 </section>
 
                 {/* Simple Footer Overlay */}

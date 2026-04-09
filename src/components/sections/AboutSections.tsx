@@ -244,20 +244,20 @@ export function TrustSection() {
                         </motion.p>
                     </div>
 
-                    <div className="flex flex-col items-center justify-center gap-16 pt-10">
+                    <div className="flex flex-col items-center justify-center pt-10">
                         {/* Magnetic Luxury Hub */}
-                        <motion.div 
+                        <a 
+                            href="https://pf.kakao.com/_xaxgJdX/chat" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
                             className="w-full max-w-2xl relative group/hub"
-                            whileHover={{ scale: 1.02 }}
                         >
-                            <div className="absolute -inset-20 bg-blue-500/5 blur-[120px] rounded-full opacity-0 group-hover/hub:opacity-100 transition-opacity duration-1000"></div>
-                            
-                            <a 
-                                href="https://pf.kakao.com/_xaxgJdX/chat" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="flex flex-col items-center gap-10 group/item"
+                            <motion.div 
+                                whileHover={{ scale: 1.02 }}
+                                className="flex flex-col items-center gap-10 group/item relative z-20"
                             >
+                                <div className="absolute -inset-20 bg-blue-500/5 blur-[120px] rounded-full opacity-0 group-hover/hub:opacity-100 transition-opacity duration-1000 -z-10"></div>
+                                
                                 <div className="relative">
                                     <div className="absolute inset-0 bg-yellow-400 opacity-20 blur-[50px] rounded-full scale-150 animate-pulse"></div>
                                     <LuxuryKakaoIcon size={140} className="md:w-[180px] md:h-[180px]" />
@@ -267,8 +267,8 @@ export function TrustSection() {
                                     <span className="text-lg sm:text-2xl md:text-5xl font-black tracking-tighter italic whitespace-nowrap">상담 및 프로젝트 시작</span>
                                     <ArrowRightIcon size={24} className="md:w-12 md:h-12 group-hover/item:translate-x-4 transition-transform duration-700 shrink-0 ml-4" />
                                 </div>
-                            </a>
-                        </motion.div>
+                            </motion.div>
+                        </a>
 
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}

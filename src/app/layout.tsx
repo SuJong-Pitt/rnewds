@@ -92,7 +92,7 @@ const jsonLd = {
         "closes": "19:00"
     },
     "sameAs": [
-        "https://pf.kakao.com/_xaxgJdX",
+        "https://pf.kakao.com/_xaxgJdX/chat",
         "https://rnewds.com"
     ]
 };
