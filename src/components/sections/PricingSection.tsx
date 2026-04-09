@@ -20,9 +20,9 @@ const plans = [
         subtitle: "Essential Sales Strategy",
         description: [
             "3~4섹션 고밀도 구성",
-            "구매 전환 핵심 트리거 설계",
-            "기획 + 디자인 원스톱 진행",
-            "스타트업 / 1인 기업 추천"
+            "구매에 필요한 핵심 구성 제작",
+            "기획 + 디자인 포함",
+            "처음 시작 하시는 분들께 추천"
         ],
         price: "99,000",
         period: "3 DAYS",
@@ -39,10 +39,10 @@ const plans = [
         title: "구성 강화 상세페이지",
         subtitle: "High-Conversion Flow",
         description: [
-            "6~7섹션 풀 패키지 구성",
-            "심리학 기반 구매 흐름 설계",
-            "고급 그래픽 리터칭 포함",
-            "가장 높은 재주문율"
+            "6~7섹션 구성",
+            "구매까지 이어지는 흐름 설계",
+            "기획 + 디자인 포함",
+            "가장 많이 선택"
         ],
         price: "249,000",
         period: "7 DAYS",
@@ -59,10 +59,10 @@ const plans = [
         title: "브랜드형 상세페이지",
         subtitle: "Premium Brand Legacy",
         description: [
-            "10섹션 이상 무제한 구성",
-            "브랜드 아이덴티티 전용 수립",
+            "10섹션 이상",
             "매출 극대화 타겟 맞춤 기획",
-            "프리미엄 브랜드 전용"
+            "기획 + 연출 + 디자인 포함",
+            "브랜드/매출 집중용"
         ],
         price: "590,000",
         period: "10 DAYS",
@@ -109,8 +109,8 @@ export function PricingSection() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                             className={`relative group flex flex-col h-full rounded-[2rem] md:rounded-[2.5rem] p-8 transition-all duration-700 ${plan.theme === "dark"
-                                    ? "bg-slate-950 text-white shadow-[0_40px_80px_-15px_rgba(0,0,0,0.4)] z-20 scale-105"
-                                    : "bg-white text-slate-950 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.05)] z-10"
+                                ? "bg-slate-950 text-white shadow-[0_40px_80px_-15px_rgba(0,0,0,0.4)] z-20 scale-105"
+                                : "bg-white text-slate-950 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.05)] z-10"
                                 }`}
                         >
                             {/* Card Decoration */}
@@ -190,8 +190,8 @@ export function PricingSection() {
                                     size="lg"
                                     asChild
                                     className={`relative w-full py-8 rounded-xl text-base font-black tracking-tight overflow-hidden transition-all duration-500 hover:scale-[1.03] active:scale-95 shadow-xl ${plan.theme === "dark"
-                                            ? "bg-white text-slate-950 hover:bg-slate-100"
-                                            : "bg-slate-950 text-white hover:bg-slate-900"
+                                        ? "bg-white text-slate-950 hover:bg-slate-100"
+                                        : "bg-slate-950 text-white hover:bg-slate-900"
                                         }`}
                                 >
                                     <a href="https://pf.kakao.com/_xaxgJdX/chat" target="_blank" rel="noopener noreferrer">

@@ -100,15 +100,29 @@ export default function Home() {
                             </motion.div>
                         </div>
 
-                        <motion.p
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 1.5, delay: 1 }}
-                            className="text-base md:text-2xl text-slate-500 font-light max-w-3xl leading-relaxed tracking-tight break-keep mb-16 text-balance"
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1.2, delay: 1, ease: [0.16, 1, 0.3, 1] }}
+                            className="relative"
                         >
-                            데이터의 도면 위에 감각적인 비주얼을 건축합니다. <br className="hidden md:block" />
-                            단순한 디자인이 아닌 <span className="text-slate-950 font-bold border-b border-blue-100">비즈니스의 승리</span>를 완성하는 설계 시스템입니다.
-                        </motion.p>
+                            <p className="text-lg md:text-2xl lg:text-3xl text-slate-500 font-light max-w-3xl leading-[1.6] md:leading-[1.5] tracking-tight break-keep mb-16 text-balance">
+                                <span className="opacity-60">준비된 자료가 많지 않아도 괜찮습니다.</span> <br className="hidden md:block" />
+                                <span className="text-slate-900 font-black relative group inline-block">
+                                    대표님은 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 italic">상품에만 집중하세요.</span>
+                                    <motion.span 
+                                        initial={{ width: 0 }}
+                                        animate={{ width: "100%" }}
+                                        transition={{ duration: 1.5, delay: 1.5 }}
+                                        className="absolute -bottom-1.5 left-0 h-1 bg-blue-100/50 -z-10"
+                                    />
+                                </span> <br className="hidden md:block" />
+                                <span className="text-slate-700 font-medium">소비자가 사고 싶게 만드는 </span>
+                                <span className="text-slate-950 font-black border-b border-slate-950/10 pb-0.5">상세페이지를 설계합니다.</span>
+                            </p>
+                            
+                            <div className="absolute -inset-10 bg-blue-600/5 blur-[80px] -z-10 opacity-20 pointer-events-none"></div>
+                        </motion.div>
 
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
