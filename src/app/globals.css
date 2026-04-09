@@ -114,3 +114,26 @@
     text-wrap: balance;
   }
 }
+
+@keyframes prism-shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.prism-text {
+    background: linear-gradient(
+        90deg,
+        #2563eb 0%,
+        #7c3aed 20%,
+        #db2777 40%,
+        #4f46e5 60%,
+        #06b6d4 80%,
+        #2563eb 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: prism-shimmer 8s linear infinite;
+    display: inline-block;
+}
