@@ -114,7 +114,7 @@ export function ValuePointsSection() {
                     <p className="text-slate-500 text-base md:text-2xl font-light max-w-3xl mx-auto mb-16 break-keep leading-[1.8] md:leading-[1.75]">
                         제품이 잘 팔리길 바라는 <span className="text-slate-950 font-medium">대표님의 진심</span>을, <br className="hidden md:block" />
                         <span className="text-blue-600 font-bold border-b-2 border-blue-500/20 pb-0.5 whitespace-nowrap">소비자 심리</span>를 기준으로 가장 완벽하게 정리합니다. <br />
-                        <span className="text-slate-400 italic mt-3 block">당신의 제품은 결과로 증명될 것입니다.</span>
+
                     </p>
                 </motion.div>
 
@@ -124,7 +124,7 @@ export function ValuePointsSection() {
                             num: "01",
                             label: "IMPRESSION",
                             title: "처음부터 시선을 끄는 디자인",
-                            desc: "고객의 스크롤을 멈추게 만드는 압도적 첫인상을 설계합니다.",
+                            desc: "스크롤을 멈추게 만듭니다.",
                             subDesc: "처음부터 시선을 끄는 디자인\n스크롤을 멈추게 만듭니다",
                             icon: <MousePointer2 size={28} />,
                             color: "from-blue-500 to-indigo-600",
@@ -135,7 +135,7 @@ export function ValuePointsSection() {
                             num: "02",
                             label: "NARRATIVE",
                             title: "계속 보게 만드는 흐름",
-                            desc: "이탈 없이 끝까지 읽히는 치밀한 서사 구조를 완성합니다.",
+                            desc: "끝까지 읽히게 만듭니다.",
                             subDesc: "계속 보게 만드는 흐름\n끝까지 읽히게 만듭니다",
                             icon: <Layers size={28} />,
                             color: "from-purple-500 to-fuchsia-600",
@@ -146,7 +146,7 @@ export function ValuePointsSection() {
                             num: "03",
                             label: "LOGIC",
                             title: "구매하고 싶게 만드는 구성",
-                            desc: "고민 없이 선택하게 만드는 논리적 설득 레이아웃을 제공합니다.",
+                            desc: "고민 없이 선택하게 만듭니다",
                             subDesc: "구매하고 싶게 만드는 구성\n고민 없이 선택하게 만듭니다",
                             icon: <Target size={28} />,
                             color: "from-emerald-500 to-teal-600",
@@ -157,7 +157,7 @@ export function ValuePointsSection() {
                             num: "04",
                             label: "COPYWRITING",
                             title: "구매를 부르는 카피",
-                            desc: "제품의 소구점을 한 번에 이해되게 전달하는 강력한 언어를 제안합니다.",
+                            desc: "한 번에 이해되게 전달합니다.",
                             subDesc: "구매를 부르는 카피\n한 번에 이해되게 전달합니다",
                             icon: <PenTool size={28} />,
                             color: "from-rose-500 to-orange-600",
@@ -175,7 +175,7 @@ export function ValuePointsSection() {
                         >
                             {/* Colorful Luxury Glow Background */}
                             <div className={`absolute -inset-4 rounded-[50px] ${item.glow} blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000`}></div>
-                            
+
                             <div className="relative h-full bg-white/70 backdrop-blur-3xl rounded-[48px] border border-white/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.03)] group-hover:shadow-[0_45px_100px_-20px_rgba(37,99,235,0.1)] transition-all duration-700 flex flex-col overflow-hidden ring-1 ring-slate-100/50 group-hover:ring-blue-500/20">
                                 <div className="p-8 md:p-11 flex-grow">
                                     <div className="flex justify-between items-start mb-14">
@@ -201,16 +201,7 @@ export function ValuePointsSection() {
                                     </div>
                                 </div>
 
-                                <div className="bg-slate-950 p-8 md:p-9 relative overflow-hidden group-hover:bg-slate-900 transition-colors">
-                                    <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${item.color}`}></div>
-                                    <p className="text-white text-base md:text-[1.1rem] font-bold leading-tight tracking-tight relative z-10">
-                                        {item.subDesc.split('\n').map((line, idx) => (
-                                            <span key={idx} className={idx === 1 ? `text-transparent bg-clip-text bg-gradient-to-r ${item.color} block mt-1.5` : "block opacity-80"}>
-                                                {line}
-                                            </span>
-                                        ))}
-                                    </p>
-                                </div>
+
                             </div>
                         </motion.div>
                     ))}
@@ -246,8 +237,8 @@ export function ProcessSection() {
             <div className="container mx-auto max-w-7xl relative z-10">
                 <motion.div {...fadeInUp} className="text-center mb-16 md:mb-24">
                     <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
-                        <h2 className="text-3xl md:text-5xl lg:text-7xl font-heading font-black text-white tracking-tighter leading-[1.1] text-balance">
-                            복잡한 과정 대신,<br />
+                        <h2 className="text-3xl md:text-5xl lg:text-7xl font-heading font-black text-white tracking-tighter leading-tight text-center">
+                            <div className="mb-2 md:mb-4">복잡한 과정 대신,</div>
                             <span className="text-blue-500">필요한 단계만 정리해 설계합니다.</span>
                         </h2>
                         <div className="h-4 md:h-8" />

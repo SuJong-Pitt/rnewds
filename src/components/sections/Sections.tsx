@@ -114,9 +114,9 @@ export function TechStack() {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-3xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tighter text-slate-900 leading-[1.1] text-balance break-keep"
+                            className="text-2xl sm:text-5xl lg:text-7xl font-heading font-black tracking-tighter text-slate-900 leading-[1.4] md:leading-tight text-balance break-keep"
                         >
-                            시선을 끄는 디자인, <br className="hidden sm:block" />
+                            <div className="mb-2 md:mb-4">시선을 끄는 디자인,</div>
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-700 italic px-1 underline decoration-blue-100 decoration-8 underline-offset-4">구매로 이어지는 구조.</span>
                         </motion.h2>
                     </div>
@@ -295,18 +295,27 @@ export function ContactSection() {
                             <div className="space-y-6 md:space-y-10 text-center lg:text-left">
                                 <span className="inline-block text-[10px] font-black tracking-[0.4em] text-blue-600 uppercase italic bg-blue-50/50 px-3 py-1 rounded-full w-fit mx-auto lg:mx-0">Elevate Your Performance</span>
 
-                                <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-heading font-black text-slate-950 tracking-tighter leading-[1.3] md:leading-[1.2] text-balance break-keep">
-                                    제품이 <span className="text-slate-950">꼭 팔리길</span><br className="hidden sm:block" />
-                                    바라는 마음,
+                                <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-7xl font-heading font-black text-slate-950 tracking-tighter leading-[1.3] md:leading-tight text-balance break-keep">
+                                    <div className="mb-1 md:mb-4">제품이 <span className="text-slate-950">꼭 팔리길</span></div>
+                                    <div className="mb-1 md:mb-4">바라는 마음,</div>
                                     <div className="h-4 md:h-10" />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-[length:200%_auto] animate-gradient-x italic inline-block pb-1 lg:mt-2 text-2xl sm:text-4xl md:text-7xl lg:text-8xl">결과로 보답합니다.</span>
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-[length:200%_auto] animate-gradient-x italic inline-block pb-1 lg:mt-2 text-2xl sm:text-4xl md:text-7xl lg:text-[7rem] leading-[1.2] md:leading-[1.1]">
+                                        <div className="mb-1 md:mb-4">결과로</div>
+                                        <div>보답합니다.</div>
+                                    </span>
                                 </h2>
 
-                                <p className="text-[15px] md:text-xl lg:text-2xl text-slate-500 font-medium max-w-lg mx-auto lg:mx-0 leading-relaxed break-keep tracking-tight text-balance">
-                                    <span className="text-slate-500 font-bold">소비자 심리</span>를 기준으로 상품이 팔리게<br className="hidden md:block" />
-                                    완벽히 정리합니다.<br className="md:hidden" /> 복잡한 고민은 내려놓고<br className="hidden md:block" />
+                                <div className="h-6 md:h-8" />
+
+                                <div className="text-[14px] md:text-xl lg:text-2xl text-slate-500 font-medium max-w-lg mx-auto lg:mx-0 leading-[1.5] md:leading-tight break-keep tracking-tight text-balance">
+                                    <div className="mb-1 md:mb-4">
+                                        <span className="text-slate-500 font-bold">소비자 심리</span>를 기준으로 상품이 팔리게
+                                    </div>
+                                    <div className="mb-2 md:mb-5">
+                                        완벽히 정리합니다. 복잡한 고민은 내려놓고
+                                    </div>
                                     <span className="text-slate-950 font-black italic border-b border-blue-500/30 pb-0.5 md:mt-2 md:inline-block">이제 믿고 맡기시면 됩니다.</span>
-                                </p>
+                                </div>
                             </div>
 
                             <div className="flex flex-col items-center lg:items-start gap-3 text-slate-400 font-mono text-[9px] tracking-[0.2em] uppercase opacity-40">

@@ -63,18 +63,18 @@ export function ProjectShowcase() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8 }}
-                                className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.6rem] font-heading font-black text-slate-950 tracking-[-0.05em] leading-[1.1] antialiased text-balance break-keep"
+                                className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.6rem] font-heading font-black text-slate-950 tracking-[-0.05em] leading-tight antialiased text-balance break-keep"
                             >
-                                <span className="block mb-1 md:mb-2 text-transparent bg-clip-text bg-gradient-to-br from-slate-950 via-slate-800 to-slate-950">보이는 디자인이 아니라,</span>
-                                <div className="flex flex-wrap items-center">
-                                    <span className="relative inline-block italic">
-                                        <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-700 bg-[length:200%_auto] animate-gradient-x px-1">구매 흐름</span>
-                                        {/* Sophisticated Architectural Underglow */}
-                                        <div className="absolute -bottom-1 sm:-bottom-3 left-0 w-full h-[4px] sm:h-[10px] bg-blue-500/10 blur-[4px] rounded-full" />
-                                        <div className="absolute -bottom-1 sm:-bottom-3 left-0 w-full h-[1.5px] sm:h-[4px] bg-gradient-to-r from-blue-400 via-indigo-400 to-transparent rounded-full" />
-                                    </span>
-                                    <span className="whitespace-nowrap">을 기준으로 만듭니다.</span>
-                                </div>
+                                 <div className="mb-2 md:mb-6 text-transparent bg-clip-text bg-gradient-to-br from-slate-950 via-slate-800 to-slate-950 leading-[1.3] md:leading-tight">보이는 디자인이 아니라,</div>
+                                 <div className="flex flex-wrap items-center leading-[1.3] md:leading-tight">
+                                     <span className="relative inline-block italic">
+                                         <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-700 bg-[length:200%_auto] animate-gradient-x px-1">구매 흐름</span>
+                                         {/* Sophisticated Architectural Underglow */}
+                                         <div className="absolute -bottom-1 sm:-bottom-3 left-0 w-full h-[3px] sm:h-[10px] bg-blue-500/10 blur-[4px] rounded-full" />
+                                         <div className="absolute -bottom-1 sm:-bottom-3 left-0 w-full h-[1px] sm:h-[4px] bg-gradient-to-r from-blue-400 via-indigo-400 to-transparent rounded-full" />
+                                     </span>
+                                     <span className="ml-1">을 기준으로 만듭니다.</span>
+                                 </div>
                             </motion.h2>
                         </div>
                     </div>
