@@ -299,9 +299,12 @@ export function ContactSection() {
                                     <div className="mb-1 md:mb-4">제품이 <span className="text-slate-950">꼭 팔리길</span></div>
                                     <div className="mb-1 md:mb-4">바라는 마음,</div>
                                     <div className="h-4 md:h-10" />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-[length:200%_auto] animate-gradient-x italic inline-block pb-1 lg:mt-2 text-2xl sm:text-4xl md:text-7xl lg:text-[7rem] leading-[1.2] md:leading-[1.1]">
-                                        <div className="mb-1 md:mb-4">결과로</div>
-                                        <div>보답합니다.</div>
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-[length:200%_auto] animate-gradient-x italic inline-block pb-1 lg:mt-2 text-3xl sm:text-5xl md:text-8xl lg:text-[7rem] leading-[1.2] md:leading-[1.1]">
+                                        <div className="md:hidden whitespace-nowrap">결과로 보답합니다.</div>
+                                        <div className="hidden md:block">
+                                            <div className="mb-2 md:mb-4">결과로</div>
+                                            <div>보답합니다.</div>
+                                        </div>
                                     </span>
                                 </h2>
 
