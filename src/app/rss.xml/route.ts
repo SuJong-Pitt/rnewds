@@ -3,7 +3,7 @@ import { getDb, Project } from "@/lib/d1";
 export async function GET() {
     const baseUrl = "https://rnewds.com";
     const db = getDb();
-    
+
     let projects: Project[] = [];
     try {
         const result = await db.prepare("SELECT * FROM projects ORDER BY created_at DESC LIMIT 10").all();
