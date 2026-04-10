@@ -12,8 +12,8 @@ const portfolioItems = [
     aura2: "#6366f1",
     aura3: "#8b5cf6",
     tailwindGrad: "from-blue-600 via-indigo-500 to-violet-600",
-    tag: "상세페이지 디자인",
-    client: "DETAIL PAGE — No.01",
+    tag: "식품 상세페이지 디자인",
+    client: "FOOD & BEVERAGE — NO.01"
   },
   {
     src: "/images/portfolio/portfolio_2.png",
@@ -22,8 +22,8 @@ const portfolioItems = [
     aura2: "#ec4899",
     aura3: "#a855f7",
     tailwindGrad: "from-rose-500 via-pink-500 to-purple-600",
-    tag: "브랜드 아이덴티티",
-    client: "BRAND STORY — No.02",
+    tag: "가전 상세페이지 디자인",
+    client: "HOME APPLIANCES — NO.02"
   },
   {
     src: "/images/portfolio/portfolio_3.png",
@@ -32,8 +32,8 @@ const portfolioItems = [
     aura2: "#14b8a6",
     aura3: "#06b6d4",
     tailwindGrad: "from-emerald-500 via-teal-400 to-cyan-600",
-    tag: "패키지 디자인",
-    client: "PACKAGE DESIGN — No.03",
+    tag: "뷰티 상세페이지 디자인",
+    client: "BEAUTY & COSMETICS — NO.03"
   },
   {
     src: "/images/portfolio/portfolio_4.png",
@@ -42,8 +42,8 @@ const portfolioItems = [
     aura2: "#f97316",
     aura3: "#ef4444",
     tailwindGrad: "from-amber-400 via-orange-500 to-red-500",
-    tag: "쇼핑몰 구축",
-    client: "STORE BUILT — No.04",
+    tag: "캠핑/아웃도어 상세페이지",
+    client: "OUTDOOR & CAMPING — NO.04"
   },
   {
     src: "/images/portfolio/portfolio_5.png",
@@ -52,8 +52,8 @@ const portfolioItems = [
     aura2: "#3b82f6",
     aura3: "#6366f1",
     tailwindGrad: "from-sky-400 via-blue-500 to-indigo-600",
-    tag: "콘텐츠 전략",
-    client: "CONTENT STRATEGY — No.05",
+    tag: "뷰티 상세페이지 디자인",
+    client: "BEAUTY & COSMETICS — NO.05"
   },
   {
     src: "/images/portfolio/portfolio_6.png",
@@ -62,8 +62,8 @@ const portfolioItems = [
     aura2: "#a855f7",
     aura3: "#ec4899",
     tailwindGrad: "from-fuchsia-500 via-purple-500 to-pink-500",
-    tag: "제품 기획전",
-    client: "EDITION PLAN — No.06",
+    tag: "반려동물 상세페이지 디자인",
+    client: "PET CARE SUPPLIES — NO.06"
   },
   {
     src: "/images/portfolio/portfolio_7.png",
@@ -72,8 +72,8 @@ const portfolioItems = [
     aura2: "#f43f5e",
     aura3: "#f97316",
     tailwindGrad: "from-red-500 via-rose-500 to-orange-500",
-    tag: "프로모션 페이지",
-    client: "PROMO PAGE — No.07",
+    tag: "식품 상세페이지 디자인",
+    client: "FOOD & BEVERAGE — NO.07"
   },
 ];
 
@@ -405,9 +405,8 @@ export function PortfolioAuraSlider() {
               key={i}
               onClick={() => goTo(i)}
               aria-label={`Go to slide ${i + 1}`}
-              className={`relative h-[5px] rounded-full overflow-hidden transition-all duration-500 ease-out ${
-                i === activeIndex ? "w-10 md:w-14" : "w-4 md:w-5"
-              }`}
+              className={`relative h-[5px] rounded-full overflow-hidden transition-all duration-500 ease-out ${i === activeIndex ? "w-10 md:w-14" : "w-4 md:w-5"
+                }`}
               style={{ background: i < activeIndex ? `${item.aura1}55` : "rgba(203,213,225,0.5)" }}
             >
               {i === activeIndex && (
