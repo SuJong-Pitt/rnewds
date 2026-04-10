@@ -84,7 +84,15 @@ export function PortfolioAuraSlider() {
   const [direction, setDirection] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const goTo = useCallback(
     (index: number, dir?: number) => {
@@ -139,51 +147,42 @@ export function PortfolioAuraSlider() {
           TRIPLE LAYER AURA SYSTEM
       ══════════════════════════════════════════ */}
 
-      {/* Layer 1: Far Outer Halo — slow breathing */}
-      <AnimatePresence mode="wait">
+      {/* ══════════════════════════════════════════
+          OPTIMIZED AURA ENGINE
+      ══════════════════════════════════════════ */}
+      <AnimatePresence>
+        {/* Combined Background Aura — Cross-fading for smoothness */}
         <motion.div
-          key={`halo-${activeIndex}`}
-          initial={{ opacity: 0, scale: 0.7 }}
-          animate={{ opacity: [0, 0.55, 0.45], scale: [0.7, 1.18, 1.1] }}
-          exit={{ opacity: 0, scale: 0.8 }}
-          transition={{ duration: 1.8, ease: "easeOut", times: [0, 0.5, 1] }}
-          className="absolute -inset-[8%] md:-inset-[22%] -z-30 pointer-events-none rounded-[40%]"
-          style={{
-            background: `radial-gradient(ellipse 80% 70% at 50% 50%, ${current.aura1}88, ${current.aura2}44, transparent 70%)`,
-            filter: "blur(70px)",
-          }}
-        />
-      </AnimatePresence>
-
-      {/* Layer 2: Mid Corona — faster pulse */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={`corona-${activeIndex}`}
+          key={`aura-bg-${activeIndex}`}
           initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 0.65, 0.5, 0.65] }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 2.5, ease: "easeInOut", times: [0, 0.3, 0.6, 1], repeat: Infinity, repeatType: "mirror" }}
-          className="absolute -inset-[2%] md:-inset-[10%] -z-20 pointer-events-none rounded-[30%]"
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          className="absolute inset-[0%] md:-inset-[15%] -z-30 pointer-events-none rounded-[40%]"
           style={{
-            background: `radial-gradient(ellipse 70% 60% at 50% 55%, ${current.aura2}77, ${current.aura3}33, transparent 65%)`,
-            filter: "blur(45px)",
+            background: `radial-gradient(ellipse 80% 80% at 50% 50%, ${current.aura1}66, ${current.aura2}33, transparent 75%)`,
+            filter: isMobile ? "blur(40px)" : "blur(80px)",
+            willChange: "opacity",
+            transform: "translateZ(0)",
           }}
         />
-      </AnimatePresence>
 
-      {/* Layer 3: Inner Edge Glow — sharp, vivid */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={`edge-glow-${activeIndex}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.6 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.8 }}
-          className="absolute inset-0 -z-10 pointer-events-none rounded-[24px] md:rounded-[4rem]"
-          style={{
-            boxShadow: `0 0 60px 20px ${current.aura1}55, 0 0 120px 40px ${current.aura2}33`,
-          }}
-        />
+        {/* Inner Edge Glow — Only on non-mobile for better performance */}
+        {!isMobile && (
+          <motion.div
+            key={`edge-glow-${activeIndex}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.5 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+            className="absolute inset-0 -z-10 pointer-events-none rounded-[24px] md:rounded-[4rem]"
+            style={{
+              boxShadow: `0 0 60px 20px ${current.aura1}44`,
+              willChange: "opacity",
+              transform: "translateZ(0)",
+            }}
+          />
+        )}
       </AnimatePresence>
 
       {/* ══════════════════════════════════════════
@@ -206,6 +205,8 @@ export function PortfolioAuraSlider() {
         className="relative overflow-hidden rounded-[24px] md:rounded-[4rem] bg-slate-950 z-10"
         style={{
           boxShadow: `0 40px 120px -20px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08) inset`,
+          transform: "translateZ(0)",
+          willChange: "transform",
         }}
       >
         {/* Cinematic Letterbox Transition Effect */}
@@ -302,6 +303,7 @@ export function PortfolioAuraSlider() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ delay: 0.5, type: "spring", bounce: 0.4 }}
               className="absolute top-4 right-4 md:top-8 md:right-8 z-30"
+              style={{ transform: "translateZ(0)" }}
             >
               <div
                 className="flex items-center gap-2 px-4 py-2 rounded-full"
@@ -309,7 +311,7 @@ export function PortfolioAuraSlider() {
                   background: "rgba(0,0,0,0.35)",
                   backdropFilter: "blur(16px)",
                   border: "1px solid rgba(255,255,255,0.15)",
-                  boxShadow: `0 0 16px 2px ${current.aura1}44`,
+                  boxShadow: isMobile ? "none" : `0 0 16px 2px ${current.aura1}44`,
                 }}
               >
                 <div
