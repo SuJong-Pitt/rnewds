@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     },
     alternates: {
         canonical: "/",
+        types: {
+            'application/rss+xml': 'https://rnewds.com/rss.xml',
+        },
     },
     icons: {
         icon: '/images/icons/logo.svg',
