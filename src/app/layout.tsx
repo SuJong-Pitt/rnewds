@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         template: "%s | R:new Design Studio"
     },
     description: "가치를 증명하는 압도적 비주얼의 힘. 데이터의 설계로 완성하는 프리미엄 상세페이지 전문가, R:new Design Studio입니다.",
-    keywords: ["상세페이지", "디자인", "상세페이지 디자이너", "쇼핑몰 디자인", "UI/UX", "프리미엄 디자인", "기획형 상세페이지"],
+    keywords: ["상세페이지", "디자인", "상세페이지 디자이너", "쇼핑몰 디자인", "UI/UX", "프리미엄 디자인", "기획형 상세페이지", "상세페이지 외주"],
     authors: [{ name: "R:new Design Studio" }],
     creator: "R:new Design Studio",
     publisher: "R:new Design Studio",
@@ -33,6 +33,14 @@ export const metadata: Metadata = {
         description: "가치를 증명하는 압도적 비주얼의 힘, R:new Design Studio",
         url: "https://rnewds.com",
         siteName: "R:new Design Studio",
+        images: [
+            {
+                url: "/images/og-image.png",
+                width: 1200,
+                height: 630,
+                alt: "R:new Design Studio",
+            },
+        ],
         locale: "ko_KR",
         type: "website",
     },
@@ -40,6 +48,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "R:new Design Studio",
         description: "하이엔드 상세페이지 기획/디자인 전문가",
+        images: ["/images/og-image.png"],
     },
     verification: {
         google: "google-site-verification-placeholder",
