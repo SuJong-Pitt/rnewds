@@ -331,7 +331,7 @@ export function PortfolioAuraSlider() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute bottom-6 left-5 md:bottom-12 md:left-12 z-30"
+              className="absolute bottom-6 left-5 right-5 md:bottom-12 md:left-12 md:right-12 z-30"
             >
               {/* Tag Badge with sparkle dot */}
               <div className="flex items-center gap-2 mb-2 md:mb-3">
@@ -356,7 +356,7 @@ export function PortfolioAuraSlider() {
 
               {/* Shimmer Title */}
               <h3
-                className="text-white font-heading font-black tracking-tighter leading-none text-xl md:text-3xl lg:text-4xl"
+                className="text-white font-heading font-black tracking-tighter leading-tight text-base md:text-3xl lg:text-4xl"
                 style={{
                   textShadow: `0 2px 20px ${current.aura1}66, 0 0 40px ${current.aura2}22`,
                 }}
