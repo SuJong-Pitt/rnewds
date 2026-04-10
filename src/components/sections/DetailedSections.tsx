@@ -238,8 +238,11 @@ export function ProcessSection() {
                 <motion.div {...fadeInUp} className="text-center mb-16 md:mb-24">
                     <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
                         <h2 className="text-3xl md:text-5xl lg:text-7xl font-heading font-black text-white tracking-tighter leading-tight text-center">
-                            <div className="mb-2 md:mb-4">복잡한 과정 대신,</div>
-                            <span className="text-blue-500">필요한 단계만 정리해 설계합니다.</span>
+                            <div className="mb-2 md:mb-4 leading-[1.3] md:leading-tight">복잡한 과정 대신,</div>
+                            <div className="text-blue-500 leading-[1.3] md:leading-tight">
+                                <span className="block md:inline">필요한 단계만 정리해</span>
+                                <span className="block md:inline">설계합니다.</span>
+                            </div>
                         </h2>
                         <div className="h-4 md:h-8" />
                         <p className="text-lg md:text-3xl text-slate-400 font-light tracking-tight break-keep">
