@@ -65,14 +65,16 @@ export function ProjectShowcase() {
                                 transition={{ duration: 0.8 }}
                                 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.6rem] font-heading font-black text-slate-950 tracking-[-0.05em] leading-[1.1] antialiased text-balance break-keep"
                             >
-                                <span className="block mb-2 text-transparent bg-clip-text bg-gradient-to-br from-slate-950 via-slate-800 to-slate-950">최상의 결과물로</span>
-                                <span className="relative inline-block italic">
-                                    <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-700 bg-[length:200%_auto] animate-gradient-x px-1">가치를 증명</span>
-                                    {/* Sophisticated Architectural Underglow */}
-                                    <div className="absolute -bottom-2 sm:-bottom-3 left-0 w-full h-[6px] sm:h-[10px] bg-blue-500/10 blur-[4px] rounded-full" />
-                                    <div className="absolute -bottom-2 sm:-bottom-3 left-0 w-full h-[2px] sm:h-[4px] bg-gradient-to-r from-blue-400 via-indigo-400 to-transparent rounded-full" />
-                                </span>
-                                <span className="ml-2">합니다.</span>
+                                <span className="block mb-1 md:mb-2 text-transparent bg-clip-text bg-gradient-to-br from-slate-950 via-slate-800 to-slate-950">보이는 디자인이 아니라,</span>
+                                <div className="flex flex-wrap items-center">
+                                    <span className="relative inline-block italic">
+                                        <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-700 bg-[length:200%_auto] animate-gradient-x px-1">구매 흐름</span>
+                                        {/* Sophisticated Architectural Underglow */}
+                                        <div className="absolute -bottom-1 sm:-bottom-3 left-0 w-full h-[4px] sm:h-[10px] bg-blue-500/10 blur-[4px] rounded-full" />
+                                        <div className="absolute -bottom-1 sm:-bottom-3 left-0 w-full h-[1.5px] sm:h-[4px] bg-gradient-to-r from-blue-400 via-indigo-400 to-transparent rounded-full" />
+                                    </span>
+                                    <span className="whitespace-nowrap">을 기준으로 만듭니다.</span>
+                                </div>
                             </motion.h2>
                         </div>
                     </div>
@@ -82,8 +84,8 @@ export function ProjectShowcase() {
                         viewport={{ once: true }}
                         className="text-slate-500 max-w-sm text-base md:text-xl font-light leading-relaxed tracking-tight break-keep border-l-4 border-blue-500/20 pl-8 md:pl-10 mb-6 text-balance"
                     >
-                        단순한 포트폴리오를 넘어 <span className="text-slate-900 font-medium">비즈니스 성장을 견인</span>한 <br className="hidden md:block" />
-                        R:new Design Studio의 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 font-bold italic">마스터피스</span>입니다.
+                        복잡하지 않게, <br className="hidden md:block" />
+                        <span className="text-slate-900 font-medium">핵심만 남겨</span> 구성합니다.
                     </motion.div>
                 </div>
 

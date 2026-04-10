@@ -88,15 +88,16 @@ export function PricingSection() {
                         <div className="max-w-3xl">
                             <span className="text-[10px] font-black tracking-[0.4em] text-slate-400 uppercase mb-4 block">Pricing Architecture</span>
                               <h2 className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-heading font-black text-slate-950 tracking-tighter leading-[1.1] mb-4 flex flex-col gap-1 sm:gap-2 break-keep">
-                                <span className="text-sm md:text-2xl font-light text-slate-400 tracking-normal mb-1">압도적 성과를 위한</span>
+                                <span className="text-sm md:text-2xl font-light text-slate-400 tracking-normal mb-1">결과를 고려한,</span>
                                 <span className="text-slate-950">
-                                    합리적 <span className="text-indigo-600 italic">설계.</span>
+                                    현실적인 <span className="text-indigo-600 italic">설계.</span>
                                 </span>
                             </h2>
                         </div>
                         <div className="max-w-md pb-2">
                             <p className="text-slate-500 text-base md:text-lg font-light leading-relaxed break-keep">
-                                단순한 페이지 제작을 넘어, 브랜드의 가치를 증명하고 실제 매출로 이어지는 가장 강력한 전술을 제안합니다.
+                                제품의 강점을, <br className="hidden md:block" />
+                                <span className="text-slate-900 font-medium whitespace-nowrap">소비자 관점에서</span> 정리합니다.
                             </p>
                         </div>
                     </div>

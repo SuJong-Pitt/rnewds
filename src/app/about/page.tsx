@@ -42,8 +42,8 @@ export default function AboutPage() {
                                         <span className="font-heading font-black tracking-tight text-2xl md:text-3xl italic px-1">R:new Design Studio</span>
                                     </div>
                                     <p className="text-slate-400 text-lg md:text-xl font-medium leading-relaxed max-w-md">
-                                        데이터로 설계하고 비주얼로 압도하는 <br />
-                                        <span className="text-white">프리미엄 상세페이지</span> 전문 스튜디오입니다.
+                                        이해되고 선택되는 디자인 <br />
+                                        <span className="text-white">상세페이지</span> 제작 스튜디오입니다.
                                     </p>
                                 </div>
                             </div>
