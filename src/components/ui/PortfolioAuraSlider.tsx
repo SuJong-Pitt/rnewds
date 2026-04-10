@@ -8,12 +8,12 @@ const portfolioItems = [
   {
     src: "/images/portfolio/portfolio_1.png",
     label: "Project 01",
-    aura1: "#3b82f6",   // blue-500
-    aura2: "#6366f1",   // indigo-500
-    aura3: "#8b5cf6",   // violet-500
+    aura1: "#3b82f6",
+    aura2: "#6366f1",
+    aura3: "#8b5cf6",
     tailwindGrad: "from-blue-600 via-indigo-500 to-violet-600",
     tag: "상세페이지 디자인",
-    client: "AURELIA DERMA",
+    client: "DETAIL PAGE — No.01",
   },
   {
     src: "/images/portfolio/portfolio_2.png",
@@ -23,7 +23,7 @@ const portfolioItems = [
     aura3: "#a855f7",
     tailwindGrad: "from-rose-500 via-pink-500 to-purple-600",
     tag: "브랜드 아이덴티티",
-    client: "LUMINOUS BEAUTY",
+    client: "BRAND STORY — No.02",
   },
   {
     src: "/images/portfolio/portfolio_3.png",
@@ -33,7 +33,7 @@ const portfolioItems = [
     aura3: "#06b6d4",
     tailwindGrad: "from-emerald-500 via-teal-400 to-cyan-600",
     tag: "패키지 디자인",
-    client: "NATURE REPUBLIC",
+    client: "PACKAGE DESIGN — No.03",
   },
   {
     src: "/images/portfolio/portfolio_4.png",
@@ -43,7 +43,7 @@ const portfolioItems = [
     aura3: "#ef4444",
     tailwindGrad: "from-amber-400 via-orange-500 to-red-500",
     tag: "쇼핑몰 구축",
-    client: "PREMIUM GOODS",
+    client: "STORE BUILT — No.04",
   },
   {
     src: "/images/portfolio/portfolio_5.png",
@@ -53,7 +53,7 @@ const portfolioItems = [
     aura3: "#6366f1",
     tailwindGrad: "from-sky-400 via-blue-500 to-indigo-600",
     tag: "콘텐츠 전략",
-    client: "TECH INNOVATION",
+    client: "CONTENT STRATEGY — No.05",
   },
   {
     src: "/images/portfolio/portfolio_6.png",
@@ -63,7 +63,7 @@ const portfolioItems = [
     aura3: "#ec4899",
     tailwindGrad: "from-fuchsia-500 via-purple-500 to-pink-500",
     tag: "제품 기획전",
-    client: "FASHION WEEK",
+    client: "EDITION PLAN — No.06",
   },
   {
     src: "/images/portfolio/portfolio_7.png",
@@ -73,7 +73,7 @@ const portfolioItems = [
     aura3: "#f97316",
     tailwindGrad: "from-red-500 via-rose-500 to-orange-500",
     tag: "프로모션 페이지",
-    client: "HOLIDAY SPECIAL",
+    client: "PROMO PAGE — No.07",
   },
 ];
 
@@ -324,17 +324,17 @@ export function PortfolioAuraSlider() {
               </div>
             </motion.div>
 
-            {/* ── BOTTOM LEFT: Tag + Title ── */}
+            {/* Bottom Text & Branding */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute bottom-6 left-5 md:bottom-14 md:left-14 z-30"
+              className="absolute bottom-6 left-5 md:bottom-12 md:left-12 z-30"
             >
               {/* Tag Badge with sparkle dot */}
-              <div className="flex items-center gap-2 mb-3">
+              <div className="flex items-center gap-2 mb-2 md:mb-3">
                 <div
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] md:text-xs font-bold tracking-widest uppercase text-white"
+                  className="flex items-center gap-2 px-2.5 py-1 md:px-3 md:py-1.5 rounded-full text-[8px] md:text-[10px] font-bold tracking-widest uppercase text-white"
                   style={{
                     background: "rgba(0,0,0,0.45)",
                     backdropFilter: "blur(12px)",
@@ -345,7 +345,7 @@ export function PortfolioAuraSlider() {
                   <motion.span
                     animate={{ scale: [1, 1.5, 1], opacity: [1, 0.6, 1] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    className="inline-block w-1.5 h-1.5 rounded-full"
+                    className="inline-block w-1 h-1 md:w-1.5 md:h-1.5 rounded-full"
                     style={{ background: current.aura1, boxShadow: `0 0 6px 2px ${current.aura1}` }}
                   />
                   {current.tag}
@@ -354,9 +354,9 @@ export function PortfolioAuraSlider() {
 
               {/* Shimmer Title */}
               <h3
-                className="text-white font-heading font-black tracking-tighter leading-none text-3xl md:text-5xl lg:text-6xl"
+                className="text-white font-heading font-black tracking-tighter leading-none text-xl md:text-3xl lg:text-4xl"
                 style={{
-                  textShadow: `0 2px 30px ${current.aura1}88, 0 0 80px ${current.aura2}44`,
+                  textShadow: `0 2px 20px ${current.aura1}66, 0 0 40px ${current.aura2}22`,
                 }}
               >
                 {current.client}
