@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         template: "%s | R:new Design Studio"
     },
     description: "가치를 증명하는 압도적 비주얼의 힘. 데이터의 설계로 완성하는 프리미엄 상세페이지 전문가, R:new Design Studio입니다.",
-    keywords: ["상세페이지", "디자인", "상세페이지 디자이너", "쇼핑몰 디자인", "UI/UX", "프리미엄 디자인", "기획형 상세페이지", "상세페이지 외주"],
+    keywords: ["상세페이지", "디자인", "상세페이지 디자이너", "쇼핑몰 디자인", "UI/UX", "프리미엄 디자인", "기획형 상세페이지", "상세페이지 외주", "알뉴디자인스튜디오", "알뉴디자인"],
     authors: [{ name: "R:new Design Studio" }],
     creator: "R:new Design Studio",
     publisher: "R:new Design Studio",
