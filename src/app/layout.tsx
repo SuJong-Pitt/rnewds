@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     verification: {
         google: "google-site-verification-placeholder",
         other: {
-            "naver-site-verification": ["naver-site-verification-placeholder"],
+            "naver-site-verification": ["fe3f328b4d42790ae8e31bf77a0f14389fcef98a"],
         },
     },
     robots: {
