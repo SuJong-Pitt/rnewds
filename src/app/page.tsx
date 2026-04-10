@@ -14,7 +14,7 @@ import {
 import { ProjectShowcase } from "@/components/projects/ProjectShowcase";
 import { TechStack, ContactSection } from "@/components/sections/Sections";
 import { PricingSection } from "@/components/sections/PricingSection";
-import { PortfolioMockup } from "@/components/ui/PortfolioMockup";
+import { PortfolioAuraSlider } from "@/components/ui/PortfolioAuraSlider";
 
 const fadeInUp = {
     initial: { opacity: 0, y: 30 },
@@ -25,8 +25,6 @@ const fadeInUp = {
 export default function Home() {
     const { scrollY } = useScroll();
     const y1 = useTransform(scrollY, [0, 800], [0, 300]);
-    const rotateX = useTransform(scrollY, [0, 800], [0, 12]);
-    const scale = useTransform(scrollY, [0, 800], [1, 1.05]);
 
     return (
         <main className="relative w-full bg-white selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden">
@@ -148,14 +146,12 @@ export default function Home() {
                     </div>
 
                     <motion.div
-                        style={{ rotateX, scale }}
-                        initial={{ opacity: 0, y: 150 }}
+                        initial={{ opacity: 0, y: 100 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 2, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
-                        className="mt-32 relative w-full max-w-6xl mx-auto"
+                        transition={{ duration: 1.8, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
+                        className="mt-12 md:mt-24 relative w-[calc(100%+2rem)] -ml-4 md:w-full md:ml-auto max-w-5xl mx-auto px-0 md:px-10"
                     >
-                        <div className="absolute -inset-10 bg-blue-600/5 blur-[120px] -z-10 rounded-[100px]"></div>
-                        <PortfolioMockup />
+                        <PortfolioAuraSlider />
                     </motion.div>
                 </div>
             </section>
