@@ -39,8 +39,8 @@ export function AboutHero() {
                     transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                     className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-black leading-[1.05] tracking-tight text-slate-950 text-balance"
                 >
-                    데이터로 기획하는 <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 italic px-1">설계의 미학.</span>
+                    예쁘게만 만드는 <br />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 italic px-1">디자인은 하지 않습니다.</span>
                 </motion.h1>
 
                 <motion.p
@@ -49,9 +49,22 @@ export function AboutHero() {
                     transition={{ duration: 1, delay: 0.2 }}
                     className="text-lg md:text-2xl text-slate-500 max-w-4xl mx-auto font-light leading-relaxed tracking-tight break-keep text-balance"
                 >
-                    우리는 데이터의 심리와 건축학적 정밀함을 결합하여 <br className="hidden md:block" />
-                    압도적인 <span className="text-slate-950 font-medium">구매 전환</span>을 이끌어내는 마스터피스를 건축합니다.
+                    Rnew Design Studio는 상품이 더 잘 보이고, 더 쉽게 이해되고, <br className="hidden md:block" />
+                    <span className="text-slate-950 font-medium tracking-tight">더 잘 팔리도록 상세페이지를 만듭니다.</span>
                 </motion.p>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.4 }}
+                    className="pt-8"
+                >
+                    <a href="https://pf.kakao.com/_xaxgJdX/chat" target="_blank" rel="noopener noreferrer">
+                        <Button className="rounded-full px-10 py-6 md:py-8 text-sm md:text-lg font-bold bg-slate-950 text-white hover:bg-blue-600 transition-all shadow-xl">
+                            프로젝트 문의하기
+                        </Button>
+                    </a>
+                </motion.div>
 
             </div>
         </section>
@@ -72,13 +85,20 @@ export function PhilosophySection() {
                     >
                         <div className="space-y-8">
                             <h2 className="text-blue-600 text-[10px] md:text-xs font-black tracking-[0.5em] opacity-60">Core Philosophy</h2>
-                            <h3 className="text-3xl md:text-6xl font-heading font-black text-slate-950 leading-[1.1] tracking-tight break-keep text-balance">
-                                아름다움 이전에 <br />
-                                <span className="text-blue-600 italic px-1">논리가 앞서야</span> 합니다.
+                            <h3 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-slate-950 leading-[1.1] tracking-tight break-keep text-balance">
+                                기획부터 연출, <br />
+                                <span className="text-blue-600 italic px-1">디자인까지 한 번에.</span>
                             </h3>
-                            <p className="text-lg md:text-2xl text-slate-500 leading-relaxed font-light tracking-tight break-keep text-balance">
-                                장식적인 요소는 본질을 흐립니다. 우리는 사용자의 시선을 추적하고 <span className="text-slate-950 font-medium">구매 버튼까지 도달하는 최단 거리</span>를 설계하는 기획적 정밀함을 최우선으로 합니다.
-                            </p>
+                            <div className="space-y-6 pt-2">
+                                <p className="text-lg md:text-xl text-slate-500 leading-relaxed font-light tracking-tight break-keep text-balance">
+                                    우리는 단순히 화면을 꾸미지 않습니다.<br />
+                                    상품의 장점을 정리하고, 고객이 궁금한 내용을 설계하고, <span className="text-slate-950 font-medium">구매로 이어지는 흐름까지 함께 만듭니다.</span>
+                                </p>
+                                <p className="text-lg md:text-xl text-slate-500 leading-relaxed font-light tracking-tight break-keep text-balance">
+                                    자료가 완벽하지 않아도 괜찮습니다.<br />
+                                    팔기 위한 페이지가 필요할 때, Rnew Design Studio가 <span className="text-slate-950 font-medium underline decoration-blue-200 underline-offset-4">가장 먼저 구조부터 다시 봅니다.</span>
+                                </p>
+                            </div>
                         </div>
                         <div className="flex items-center gap-6 py-4">
                             <div className="w-20 h-1 bg-blue-600/20 rounded-full overflow-hidden">
@@ -131,61 +151,57 @@ export function PhilosophySection() {
     );
 }
 
-export function ProcessSection() {
-    const steps = [
-        { icon: <BarChart3Icon size={24} />, title: "Data Analysis", label: "01", desc: "비즈니스 데이터와 소비자 심리를 심층 분석합니다." },
-        { icon: <LayersIcon size={24} />, title: "Architecture", label: "02", desc: "논리적 정보 설계로 최적의 동선을 구축합니다." },
-        { icon: <LightbulbIcon size={24} />, title: "Visualizing", label: "03", desc: "압도적 고퀄리티 그래픽으로 가치를 형상화합니다." },
-        { icon: <ZapIcon size={24} />, title: "Optimization", label: "04", desc: "상호작용 데이터를 기반으로 끊임없이 개선합니다." }
+export function StrengthSection() {
+    const strengths = [
+        { icon: <ZapIcon size={24} />, title: "시선을 끄는 디자인", label: "01", desc: "시각적 매력을 더해 트렌디하고 고퀄리티에 빛나는 그래픽 디자인을 선사합니다." },
+        { icon: <LayersIcon size={24} />, title: "계속 보게 만드는 흐름", label: "02", desc: "고객이 이탈하지 않고 끝까지 흥미를 잃지 않는 몰입감 있는 레이아웃을 구축합니다." },
+        { icon: <CheckCircle2Icon size={24} />, title: "구매하고 싶게 만드는 구성", label: "03", desc: "고객의 니즈와 심리를 치밀하게 파악해 구매 버튼을 누르게 만드는 전략을 세웁니다." },
+        { icon: <LightbulbIcon size={24} />, title: "이해를 돕는 카피", label: "04", desc: "아무리 복잡한 제품이라도 직관적이고 매력적으로 전달하는 세일즈 카피라이팅을 곁들입니다." }
     ];
 
     return (
-        <section className="relative section-padding-large bg-slate-950 text-white rounded-t-[40px] md:rounded-t-[100px] overflow-hidden">
-            {/* Visual Texture */}
-            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05] pointer-events-none"></div>
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/5 rounded-full blur-[160px] pointer-events-none"></div>
+        <section className="relative px-4 py-8 md:px-8">
+            <div className="relative section-padding-large bg-slate-950 text-white rounded-[40px] md:rounded-[80px] overflow-hidden">
+                {/* Visual Texture */}
+                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05] pointer-events-none"></div>
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/5 rounded-full blur-[160px] pointer-events-none"></div>
 
-            <div className="container mx-auto max-w-7xl relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 md:gap-32 items-center">
-                    <div className="space-y-12">
-                        <div className="space-y-8">
-                            <h2 className="text-blue-400 text-[10px] md:text-xs font-black tracking-[0.5em] opacity-60">Systematic Workflow</h2>
-                            <h3 className="text-3xl md:text-5xl lg:text-[4rem] font-heading font-black text-white leading-[1.05] tracking-tighter text-balance">
-                                투명하고 <br /> <span className="text-blue-400 italic px-1">정밀한</span> 프로세스.
-                            </h3>
-                            <p className="text-lg md:text-2xl text-slate-400 leading-relaxed max-w-lg font-light tracking-tight break-keep text-balance">
-                                막연한 직감이 아닌, <span className="text-white font-medium">검증된 데이터 시스템</span>을 통해 완성됩니다. 매 단계마다 당신의 비즈니스는 한 단계 더 진화합니다.
-                            </p>
+                <div className="container mx-auto max-w-7xl relative z-10 px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 md:gap-32 items-center">
+                        <div className="space-y-12">
+                            <div className="space-y-8">
+                                <h2 className="text-blue-400 text-[10px] md:text-xs font-black tracking-[0.5em] opacity-60">All-in-One Solution</h2>
+                                <h3 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-white leading-[1.1] tracking-tighter text-balance">
+                                    기획부터 연출, <br /> <span className="text-blue-400 italic px-1">디자인까지 한 번에</span>
+                                </h3>
+                            </div>
                         </div>
-                        <Button className="rounded-full px-10 py-7 text-sm font-bold bg-white text-slate-950 hover:bg-blue-400 hover:text-white transition-all shadow-xl shadow-white/5">
-                            EXPLORE PROCESS
-                        </Button>
-                    </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10">
-                        {steps.map((step, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                                className="group relative"
-                            >
-                                <div className="bg-white/5 border border-white/10 p-8 md:p-12 rounded-[32px] md:rounded-[48px] hover:bg-white/10 transition-all duration-500 h-full flex flex-col justify-between shadow-sm group-hover:shadow-blue-500/10 group-hover:-translate-y-2">
-                                    <div className="flex justify-between items-start mb-10 md:mb-12">
-                                        <div className="text-blue-400 w-12 h-12 flex items-center justify-center bg-white/5 rounded-2xl group-hover:scale-110 transition-transform">
-                                            {step.icon}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10">
+                            {strengths.map((str, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                                    className="group relative"
+                                >
+                                    <div className="bg-white/5 border border-white/10 p-8 md:p-10 rounded-[32px] md:rounded-[40px] hover:bg-white/10 transition-all duration-500 h-full flex flex-col justify-between shadow-sm group-hover:shadow-blue-500/10 group-hover:-translate-y-2">
+                                        <div className="flex justify-between items-start mb-10 md:mb-12">
+                                            <div className="text-blue-400 w-12 h-12 flex items-center justify-center bg-white/5 rounded-2xl group-hover:scale-110 transition-transform">
+                                                {str.icon}
+                                            </div>
+                                            <span className="text-4xl font-black text-white/10 italic group-hover:text-blue-500/20 transition-colors">{str.label}</span>
                                         </div>
-                                        <span className="text-4xl font-black text-white/10 italic group-hover:text-blue-500/20 transition-colors">{step.label}</span>
+                                        <div className="space-y-4 relative z-10">
+                                            <h4 className="text-xl md:text-xl font-black tracking-tight">{str.title}</h4>
+                                            <p className="text-sm text-slate-400 leading-relaxed font-light tracking-tight text-balance">{str.desc}</p>
+                                        </div>
                                     </div>
-                                    <div className="space-y-4 relative z-10">
-                                        <h4 className="text-xl md:text-2xl font-black tracking-tight">{step.title}</h4>
-                                        <p className="text-sm md:text-base text-slate-400 leading-relaxed font-light tracking-tight text-balance">{step.desc}</p>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -228,8 +244,8 @@ export function TrustSection() {
                             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
                             className="text-4xl md:text-6xl lg:text-8xl font-heading font-black text-slate-950 tracking-tighter leading-[0.95] text-balance"
                         >
-                            디자인은 감각이 아니라, <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 italic px-2">신뢰의 결과물</span>이어야 합니다.
+                            이제 상품에만 <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 italic px-2">집중하세요</span>
                         </motion.h2>
 
                         <motion.p
@@ -239,8 +255,8 @@ export function TrustSection() {
                             transition={{ delay: 0.4, duration: 1 }}
                             className="text-lg md:text-2xl text-slate-500 font-light max-w-2xl mx-auto tracking-tight break-keep border-t border-slate-200 pt-10 text-balance"
                         >
-                            수많은 명작들이 증명하는 R:new Design Studio의 정체성은 <br className="hidden md:block" />
-                            당신의 비즈니스 가치를 완성하는 <span className="text-slate-950 font-medium italic">마지막 결정적 조각</span>입니다.
+                            매출을 이끄는 <span className="text-slate-950 font-medium italic">상세페이지 제작</span>은 <br className="hidden md:block" />
+                            Rnew Design Studio가 함께합니다.
                         </motion.p>
                     </div>
 
@@ -264,7 +280,7 @@ export function TrustSection() {
                                 </div>
 
                                 <div className="w-full py-8 md:py-14 px-10 md:px-20 rounded-[35px] md:rounded-[60px] bg-slate-950 text-white flex items-center justify-between group-hover/item:bg-yellow-400 group-hover/item:text-slate-950 transition-all duration-700 shadow-[0_40px_100px_-20px_rgba(250,204,21,0.2)]">
-                                    <span className="text-lg sm:text-2xl md:text-5xl font-black tracking-tighter italic whitespace-nowrap">상담 및 프로젝트 시작</span>
+                                    <span className="text-[1.1rem] sm:text-2xl md:text-5xl font-black tracking-tighter italic whitespace-nowrap">프로젝트 상담 신청하기</span>
                                     <ArrowRightIcon size={24} className="md:w-12 md:h-12 group-hover/item:translate-x-4 transition-transform duration-700 shrink-0 ml-4" />
                                 </div>
                             </motion.div>

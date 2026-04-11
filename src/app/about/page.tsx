@@ -6,7 +6,6 @@ import { Navbar } from "@/components/ui/Navbar";
 import {
     AboutHero,
     PhilosophySection,
-    ProcessSection,
     TrustSection
 } from "@/components/sections/AboutSections";
 
@@ -21,13 +20,10 @@ export default function AboutPage() {
                 <AboutHero />
 
 
-                {/* Section 3: Philosophy - Logic over Aesthetics */}
+                {/* Section 2: Philosophy - Logic over Aesthetics */}
                 <PhilosophySection />
 
-                {/* Section 4: Process - Transparent Workflow */}
-                <ProcessSection />
-
-                {/* Section 5: Trust - R:NEW Identity */}
+                {/* Section 3: Trust - R:NEW Identity */}
                 <TrustSection />
 
                 {/* Footer - Unified Dark Style */}
