@@ -27,9 +27,15 @@ export const metadata: Metadata = {
         },
     },
     icons: {
-        icon: '/images/icons/logo.svg',
-        shortcut: '/images/icons/logo.svg',
-        apple: '/images/icons/logo.svg',
+        // 1순위: 고화질 SVG (브라우저 탭용)
+        icon: [
+            { url: '/images/icons/logo.svg', type: 'image/svg+xml' },
+            { url: '/favicon.ico', sizes: 'any' }, // 2순위: ICO (검색엔진 봇용)
+        ],
+        // 아이폰/아이패드 홈 화면 추가용
+        apple: [
+            { url: '/images/icons/logo.svg' },
+        ],
     },
     openGraph: {
         title: "R:new Design Studio | 하이엔드 상세페이지 기획/디자인",
