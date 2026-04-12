@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation";
 
 export function ProjectShowcase() {
     const [projects, setProjects] = useState<any[]>([]);
+    const [categories, setCategories] = useState<any[]>([]);
+    const [activeCategory, setActiveCategory] = useState<string>("all");
     const [loading, setLoading] = useState(true);
     const router = useRouter();
 
@@ -24,8 +26,35 @@ export function ProjectShowcase() {
             setLoading(false);
         };
 
+        const fetchCategories = async () => {
+            try {
+                const res = await fetch("/api/categories");
+                const data = await res.json();
+                if (Array.isArray(data)) setCategories(data);
+            } catch (error) {
+                console.error("Fetch categories error:", error);
+            }
+        };
+
         fetchProjects();
+        fetchCategories();
     }, []);
+
+    const filteredProjects = activeCategory === "all" 
+        ? projects 
+        : projects.filter(p => p.category_id?.toString() === activeCategory);
+
+    const groupedProjects = activeCategory === "all"
+        ? categories.map(c => ({
+            id: c.id,
+            name: c.name,
+            projects: projects.filter(p => p.category_id === c.id)
+        })).filter(g => g.projects.length > 0)
+        : [{
+            id: activeCategory,
+            name: categories.find(c => c.id.toString() === activeCategory)?.name || "Category",
+            projects: filteredProjects
+        }].filter(g => g.projects.length > 0);
 
     return (
         <section
@@ -89,56 +118,110 @@ export function ProjectShowcase() {
                     </motion.div>
                 </div>
 
+                {/* Category Pill Navigation */}
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="flex flex-wrap items-center gap-3 md:gap-4 mb-12 md:mb-16"
+                >
+                    <button
+                        onClick={() => setActiveCategory("all")}
+                        className={`px-6 py-3 rounded-full font-bold text-xs md:text-sm tracking-widest uppercase transition-all duration-300 backdrop-blur-md ${
+                            activeCategory === "all"
+                                ? "bg-slate-900 text-white shadow-xl shadow-slate-900/20 border border-slate-800"
+                                : "bg-white/60 text-slate-500 hover:bg-white hover:text-slate-900 shadow-sm border border-slate-200/50"
+                        }`}
+                    >
+                        전체보기
+                    </button>
+                    {categories.map((c) => (
+                        <button
+                            key={c.id}
+                            onClick={() => setActiveCategory(c.id.toString())}
+                            className={`px-6 py-3 rounded-full font-bold text-xs md:text-sm tracking-widest uppercase transition-all duration-300 backdrop-blur-md ${
+                                activeCategory === c.id.toString()
+                                    ? "bg-blue-600 text-white shadow-xl shadow-blue-600/30 border border-blue-500"
+                                    : "bg-white/60 text-slate-500 hover:bg-white hover:text-blue-600 shadow-sm border border-slate-200/50"
+                            }`}
+                        >
+                            {c.name}
+                        </button>
+                    ))}
+                </motion.div>
+
                 {loading ? (
                     <div className="flex justify-center py-40">
                         <Loader2 className="w-12 h-12 text-blue-600 animate-spin" />
                     </div>
                 ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
-                        <AnimatePresence>
-                            {projects.length > 0 ? (
-                                projects.map((project, index) => (
-                                    <motion.div
-                                        key={project.id}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.6, delay: index * 0.05 }}
-                                        viewport={{ once: true }}
-                                        onClick={() => router.push(`/projects/${project.id}`)}
-                                        className="group cursor-pointer"
+                    <div className="space-y-32">
+                        <AnimatePresence mode="popLayout">
+                            {groupedProjects.length > 0 ? (
+                                groupedProjects.map((group, groupIdx) => (
+                                    <motion.div 
+                                        key={group.id} 
+                                        layout
+                                        initial={{ opacity: 0, y: 30 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -20, transition: { duration: 0.2 } }}
+                                        transition={{ duration: 0.6 }}
+                                        className="space-y-12"
                                     >
-                                        <div className="relative aspect-square md:aspect-[3/4] overflow-hidden rounded-[40px] md:rounded-[50px] bg-slate-100 border border-slate-200/50 transition-all duration-700 shadow-[0_20px_50px_rgba(0,0,0,0.02)] group-hover:shadow-[0_40px_120px_rgba(37,99,235,0.15)]">
-                                            <img
-                                                src={project.image_url}
-                                                alt={project.title}
-                                                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-700"></div>
+                                        <div className="flex items-center gap-5 border-b border-slate-200/50 pb-6 mb-10 pl-2">
+                                            <div className={`w-3.5 h-12 rounded-full shadow-lg ${
+                                                ['bg-blue-500 shadow-blue-500/40', 'bg-violet-500 shadow-violet-500/40', 'bg-rose-500 shadow-rose-500/40', 'bg-amber-500 shadow-amber-500/40', 'bg-teal-500 shadow-teal-500/40'][groupIdx % 5]
+                                            }`}></div>
+                                            <h3 className="text-3xl md:text-5xl font-heading font-black text-slate-900 tracking-[-0.03em]">
+                                                {group.name}
+                                            </h3>
+                                        </div>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
+                                            {group.projects.map((project: any, index: number) => (
+                                                <motion.div
+                                                    key={project.id}
+                                                    initial={{ opacity: 0, y: 20 }}
+                                                    whileInView={{ opacity: 1, y: 0 }}
+                                                    transition={{ duration: 0.6, delay: index * 0.05 }}
+                                                    viewport={{ once: true }}
+                                                    onClick={() => router.push(`/projects/${project.id}`)}
+                                                    className="group cursor-pointer"
+                                                >
+                                                    <div className="relative aspect-square md:aspect-[3/4] overflow-hidden rounded-[40px] md:rounded-[50px] bg-slate-100 border border-slate-200/50 transition-all duration-700 shadow-[0_20px_50px_rgba(0,0,0,0.02)] group-hover:shadow-[0_40px_120px_rgba(37,99,235,0.15)]">
+                                                        <img
+                                                            src={project.image_url}
+                                                            alt={project.title}
+                                                            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                                                        />
+                                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-700"></div>
 
-                                            <div className="absolute bottom-8 md:bottom-12 left-8 md:left-12 right-8 md:right-12 z-10 transform group-hover:-translate-y-2 transition-transform duration-700">
-                                                <div className="flex items-center justify-between mb-6 md:mb-8">
-                                                    <div className="flex items-center gap-4">
-                                                        <div className="w-2.5 h-2.5 bg-blue-500 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.5)]"></div>
-                                                        <span className="text-[10px] md:text-[11px] font-black text-blue-400 tracking-[0.5em] uppercase">
-                                                            Premium Archive
-                                                        </span>
+                                                        <div className="absolute bottom-8 md:bottom-12 left-8 md:left-12 right-8 md:right-12 z-10 transform group-hover:-translate-y-2 transition-transform duration-700">
+                                                            <div className="flex items-center justify-between mb-6 md:mb-8">
+                                                                <div className="flex items-center gap-4">
+                                                                    <div className="w-2.5 h-2.5 bg-blue-500 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.5)]"></div>
+                                                                    <span className="text-[10px] md:text-[11px] font-black text-blue-400 tracking-[0.5em] uppercase">
+                                                                        {project.category_name || "Premium Archive"}
+                                                                    </span>
+                                                                </div>
+                                                                <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-500 transition-all duration-700 shadow-xl">
+                                                                    <ArrowUpRight className="text-white" size={24} />
+                                                                </div>
+                                                            </div>
+                                                            <h3 className="text-2xl md:text-4xl font-black text-white mb-2 md:mb-4 tracking-tighter leading-tight">
+                                                                {project.title}
+                                                            </h3>
+                                                            <p className="text-sm md:text-lg text-slate-300 line-clamp-2 leading-relaxed font-light tracking-tight opacity-0 group-hover:opacity-100 transition-all duration-700 break-keep">
+                                                                {project.description}
+                                                            </p>
+                                                        </div>
                                                     </div>
-                                                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-500 transition-all duration-700 shadow-xl">
-                                                        <ArrowUpRight className="text-white" size={24} />
-                                                    </div>
-                                                </div>
-                                                <h3 className="text-2xl md:text-4xl font-black text-white mb-2 md:mb-4 tracking-tighter leading-tight">
-                                                    {project.title}
-                                                </h3>
-                                                <p className="text-sm md:text-lg text-slate-300 line-clamp-2 leading-relaxed font-light tracking-tight opacity-0 group-hover:opacity-100 transition-all duration-700 break-keep">
-                                                    {project.description}
-                                                </p>
-                                            </div>
+                                                </motion.div>
+                                            ))}
                                         </div>
                                     </motion.div>
                                 ))
                             ) : (
-                                <div className="col-span-full p-12 md:p-40 rounded-[60px] md:rounded-[100px] border border-slate-200/50 bg-white/40 backdrop-blur-3xl flex flex-col items-center justify-center text-center relative overflow-hidden shadow-[0_60px_150px_rgba(0,0,0,0.04)]">
+                                <motion.div layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="col-span-full p-12 md:p-40 rounded-[60px] md:rounded-[100px] border border-slate-200/50 bg-white/40 backdrop-blur-3xl flex flex-col items-center justify-center text-center relative overflow-hidden shadow-[0_60px_150px_rgba(0,0,0,0.04)]">
                                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-indigo-500/[0.02]"></div>
 
                                     {/* Architectural Markers */}
@@ -172,7 +255,7 @@ export function ProjectShowcase() {
                                     {/* Geometric Finishing */}
                                     <div className="absolute bottom-12 left-12 w-32 h-[1px] bg-slate-200"></div>
                                     <div className="absolute bottom-12 right-12 w-32 h-[1px] bg-slate-200"></div>
-                                </div>
+                                </motion.div>
                             )}
                         </AnimatePresence>
                     </div>

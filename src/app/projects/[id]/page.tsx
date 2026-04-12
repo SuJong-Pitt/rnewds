@@ -81,7 +81,7 @@ export default function ProjectDetail() {
                         >
                             <div className="flex items-center gap-4 mb-8">
                                 <span className="px-4 py-1.5 bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-black uppercase tracking-widest rounded-full">
-                                    Featured Masterpiece
+                                    {project.category_name || "Featured Masterpiece"}
                                 </span>
                                 <span className="text-slate-400 font-bold text-xs">/ {new Date(project.created_at).getFullYear()}</span>
                             </div>

@@ -1,24 +1,12 @@
 import { NextResponse } from "next/server";
 import { getDb } from "@/lib/d1";
 
-// export const runtime = "edge"; // 로컬 Wrangler Bridge 지원을 위해 일시 주석 처리
-
 export async function GET(request: Request) {
   try {
     const db = getDb();
-    const { searchParams } = new URL(request.url);
-    const id = searchParams.get('id');
-
-    if (id) {
-        const result = await db
-          .prepare("SELECT p.*, c.name as category_name FROM projects p LEFT JOIN categories c ON p.category_id = c.id WHERE p.id = ?")
-          .bind(id)
-          .first();
-        return NextResponse.json(result);
-    }
-
+    
     const { results } = await db
-      .prepare("SELECT p.*, c.name as category_name FROM projects p LEFT JOIN categories c ON p.category_id = c.id ORDER BY p.created_at DESC")
+      .prepare("SELECT * FROM categories ORDER BY id ASC")
       .all();
     
     return NextResponse.json(results);
@@ -31,15 +19,15 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const db = getDb();
-    const { title, description, image_url, category_id } = await request.json();
+    const { name } = await request.json();
 
-    if (!title || !category_id) {
-        return NextResponse.json({ error: "Title and Category are required" }, { status: 400 });
+    if (!name) {
+        return NextResponse.json({ error: "Category name is required" }, { status: 400 });
     }
 
     const result = await db
-      .prepare("INSERT INTO projects (title, description, image_url, category_id) VALUES (?, ?, ?, ?)")
-      .bind(title, description, image_url, category_id || null)
+      .prepare("INSERT INTO categories (name) VALUES (?)")
+      .bind(name)
       .run();
 
     return NextResponse.json({ success: true, result });
@@ -52,15 +40,15 @@ export async function POST(request: Request) {
 export async function PUT(request: Request) {
   try {
     const db = getDb();
-    const { id, title, description, image_url, category_id } = await request.json();
+    const { id, name } = await request.json();
 
-    if (!id || !title || !category_id) {
-        return NextResponse.json({ error: "ID, Title, and Category are required" }, { status: 400 });
+    if (!id || !name) {
+        return NextResponse.json({ error: "ID and Name are required" }, { status: 400 });
     }
 
     await db
-      .prepare("UPDATE projects SET title = ?, description = ?, image_url = ?, category_id = ? WHERE id = ?")
-      .bind(title, description, image_url, category_id || null, id)
+      .prepare("UPDATE categories SET name = ? WHERE id = ?")
+      .bind(name, id)
       .run();
 
     return NextResponse.json({ success: true });
@@ -80,8 +68,18 @@ export async function DELETE(request: Request) {
         return NextResponse.json({ error: "ID is required" }, { status: 400 });
     }
 
+    // Check if any projects are using this category
+    const countResult = await db
+        .prepare("SELECT COUNT(*) as count FROM projects WHERE category_id = ?")
+        .bind(id)
+        .first();
+
+    if (countResult && countResult.count > 0) {
+        return NextResponse.json({ error: "이미 프로젝트에 매핑되어 있는 카테고리는 삭제할 수 없습니다. 먼저 관련 프로젝트의 카테고리를 변경하거나 삭제해주세요." }, { status: 400 });
+    }
+
     await db
-      .prepare("DELETE FROM projects WHERE id = ?")
+      .prepare("DELETE FROM categories WHERE id = ?")
       .bind(id)
       .run();
 
