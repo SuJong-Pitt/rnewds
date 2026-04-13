@@ -127,8 +127,11 @@ export function ProjectShowcase() {
                 >
                     <div className="inline-flex items-center p-1.5 md:p-2 bg-white/80 backdrop-blur-2xl rounded-[24px] md:rounded-[32px] border border-slate-200/60 shadow-[0_10px_30px_rgba(0,0,0,0.03)] relative">
                         <button
-                            onClick={() => setActiveCategory("all")}
-                            className={`relative z-10 px-6 md:px-10 py-2.5 md:py-4 rounded-[18px] md:rounded-[24px] font-black text-[12px] md:text-sm tracking-tighter uppercase transition-colors duration-500 ${
+                            onClick={() => {
+                                setActiveCategory("all");
+                                document.getElementById("projects")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                            }}
+                            className={`relative z-10 px-5 md:px-10 py-2.5 md:py-4 rounded-[18px] md:rounded-[24px] font-black text-[12px] md:text-sm tracking-tighter uppercase whitespace-nowrap transition-colors duration-500 ${
                                 activeCategory === "all" ? "text-white" : "text-slate-500 hover:text-slate-900"
                             }`}
                         >
@@ -144,8 +147,11 @@ export function ProjectShowcase() {
                         {categories.map((c) => (
                             <button
                                 key={c.id}
-                                onClick={() => setActiveCategory(c.id.toString())}
-                                className={`relative z-10 px-6 md:px-10 py-2.5 md:py-4 rounded-[18px] md:rounded-[24px] font-black text-[12px] md:text-sm tracking-tighter uppercase transition-colors duration-500 ${
+                                onClick={() => {
+                                    setActiveCategory(c.id.toString());
+                                    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                                }}
+                                className={`relative z-10 px-5 md:px-10 py-2.5 md:py-4 rounded-[18px] md:rounded-[24px] font-black text-[12px] md:text-sm tracking-tighter uppercase whitespace-nowrap transition-colors duration-500 ${
                                     activeCategory === c.id.toString() ? "text-white" : "text-slate-500 hover:text-blue-600"
                                 }`}
                             >
