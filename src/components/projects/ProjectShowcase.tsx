@@ -74,8 +74,8 @@ export function ProjectShowcase() {
                 style={{ backgroundImage: 'linear-gradient(#2563eb 0.5px, transparent 0.5px), linear-gradient(90deg, #2563eb 0.5px, transparent 0.5px)', backgroundSize: '120px 120px' }}></div>
 
             <div className="container mx-auto max-w-7xl relative z-10">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 md:mb-40 gap-10 md:gap-12">
-                    <div className="max-w-3xl space-y-12">
+                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 md:mb-32 gap-8 md:gap-12">
+                    <div className="max-w-4xl space-y-12">
                         <div className="space-y-8">
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.9 }}
@@ -92,17 +92,17 @@ export function ProjectShowcase() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8 }}
-                                className="text-[1.35rem] sm:text-4xl md:text-5xl lg:text-[3.6rem] font-heading font-black text-slate-950 tracking-[-0.05em] leading-tight antialiased text-balance break-keep"
+                                className="text-[1.35rem] sm:text-4xl md:text-5xl lg:text-[3.6rem] font-heading font-black text-slate-950 tracking-[-0.05em] leading-[1.15] antialiased text-balance break-keep"
                             >
                                 <div className="mb-2 md:mb-6 text-transparent bg-clip-text bg-gradient-to-br from-slate-950 via-slate-800 to-slate-950 leading-[1.3] md:leading-tight">보이는 디자인이 아니라,</div>
-                                <div className="flex flex-nowrap items-center leading-[1.3] md:leading-tight">
+                                <div className="flex flex-wrap items-center leading-[1.3] md:leading-tight">
                                     <span className="relative inline-block italic flex-shrink-0">
                                         <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-700 bg-[length:200%_auto] animate-gradient-x px-1">구매 흐름</span>
                                         {/* Sophisticated Architectural Underglow */}
                                         <div className="absolute -bottom-1 sm:-bottom-3 left-0 w-full h-[3px] sm:h-[10px] bg-blue-500/10 blur-[4px] rounded-full" />
                                         <div className="absolute -bottom-1 sm:-bottom-3 left-0 w-full h-[1px] sm:h-[4px] bg-gradient-to-r from-blue-400 via-indigo-400 to-transparent rounded-full" />
                                     </span>
-                                    <span className="ml-[2px] whitespace-nowrap flex-shrink-0">을 기준으로 만듭니다.</span>
+                                    <span className="ml-[2px] whitespace-normal">을 기준으로 만듭니다.</span>
                                 </div>
                             </motion.h2>
                         </div>
@@ -111,43 +111,55 @@ export function ProjectShowcase() {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="text-slate-500 max-w-sm text-lg md:text-2xl font-light leading-relaxed tracking-tight break-keep border-l-4 border-blue-500/20 pl-5 md:pl-6 mb-6 text-balance"
+                        className="text-slate-500 max-w-sm text-lg md:text-2xl font-light leading-relaxed tracking-tight break-keep border-l-4 border-blue-500/20 pl-5 md:pl-6 mb-2 lg:mb-6 text-balance"
                     >
                         복잡하지 않게, <br className="hidden md:block" />
                         <span className="text-slate-900 font-medium">핵심만 남겨</span> 구성합니다.
                     </motion.div>
                 </div>
 
-                {/* Category Pill Navigation */}
+                {/* Premium Segmented Control Navigation - Reworked for maximum readability & aesthetic */}
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="flex flex-wrap items-center gap-3 md:gap-4 mb-12 md:mb-16"
+                    className="flex justify-center md:justify-start mb-16 md:mb-24"
                 >
-                    <button
-                        onClick={() => setActiveCategory("all")}
-                        className={`px-6 py-3 rounded-full font-bold text-xs md:text-sm tracking-widest uppercase transition-all duration-300 backdrop-blur-md ${
-                            activeCategory === "all"
-                                ? "bg-slate-900 text-white shadow-xl shadow-slate-900/20 border border-slate-800"
-                                : "bg-white/60 text-slate-500 hover:bg-white hover:text-slate-900 shadow-sm border border-slate-200/50"
-                        }`}
-                    >
-                        전체보기
-                    </button>
-                    {categories.map((c) => (
+                    <div className="inline-flex items-center p-1.5 md:p-2 bg-white/80 backdrop-blur-2xl rounded-[24px] md:rounded-[32px] border border-slate-200/60 shadow-[0_10px_30px_rgba(0,0,0,0.03)] relative">
                         <button
-                            key={c.id}
-                            onClick={() => setActiveCategory(c.id.toString())}
-                            className={`px-6 py-3 rounded-full font-bold text-xs md:text-sm tracking-widest uppercase transition-all duration-300 backdrop-blur-md ${
-                                activeCategory === c.id.toString()
-                                    ? "bg-blue-600 text-white shadow-xl shadow-blue-600/30 border border-blue-500"
-                                    : "bg-white/60 text-slate-500 hover:bg-white hover:text-blue-600 shadow-sm border border-slate-200/50"
+                            onClick={() => setActiveCategory("all")}
+                            className={`relative z-10 px-6 md:px-10 py-2.5 md:py-4 rounded-[18px] md:rounded-[24px] font-black text-[12px] md:text-sm tracking-tighter uppercase transition-colors duration-500 ${
+                                activeCategory === "all" ? "text-white" : "text-slate-500 hover:text-slate-900"
                             }`}
                         >
-                            {c.name}
+                            {activeCategory === "all" && (
+                                <motion.div
+                                    layoutId="active-pill"
+                                    className="absolute inset-0 bg-slate-950 rounded-[18px] md:rounded-[24px] -z-10 shadow-xl shadow-slate-900/20"
+                                    transition={{ type: "spring", bounce: 0.25, duration: 0.6 }}
+                                />
+                            )}
+                            전체보기
                         </button>
-                    ))}
+                        {categories.map((c) => (
+                            <button
+                                key={c.id}
+                                onClick={() => setActiveCategory(c.id.toString())}
+                                className={`relative z-10 px-6 md:px-10 py-2.5 md:py-4 rounded-[18px] md:rounded-[24px] font-black text-[12px] md:text-sm tracking-tighter uppercase transition-colors duration-500 ${
+                                    activeCategory === c.id.toString() ? "text-white" : "text-slate-500 hover:text-blue-600"
+                                }`}
+                            >
+                                {activeCategory === c.id.toString() && (
+                                    <motion.div
+                                        layoutId="active-pill"
+                                        className="absolute inset-0 bg-blue-600 rounded-[18px] md:rounded-[24px] -z-10 shadow-xl shadow-blue-600/30"
+                                        transition={{ type: "spring", bounce: 0.25, duration: 0.6 }}
+                                    />
+                                )}
+                                {c.name}
+                            </button>
+                        ))}
+                    </div>
                 </motion.div>
 
                 {loading ? (
