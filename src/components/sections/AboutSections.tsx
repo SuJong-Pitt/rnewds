@@ -47,10 +47,10 @@ export function AboutHero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.2 }}
-                    className="text-lg md:text-2xl text-slate-500 max-w-4xl mx-auto font-light leading-relaxed tracking-tight break-keep text-balance"
+                    className="text-lg md:text-2xl text-slate-800 max-w-4xl mx-auto font-medium leading-relaxed tracking-tight break-keep text-balance"
                 >
-                    Rnew Design Studio는 상품이 더 잘 보이고, 더 쉽게 이해되고, <br className="hidden md:block" />
-                    <span className="text-slate-950 font-medium tracking-tight">더 잘 팔리도록 상세페이지를 만듭니다.</span>
+                    Rnew Design Studio는 <span className="prism-text font-black">상품이 더 잘 보이고</span>, <span className="prism-text font-black">더 쉽게 이해되고</span>, <br className="hidden md:block" />
+                    <span className="text-slate-950 font-black underline decoration-blue-600/10 decoration-[8px] underline-offset-8">더 잘 팔리도록 상세페이지를 만듭니다.</span>
                 </motion.p>
 
                 <motion.div
@@ -262,18 +262,18 @@ export function TrustSection() {
 
                     <div className="flex flex-col items-center justify-center pt-10">
                         {/* Magnetic Luxury Hub */}
-                        <a 
-                            href="https://pf.kakao.com/_xaxgJdX/chat" 
-                            target="_blank" 
+                        <a
+                            href="https://pf.kakao.com/_xaxgJdX/chat"
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="w-full max-w-2xl relative group/hub"
                         >
-                            <motion.div 
+                            <motion.div
                                 whileHover={{ scale: 1.02 }}
                                 className="flex flex-col items-center gap-10 group/item relative z-20"
                             >
                                 <div className="absolute -inset-20 bg-blue-500/5 blur-[120px] rounded-full opacity-0 group-hover/hub:opacity-100 transition-opacity duration-1000 -z-10"></div>
-                                
+
                                 <div className="relative">
                                     <div className="absolute inset-0 bg-yellow-400 opacity-20 blur-[50px] rounded-full scale-150 animate-pulse"></div>
                                     <LuxuryKakaoIcon size={140} className="md:w-[180px] md:h-[180px]" />
@@ -294,7 +294,7 @@ export function TrustSection() {
                             className="flex flex-col items-center text-center space-y-6 pt-10 group/mail"
                         >
                             <span className="text-[10px] font-black text-blue-500 tracking-[0.5em] uppercase block">Signature Collaboration</span>
-                            
+
                             <a href="mailto:admin@rnewds.com" className="relative group/text">
                                 <div className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-slate-950 tracking-tighter transition-all duration-700 prism-text group-hover/text:scale-[1.02] whitespace-nowrap">
                                     admin@rnewds.com
