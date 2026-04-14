@@ -121,7 +121,7 @@ export default function Home() {
                             className="flex flex-col items-center gap-6 mb-16 relative"
                         >
                             {/* Stylish Speech Bubbles (Pain Points) */}
-                            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 max-w-7xl px-4 w-full">
+                            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 max-w-7xl px-1 w-full relative">
                                 {[
                                     { text: "만들 줄 모르겠다", delay: 0.8, rotate: -3 },
                                     { text: "만들었는데 안 팔린다", delay: 1.0, rotate: 2 },
@@ -129,7 +129,7 @@ export default function Home() {
                                 ].map((point, i) => (
                                     <motion.div
                                         key={i}
-                                        initial={{ opacity: 0, scale: 0.8, y: 20, x: i % 2 === 0 ? -20 : 20 }}
+                                        initial={{ opacity: 0, scale: 0.8, y: 20, x: i % 2 === 0 ? -10 : 10 }}
                                         whileInView={{ opacity: 1, scale: 1, y: 0, x: 0 }}
                                         transition={{
                                             duration: 0.8,
@@ -138,11 +138,11 @@ export default function Home() {
                                             stiffness: 100
                                         }}
                                         whileHover={{ y: -10, scale: 1.05, transition: { duration: 0.2 } }}
-                                        className={`relative w-full md:w-auto flex ${i === 0 ? 'justify-start md:justify-center' : i === 1 ? 'justify-end md:justify-center' : 'justify-start md:justify-center'} px-2 md:px-0`}
+                                        className={`relative w-full md:w-auto flex ${i === 0 ? 'justify-start md:justify-center' : i === 1 ? 'justify-end md:justify-center' : 'justify-start md:justify-center'} px-1 md:px-0`}
                                         style={{ rotate: `${point.rotate}deg` }}
                                     >
-                                        <div className="bg-white px-8 py-5 md:px-12 md:py-8 rounded-[2.5rem] md:rounded-[3rem] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] border border-slate-100 flex items-center justify-center relative max-w-[92vw] md:max-w-none hover:shadow-[0_30px_70px_-30px_rgba(0,0,0,0.12)] transition-shadow">
-                                            <span className="text-slate-500 font-normal text-xl md:text-3xl whitespace-nowrap tracking-tight font-cursive">
+                                        <div className="bg-white px-10 py-6 md:px-12 md:py-8 rounded-[2.5rem] md:rounded-[3rem] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] border border-slate-100 flex items-center justify-center relative max-w-[98vw] md:max-w-none hover:shadow-[0_30px_70px_-30px_rgba(0,0,0,0.12)] transition-shadow">
+                                            <span className="text-slate-500 font-normal text-2xl md:text-3xl whitespace-nowrap tracking-tight font-cursive">
                                                 "{point.text}"
                                             </span>
                                             {/* Dynamic Bubble Tail */}
@@ -176,10 +176,10 @@ export default function Home() {
                             </h4>
 
                             <Link href="/#projects" className="w-full sm:w-auto">
-                                <Button size="lg" className="w-full sm:w-auto h-16 py-6 md:py-8  mt-10 md:mt-20 px-10 md:px-16 rounded-2xl text-lg md:text-xl font-black bg-slate-950 text-white shadow-2xl hover:bg-blue-600 hover:scale-[1.03] transition-all duration-500 group">
-                                    <span className="relative z-10 flex items-center justify-center gap-4">
+                                <Button size="lg" className="w-auto h-9 md:h-16 py-2 md:py-8 mt-10 md:mt-20 px-4 md:px-16 rounded-lg md:rounded-2xl text-xs md:text-xl font-black bg-slate-950 text-white shadow-md md:shadow-2xl hover:bg-blue-600 hover:scale-[1.03] transition-all duration-500 group">
+                                    <span className="relative z-10 flex items-center justify-center gap-2 md:gap-4">
                                         포트폴리오 확인
-                                        <ArrowRight size={24} className="group-hover:translate-x-3 transition-transform duration-500" />
+                                        <ArrowRight size={14} className="md:size-24 group-hover:translate-x-3 transition-transform duration-500" />
                                     </span>
                                 </Button>
                             </Link>
