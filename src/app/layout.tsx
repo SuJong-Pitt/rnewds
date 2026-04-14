@@ -7,6 +7,8 @@ const nanumPen = Nanum_Pen_Script({
     weight: "400", 
     subsets: ["latin"],
     variable: "--font-nanum-pen",
+    display: "swap",
+    preload: false,
 });
 
 export const metadata: Metadata = {
