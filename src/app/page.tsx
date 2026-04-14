@@ -142,7 +142,10 @@ export default function Home() {
                                         style={{ rotate: `${point.rotate}deg` }}
                                     >
                                         <div className="bg-white px-10 py-6 md:px-12 md:py-8 rounded-[2.5rem] md:rounded-[3rem] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] border border-slate-100 flex items-center justify-center relative max-w-[98vw] md:max-w-none hover:shadow-[0_30px_70px_-30px_rgba(0,0,0,0.12)] transition-shadow">
-                                            <span className="text-slate-500 font-normal text-2xl md:text-3xl whitespace-nowrap tracking-tight font-cursive">
+                                            <span 
+                                                className="text-slate-500 font-normal text-2xl md:text-3xl whitespace-nowrap tracking-tight font-cursive"
+                                                style={{ fontFamily: '"Nanum Pen Script", cursive' }}
+                                            >
                                                 "{point.text}"
                                             </span>
                                             {/* Dynamic Bubble Tail */}
