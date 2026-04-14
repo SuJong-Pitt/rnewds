@@ -8,7 +8,6 @@ const nanumPen = Nanum_Pen_Script({
     subsets: ["latin"],
     variable: "--font-nanum-pen",
     display: "swap",
-    preload: false,
 });
 
 export const metadata: Metadata = {
@@ -128,8 +127,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="ko" className="scroll-smooth" suppressHydrationWarning>
-            <body className={`${inter.className} ${nanumPen.variable}`}>
+        <html lang="ko" className={`scroll-smooth ${nanumPen.variable}`} suppressHydrationWarning>
+            <body className={inter.className}>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
