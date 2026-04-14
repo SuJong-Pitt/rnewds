@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Nanum_Pen_Script } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const nanumPen = Nanum_Pen_Script({ 
+    weight: "400", 
+    subsets: ["latin"],
+    variable: "--font-nanum-pen",
+});
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://rnewds.com"),
@@ -122,7 +127,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="ko" className="scroll-smooth" suppressHydrationWarning>
-            <body className={inter.className}>
+            <body className={`${inter.className} ${nanumPen.variable}`}>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

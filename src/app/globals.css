@@ -113,6 +113,10 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .font-cursive {
+    font-family: var(--font-nanum-pen), cursive;
+  }
 }
 
 @keyframes prism-shimmer {

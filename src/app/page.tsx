@@ -69,15 +69,9 @@ export default function Home() {
                                 transition={{ duration: 1, delay: 0.2 }}
                                 className="relative group"
                             >
-                                <h2 className="text-[2rem] md:text-3xl lg:text-5xl font-heading font-medium text-slate-800 tracking-tight px-4 pb-0">
-                                    가치를 기획하고
+                                <h2 className="text-[1.25rem] xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-medium text-slate-800 tracking-tight px-4 pb-1 break-keep text-balance">
+                                    상세페이지 만들었는데,
                                 </h2>
-                                <motion.div
-                                    initial={{ width: 0 }}
-                                    animate={{ width: "100%" }}
-                                    transition={{ duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                                    className="absolute bottom-0 left-0 h-[1.5px] bg-blue-500/40"
-                                />
                             </motion.div>
 
                             {/* Line 02: Result Proven */}
@@ -85,54 +79,105 @@ export default function Home() {
                                 initial={{ opacity: 0, y: 40 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                                className="relative py-2 md:py-4"
+                                className="relative py-2 md:py-4 mt-2 md:mt-0"
                             >
-                                <h1 className="text-[2.2rem] sm:text-5xl md:text-7xl lg:text-9xl font-heading font-black tracking-tighter leading-none px-4 prism-text whitespace-nowrap">
-                                    매출로 증명합니다.
+                                <h1 className="text-[2.2rem] xs:text-[2.8rem] sm:text-6xl md:text-8xl lg:text-9xl font-heading font-black tracking-tighter leading-none px-4 prism-text whitespace-nowrap">
+                                    왜 안팔릴까요?
                                 </h1>
                                 <motion.div
                                     initial={{ width: 0 }}
                                     animate={{ width: "100%" }}
                                     transition={{ duration: 1.5, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                                    className="absolute bottom-0 left-0 h-[2.5px] bg-blue-600/60"
+                                    className="absolute bottom-0 left-0 h-[2px] md:h-[3px] bg-blue-600/60"
                                 />
+                            </motion.div>
+
+                            {/* Impact Statement */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1, delay: 0.2 }}
+                                viewport={{ once: true }}
+                                className="mt-12 md:mt-14 text-center px-6 flex flex-col items-center"
+                            >
+                                <div className="flex flex-col items-center">
+                                    <span className="text-[1.02rem] md:text-2xl lg:text-3xl text-slate-400 font-medium tracking-tight leading-snug px-2 text-balance break-keep">
+                                        예쁘기만 한 페이지로는 <br className="md:hidden" /> 고객은 구매하지 않습니다.
+                                    </span>
+
+                                    <div className="mt-4 md:mt-6 px-1">
+                                        <span className="text-[1.15rem] md:text-4xl lg:text-5xl text-slate-900 font-black relative group inline-block tracking-tighter leading-tight text-balance break-keep">
+                                            <span className="whitespace-nowrap">이제는 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 italic">"팔리는 페이지"</span> 가</span> <br className="md:hidden" /> 필요합니다.
+                                        </span>
+                                    </div>
+                                </div>
                             </motion.div>
                         </div>
 
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1.2, delay: 1, ease: [0.16, 1, 0.3, 1] }}
-                            className="relative mt-8"
+                            transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                            className="flex flex-col items-center gap-6 mb-16 relative"
                         >
-                            <p className="text-lg md:text-2xl lg:text-3xl text-slate-500 font-light max-w-4xl tracking-tight break-keep mb-16 text-balance flex flex-col items-center leading-relaxed">
-                                <span className="opacity-60">준비된 자료가 많지 않아도 괜찮습니다.</span>
-                                <span className="block h-2 md:h-4" />
-                                <span className="text-slate-900 font-black relative group inline-block">
-                                    대표님은 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 italic">상품에만 집중하세요.</span>
-                                    <motion.span
-                                        initial={{ width: 0 }}
-                                        animate={{ width: "100%" }}
-                                        transition={{ duration: 1.5, delay: 1.5 }}
-                                        className="absolute -bottom-1.5 left-0 h-1 bg-blue-100/50 -z-10"
-                                    />
-                                </span>
-                                <span className="block h-2 md:h-4" />
-                                <span className="text-slate-700 font-medium text-center">소비자가 사고 싶게 만드는 <span className="text-slate-950 font-black border-b border-slate-950/10 pb-0.5">상세페이지를 설계합니다.</span></span>
-                            </p>
+                            {/* Stylish Speech Bubbles (Pain Points) */}
+                            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 max-w-7xl px-4 w-full">
+                                {[
+                                    { text: "만들 줄 모르겠다", delay: 0.8, rotate: -3 },
+                                    { text: "만들었는데 안 팔린다", delay: 1.0, rotate: 2 },
+                                    { text: "어디 맡겨야 할지 모르겠다", delay: 1.2, rotate: -2 }
+                                ].map((point, i) => (
+                                    <motion.div
+                                        key={i}
+                                        initial={{ opacity: 0, scale: 0.8, y: 20, x: i % 2 === 0 ? -20 : 20 }}
+                                        whileInView={{ opacity: 1, scale: 1, y: 0, x: 0 }}
+                                        transition={{
+                                            duration: 0.8,
+                                            delay: point.delay,
+                                            type: "spring",
+                                            stiffness: 100
+                                        }}
+                                        whileHover={{ y: -10, scale: 1.05, transition: { duration: 0.2 } }}
+                                        className={`relative w-full md:w-auto flex ${i === 0 ? 'justify-start md:justify-center' : i === 1 ? 'justify-end md:justify-center' : 'justify-start md:justify-center'} px-2 md:px-0`}
+                                        style={{ rotate: `${point.rotate}deg` }}
+                                    >
+                                        <div className="bg-white px-6 py-4 md:px-12 md:py-8 rounded-[2.5rem] md:rounded-[3rem] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] border border-slate-100 flex items-center justify-center relative max-w-[85vw] md:max-w-none hover:shadow-[0_30px_70px_-30px_rgba(0,0,0,0.12)] transition-shadow">
+                                            <span className="text-slate-500 font-normal text-lg md:text-3xl whitespace-nowrap tracking-tight font-cursive">
+                                                "{point.text}"
+                                            </span>
+                                            {/* Dynamic Bubble Tail */}
+                                            <div className={`absolute -bottom-2 ${i % 2 === 0 ? 'left-[30%] md:left-1/2' : 'right-[30%] md:right-1/2'} -translate-x-1/2 w-4 h-4 md:w-5 md:h-5 bg-white border-b border-r border-slate-100 rotate-45 shadow-[5px_5px_10px_-5px_rgba(0,0,0,0.03)]`}></div>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1.2, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
+                            className="relative"
+                        >
+
 
                             <div className="absolute -inset-10 bg-blue-600/5 blur-[80px] -z-10 opacity-20 pointer-events-none"></div>
                         </motion.div>
 
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1, delay: 1.2 }}
-                            className="relative"
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 0.2 }}
+                            viewport={{ once: true }}
+                            className="relative w-full flex flex-col items-center px-4"
                         >
-                            <Link href="/#projects">
-                                <Button size="lg" className="h-auto py-8 px-16 rounded-2xl text-xl font-black bg-slate-950 text-white shadow-2xl hover:bg-blue-600 hover:scale-[1.03] transition-all duration-500 group">
-                                    <span className="relative z-10 flex items-center gap-4">
+                            <h4 className="text-xl md:text-2xl lg:text-3xl font-normal text-slate-900 mb-8 md:mb-12 tracking-tight text-center">
+                                <span className="font-black">Rnew Design</span> 에서 해결해 드리겠습니다.
+                            </h4>
+
+                            <Link href="/#projects" className="w-full sm:w-auto">
+                                <Button size="lg" className="w-full sm:w-auto h-16 py-6 md:py-8  mt-10 md:mt-20 px-10 md:px-16 rounded-2xl text-lg md:text-xl font-black bg-slate-950 text-white shadow-2xl hover:bg-blue-600 hover:scale-[1.03] transition-all duration-500 group">
+                                    <span className="relative z-10 flex items-center justify-center gap-4">
                                         포트폴리오 확인
                                         <ArrowRight size={24} className="group-hover:translate-x-3 transition-transform duration-500" />
                                     </span>
