@@ -101,12 +101,12 @@ export default function Home() {
                                 className="mt-12 md:mt-14 text-center px-6 flex flex-col items-center"
                             >
                                 <div className="flex flex-col items-center">
-                                    <span className="text-[1.02rem] md:text-2xl lg:text-3xl text-slate-400 font-medium tracking-tight leading-snug px-2 text-balance break-keep">
+                                    <span className="text-[1.15rem] md:text-2xl lg:text-3xl text-slate-400 font-medium tracking-tight leading-snug px-1 text-balance break-keep">
                                         예쁘기만 한 페이지로는 <br className="md:hidden" /> 고객은 구매하지 않습니다.
                                     </span>
 
-                                    <div className="mt-4 md:mt-6 px-1">
-                                        <span className="text-[1.15rem] md:text-4xl lg:text-5xl text-slate-900 font-black relative group inline-block tracking-tighter leading-tight text-balance break-keep">
+                                    <div className="mt-5 md:mt-6 px-1">
+                                        <span className="text-[1.6rem] md:text-4xl lg:text-5xl text-slate-900 font-black relative group inline-block tracking-tighter leading-tight text-balance break-keep">
                                             <span className="whitespace-nowrap">이제는 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 italic">"팔리는 페이지"</span> 가</span> <br className="md:hidden" /> 필요합니다.
                                         </span>
                                     </div>
@@ -141,8 +141,8 @@ export default function Home() {
                                         className={`relative w-full md:w-auto flex ${i === 0 ? 'justify-start md:justify-center' : i === 1 ? 'justify-end md:justify-center' : 'justify-start md:justify-center'} px-2 md:px-0`}
                                         style={{ rotate: `${point.rotate}deg` }}
                                     >
-                                        <div className="bg-white px-6 py-4 md:px-12 md:py-8 rounded-[2.5rem] md:rounded-[3rem] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] border border-slate-100 flex items-center justify-center relative max-w-[85vw] md:max-w-none hover:shadow-[0_30px_70px_-30px_rgba(0,0,0,0.12)] transition-shadow">
-                                            <span className="text-slate-500 font-normal text-lg md:text-3xl whitespace-nowrap tracking-tight font-cursive">
+                                        <div className="bg-white px-8 py-5 md:px-12 md:py-8 rounded-[2.5rem] md:rounded-[3rem] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] border border-slate-100 flex items-center justify-center relative max-w-[92vw] md:max-w-none hover:shadow-[0_30px_70px_-30px_rgba(0,0,0,0.12)] transition-shadow">
+                                            <span className="text-slate-500 font-normal text-xl md:text-3xl whitespace-nowrap tracking-tight font-cursive">
                                                 "{point.text}"
                                             </span>
                                             {/* Dynamic Bubble Tail */}
