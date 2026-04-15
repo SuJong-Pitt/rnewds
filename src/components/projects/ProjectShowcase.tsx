@@ -40,8 +40,8 @@ export function ProjectShowcase() {
         fetchCategories();
     }, []);
 
-    const filteredProjects = activeCategory === "all" 
-        ? projects 
+    const filteredProjects = activeCategory === "all"
+        ? projects
         : projects.filter(p => p.category_id?.toString() === activeCategory);
 
     const groupedProjects = activeCategory === "all"
@@ -68,7 +68,7 @@ export function ProjectShowcase() {
 
             {/* Static Premium Depth (Replaced dynamic glow for performance) */}
             <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none z-0" />
-            
+
             {/* Architectural Grid Texturing */}
             <div className="absolute inset-0 opacity-[0.05] select-none pointer-events-none antialiased"
                 style={{ backgroundImage: 'linear-gradient(#2563eb 0.5px, transparent 0.5px), linear-gradient(90deg, #2563eb 0.5px, transparent 0.5px)', backgroundSize: '120px 120px' }}></div>
@@ -84,7 +84,7 @@ export function ProjectShowcase() {
                                 className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white/50 backdrop-blur-xl border border-blue-100/50 text-blue-600 shadow-[0_10px_30px_rgba(37,99,235,0.05)]"
                             >
                                 <Sparkles size={16} className="text-blue-500" />
-                                <span className="font-bold text-[11px] md:text-xs uppercase tracking-[0.5em] pl-1">Case Study Hub</span>
+                                <span className="font-bold text-[11px] md:text-xs uppercase tracking-[0.5em] pl-1">Work History Hub</span>
                             </motion.div>
 
                             <motion.h2
@@ -119,7 +119,7 @@ export function ProjectShowcase() {
                 </div>
 
                 {/* Premium Segmented Control Navigation - Reworked for maximum readability & aesthetic */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -131,9 +131,8 @@ export function ProjectShowcase() {
                                 setActiveCategory("all");
                                 document.getElementById("projects")?.scrollIntoView({ behavior: "smooth", block: "start" });
                             }}
-                            className={`relative z-10 px-5 md:px-10 py-2.5 md:py-4 rounded-[18px] md:rounded-[24px] font-black text-[12px] md:text-sm tracking-tighter uppercase whitespace-nowrap transition-colors duration-500 ${
-                                activeCategory === "all" ? "text-white" : "text-slate-500 hover:text-slate-900"
-                            }`}
+                            className={`relative z-10 px-5 md:px-10 py-2.5 md:py-4 rounded-[18px] md:rounded-[24px] font-black text-[12px] md:text-sm tracking-tighter uppercase whitespace-nowrap transition-colors duration-500 ${activeCategory === "all" ? "text-white" : "text-slate-500 hover:text-slate-900"
+                                }`}
                         >
                             {activeCategory === "all" && (
                                 <motion.div
@@ -151,9 +150,8 @@ export function ProjectShowcase() {
                                     setActiveCategory(c.id.toString());
                                     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth", block: "start" });
                                 }}
-                                className={`relative z-10 px-5 md:px-10 py-2.5 md:py-4 rounded-[18px] md:rounded-[24px] font-black text-[12px] md:text-sm tracking-tighter uppercase whitespace-nowrap transition-colors duration-500 ${
-                                    activeCategory === c.id.toString() ? "text-white" : "text-slate-500 hover:text-blue-600"
-                                }`}
+                                className={`relative z-10 px-5 md:px-10 py-2.5 md:py-4 rounded-[18px] md:rounded-[24px] font-black text-[12px] md:text-sm tracking-tighter uppercase whitespace-nowrap transition-colors duration-500 ${activeCategory === c.id.toString() ? "text-white" : "text-slate-500 hover:text-blue-600"
+                                    }`}
                             >
                                 {activeCategory === c.id.toString() && (
                                     <motion.div
@@ -177,8 +175,8 @@ export function ProjectShowcase() {
                         <AnimatePresence mode="popLayout">
                             {groupedProjects.length > 0 ? (
                                 groupedProjects.map((group, groupIdx) => (
-                                    <motion.div 
-                                        key={group.id} 
+                                    <motion.div
+                                        key={group.id}
                                         layout
                                         initial={{ opacity: 0, y: 30 }}
                                         animate={{ opacity: 1, y: 0 }}
@@ -187,9 +185,8 @@ export function ProjectShowcase() {
                                         className="space-y-12"
                                     >
                                         <div className="flex items-center gap-5 border-b border-slate-200/50 pb-6 mb-10 pl-2">
-                                            <div className={`w-3.5 h-12 rounded-full shadow-lg ${
-                                                ['bg-blue-500 shadow-blue-500/40', 'bg-violet-500 shadow-violet-500/40', 'bg-rose-500 shadow-rose-500/40', 'bg-amber-500 shadow-amber-500/40', 'bg-teal-500 shadow-teal-500/40'][groupIdx % 5]
-                                            }`}></div>
+                                            <div className={`w-3.5 h-12 rounded-full shadow-lg ${['bg-blue-500 shadow-blue-500/40', 'bg-violet-500 shadow-violet-500/40', 'bg-rose-500 shadow-rose-500/40', 'bg-amber-500 shadow-amber-500/40', 'bg-teal-500 shadow-teal-500/40'][groupIdx % 5]
+                                                }`}></div>
                                             <h3 className="text-3xl md:text-5xl font-heading font-black text-slate-900 tracking-[-0.03em]">
                                                 {group.name}
                                             </h3>

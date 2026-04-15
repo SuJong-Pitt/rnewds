@@ -46,7 +46,7 @@ export default function PortfolioPage() {
                                 className="text-6xl md:text-9xl lg:text-[10rem] font-heading font-black text-white tracking-tighter leading-[0.9]"
                             >
                                 Portfolio <br />
-                                <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-500 italic px-2 drop-shadow-[0_10px_30px_rgba(37,99,235,0.3)] whitespace-pre-wrap pb-4">Case Study </span>
+                                <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-500 italic px-2 drop-shadow-[0_10px_30px_rgba(37,99,235,0.3)] whitespace-pre-wrap pb-4">Work History </span>
                             </motion.h1>
                         </div>
 
