@@ -213,8 +213,8 @@ export default function Home() {
             <ReliefSection />
             <ValuePointsSection />
             <ProcessSection />
-            <TechStack />
             <PricingSection />
+            <TechStack />
             <ContactSection />
             <Footer />
         </main>

@@ -89,62 +89,161 @@ export function ExpertiseSection() {
 }
 
 export function ReliefSection() {
+    const features = [
+        {
+            num: "01",
+            title: "자료가 없어도\n함께 정리해드립니다",
+            desc: "제품 정보가 없어도 걱정 마세요. 처음부터 함께 구조화합니다.",
+            icon: <FileText strokeWidth={1.5} />,
+            glow: "rgba(59,130,246,0.3)",
+            accent: "from-blue-500 to-blue-700",
+        },
+        {
+            num: "02",
+            title: "하나씩 안내드리며\n진행합니다",
+            desc: "복잡한 과정 없이, 각 단계를 쉽게 이해할 수 있도록 안내드립니다.",
+            icon: <MessageCircle strokeWidth={1.5} />,
+            glow: "rgba(99,102,241,0.3)",
+            accent: "from-indigo-500 to-indigo-700",
+        },
+        {
+            num: "03",
+            title: "방향부터 함께\n잡아드립니다",
+            desc: "어디서 시작해야 할지 모르셔도 됩니다. 전략부터 함께 설계합니다.",
+            icon: <Target strokeWidth={1.5} />,
+            glow: "rgba(139,92,246,0.3)",
+            accent: "from-violet-500 to-violet-700",
+        }
+    ];
+
     return (
-        <section className="bg-white py-10 md:py-20 overflow-hidden relative">
-            <div className="container mx-auto max-w-7xl relative z-10 px-4">
-                {/* 초보셀러 안심 블록 - Beginner Seller Relief Section */}
+        <section className="relative overflow-hidden py-24 md:py-40" style={{ background: "linear-gradient(135deg, #f0f4ff 0%, #e8edf8 40%, #eef2fb 70%, #f5f0ff 100%)" }}>
+            {/* — Ambient Glow Orbs — */}
+            <motion.div
+                animate={{ x: [0, 60, 0], y: [0, -40, 0], scale: [1, 1.15, 1] }}
+                transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+                className="pointer-events-none absolute -left-40 top-0 h-[700px] w-[700px] rounded-full bg-blue-400/20 blur-[160px]"
+            />
+            <motion.div
+                animate={{ x: [0, -80, 0], y: [0, 60, 0], scale: [1, 1.2, 1] }}
+                transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+                className="pointer-events-none absolute -right-40 bottom-0 h-[600px] w-[600px] rounded-full bg-indigo-300/20 blur-[140px]"
+            />
+
+            {/* — Dot Grid Texture — */}
+            <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(rgba(99,102,241,0.5)_1px,transparent_1px)] [background-size:32px_32px]" />
+
+            <div className="container relative z-10 mx-auto max-w-7xl px-6">
+
+                {/* — Section Header — */}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                    className="mb-20 md:mb-28 flex flex-col items-center text-center"
+                >
+                    {/* Badge */}
+                    <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-blue-200 bg-white/70 px-5 py-2 shadow-sm backdrop-blur-sm">
+                        <ShieldCheck className="h-4 w-4 text-blue-600" strokeWidth={2} />
+                        <span className="text-[11px] font-black uppercase tracking-[0.35em] text-blue-600">For Beginners</span>
+                    </div>
+
+                    {/* Main Heading */}
+                    <h2 className="mb-6 text-4xl font-black leading-[1.08] tracking-[-0.04em] text-slate-900 md:text-7xl lg:text-8xl">
+                        처음이셔도
+                        <br />
+                        <span className="relative inline-block">
+                            <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600">
+                                괜찮습니다.
+                            </span>
+                            {/* Underline glow */}
+                            <span className="absolute -bottom-1 left-0 h-[3px] w-full rounded-full bg-gradient-to-r from-blue-500 via-indigo-500 to-violet-500 opacity-40 blur-[2px]" />
+                        </span>
+                    </h2>
+
+                    <p className="max-w-xl text-lg font-light leading-relaxed tracking-tight text-slate-500 md:text-2xl break-keep">
+                        알뉴디자인은 단순한 제작을 넘어{" "}
+                        <span className="font-semibold text-slate-800">사업의 시작과 방향</span>을
+                        <br className="hidden md:block" /> 함께 고민합니다.
+                    </p>
+                </motion.div>
+
+                {/* — Feature Cards — */}
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+                    {features.map((f, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                            className="group relative"
+                        >
+                            {/* Hover glow behind card */}
+                            <div
+                                className="absolute -inset-px rounded-[36px] opacity-0 blur-xl transition-opacity duration-700 group-hover:opacity-100"
+                                style={{ background: f.glow }}
+                            />
+
+                            {/* Card border gradient ring */}
+                            <div className="relative rounded-[36px] p-px bg-gradient-to-b from-blue-200/60 to-slate-200/30 group-hover:from-blue-300/80 group-hover:to-indigo-200/40 transition-all duration-700 shadow-lg">
+                                {/* Card body */}
+                                <div className="relative h-full rounded-[35px] bg-white/80 backdrop-blur-2xl px-8 py-10 md:px-10 md:py-12 flex flex-col gap-8 overflow-hidden">
+                                    {/* Subtle inner light */}
+                                    <div className="pointer-events-none absolute inset-0 rounded-[35px] bg-gradient-to-br from-blue-50/60 to-indigo-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+                                    {/* Number + Icon Row */}
+                                    <div className="flex items-center justify-between relative z-10">
+                                        <div className="text-5xl font-black font-mono text-slate-200 tracking-tighter italic group-hover:text-blue-100 transition-colors duration-700">
+                                            {f.num}
+                                        </div>
+                                        <div className={`relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${f.accent} text-white shadow-2xl transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110`}>
+                                            {f.icon}
+                                        </div>
+                                    </div>
+
+                                    {/* Text */}
+                                    <div className="relative z-10 flex flex-col gap-4">
+                                        <h3 className="text-2xl md:text-3xl font-black leading-tight tracking-tighter text-slate-900 break-keep whitespace-pre-line">
+                                            {f.title}
+                                        </h3>
+                                        <p className="text-sm md:text-base font-light leading-relaxed tracking-tight text-slate-500 break-keep group-hover:text-slate-700 transition-colors duration-500">
+                                            {f.desc}
+                                        </p>
+                                    </div>
+
+                                    {/* Bottom accent line */}
+                                    <div className={`mt-auto h-[2px] w-0 rounded-full bg-gradient-to-r ${f.accent} group-hover:w-full transition-all duration-700 origin-left`} />
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+
+                {/* — Bottom CTA — */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="p-8 md:p-20 rounded-[40px] md:rounded-[80px] bg-slate-50 border border-slate-200 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.05)] relative overflow-hidden group"
+                    transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    className="mt-20 md:mt-28 flex flex-col items-center gap-4 text-center"
                 >
-                    {/* Decorative Background Elements */}
-                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/20 blur-[120px] rounded-full -mr-40 -mt-40 group-hover:bg-blue-100/40 transition-colors duration-1000" />
-                    
-                    <div className="relative z-10 flex flex-col xl:flex-row items-center xl:items-start gap-12 md:gap-24">
-                        {/* Icon Strategy */}
-                        <div className="flex-shrink-0">
-                            <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-[32px] md:rounded-[40px] bg-blue-600 flex items-center justify-center text-white shadow-2xl shadow-blue-300 transform -rotate-3 hover:rotate-0 transition-transform duration-500">
-                                <ShieldCheck className="w-12 h-12 md:w-16 md:h-16" strokeWidth={1.2} />
-                                <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-slate-950 rounded-2xl flex items-center justify-center shadow-lg">
-                                    <Sparkles className="text-yellow-400 w-5 h-5" />
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div className="flex-grow space-y-8 md:space-y-12 text-center xl:text-left">
-                            <div className="space-y-4 md:space-y-6">
-                                <div className="inline-block px-5 py-1.5 rounded-full bg-white border border-slate-200 text-blue-600 text-xs md:text-sm font-black tracking-[0.3em] uppercase shadow-sm">
-                                    For Beginners
-                                </div>
-                                <h2 className="text-3xl md:text-6xl font-black text-slate-950 tracking-[-0.03em] leading-tight">
-                                    처음이셔도 괜찮습니다
-                                </h2>
-                                <p className="text-slate-500 text-lg md:text-2xl font-light tracking-tight max-w-3xl mx-auto xl:mx-0 break-keep">
-                                   <span className="text-blue-600 font-bold">초보셀러 안심 블록:</span> 알뉴디자인은 단순한 제작을 넘어 사업의 시작과 방향을 함께 고민합니다.
-                                </p>
-                            </div>
-                            
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 pt-10 md:pt-16 border-t border-slate-200">
-                                {[
-                                    { text: "자료가 없어도 함께 정리해드립니다", icon: "01" },
-                                    { text: "하나씩 안내드리며 진행합니다", icon: "02" },
-                                    { text: "방향부터 함께 잡아드립니다", icon: "03" }
-                                ].map((item, i) => (
-                                    <div key={i} className="flex flex-col items-center xl:items-start gap-4 md:gap-6 group/item">
-                                        <div className="text-2xl md:text-3xl font-mono font-black text-slate-200 group-hover/item:text-blue-600 transition-colors duration-500">
-                                            {item.icon}
-                                        </div>
-                                        <p className="text-slate-800 font-bold text-lg md:text-2xl break-keep tracking-tighter leading-snug">
-                                            {item.text}
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
+                    <p className="text-slate-500 text-base md:text-xl font-light break-keep">
+                        어디서 시작해야 할지 모르겠다면, 지금 바로 연락주세요.
+                    </p>
+                    <a
+                        href="https://pf.kakao.com/_xaxgJdX/chat"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group mt-2 inline-flex items-center gap-3 rounded-full bg-slate-950 px-8 py-4 text-white font-black text-base md:text-lg shadow-[0_20px_60px_rgba(37,99,235,0.2)] hover:bg-blue-600 hover:shadow-[0_20px_60px_rgba(59,130,246,0.35)] transition-all duration-500 hover:scale-[1.04] active:scale-[0.98]"
+                    >
+                        <Sparkles className="h-5 w-5 text-yellow-400 group-hover:rotate-12 transition-transform duration-300" />
+                        무료 상담 시작하기
+                        <span className="ml-1 translate-x-0 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                    </a>
                 </motion.div>
+
             </div>
         </section>
     );
