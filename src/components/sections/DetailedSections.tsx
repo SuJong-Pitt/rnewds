@@ -94,7 +94,7 @@ export function ReliefSection() {
             num: "01",
             title: "자료가 없어도\n함께 정리해드립니다",
             desc: "제품 정보가 없어도 걱정 마세요. 처음부터 함께 구조화합니다.",
-            icon: <FileText strokeWidth={1.5} />,
+            icon: <FileText strokeWidth={1.5} size={20} />,
             glow: "rgba(59,130,246,0.3)",
             accent: "from-blue-500 to-blue-700",
         },
@@ -102,7 +102,7 @@ export function ReliefSection() {
             num: "02",
             title: "하나씩 안내드리며\n진행합니다",
             desc: "복잡한 과정 없이, 각 단계를 쉽게 이해할 수 있도록 안내드립니다.",
-            icon: <MessageCircle strokeWidth={1.5} />,
+            icon: <MessageCircle strokeWidth={1.5} size={20} />,
             glow: "rgba(99,102,241,0.3)",
             accent: "from-indigo-500 to-indigo-700",
         },
@@ -110,112 +110,100 @@ export function ReliefSection() {
             num: "03",
             title: "방향부터 함께\n잡아드립니다",
             desc: "어디서 시작해야 할지 모르셔도 됩니다. 전략부터 함께 설계합니다.",
-            icon: <Target strokeWidth={1.5} />,
+            icon: <Target strokeWidth={1.5} size={20} />,
             glow: "rgba(139,92,246,0.3)",
             accent: "from-violet-500 to-violet-700",
         }
     ];
 
     return (
-        <section className="relative overflow-hidden py-24 md:py-40" style={{ background: "linear-gradient(135deg, #f0f4ff 0%, #e8edf8 40%, #eef2fb 70%, #f5f0ff 100%)" }}>
+        <section className="relative overflow-hidden py-16 md:py-24" style={{ background: "linear-gradient(135deg, #f0f4ff 0%, #e8edf8 40%, #eef2fb 70%, #f5f0ff 100%)" }}>
             {/* — Ambient Glow Orbs — */}
             <motion.div
                 animate={{ x: [0, 60, 0], y: [0, -40, 0], scale: [1, 1.15, 1] }}
                 transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-                className="pointer-events-none absolute -left-40 top-0 h-[700px] w-[700px] rounded-full bg-blue-400/20 blur-[160px]"
+                className="pointer-events-none absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-blue-400/15 blur-[120px]"
             />
             <motion.div
                 animate={{ x: [0, -80, 0], y: [0, 60, 0], scale: [1, 1.2, 1] }}
                 transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
-                className="pointer-events-none absolute -right-40 bottom-0 h-[600px] w-[600px] rounded-full bg-indigo-300/20 blur-[140px]"
+                className="pointer-events-none absolute -right-40 bottom-0 h-[400px] w-[400px] rounded-full bg-indigo-300/15 blur-[100px]"
             />
 
             {/* — Dot Grid Texture — */}
-            <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(rgba(99,102,241,0.5)_1px,transparent_1px)] [background-size:32px_32px]" />
+            <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:radial-gradient(rgba(99,102,241,0.5)_1px,transparent_1px)] [background-size:24px_24px]" />
 
-            <div className="container relative z-10 mx-auto max-w-7xl px-4 md:px-6">
+            <div className="container relative z-10 mx-auto max-w-6xl px-4 md:px-6">
 
                 {/* — Section Header — */}
                 <motion.div
-                    initial={{ opacity: 0, y: 40 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                    className="mb-20 md:mb-28 flex flex-col items-center text-center"
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    className="mb-12 md:mb-16 flex flex-col items-center text-center"
                 >
                     {/* Badge */}
-                    <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-blue-200 bg-white/70 px-5 py-2 shadow-sm backdrop-blur-sm">
-                        <ShieldCheck className="h-4 w-4 text-blue-600" strokeWidth={2} />
-                        <span className="text-[11px] font-black uppercase tracking-[0.35em] text-blue-600">For Beginners</span>
+                    <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/70 px-4 py-1.5 shadow-sm backdrop-blur-sm">
+                        <ShieldCheck className="h-3.5 w-3.5 text-blue-600" strokeWidth={2} />
+                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-600">For Beginners</span>
                     </div>
 
                     {/* Main Heading */}
-                    <h2 className="mb-4 md:mb-6 text-[2.8rem] md:text-7xl lg:text-8xl font-black leading-[1.02] md:leading-[1.08] tracking-[-0.04em] text-slate-900">
+                    <h2 className="mb-4 text-3xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tighter text-slate-900">
                         처음이셔도
-                        <br />
-                        <span className="relative inline-block">
+                        <span className="relative inline-block ml-3">
                             <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600">
                                 괜찮습니다.
                             </span>
-                            {/* Underline glow */}
-                            <span className="absolute -bottom-1 left-0 h-[3px] w-full rounded-full bg-gradient-to-r from-blue-500 via-indigo-500 to-violet-500 opacity-40 blur-[2px]" />
                         </span>
                     </h2>
 
-                    <p className="max-w-xl text-lg font-light leading-relaxed tracking-tight text-slate-500 md:text-2xl break-keep">
-                        알뉴디자인은 단순한 제작을 넘어{" "}
-                        <span className="font-semibold text-slate-800">사업의 시작과 방향</span>을
+                    <p className="max-w-xl text-sm md:text-lg font-light leading-relaxed tracking-tight text-slate-500 break-keep">
+                        단순한 제작을 넘어 <span className="font-semibold text-slate-800">사업의 시작과 방향</span>을
                         <br className="hidden md:block" /> 함께 고민합니다.
                     </p>
                 </motion.div>
 
                 {/* — Feature Cards — */}
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+                <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6 max-w-5xl mx-auto">
                     {features.map((f, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 50 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                            className="group relative"
+                            transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                            className="group relative h-full"
                         >
-                            {/* Hover glow behind card */}
-                            <div
-                                className="absolute -inset-px rounded-[36px] opacity-0 blur-xl transition-opacity duration-700 group-hover:opacity-100"
-                                style={{ background: f.glow }}
-                            />
+                            {/* Card body */}
+                            <div className="relative h-full rounded-2xl bg-white border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgba(37,99,235,0.08)] transition-all duration-500 px-6 py-8 md:px-8 md:py-10 flex flex-col gap-5 md:gap-6 overflow-hidden">
+                                
+                                {/* Inner gradient hover effect */}
+                                <div className={`absolute inset-0 bg-gradient-to-br ${f.accent} opacity-0 group-hover:opacity-[0.02] transition-opacity duration-500`} />
 
-                            {/* Card border gradient ring */}
-                            <div className="relative rounded-[36px] p-px bg-gradient-to-b from-blue-200/60 to-slate-200/30 group-hover:from-blue-300/80 group-hover:to-indigo-200/40 transition-all duration-700 shadow-lg">
-                                {/* Card body */}
-                                <div className="relative h-full rounded-[35px] bg-white/80 backdrop-blur-2xl px-6 py-10 md:px-10 md:py-12 flex flex-col gap-7 md:gap-8 overflow-hidden">
-                                    {/* Subtle inner light */}
-                                    <div className="pointer-events-none absolute inset-0 rounded-[35px] bg-gradient-to-br from-blue-50/60 to-indigo-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
-                                    {/* Number + Icon Row */}
-                                    <div className="flex items-center justify-between relative z-10">
-                                        <div className="text-5xl font-black font-mono text-slate-200 tracking-tighter italic group-hover:text-blue-100 transition-colors duration-700">
-                                            {f.num}
-                                        </div>
-                                        <div className={`relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${f.accent} text-white shadow-2xl transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110`}>
-                                            {f.icon}
-                                        </div>
+                                {/* Number + Icon Row */}
+                                <div className="flex items-center justify-between relative z-10">
+                                    <div className="text-3xl font-black font-mono text-slate-100 tracking-tighter italic group-hover:text-blue-50 transition-colors duration-500">
+                                        {f.num}
                                     </div>
-
-                                    {/* Text */}
-                                    <div className="relative z-10 flex flex-col gap-4">
-                                        <h3 className="text-[1.75rem] md:text-3xl font-black leading-[1.15] md:leading-tight tracking-tighter text-slate-900 break-keep whitespace-pre-line">
-                                            {f.title}
-                                        </h3>
-                                        <p className="text-sm md:text-base font-light leading-relaxed tracking-tight text-slate-500 break-keep group-hover:text-slate-700 transition-colors duration-500">
-                                            {f.desc}
-                                        </p>
+                                    <div className={`relative flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br ${f.accent} text-white shadow-lg transition-transform duration-500 group-hover:-rotate-3 group-hover:scale-110`}>
+                                        {f.icon}
                                     </div>
-
-                                    {/* Bottom accent line */}
-                                    <div className={`mt-auto h-[2px] w-0 rounded-full bg-gradient-to-r ${f.accent} group-hover:w-full transition-all duration-700 origin-left`} />
                                 </div>
+
+                                {/* Text */}
+                                <div className="relative z-10 flex flex-col gap-3">
+                                    <h3 className="text-xl md:text-2xl font-black leading-tight tracking-tighter text-slate-900 break-keep whitespace-pre-line">
+                                        {f.title}
+                                    </h3>
+                                    <p className="text-xs md:text-sm font-light leading-relaxed tracking-tight text-slate-500 break-keep">
+                                        {f.desc}
+                                    </p>
+                                </div>
+
+                                {/* Bottom accent line */}
+                                <div className={`mt-auto h-[2px] w-0 rounded-full bg-gradient-to-r ${f.accent} group-hover:w-full transition-all duration-700 origin-left`} />
                             </div>
                         </motion.div>
                     ))}
@@ -223,24 +211,24 @@ export function ReliefSection() {
 
                 {/* — Bottom CTA — */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                    className="mt-20 md:mt-28 flex flex-col items-center gap-4 text-center"
+                    transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                    className="mt-12 md:mt-16 flex flex-col items-center gap-4 text-center"
                 >
-                    <p className="text-slate-500 text-base md:text-xl font-light break-keep">
+                    <p className="text-slate-500 text-sm md:text-base font-light break-keep">
                         어디서 시작해야 할지 모르겠다면, 지금 바로 연락주세요.
                     </p>
                     <a
                         href="https://pf.kakao.com/_xaxgJdX/chat"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group mt-2 inline-flex items-center gap-3 rounded-full bg-slate-950 px-8 py-4 text-white font-black text-base md:text-lg shadow-[0_20px_60px_rgba(37,99,235,0.2)] hover:bg-blue-600 hover:shadow-[0_20px_60px_rgba(59,130,246,0.35)] transition-all duration-500 hover:scale-[1.04] active:scale-[0.98]"
+                        className="group inline-flex items-center gap-2.5 rounded-full bg-slate-950 px-6 py-3 text-white font-black text-sm md:text-base shadow-lg hover:bg-blue-600 transition-all duration-300 hover:scale-105"
                     >
-                        <Sparkles className="h-5 w-5 text-yellow-400 group-hover:rotate-12 transition-transform duration-300" />
+                        <Sparkles className="h-4 w-4 text-yellow-400" />
                         무료 상담 시작하기
-                        <span className="ml-1 translate-x-0 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                        <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
                     </a>
                 </motion.div>
 
@@ -376,76 +364,64 @@ export function ProcessSection() {
         { icon: <MessageCircle />, title: "브랜드 맞춤 1:1 상담", desc: "제품 컨셉 설정 및 디자인 방향 제시", color: "text-blue-400", bg: "bg-blue-600", shadow: "shadow-blue-500/20", glow: "from-blue-600/20" },
         { icon: <FileText />, title: "견적서 전달 & 일정 안내", desc: "상세 견적 확정 및 전체 작업 일정 안내", color: "text-indigo-400", bg: "bg-indigo-600", shadow: "shadow-indigo-500/20", glow: "from-indigo-600/20" },
         { icon: <Zap />, title: "결제 & 작업 시작", desc: "결제 확인 후 즉시 전문 작업 착수", color: "get-amber-400", bg: "bg-amber-600", shadow: "shadow-amber-500/20", glow: "from-amber-600/20" },
-        { icon: <PenTool />, title: "상세페이지 기획(피그마)", desc: "피그마 시안 제작 및 전략적 서사 설계", color: "text-rose-400", bg: "bg-rose-600", shadow: "shadow-rose-500/20", glow: "from-rose-600/20" },
-        { icon: <Palette />, title: "디자인 시안 전달 및 수정", desc: "고퀄리티 디자인 시안 공유 및 피드백 반영", color: "text-purple-400", bg: "bg-purple-600", shadow: "shadow-purple-500/20", glow: "from-purple-600/20" },
-        { icon: <CheckCircle2 />, title: "최종 파일 전달", desc: "피그마 원본 및 최적화된 최종 파일 패키지 전달", color: "text-emerald-400", bg: "bg-emerald-600", shadow: "shadow-emerald-500/20", glow: "from-emerald-600/20" }
+        { icon: <PenTool />, title: "상세페이지 기획(피그마)", desc: "피그마 시안 제작", color: "text-rose-400", bg: "bg-rose-600", shadow: "shadow-rose-500/20", glow: "from-rose-600/20" },
+        { icon: <Palette />, title: "디자인 시안 전달 및 수정", desc: "디자인 시안 공유 및 피드백 반영", color: "text-purple-400", bg: "bg-purple-600", shadow: "shadow-purple-500/20", glow: "from-purple-600/20" },
+        { icon: <CheckCircle2 />, title: "최종 파일 전달", desc: "피그마 파일 전달", color: "text-emerald-400", bg: "bg-emerald-600", shadow: "shadow-emerald-500/20", glow: "from-emerald-600/20" }
     ];
 
     return (
-        <section className="section-padding bg-slate-950 text-white overflow-hidden relative">
-            <motion.div
-                animate={{ x: [0, 100, 0], y: [0, 50, 0], scale: [1, 1.2, 1] }}
-                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                className="absolute top-0 -left-20 w-[600px] h-[600px] bg-blue-600/5 blur-[140px] rounded-full pointer-events-none"
-            />
-            <motion.div
-                animate={{ x: [0, -100, 0], y: [0, 100, 0], scale: [1, 1.1, 1] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute bottom-0 -right-20 w-[700px] h-[700px] bg-purple-600/5 blur-[160px] rounded-full pointer-events-none"
-            />
+        <section className="py-16 md:py-24 bg-slate-950 text-white overflow-hidden relative">
+            <div className="absolute top-0 -left-20 w-[500px] h-[500px] bg-blue-600/5 blur-[140px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 -right-20 w-[500px] h-[500px] bg-purple-600/5 blur-[140px] rounded-full pointer-events-none" />
 
-            <div className="container mx-auto max-w-7xl relative z-10">
-                <motion.div {...fadeInUp} className="text-center mb-16 md:mb-24">
-                    <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
-                        <h2 className="text-[2.2rem] md:text-5xl lg:text-7xl font-heading font-black text-white tracking-tighter leading-[1.1] text-center">
-                            <div className="mb-2 md:mb-4 leading-[1.1]">복잡한 과정 대신,</div>
-                            <div className="text-blue-500 leading-[1.1]">
-                                <span className="block md:inline">필요한 단계만 정리해</span>
-                                <span className="block md:inline">설계합니다.</span>
-                            </div>
+            <div className="container mx-auto max-w-5xl relative z-10 px-6">
+                <motion.div {...fadeInUp} className="text-center mb-10 md:mb-14">
+                    <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
+                        <h2 className="text-3xl md:text-5xl font-heading font-black text-white tracking-tighter leading-tight">
+                            <span className="text-blue-500">작업 진행 과정</span>
                         </h2>
-                        <div className="h-4 md:h-8" />
-                        <p className="text-lg md:text-3xl text-slate-400 font-light tracking-tight break-keep">
-                            R:new의 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 italic font-black border-b-2 border-blue-500/30 pb-1">6단계 제작 흐름</span>을 확인해보세요.
+                        <div className="h-3 md:h-5" />
+                        <p className="text-base md:text-xl text-slate-400 font-light tracking-tight break-keep">
+                            R:new의 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 italic font-black">6단계 제작 흐름</span>을 확인해보세요.
                         </p>
                     </div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
                     {steps.map((step, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: i * 0.1, duration: 0.8 }}
+                            transition={{ delay: i * 0.08, duration: 0.6 }}
                             className="group relative"
                         >
-                            <div className="bg-white/[0.03] backdrop-blur-3xl p-8 md:p-12 rounded-[40px] border border-white/5 group-hover:border-white/20 transition-all duration-700 relative overflow-hidden h-full shadow-[0_4px_30px_rgba(0,0,0,0.1)] group-hover:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
-                                <div className={`absolute inset-0 bg-gradient-to-br ${step.glow} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700`}></div>
+                            <div className="bg-white/[0.04] p-5 md:p-6 rounded-[20px] border border-white/5 group-hover:border-white/15 transition-all duration-500 relative overflow-hidden h-full">
+                                <div className={`absolute inset-0 bg-gradient-to-br ${step.glow} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
 
-                                <div className="flex justify-between items-start mb-10 relative z-10">
+                                <div className="flex items-center justify-between mb-4 relative z-10">
                                     <div className="relative">
-                                        <div className={`absolute inset-0 rounded-2xl blur-xl ${step.bg} opacity-20 group-hover:opacity-40 transition-opacity duration-700`}></div>
-                                        <div className={`relative w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center ${step.color} group-hover:bg-slate-950 group-hover:text-white transition-all duration-500 shadow-sm`}>
-                                            {step.icon}
+                                        <div className={`absolute inset-0 rounded-xl blur-lg ${step.bg} opacity-20 group-hover:opacity-40 transition-opacity`}></div>
+                                        <div className={`relative w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center ${step.color} group-hover:bg-white/10 transition-all duration-300`}>
+                                            <span className="w-4 h-4">{step.icon}</span>
                                         </div>
                                     </div>
-                                    <div className="text-4xl font-heading font-black text-white/5 tracking-tighter italic">
-                                        STEP {String(i + 1).padStart(2, '0')}
-                                    </div>
+                                    <span className="text-[11px] font-black text-white/10 tracking-widest italic">
+                                        {String(i + 1).padStart(2, '0')}
+                                    </span>
                                 </div>
 
-                                <div className="relative z-10 space-y-4">
-                                    <h3 className="text-xl md:text-2xl font-black text-white tracking-tighter leading-[1.2] group-hover:text-blue-400 transition-colors">
+                                <div className="relative z-10">
+                                    <h3 className="text-sm md:text-base font-black text-white tracking-tight leading-snug group-hover:text-blue-400 transition-colors mb-1.5 break-keep">
                                         {step.title}
                                     </h3>
-                                    <p className="text-sm md:text-base text-slate-400 font-light leading-relaxed tracking-tight group-hover:text-slate-200 transition-colors break-keep">
+                                    <p className="text-xs text-slate-500 font-light leading-relaxed group-hover:text-slate-300 transition-colors break-keep">
                                         {step.desc}
                                     </p>
                                 </div>
 
-                                <div className={`mt-8 h-[1px] w-0 group-hover:w-full transition-all duration-1000 origin-left ${step.bg} bg-opacity-30`}></div>
+                                <div className={`mt-4 h-[1px] w-0 group-hover:w-full transition-all duration-700 origin-left ${step.bg} opacity-30`}></div>
                             </div>
                         </motion.div>
                     ))}

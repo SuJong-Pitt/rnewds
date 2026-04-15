@@ -216,9 +216,11 @@ export default function Home() {
 
             <ExpertiseSection />
             <ReliefSection />
-            <ValuePointsSection />
-            <ProcessSection />
             <PricingSection />
+            {/* Shimmer 
+            <ValuePointsSection />
+            */}
+            <ProcessSection />
             <TechStack />
             <ContactSection />
             <Footer />

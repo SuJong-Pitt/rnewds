@@ -6,7 +6,6 @@ import { LuxuryKakaoIcon } from "@/components/ui/LuxuryKakaoIcon";
 import {
     ArrowRight,
     Mail,
-    Instagram,
     MessageSquare,
     ExternalLink,
     ShieldCheck,
@@ -22,12 +21,14 @@ import {
     Target,
     Sparkles
 } from "lucide-react";
+import { SiFigma } from "react-icons/si";
+import { MdDesignServices } from "react-icons/md";
 
 const skills = [
     {
         name: "Photoshop", level: "Master", value: 95,
         desc: "상상하는 모든 비주얼을 현실로 그려냅니다.",
-        icon: <Palette size={24} />,
+        icon: <span className="font-black text-[13px] tracking-tight leading-none">Ps</span>,
         color: "text-blue-600",
         bg: "bg-blue-600",
         gradient: "from-blue-400 via-blue-600 to-indigo-600",
@@ -36,7 +37,7 @@ const skills = [
     {
         name: "Illustrator", level: "Expert", value: 85,
         desc: "데이터 기반의 정확한 벡터 설계를 구현합니다.",
-        icon: <PenTool size={24} />,
+        icon: <span className="font-black text-[13px] tracking-tight leading-none italic">Ai</span>,
         color: "text-orange-500",
         bg: "bg-orange-500",
         gradient: "from-orange-400 via-orange-500 to-amber-500",
@@ -45,7 +46,7 @@ const skills = [
     {
         name: "Figma", level: "Master", value: 98,
         desc: "기획부터 디자인까지 기틀이 되는 정밀한 상세페이지를 설계합니다.",
-        icon: <Layers size={24} />,
+        icon: <SiFigma size={22} />,
         color: "text-purple-600",
         bg: "bg-purple-600",
         gradient: "from-purple-400 via-purple-600 to-pink-500",
@@ -54,7 +55,7 @@ const skills = [
     {
         name: "UI/UX Design", level: "Strategic", value: 92,
         desc: "구매 동선을 고려한 논리적 배치를 설계합니다.",
-        icon: <Target size={24} />,
+        icon: <MdDesignServices size={24} />,
         color: "text-cyan-500",
         bg: "bg-cyan-500",
         gradient: "from-cyan-400 via-cyan-500 to-emerald-500",
@@ -64,130 +65,57 @@ const skills = [
 
 export function TechStack() {
     return (
-        <section id="skills" className="section-padding bg-[#fcfdfe] overflow-hidden relative">
-            {/* 1. Atmospheric Glowing Blobs (Fill the spatial void with luxury multi-color lighting) */}
-            <motion.div
-                animate={{
-                    x: [0, 60, 0],
-                    y: [0, 40, 0],
-                    scale: [1, 1.2, 1]
-                }}
-                transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[5%] -left-20 w-[500px] h-[500px] bg-blue-400/5 blur-[130px] rounded-full pointer-events-none"
-            />
-            <motion.div
-                animate={{
-                    x: [0, -60, 0],
-                    y: [0, 60, 0],
-                    scale: [1, 1.1, 1]
-                }}
-                transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute bottom-[10%] -right-20 w-[600px] h-[600px] bg-purple-400/5 blur-[160px] rounded-full pointer-events-none"
-            />
-            <motion.div
-                animate={{
-                    x: [0, 30, 0],
-                    y: [0, -30, 0],
-                    scale: [1, 1.3, 1]
-                }}
-                transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-1/2 left-[30%] w-[350px] h-[350px] bg-amber-400/[0.03] blur-[110px] rounded-full pointer-events-none"
-            />
+        <section id="skills" className="py-16 md:py-24 bg-[#f8f9fc] overflow-hidden relative">
+            {/* Atmospheric glow blobs */}
+            <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-400/[0.04] blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-purple-400/[0.04] blur-[100px] rounded-full pointer-events-none" />
 
-            {/* Architectural Grid Texture */}
-            <div className="absolute inset-0 opacity-[0.05] select-none pointer-events-none"
-                style={{ backgroundImage: 'linear-gradient(#2563eb 0.5px, transparent 0.5px), linear-gradient(90deg, #2563eb 0.5px, transparent 0.5px)', backgroundSize: '100px 100px' }}></div>
-
-            <div className="container mx-auto max-w-7xl relative z-10">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-20 gap-x-12 gap-y-10">
-                    <div className="max-w-3xl">
-                        <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-slate-950 text-white font-bold text-[10px] uppercase tracking-widest md:tracking-[0.4em] mb-8 shadow-2xl"
-                        >
-                            <Sparkles size={12} className="text-yellow-400 animate-pulse" />
-                            Elite Design Architecture
-                        </motion.div>
-                        <motion.h2
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-2xl sm:text-5xl lg:text-7xl font-heading font-black tracking-tighter text-slate-900 leading-[1.4] md:leading-tight text-balance break-keep"
-                        >
-                            <div className="mb-2 md:mb-4">시선을 끄는 디자인,</div>
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-700 italic px-1 underline decoration-blue-100 decoration-8 underline-offset-4">구매로 이어지는 구조.</span>
-                        </motion.h2>
+            <div className="container mx-auto max-w-5xl relative z-10 px-6">
+                {/* Section Header — Centered */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="text-center mb-10 md:mb-14"
+                >
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-950 text-white text-[10px] font-black uppercase tracking-[0.35em] mb-5 shadow-xl">
+                        <Sparkles size={11} className="text-yellow-400 animate-pulse" />
+                        사용 툴
                     </div>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="text-slate-500/90 max-w-sm text-base md:text-xl font-medium leading-relaxed tracking-tight break-keep border-l-2 border-slate-200 pl-8"
-                    >
-                        단순 제작을 넘어, <br className="hidden md:block" />
-                        <span className="text-slate-900 font-medium whitespace-nowrap">브랜드가 잘 보이도록</span> <br className="hidden md:block" />
-                        구조를 설계합니다.
-                    </motion.p>
-                </div>
+                    <h2 className="text-3xl md:text-5xl font-heading font-black text-slate-900 tracking-tighter leading-tight">
+                        디자인을 완성하는
+                        <br className="block md:hidden" />
+                        {" "}<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 italic pr-2">도구들</span>
+                    </h2>
+                </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
+                {/* Icon Card Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
                     {skills.map((skill, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 24 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                            transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                             viewport={{ once: true }}
-                            className="p-5 md:p-14 rounded-[40px] md:rounded-[48px] bg-white/70 backdrop-blur-3xl border border-white shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_45px_90px_rgba(37,99,235,0.15)] hover:border-slate-200 transition-all duration-700 group relative overflow-hidden flex flex-col"
+                            className="flex flex-col items-center gap-3 py-8 px-5 rounded-[24px] bg-white border border-slate-100/80 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(37,99,235,0.1)] hover:-translate-y-1 transition-all duration-400 group relative overflow-hidden"
                         >
-                            {/* colored orbital glow effect */}
-                            <div className={`absolute -right-20 -top-20 w-52 h-52 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 blur-[100px] ${skill.bg} opacity-10`}></div>
-                            <div className={`absolute -left-10 -bottom-10 w-40 h-40 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 blur-[80px] ${skill.bg} opacity-[0.05]`}></div>
+                            {/* Hover color glow */}
+                            <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br ${skill.gradient} via-transparent to-transparent opacity-[0.04]`} />
 
-                            <div className="flex items-start justify-between mb-12 relative z-10">
-                                {/* Orbital Icon Design - Unique Palette */}
-                                <div className="relative">
-                                    <div className={`absolute inset-0 rounded-3xl scale-150 blur-2xl opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-700 ${skill.bg} opacity-10`}></div>
-                                    <div className={`${skill.color} bg-white w-20 h-20 rounded-3xl shadow-2xl border border-slate-50 flex items-center justify-center group-hover:bg-slate-950 group-hover:text-white transition-all duration-700 relative z-10 transform group-hover:scale-110 group-hover:-rotate-6`}>
-                                        {skill.icon}
-                                    </div>
-                                    {/* Rotating Ring - Unique Palette */}
-                                    <div className={`absolute inset-0 border-2 rounded-3xl scale-125 opacity-0 group-hover:opacity-100 group-hover:animate-[spin_6s_linear_infinite] transition-all duration-700 ${skill.color} opacity-20`}></div>
-                                </div>
-
-                                <div className="px-5 py-1.5 rounded-full bg-slate-950 text-white text-[9px] font-black tracking-[0.3em] uppercase group-hover:bg-blue-600 transition-colors shadow-xl italic">
-                                    {skill.level}
+                            {/* Icon */}
+                            <div className="relative">
+                                <div className={`absolute inset-0 rounded-xl blur-xl scale-150 opacity-0 group-hover:opacity-40 transition-all duration-500 ${skill.bg}`} />
+                                <div className={`${skill.color} w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center group-hover:bg-slate-950 group-hover:text-white group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500 relative z-10`}>
+                                    {skill.icon}
                                 </div>
                             </div>
 
-                            <div className="flex-grow space-y-4 md:space-y-5 relative z-10">
-                                <h3 className="text-2xl md:text-5xl font-black text-slate-950 tracking-tighter group-hover:translate-x-3 transition-transform duration-500">{skill.name}</h3>
-                                <p className="text-sm md:text-xl text-slate-500 font-light leading-relaxed tracking-tight group-hover:text-slate-800 transition-colors break-keep text-balance">
-                                    {skill.desc}
-                                </p>
-                            </div>
-
-                            {/* Luxury mastery bar (Multi-Color Gradient) */}
-                            <div className="mt-14 pt-10 border-t border-slate-100/80">
-                                <div className="flex justify-between items-center mb-5">
-                                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest group-hover:text-slate-900 transition-colors">Digital Mastery</span>
-                                    <span className={`text-sm font-black ${skill.color}`}>{skill.value}%</span>
-                                </div>
-                                <div className="h-[4px] w-full bg-slate-100/50 rounded-full overflow-hidden relative">
-                                    <motion.div
-                                        initial={{ width: 0 }}
-                                        whileInView={{ width: `${skill.value}%` }}
-                                        viewport={{ once: true }}
-                                        transition={{ duration: 2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                                        className={`h-full bg-gradient-to-r ${skill.gradient} relative`}
-                                    >
-                                        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full blur-[6px] shadow-[0_0_15px_white]"></div>
-                                    </motion.div>
-                                </div>
-                            </div>
+                            {/* Tool Name */}
+                            <span className="text-sm md:text-base font-black text-slate-700 group-hover:text-slate-950 tracking-tight text-center transition-colors duration-300">
+                                {skill.name}
+                            </span>
                         </motion.div>
                     ))}
                 </div>
