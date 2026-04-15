@@ -13,10 +13,10 @@ const nanumPen = Nanum_Pen_Script({
 export const metadata: Metadata = {
     metadataBase: new URL("https://rnewds.com"),
     title: {
-        default: "R:new Design Studio | 하이엔드 상세페이지 기획/디자인",
-        template: "%s | R:new Design Studio"
+        default: "알뉴디자인 | 사장님을 위한 상세페이지 파트너",
+        template: "%s | 알뉴디자인"
     },
-    description: "가치를 증명하는 압도적 비주얼의 힘. 데이터의 설계로 완성하는 프리미엄 상세페이지 전문가, R:new Design Studio입니다.",
+    description: "디자인이 막막한 초보 사장님을 위한 든든한 파트너. 기획부터 디자인까지 친절하게 도와드리는 알뉴디자인스튜디오입니다.",
     keywords: ["상세페이지", "디자인", "상세페이지 디자이너", "쇼핑몰 디자인", "UI/UX", "프리미엄 디자인", "기획형 상세페이지", "상세페이지 외주", "알뉴디자인스튜디오", "알뉴디자인"],
     authors: [{ name: "R:new Design Studio" }],
     creator: "R:new Design Studio",
@@ -44,10 +44,10 @@ export const metadata: Metadata = {
         ],
     },
     openGraph: {
-        title: "R:new Design Studio | 하이엔드 상세페이지 기획/디자인",
-        description: "가치를 증명하는 압도적 비주얼의 힘, R:new Design Studio",
+        title: "알뉴디자인 | 사장님을 위한 상세페이지 파트너",
+        description: "사장님의 진심을 담아 기획부터 디자인까지 친절하게 도와드려요.",
         url: "https://rnewds.com",
-        siteName: "R:new Design Studio",
+        siteName: "알뉴디자인",
         images: [
             {
                 url: "/images/og-image.png",
@@ -61,8 +61,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "R:new Design Studio",
-        description: "하이엔드 상세페이지 기획/디자인 전문가",
+        title: "알뉴디자인",
+        description: "상세페이지 고민, 알뉴디자인이 함께 해결해 드릴게요.",
         images: ["/images/og-image.png"],
     },
     verification: {
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
 const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "R:new Design Studio",
+    "name": "알뉴디자인",
     "image": "https://rnewds.com/og-image.jpg",
     "url": "https://rnewds.com",
     "telephone": "",
