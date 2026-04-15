@@ -9,12 +9,12 @@ import { Button } from "@/components/ui/button";
 
 const navLinks = [
     { name: "About", href: "/about" },
-    { name: "Projects", href: "/#projects" },
+    { name: "Portfolio", href: "/portfolio" },
     { name: "Skills", href: "/#skills" },
     { name: "Contact", href: "/#contact" },
 ];
 
-export function Navbar() {
+export function Navbar({ variant = "default" }: { variant?: "default" | "dark" }) {
     const [scrolled, setScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -40,8 +40,8 @@ export function Navbar() {
                         className="text-xl font-bold tracking-tight flex items-center gap-3"
                     >
                         <Image src="/images/icons/logo.svg" alt="R:new Logo" width={38} height={38} className="rounded-xl shadow-xl shadow-slate-950/10 group-hover:scale-105 transition-transform duration-500" priority />
-                        <span className="text-slate-950 hidden sm:block font-heading font-black tracking-tighter text-2xl italic">R:new <span className="text-slate-400 font-medium tracking-normal not-italic ml-1">Design Studio</span></span>
-                        <span className="text-slate-950 sm:hidden font-heading font-black tracking-tighter text-2xl italic">R:new</span>
+                        <span className={`hidden sm:block font-heading font-black tracking-tighter text-2xl italic transition-colors ${scrolled || isMenuOpen || variant === "default" ? "text-slate-950" : "text-white"}`}>R:new <span className={`${scrolled || isMenuOpen || variant === "default" ? "text-slate-400" : "text-slate-300"} font-medium tracking-normal not-italic ml-1`}>Design Studio</span></span>
+                        <span className={`sm:hidden font-heading font-black tracking-tighter text-2xl italic transition-colors ${scrolled || isMenuOpen || variant === "default" ? "text-slate-950" : "text-white"}`}>R:new</span>
                     </motion.div>
                 </Link>
 
@@ -51,7 +51,7 @@ export function Navbar() {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-medium text-slate-500 hover:text-slate-900 transition-all px-4 py-2 rounded-xl hover:bg-white hover:shadow-sm"
+                            className={`text-sm font-medium transition-all px-4 py-2 rounded-xl hover:bg-white hover:text-slate-900 hover:shadow-sm ${scrolled || isMenuOpen || variant === "default" ? "text-slate-500" : "text-slate-200"}`}
                         >
                             {link.name}
                         </Link>
@@ -61,7 +61,7 @@ export function Navbar() {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden z-50 p-2 text-slate-900"
+                    className={`md:hidden z-50 p-2 transition-colors ${scrolled || isMenuOpen || variant === "default" ? "text-slate-900" : "text-white"}`}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                     {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

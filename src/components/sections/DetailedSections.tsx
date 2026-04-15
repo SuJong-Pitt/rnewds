@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { MessageCircle, Zap, Layers, Target, Clock, FileText, PenTool, CheckCircle2, Sparkles, Layout, MousePointer2, Palette, Shield, BarChart3, Search } from "lucide-react";
+import { MessageCircle, Zap, Layers, Target, Clock, FileText, PenTool, CheckCircle2, Sparkles, Layout, MousePointer2, Palette, Shield, BarChart3, Search, ShieldCheck } from "lucide-react";
 
 const fadeInUp = {
     initial: { opacity: 0, y: 30 },
@@ -28,7 +28,6 @@ export function ExpertiseSection() {
                             </div>
 
                             <div className="space-y-4">
-                                <span className="text-xl md:text-3xl font-heading font-light text-slate-400 italic">상세페이지가 고민이신가요?</span>
                                 <h2 className="text-4xl md:text-7xl lg:text-8xl font-heading font-black leading-[1] tracking-tighter text-balance">
                                     MD 디자이너 <br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-400 animate-gradient-x bg-[length:200%_auto]">실무 15년.</span>
@@ -84,6 +83,68 @@ export function ExpertiseSection() {
                         </div>
                     </motion.div>
                 </div>
+            </div>
+        </section>
+    );
+}
+
+export function ReliefSection() {
+    return (
+        <section className="bg-white py-10 md:py-20 overflow-hidden relative">
+            <div className="container mx-auto max-w-7xl relative z-10 px-4">
+                {/* 초보셀러 안심 블록 - Beginner Seller Relief Section */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="p-8 md:p-20 rounded-[40px] md:rounded-[80px] bg-slate-50 border border-slate-200 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.05)] relative overflow-hidden group"
+                >
+                    {/* Decorative Background Elements */}
+                    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/20 blur-[120px] rounded-full -mr-40 -mt-40 group-hover:bg-blue-100/40 transition-colors duration-1000" />
+                    
+                    <div className="relative z-10 flex flex-col xl:flex-row items-center xl:items-start gap-12 md:gap-24">
+                        {/* Icon Strategy */}
+                        <div className="flex-shrink-0">
+                            <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-[32px] md:rounded-[40px] bg-blue-600 flex items-center justify-center text-white shadow-2xl shadow-blue-300 transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                                <ShieldCheck className="w-12 h-12 md:w-16 md:h-16" strokeWidth={1.2} />
+                                <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-slate-950 rounded-2xl flex items-center justify-center shadow-lg">
+                                    <Sparkles className="text-yellow-400 w-5 h-5" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div className="flex-grow space-y-8 md:space-y-12 text-center xl:text-left">
+                            <div className="space-y-4 md:space-y-6">
+                                <div className="inline-block px-5 py-1.5 rounded-full bg-white border border-slate-200 text-blue-600 text-xs md:text-sm font-black tracking-[0.3em] uppercase shadow-sm">
+                                    For Beginners
+                                </div>
+                                <h2 className="text-3xl md:text-6xl font-black text-slate-950 tracking-[-0.03em] leading-tight">
+                                    처음이셔도 괜찮습니다
+                                </h2>
+                                <p className="text-slate-500 text-lg md:text-2xl font-light tracking-tight max-w-3xl mx-auto xl:mx-0 break-keep">
+                                   <span className="text-blue-600 font-bold">초보셀러 안심 블록:</span> 알뉴디자인은 단순한 제작을 넘어 사업의 시작과 방향을 함께 고민합니다.
+                                </p>
+                            </div>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 pt-10 md:pt-16 border-t border-slate-200">
+                                {[
+                                    { text: "자료가 없어도 함께 정리해드립니다", icon: "01" },
+                                    { text: "하나씩 안내드리며 진행합니다", icon: "02" },
+                                    { text: "방향부터 함께 잡아드립니다", icon: "03" }
+                                ].map((item, i) => (
+                                    <div key={i} className="flex flex-col items-center xl:items-start gap-4 md:gap-6 group/item">
+                                        <div className="text-2xl md:text-3xl font-mono font-black text-slate-200 group-hover/item:text-blue-600 transition-colors duration-500">
+                                            {item.icon}
+                                        </div>
+                                        <p className="text-slate-800 font-bold text-lg md:text-2xl break-keep tracking-tighter leading-snug">
+                                            {item.text}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );

@@ -21,7 +21,7 @@ export async function GET() {
         },
         ...projects.map(project => ({
             title: project.title,
-            link: `${baseUrl}/projects/${project.id}`,
+            link: `${baseUrl}/portfolio/${project.id}`,
             description: project.description || "",
             pubDate: new Date(project.created_at).toUTCString(),
         }))

@@ -9,10 +9,11 @@ import { ArrowRight, Sparkles, Layers, MousePointer2, Zap, Trophy, Shield } from
 import {
     ExpertiseSection,
     ValuePointsSection,
-    ProcessSection
+    ProcessSection,
+    ReliefSection
 } from "@/components/sections/DetailedSections";
-import { ProjectShowcase } from "@/components/projects/ProjectShowcase";
 import { TechStack, ContactSection } from "@/components/sections/Sections";
+import { Footer } from "@/components/ui/Footer";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { PortfolioAuraSlider } from "@/components/ui/PortfolioAuraSlider";
 
@@ -159,7 +160,7 @@ export default function Home() {
                                                 />
                                             </div>
                                         </div>
-                                        
+
                                         {/* Minimal Logo Badge (Option 3) */}
                                         <motion.div
                                             initial={{ opacity: 0, x: 20 }}
@@ -196,7 +197,7 @@ export default function Home() {
                         viewport={{ once: true }}
                         className="flex justify-center mt-24 md:mt-40 relative z-20 px-6"
                     >
-                        <Link href="/#projects" className="w-full sm:w-auto flex justify-center">
+                        <Link href="/portfolio" className="w-full sm:w-auto flex justify-center">
                             <Button size="lg" className="w-full sm:w-auto h-16 md:h-24 px-10 md:px-20 rounded-2xl md:rounded-[2rem] text-base md:text-2xl font-black bg-slate-950 text-white shadow-2xl hover:bg-blue-600 hover:scale-[1.05] active:scale-95 transition-all duration-500 group">
                                 <span className="flex items-center gap-4 md:gap-6">
                                     포트폴리오 확인
@@ -209,55 +210,13 @@ export default function Home() {
             </section>
 
             <ExpertiseSection />
+            <ReliefSection />
             <ValuePointsSection />
             <ProcessSection />
-            <ProjectShowcase />
             <TechStack />
             <PricingSection />
             <ContactSection />
-
-            <footer className="pt-20 md:pt-32 pb-12 bg-slate-950 text-white rounded-t-[40px] md:rounded-t-[80px] relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05] pointer-events-none"></div>
-                <div className="container mx-auto px-8 max-w-7xl relative z-10">
-                    <div className="flex flex-col lg:flex-row justify-between gap-20 mb-20 items-start lg:items-center">
-                        <div className="max-w-xl space-y-10">
-                            <div className="space-y-6">
-                                <div className="flex items-center gap-4">
-                                    <Image src="/images/icons/logo.svg" alt="R:new Logo" width={48} height={48} className="rounded-2xl shadow-lg" />
-                                    <span className="font-heading font-black tracking-tight text-2xl md:text-3xl italic px-1">R:new Design Studio</span>
-                                </div>
-                                <p className="text-slate-400 text-lg md:text-xl font-medium leading-relaxed max-w-md">
-                                    이해되고 선택되는 디자인 <br />
-                                    <span className="text-white">상세페이지</span> 제작 스튜디오입니다.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-row gap-16 md:gap-32 lg:pr-10">
-                            <div className="space-y-8">
-                                <h5 className="font-bold text-slate-500 uppercase tracking-widest text-xs">Explore</h5>
-                                <ul className="space-y-4 text-base font-medium">
-                                    <li><a href="/about" className="text-slate-400 hover:text-blue-400 transition-all">About Studio</a></li>
-                                    <li><Link href="/#projects" className="text-slate-400 hover:text-blue-400 transition-all">Work Portfolio</Link></li>
-                                    <li><Link href="/admin/login" className="text-slate-400 hover:text-blue-400 transition-all">Admin System</Link></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-                        <p className="text-slate-600 text-[10px] font-black tracking-widest italic uppercase">
-                            &copy; 2026 r:new design studio. all rights reserved.
-                        </p>
-                        <div className="flex items-center gap-10">
-                            <a href="https://pf.kakao.com/_xaxgJdX" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-1">
-                                <span className="text-[10px] font-black text-slate-600 group-hover:text-yellow-500 tracking-[0.2em] transition-colors italic">kakao</span>
-                                <div className="h-[2px] w-0 bg-yellow-500 group-hover:w-full transition-all duration-300"></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </main>
     );
 }
