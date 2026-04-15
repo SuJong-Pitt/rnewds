@@ -137,16 +137,25 @@ export default function Home() {
                                     viewport={{ once: true }}
                                     className="mt-16 md:mt-24 mb-6"
                                 >
-                                    <div className="relative w-80 aspect-[3/4] md:w-[540px] md:h-[720px] mx-auto group">
+                                    <div className="relative w-80 aspect-[3/4] md:w-[720px] md:aspect-square mx-auto group">
                                         <div className="absolute inset-0 bg-blue-600/5 rounded-[3rem] md:rounded-[6rem] blur-[100px] group-hover:bg-blue-600/10 transition-colors duration-1000"></div>
                                         <div className="relative w-full h-full rounded-[3rem] md:rounded-[6rem] overflow-hidden border-[12px] md:border-[20px] border-white shadow-[0_60px_120px_-20px_rgba(0,0,0,0.15)] bg-white">
                                             <div className="relative w-full h-full overflow-hidden bg-slate-50">
+                                                {/* Web Version Image */}
                                                 <Image
-                                                    src="/images/ceo_image.png"
+                                                    src="/images/ceo_image_w.png"
                                                     alt="R:new Design Studio CEO"
                                                     fill
                                                     priority
-                                                    className="object-cover scale-105 group-hover:scale-100 transition-transform duration-[2.5s] ease-out"
+                                                    className="hidden md:block object-cover scale-105 group-hover:scale-100 transition-transform duration-[2.5s] ease-out"
+                                                />
+                                                {/* Mobile Version Image */}
+                                                <Image
+                                                    src="/images/ceo_image_m.png"
+                                                    alt="R:new Design Studio CEO"
+                                                    fill
+                                                    priority
+                                                    className="block md:hidden object-cover scale-105 group-hover:scale-100 transition-transform duration-[2.5s] ease-out"
                                                 />
                                             </div>
                                         </div>
