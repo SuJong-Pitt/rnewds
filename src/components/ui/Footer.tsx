@@ -16,8 +16,8 @@ export function Footer() {
                                 <span className="font-heading font-black tracking-tight text-2xl md:text-3xl italic px-1">R:new Design Studio</span>
                             </div>
                             <p className="text-slate-400 text-lg md:text-xl font-medium leading-relaxed max-w-md">
-                                이해되고 선택되는 디자인 <br />
-                                데이터를 근거로 설계하는 하이엔드 상세페이지 스튜디오입니다.
+                                사장님의 막막한 시작, 함께 고민합니다,<br />
+                                처음이라도 쉬운 친절한 디자인 파트너
                             </p>
                         </div>
 
