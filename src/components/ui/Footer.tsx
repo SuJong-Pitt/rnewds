@@ -5,10 +5,10 @@ import { Mail, Instagram, MessageCircle, ArrowRight } from "lucide-react";
 
 export function Footer() {
     return (
-        <footer className="pt-20 md:pt-32 pb-12 bg-slate-950 text-white rounded-t-[40px] md:rounded-t-[80px] relative overflow-hidden">
+        <footer className="pt-16 md:pt-24 pb-12 bg-slate-950 text-white rounded-t-[40px] md:rounded-t-[80px] relative overflow-hidden">
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05] pointer-events-none"></div>
             <div className="container mx-auto px-8 max-w-7xl relative z-10">
-                <div className="flex flex-col lg:flex-row justify-between gap-20 mb-20 items-start lg:items-center">
+                <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-20 mb-12 lg:mb-16 items-start lg:items-center">
                     <div className="max-w-xl space-y-10">
                         <div className="space-y-6">
                             <div className="flex items-center gap-4">
@@ -23,7 +23,6 @@ export function Footer() {
 
                         <div className="flex gap-4">
                             {[
-                                { icon: <Instagram size={20} />, href: "#", name: "Instagram" },
                                 { icon: <MessageCircle size={20} />, href: "https://pf.kakao.com/_xaxgJdX/chat", name: "KakaoTalk" },
                                 { icon: <Mail size={20} />, href: "mailto:admin@rnewds.com", name: "Email" }
                             ].map((social, i) => (
@@ -41,11 +40,11 @@ export function Footer() {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-12 md:gap-20">
-                        <div className="space-y-8">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 md:gap-16">
+                        <div className="space-y-6">
                             <h4 className="text-[10px] font-black tracking-[0.4em] uppercase text-blue-500">Navigation</h4>
                             <ul className="space-y-5">
-                                {["About", "Portfolio", "Process", "Pricing"].map((item) => (
+                                {["About", "Portfolio", "Pricing"].map((item) => (
                                     <li key={item}>
                                         <a href={item === "Portfolio" ? "/portfolio" : `/#${item.toLowerCase()}`} className="text-sm md:text-base font-medium text-slate-400 hover:text-white transition-colors">
                                             {item}
@@ -54,7 +53,7 @@ export function Footer() {
                                 ))}
                             </ul>
                         </div>
-                        <div className="space-y-8">
+                        <div className="space-y-6">
                             <h4 className="text-[10px] font-black tracking-[0.4em] uppercase text-blue-500">Contact</h4>
                             <ul className="space-y-5">
                                 <li>
@@ -62,15 +61,12 @@ export function Footer() {
                                         admin@rnewds.com
                                     </a>
                                 </li>
-                                <li className="text-sm md:text-base font-medium text-slate-400">
-                                    Kakao: rnewstudio
-                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
                     <p className="text-slate-500 text-[11px] md:text-xs font-medium tracking-tight">
                         © 2026 R:new Design Studio. All rights reserved.
                     </p>

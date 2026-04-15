@@ -62,7 +62,7 @@ export default function Home() {
                         </motion.div>
 
                         {/* Image Matching Heading Section */}
-                        <div className="flex flex-col items-center gap-1 md:gap-2 mb-12 md:mb-16">
+                        <div className="flex flex-col items-center gap-0 md:gap-2 mb-12 md:mb-16">
                             {/* Line 01: Value Planning */}
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.95 }}
@@ -70,7 +70,7 @@ export default function Home() {
                                 transition={{ duration: 1, delay: 0.2 }}
                                 className="relative group"
                             >
-                                <h2 className="text-[1.25rem] xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-medium text-slate-800 tracking-tight px-4 pb-1 break-keep text-balance">
+                                <h2 className="text-[1.5rem] xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-medium text-slate-800 tracking-tight px-2 pb-1 break-keep text-balance">
                                     상세페이지 만들었는데,
                                 </h2>
                             </motion.div>
@@ -80,9 +80,9 @@ export default function Home() {
                                 initial={{ opacity: 0, y: 40 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                                className="relative py-2 md:py-4 mt-2 md:mt-0"
+                                className="relative py-2 md:py-4 mt-0"
                             >
-                                <h1 className="text-[2.2rem] xs:text-[2.8rem] sm:text-6xl md:text-8xl lg:text-9xl font-heading font-black tracking-tighter leading-none px-4 prism-text whitespace-nowrap">
+                                <h1 className="text-[2.8rem] xs:text-[3.8rem] sm:text-6xl md:text-8xl lg:text-9xl font-heading font-black tracking-tighter leading-none px-2 prism-text whitespace-nowrap">
                                     왜 안팔릴까요?
                                 </h1>
                                 <motion.div
@@ -102,12 +102,12 @@ export default function Home() {
                                 className="mt-12 md:mt-14 text-center px-6 flex flex-col items-center"
                             >
                                 <div className="flex flex-col items-center">
-                                    <span className="text-[1.15rem] md:text-2xl lg:text-3xl text-slate-400 font-medium tracking-tight leading-snug px-1 text-balance break-keep">
+                                    <span className="text-[1.15rem] md:text-2xl lg:text-3xl text-slate-400 font-medium tracking-tight leading-none px-1 text-balance break-keep">
                                         예쁘기만 한 디자인이 아니라
                                     </span>
 
                                     <div className="mt-5 md:mt-6 px-1">
-                                        <span className="text-[1.6rem] md:text-4xl lg:text-5xl text-slate-900 font-black relative group inline-block tracking-tighter leading-tight text-balance break-keep">
+                                        <span className="text-[1.6rem] md:text-4xl lg:text-5xl text-slate-900 font-black relative group inline-block tracking-tighter leading-none text-balance break-keep">
                                             <span className="whitespace-nowrap">구매까지 이어지게 만듭니다.</span>
                                         </span>
                                     </div>
@@ -195,13 +195,18 @@ export default function Home() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.2 }}
                         viewport={{ once: true }}
-                        className="flex justify-center mt-24 md:mt-40 relative z-20 px-6"
+                        className="flex justify-center mt-12 md:mt-40 relative z-20 px-6"
                     >
-                        <Link href="/portfolio" className="w-full sm:w-auto flex justify-center">
-                            <Button size="lg" className="w-full sm:w-auto h-16 md:h-24 px-10 md:px-20 rounded-2xl md:rounded-[2rem] text-base md:text-2xl font-black bg-slate-950 text-white shadow-2xl hover:bg-blue-600 hover:scale-[1.05] active:scale-95 transition-all duration-500 group">
-                                <span className="flex items-center gap-4 md:gap-6">
+                        <Link href="/portfolio" className="w-full sm:w-auto flex justify-center group/btn relative">
+                            {/* Glow backdrop */}
+                            <div className="absolute -inset-1.5 bg-gradient-to-r from-blue-600/30 via-indigo-500/30 to-blue-600/30 rounded-2xl md:rounded-[2rem] blur-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-700" />
+                            <Button size="lg" className="relative w-full sm:w-auto h-16 md:h-24 px-10 md:px-20 rounded-2xl md:rounded-[2rem] text-base md:text-2xl font-black bg-slate-950 text-white border border-white/10 shadow-2xl active:scale-95 transition-all duration-500 group overflow-hidden">
+                                {/* Shimmer */}
+                                <div className="absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
+                                <span className="flex items-center gap-3 md:gap-6 relative z-10">
+                                    <Sparkles size={18} className="text-blue-400 group-hover:rotate-12 transition-transform duration-300" />
                                     포트폴리오 확인
-                                    <ArrowRight className="size-5 md:size-8 group-hover:translate-x-3 transition-transform duration-500" />
+                                    <ArrowRight className="size-5 md:size-8 group-hover:translate-x-2 transition-transform duration-500" />
                                 </span>
                             </Button>
                         </Link>

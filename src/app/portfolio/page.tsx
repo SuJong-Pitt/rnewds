@@ -13,7 +13,7 @@ export default function PortfolioPage() {
             <Navbar variant="dark" />
 
             {/* Portfolio Hero - Cinematic Premium Header */}
-            <section className="relative pt-48 pb-24 md:pt-72 md:pb-48 overflow-hidden bg-slate-950">
+            <section className="relative pt-32 pb-16 md:pt-48 md:pb-32 overflow-hidden bg-slate-950">
                 {/* Custom Generated Background Image */}
                 <div className="absolute inset-0 z-0">
                     <img
@@ -21,14 +21,14 @@ export default function PortfolioPage() {
                         alt="Portfolio Background"
                         className="w-full h-full object-cover opacity-60 scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-slate-50"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-slate-50/10"></div>
                 </div>
 
                 {/* Depth Particles & Ornaments */}
                 <div className="absolute inset-0 z-[1] opacity-[0.05] pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:60px_60px]"></div>
 
                 <div className="container mx-auto max-w-7xl relative z-10 px-8">
-                    <div className="max-w-5xl space-y-12">
+                    <div className="max-w-5xl space-y-10">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -38,15 +38,15 @@ export default function PortfolioPage() {
                             <span className="font-bold text-[11px] md:text-sm uppercase tracking-[0.5em] pl-1">Project Masterpieces</span>
                         </motion.div>
 
-                        <div className="space-y-8">
+                        <div className="space-y-6">
                             <motion.h1
                                 initial={{ opacity: 0, y: 40 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                                className="text-6xl md:text-9xl lg:text-[11rem] font-heading font-black text-white tracking-tighter leading-[1.0]"
+                                className="text-6xl md:text-9xl lg:text-[10rem] font-heading font-black text-white tracking-tighter leading-[0.9]"
                             >
                                 Portfolio <br />
-                                <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-500 italic px-10 drop-shadow-[0_10px_30px_rgba(37,99,235,0.3)] whitespace-pre-wrap pb-4">Case Study </span>
+                                <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-500 italic px-2 drop-shadow-[0_10px_30px_rgba(37,99,235,0.3)] whitespace-pre-wrap pb-4">Case Study </span>
                             </motion.h1>
                         </div>
 

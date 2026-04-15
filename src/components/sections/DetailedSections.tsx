@@ -28,7 +28,7 @@ export function ExpertiseSection() {
                             </div>
 
                             <div className="space-y-4">
-                                <h2 className="text-4xl md:text-7xl lg:text-8xl font-heading font-black leading-[1] tracking-tighter text-balance">
+                                <h2 className="text-[2.6rem] md:text-7xl lg:text-8xl font-heading font-black leading-[1] tracking-tighter text-balance">
                                     MD 디자이너 <br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-400 animate-gradient-x bg-[length:200%_auto]">실무 15년.</span>
                                 </h2>
@@ -133,7 +133,7 @@ export function ReliefSection() {
             {/* — Dot Grid Texture — */}
             <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(rgba(99,102,241,0.5)_1px,transparent_1px)] [background-size:32px_32px]" />
 
-            <div className="container relative z-10 mx-auto max-w-7xl px-6">
+            <div className="container relative z-10 mx-auto max-w-7xl px-4 md:px-6">
 
                 {/* — Section Header — */}
                 <motion.div
@@ -150,7 +150,7 @@ export function ReliefSection() {
                     </div>
 
                     {/* Main Heading */}
-                    <h2 className="mb-6 text-4xl font-black leading-[1.08] tracking-[-0.04em] text-slate-900 md:text-7xl lg:text-8xl">
+                    <h2 className="mb-4 md:mb-6 text-[2.8rem] md:text-7xl lg:text-8xl font-black leading-[1.02] md:leading-[1.08] tracking-[-0.04em] text-slate-900">
                         처음이셔도
                         <br />
                         <span className="relative inline-block">
@@ -189,7 +189,7 @@ export function ReliefSection() {
                             {/* Card border gradient ring */}
                             <div className="relative rounded-[36px] p-px bg-gradient-to-b from-blue-200/60 to-slate-200/30 group-hover:from-blue-300/80 group-hover:to-indigo-200/40 transition-all duration-700 shadow-lg">
                                 {/* Card body */}
-                                <div className="relative h-full rounded-[35px] bg-white/80 backdrop-blur-2xl px-8 py-10 md:px-10 md:py-12 flex flex-col gap-8 overflow-hidden">
+                                <div className="relative h-full rounded-[35px] bg-white/80 backdrop-blur-2xl px-6 py-10 md:px-10 md:py-12 flex flex-col gap-7 md:gap-8 overflow-hidden">
                                     {/* Subtle inner light */}
                                     <div className="pointer-events-none absolute inset-0 rounded-[35px] bg-gradient-to-br from-blue-50/60 to-indigo-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
@@ -205,7 +205,7 @@ export function ReliefSection() {
 
                                     {/* Text */}
                                     <div className="relative z-10 flex flex-col gap-4">
-                                        <h3 className="text-2xl md:text-3xl font-black leading-tight tracking-tighter text-slate-900 break-keep whitespace-pre-line">
+                                        <h3 className="text-[1.75rem] md:text-3xl font-black leading-[1.15] md:leading-tight tracking-tighter text-slate-900 break-keep whitespace-pre-line">
                                             {f.title}
                                         </h3>
                                         <p className="text-sm md:text-base font-light leading-relaxed tracking-tight text-slate-500 break-keep group-hover:text-slate-700 transition-colors duration-500">
@@ -397,9 +397,9 @@ export function ProcessSection() {
             <div className="container mx-auto max-w-7xl relative z-10">
                 <motion.div {...fadeInUp} className="text-center mb-16 md:mb-24">
                     <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
-                        <h2 className="text-3xl md:text-5xl lg:text-7xl font-heading font-black text-white tracking-tighter leading-tight text-center">
-                            <div className="mb-2 md:mb-4 leading-[1.3] md:leading-tight">복잡한 과정 대신,</div>
-                            <div className="text-blue-500 leading-[1.3] md:leading-tight">
+                        <h2 className="text-[2.2rem] md:text-5xl lg:text-7xl font-heading font-black text-white tracking-tighter leading-[1.1] text-center">
+                            <div className="mb-2 md:mb-4 leading-[1.1]">복잡한 과정 대신,</div>
+                            <div className="text-blue-500 leading-[1.1]">
                                 <span className="block md:inline">필요한 단계만 정리해</span>
                                 <span className="block md:inline">설계합니다.</span>
                             </div>
@@ -437,7 +437,7 @@ export function ProcessSection() {
                                 </div>
 
                                 <div className="relative z-10 space-y-4">
-                                    <h3 className="text-xl md:text-2xl font-black text-white tracking-tighter leading-tight group-hover:text-blue-400 transition-colors">
+                                    <h3 className="text-xl md:text-2xl font-black text-white tracking-tighter leading-[1.2] group-hover:text-blue-400 transition-colors">
                                         {step.title}
                                     </h3>
                                     <p className="text-sm md:text-base text-slate-400 font-light leading-relaxed tracking-tight group-hover:text-slate-200 transition-colors break-keep">
@@ -511,7 +511,7 @@ export function PricingSection() {
                     <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-bold text-[10px] uppercase tracking-widest md:tracking-[0.4em] mb-8 mx-auto whitespace-nowrap shadow-sm">
                         Strategic Investment
                     </div>
-                    <h2 className="text-3xl md:text-[4rem] font-heading font-black text-slate-950 tracking-tighter leading-tight relative text-balance">
+                    <h2 className="text-[2.5rem] md:text-[4rem] font-heading font-black text-slate-950 tracking-tighter leading-[1.1] relative text-balance">
                         옵션별 <span className="text-blue-600 italic px-1 underline decoration-blue-100 decoration-8 underline-offset-4">가격 안내.</span>
                     </h2>
                 </motion.div>
