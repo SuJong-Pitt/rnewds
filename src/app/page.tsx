@@ -102,94 +102,72 @@ export default function Home() {
                             >
                                 <div className="flex flex-col items-center">
                                     <span className="text-[1.15rem] md:text-2xl lg:text-3xl text-slate-400 font-medium tracking-tight leading-snug px-1 text-balance break-keep">
-                                        예쁘기만 한 페이지로는 <br className="md:hidden" /> 고객은 구매하지 않습니다.
+                                        예쁘기만 한 디자인이 아니라
                                     </span>
 
                                     <div className="mt-5 md:mt-6 px-1">
                                         <span className="text-[1.6rem] md:text-4xl lg:text-5xl text-slate-900 font-black relative group inline-block tracking-tighter leading-tight text-balance break-keep">
-                                            <span className="whitespace-nowrap">이제는 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 italic">"팔리는 페이지"</span> 가</span> <br className="md:hidden" /> 필요합니다.
+                                            <span className="whitespace-nowrap">구매까지 이어지게 만듭니다.</span>
                                         </span>
                                     </div>
                                 </div>
+
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.8, delay: 0.4, type: "spring" }}
+                                    viewport={{ once: true }}
+                                    className="mt-10 md:mt-12"
+                                >
+                                    <Link href="https://pf.kakao.com/_xaxgJdX/chat" target="_blank" rel="noopener noreferrer">
+                                        <Button className="h-14 md:h-18 px-8 md:px-12 rounded-full bg-slate-950 text-white text-lg md:text-xl font-bold shadow-2xl hover:bg-slate-900 active:bg-[#FAE100] active:text-slate-900 active:scale-95 transition-all duration-300 group">
+                                            <span className="flex items-center gap-3">
+                                                지금 상담 받아보기
+                                                <Sparkles size={20} className="text-yellow-400 group-hover:rotate-12 transition-transform" />
+                                            </span>
+                                        </Button>
+                                    </Link>
+                                </motion.div>
+
+                                {/* CEO Identity Section */}
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.95, y: 30 }}
+                                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                    transition={{ duration: 1.2, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                                    viewport={{ once: true }}
+                                    className="mt-16 md:mt-24 mb-6"
+                                >
+                                    <div className="relative w-80 aspect-[3/4] md:w-[540px] md:h-[720px] mx-auto group">
+                                        <div className="absolute inset-0 bg-blue-600/5 rounded-[3rem] md:rounded-[6rem] blur-[100px] group-hover:bg-blue-600/10 transition-colors duration-1000"></div>
+                                        <div className="relative w-full h-full rounded-[3rem] md:rounded-[6rem] overflow-hidden border-[12px] md:border-[20px] border-white shadow-[0_60px_120px_-20px_rgba(0,0,0,0.15)] bg-white">
+                                            <div className="relative w-full h-full overflow-hidden bg-slate-50">
+                                                <Image
+                                                    src="/images/ceo_image.png"
+                                                    alt="R:new Design Studio CEO"
+                                                    fill
+                                                    priority
+                                                    className="object-cover scale-105 group-hover:scale-100 transition-transform duration-[2.5s] ease-out"
+                                                />
+                                            </div>
+                                        </div>
+                                        
+                                        {/* Minimal Logo Badge (Option 3) */}
+                                        <motion.div
+                                            initial={{ opacity: 0, x: 20 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            transition={{ delay: 1.5, duration: 0.8 }}
+                                            className="absolute -right-4 md:-right-10 bottom-10 md:bottom-16 bg-slate-950 text-white px-6 py-3 md:px-10 md:py-5 rounded-full shadow-2xl border border-white/20 backdrop-blur-sm z-30 flex items-center gap-3"
+                                        >
+                                            <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-blue-500 animate-pulse"></div>
+                                            <span className="text-[10px] md:text-2xl font-black tracking-[0.3em] uppercase italic leading-none translate-y-[1px]">
+                                                R:NEW STUDIO
+                                            </span>
+                                        </motion.div>
+                                    </div>
+                                </motion.div>
                             </motion.div>
                         </div>
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                            className="flex flex-col items-center gap-6 mb-16 relative"
-                        >
-                            {/* Stylish Speech Bubbles (Pain Points) */}
-                            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 max-w-7xl px-1 w-full relative">
-                                {[
-                                    { text: "만들 줄 모르겠다", delay: 0.8, rotate: -3 },
-                                    { text: "만들었는데 안 팔린다", delay: 1.0, rotate: 2 },
-                                    { text: "어디 맡겨야 할지 모르겠다", delay: 1.2, rotate: -2 }
-                                ].map((point, i) => (
-                                    <motion.div
-                                        key={i}
-                                        initial={{ opacity: 0, scale: 0.8, y: 20, x: i % 2 === 0 ? -10 : 10 }}
-                                        whileInView={{ opacity: 1, scale: 1, y: 0, x: 0 }}
-                                        transition={{
-                                            duration: 0.8,
-                                            delay: point.delay,
-                                            type: "spring",
-                                            stiffness: 100
-                                        }}
-                                        whileHover={{ y: -10, scale: 1.05, transition: { duration: 0.2 } }}
-                                        className={`relative w-full md:w-auto flex ${i === 0 ? 'justify-start md:justify-center' : i === 1 ? 'justify-end md:justify-center' : 'justify-start md:justify-center'} px-1 md:px-0`}
-                                        style={{ rotate: `${point.rotate}deg` }}
-                                    >
-                                        <div className="bg-white px-10 py-6 md:px-12 md:py-8 rounded-[2.5rem] md:rounded-[3rem] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.08)] border border-slate-100 flex items-center justify-center relative max-w-[98vw] md:max-w-none hover:shadow-[0_30px_70px_-30px_rgba(0,0,0,0.12)] transition-shadow">
-                                            <span 
-                                                className="speech-bubble text-slate-500 font-normal md:text-3xl whitespace-nowrap tracking-tight"
-                                            >
-                                                "{point.text}"
-                                            </span>
-                                            {/* Dynamic Bubble Tail */}
-                                            <div className={`absolute -bottom-2 ${i % 2 === 0 ? 'left-[30%] md:left-1/2' : 'right-[30%] md:right-1/2'} -translate-x-1/2 w-4 h-4 md:w-5 md:h-5 bg-white border-b border-r border-slate-100 rotate-45 shadow-[5px_5px_10px_-5px_rgba(0,0,0,0.03)]`}></div>
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1.2, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
-                            className="relative"
-                        >
-
-
-                            <div className="absolute -inset-10 bg-blue-600/5 blur-[80px] -z-10 opacity-20 pointer-events-none"></div>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1, delay: 0.2 }}
-                            viewport={{ once: true }}
-                            className="relative w-full flex flex-col items-center px-4"
-                        >
-                            <h4 className="text-xl md:text-2xl lg:text-3xl font-normal text-slate-900 mb-8 md:mb-12 tracking-tight text-center">
-                                <span className="font-black">Rnew Design</span> 에서 해결해 드리겠습니다.
-                            </h4>
-
-                            <Link href="/#projects" className="w-full sm:w-auto">
-                                <Button size="lg" className="w-auto h-9 md:h-16 py-2 md:py-8 mt-10 md:mt-20 px-4 md:px-16 rounded-lg md:rounded-2xl text-xs md:text-xl font-black bg-slate-950 text-white shadow-md md:shadow-2xl hover:bg-blue-600 hover:scale-[1.03] transition-all duration-500 group">
-                                    <span className="relative z-10 flex items-center justify-center gap-2 md:gap-4">
-                                        포트폴리오 확인
-                                        <ArrowRight size={14} className="md:size-24 group-hover:translate-x-3 transition-transform duration-500" />
-                                    </span>
-                                </Button>
-                            </Link>
-
-                            <div className="absolute -left-40 top-0 text-[8px] font-mono text-slate-300 uppercase tracking-[0.5em] hidden lg:block leading-none h-full flex items-center">
-                                RDS_ARCHITEC_26
-                            </div>
-                        </motion.div>
                     </div>
 
                     <motion.div
@@ -199,6 +177,24 @@ export default function Home() {
                         className="mt-12 md:mt-24 relative w-[calc(100%+2rem)] -ml-4 md:w-full md:ml-auto max-w-5xl mx-auto px-0 md:px-10"
                     >
                         <PortfolioAuraSlider />
+                    </motion.div>
+
+                    {/* Moved Button to Bottom for better flow */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="flex justify-center mt-24 md:mt-40 relative z-20 px-6"
+                    >
+                        <Link href="/#projects" className="w-full sm:w-auto flex justify-center">
+                            <Button size="lg" className="w-full sm:w-auto h-16 md:h-24 px-10 md:px-20 rounded-2xl md:rounded-[2rem] text-base md:text-2xl font-black bg-slate-950 text-white shadow-2xl hover:bg-blue-600 hover:scale-[1.05] active:scale-95 transition-all duration-500 group">
+                                <span className="flex items-center gap-4 md:gap-6">
+                                    포트폴리오 확인
+                                    <ArrowRight className="size-5 md:size-8 group-hover:translate-x-3 transition-transform duration-500" />
+                                </span>
+                            </Button>
+                        </Link>
                     </motion.div>
                 </div>
             </section>
