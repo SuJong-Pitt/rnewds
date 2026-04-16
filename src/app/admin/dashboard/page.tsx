@@ -115,32 +115,32 @@ export default function AdminDashboard() {
                 }
 
                 const fileExt = imageFile.name.split('.').pop();
-                const fileName = `${Math.random().toString(36).substring(2)}.${fileExt}`;
+                const fileName = `project-images/${Math.random().toString(36).substring(2)}.${fileExt}`;
                 
-                const formData = new FormData();
-                formData.append("file", imageFile);
-                formData.append("filename", `project-images/${fileName}`);
+                // 1. 서버에 업로드용 '서명된 URL' 요청 (직접 업로드 방식)
+                const signedUrlRes = await fetch(`/api/storage?filename=${fileName}&contentType=${imageFile.type}`);
+                if (!signedUrlRes.ok) {
+                    throw new Error("업로드 권한을 가져오는데 실패했습니다.");
+                }
+                const { uploadUrl, publicUrl: r2PublicUrl } = await signedUrlRes.json();
 
-                const uploadRes = await fetch("/api/storage", {
-                    method: "POST",
-                    body: formData
+                // 2. R2로 직접 파일 업로드 (서버를 거치지 않음 -> 용량 제한 우회)
+                const uploadRes = await fetch(uploadUrl, {
+                    method: "PUT",
+                    body: imageFile,
+                    headers: {
+                        "Content-Type": imageFile.type,
+                    },
                 });
 
                 if (!uploadRes.ok) {
-                    const errorText = await uploadRes.text();
-                    if (uploadRes.status === 413 || errorText.includes("Request Entity Too Large")) {
-                        throw new Error("이미지 파일 크기가 너무 큽니다. 50MB 이하의 이미지를 사용해주세요.");
+                    if (uploadRes.status === 413) {
+                        throw new Error("이미지 파일 크기가 너무 큽니다. (R2 직접 업로드 제한 확인 필요)");
                     }
-                    try {
-                        const errorData = JSON.parse(errorText);
-                        throw new Error(errorData.error || "Upload failed");
-                    } catch {
-                        throw new Error(`업로드 실패 (상태 코드: ${uploadRes.status})`);
-                    }
+                    throw new Error(`이미지 업로드 실패 (상태 코드: ${uploadRes.status})`);
                 }
 
-                const uploadData = await uploadRes.json();
-                publicUrl = uploadData.url;
+                publicUrl = r2PublicUrl;
             }
 
             // 2. Save via API
