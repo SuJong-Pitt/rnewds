@@ -1,7 +1,16 @@
 import { NextResponse } from "next/server";
 import { S3Client, PutObjectCommand, DeleteObjectCommand } from "@aws-sdk/client-s3";
 
-export const runtime = "nodejs"; // DOMParser 에러 방지를 위해 Node.js 런타임 사용
+export const runtime = "nodejs"; 
+
+// API 본문 크기 제한을 20MB로 늘립니다.
+export const config = {
+    api: {
+        bodyParser: {
+            sizeLimit: '50mb',
+        },
+    },
+};
 
 const r2Client = new S3Client({
     region: "auto",

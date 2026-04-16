@@ -38,23 +38,34 @@ export default function AdminDashboard() {
     const fetchCategories = async () => {
         try {
             const res = await fetch("/api/categories");
+            if (!res.ok) {
+                const text = await res.text();
+                throw new Error(text.includes("Request Entity Too Large") ? "파일 크기가 너무 큽니다. (최대 50MB)" : `오류 발생: ${res.status}`);
+            }
             const data = await res.json();
             if (Array.isArray(data)) {
                 setCategories(data);
             }
-        } catch (error) {
+        } catch (error: any) {
             console.error("Fetch categories error:", error);
+            if (error.message.includes("is not valid JSON")) {
+                console.error("The server returned a non-JSON response.");
+            }
         }
     };
 
     const fetchProjects = async () => {
         try {
             const res = await fetch("/api/projects");
+            if (!res.ok) {
+                const text = await res.text();
+                throw new Error(text.includes("Request Entity Too Large") ? "데이터가 너무 큽니다." : `오류 발생: ${res.status}`);
+            }
             const data = await res.json();
             if (Array.isArray(data)) {
                 setProjects(data);
             }
-        } catch (error) {
+        } catch (error: any) {
             console.error("Fetch projects error:", error);
         }
     };
@@ -114,9 +125,21 @@ export default function AdminDashboard() {
                     method: "POST",
                     body: formData
                 });
-                const uploadData = await uploadRes.json();
 
-                if (!uploadRes.ok) throw new Error(uploadData.error || "Upload failed");
+                if (!uploadRes.ok) {
+                    const errorText = await uploadRes.text();
+                    if (uploadRes.status === 413 || errorText.includes("Request Entity Too Large")) {
+                        throw new Error("이미지 파일 크기가 너무 큽니다. 50MB 이하의 이미지를 사용해주세요.");
+                    }
+                    try {
+                        const errorData = JSON.parse(errorText);
+                        throw new Error(errorData.error || "Upload failed");
+                    } catch {
+                        throw new Error(`업로드 실패 (상태 코드: ${uploadRes.status})`);
+                    }
+                }
+
+                const uploadData = await uploadRes.json();
                 publicUrl = uploadData.url;
             }
 
