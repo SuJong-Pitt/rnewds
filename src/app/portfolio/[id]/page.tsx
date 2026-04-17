@@ -165,51 +165,87 @@ export default function ProjectDetail() {
                     </div>
                 </section>
 
-                {/* Final CTA */}
-                <section className="py-32 md:py-56 text-center container mx-auto px-6 max-w-5xl relative">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[50%] bg-blue-50/50 blur-[120px] -z-10"></div>
-                    
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="mb-12 flex justify-center"
-                    >
-                        <LuxuryKakaoIcon size={120} className="md:w-[160px] md:h-[160px]" />
-                    </motion.div>
-
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-2xl md:text-5xl font-bold mb-12 tracking-tight text-slate-900 leading-[1.2] text-balance break-keep"
-                    >
-                        당신의 가치를 만드는 <br className="hidden md:block" /> <span className="text-blue-600">마지막 퍼즐 조각</span>, R:new.
-                    </motion.h2>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="flex justify-center"
-                    >
-                        <a
-                            href="https://pf.kakao.com/_xaxgJdX/chat"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group relative flex items-center justify-between gap-8 md:gap-12 px-8 md:px-12 py-5 md:py-8 bg-slate-950 text-white rounded-full hover:bg-yellow-400 hover:text-slate-950 transition-all duration-500 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_45px_90px_-20px_rgba(250,204,21,0.4)]"
+                {/* Luxurious Final CTA */}
+                <section className="py-24 md:py-32 px-6 relative z-10">
+                    <div className="container mx-auto max-w-5xl">
+                        <motion.div 
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                            className="relative rounded-[40px] md:rounded-[64px] bg-slate-950 overflow-hidden px-6 py-20 md:py-32 text-center shadow-2xl ring-1 ring-slate-900/5 group"
                         >
-                            <span className="text-lg md:text-2xl font-black tracking-tighter">카톡 상담으로 프로젝트 시작하기</span>
-                            <div className="w-10 h-10 md:w-16 md:h-16 rounded-full border border-white/20 group-hover:border-slate-950/20 flex items-center justify-center transition-all group-hover:rotate-45">
-                                <ArrowRight size={20} className="md:w-8 md:h-8" />
-                            </div>
-                        </a>
-                    </motion.div>
+                            {/* Premium Background Effects */}
+                            <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-[0.04] mix-blend-overlay"></div>
+                            <div className="absolute top-0 right-0 w-[150%] h-[500px] bg-yellow-400/10 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none group-hover:bg-yellow-400/15 transition-colors duration-1000"></div>
+                            <div className="absolute bottom-0 left-0 w-[150%] h-[400px] bg-blue-600/10 blur-[100px] rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none group-hover:bg-blue-600/15 transition-colors duration-1000"></div>
 
-                    <p className="mt-16 text-slate-400 text-xs md:text-sm font-bold tracking-[0.3em] uppercase">
-                        Consultation available 24/7 via KakaoTalk
-                    </p>
+                            <div className="relative z-10 flex flex-col items-center">
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ type: "spring", stiffness: 100, delay: 0.1 }}
+                                    className="mb-10 relative"
+                                >
+                                    {/* Glowing aura behind icon */}
+                                    <div className="absolute inset-0 bg-yellow-400/20 blur-[50px] rounded-full transform scale-150"></div>
+                                    <LuxuryKakaoIcon size={100} className="md:w-[130px] md:h-[130px] relative z-10 drop-shadow-[0_20px_40px_rgba(250,204,21,0.2)]" />
+                                </motion.div>
+
+                                <motion.h2
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.2, duration: 0.8 }}
+                                    className="text-3xl md:text-5xl lg:text-6xl font-black mb-12 tracking-tight text-white leading-[1.3] text-balance break-keep"
+                                >
+                                    당신의 가치를 완성할 <br className="hidden md:block" />
+                                    <span className="relative inline-block mt-2">
+                                        <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-200">
+                                            마지막 퍼즐.
+                                        </span>
+                                        <span className="absolute bottom-1 left-0 w-full h-[30%] bg-yellow-400/20 blur-md -z-10"></span>
+                                    </span>
+                                </motion.h2>
+
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.3, duration: 0.8 }}
+                                >
+                                    <a
+                                        href="https://pf.kakao.com/_xaxgJdX/chat"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="group/btn relative inline-flex items-center justify-between gap-4 sm:gap-6 md:gap-10 px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 bg-white text-slate-950 rounded-[32px] hover:bg-yellow-400 hover:scale-[1.02] hover:shadow-[0_20px_40px_-10px_rgba(250,204,21,0.4)] transition-all duration-500 overflow-hidden will-change-transform"
+                                    >
+                                        {/* Sweeping light effect */}
+                                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-[150%] skew-x-[-45deg] group-hover/btn:translate-x-[150%] transition-transform duration-1000 ease-in-out"></div>
+                                        
+                                        <span className="text-[16px] sm:text-[17px] md:text-[22px] font-black tracking-tight relative z-10 whitespace-nowrap">
+                                            프로젝트 시작하기
+                                        </span>
+                                        
+                                        <div className="w-10 h-10 md:w-14 md:h-14 rounded-full bg-slate-100 group-hover/btn:bg-white/20 flex shrink-0 items-center justify-center transition-all duration-300 group-hover/btn:translate-x-2 relative z-10 shadow-inner">
+                                            <ArrowRight size={20} strokeWidth={2.5} className="md:w-6 md:h-6 opacity-80 group-hover/btn:opacity-100 transition-opacity" />
+                                        </div>
+                                    </a>
+                                </motion.div>
+
+                                <motion.p 
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.5, duration: 1 }}
+                                    className="mt-20 text-slate-400/50 text-[10px] sm:text-xs font-bold tracking-[0.4em] uppercase"
+                                >
+                                    Consultation available 24/7 via KakaoTalk
+                                </motion.p>
+                            </div>
+                        </motion.div>
+                    </div>
                 </section>
 
                 {/* Simple Footer Overlay */}
