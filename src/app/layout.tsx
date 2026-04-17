@@ -147,7 +147,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="ko" className={`scroll-smooth ${notoProject.variable} ${montserrat.variable} ${gowunBatang.variable} ${nanumPen.variable}`} suppressHydrationWarning>
-            <body className={`${notoProject.className} font-sans`}>
+            <body className="font-sans antialiased">
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

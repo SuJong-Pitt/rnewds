@@ -43,6 +43,12 @@ const config: Config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      fontFamily: {
+        sans: ["var(--font-noto)", "ui-sans-serif", "system-ui", "-apple-system", "sans-serif"],
+        heading: ["var(--font-montserrat)", "var(--font-noto)", "sans-serif"],
+        serif: ["var(--font-gowun)", "ui-serif", "Georgia", "serif"],
+        cursive: ["var(--font-nanum-pen)", "cursive"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
