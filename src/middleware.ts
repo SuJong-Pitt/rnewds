@@ -38,7 +38,21 @@ export function middleware(request: NextRequest) {
         }
     }
 
-    return NextResponse.next();
+    const response = NextResponse.next();
+
+    // 4. 세션 유지 시간 연장 (Sliding Expiration: 1시간)
+    // 접속할 때마다 쿠키의 만료 시간을 1시간으로 초기화하여, 1시간 동안 활동이 없으면 로그아웃되게 함
+    if (session && session.value === 'authenticated') {
+        response.cookies.set('admin-session', 'authenticated', {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'strict',
+            path: '/',
+            maxAge: 60 * 60, // 1시간
+        });
+    }
+
+    return response;
 }
 
 // 매쳐를 사용하여 관련 경로들에 대해 미들웨어 실행

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Upload, Plus, X, Trash2, Loader2, LayoutDashboard, LogOut, CheckCircle2, Pencil } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SessionTimerBadge from "@/components/admin/SessionTimerBadge";
 
 export default function AdminDashboard() {
     const [loading, setLoading] = useState(true);
@@ -264,8 +265,11 @@ export default function AdminDashboard() {
                         <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white">
                             <LayoutDashboard size={24} />
                         </div>
-                        <div>
-                            <h1 className="text-2xl font-bold tracking-tight">Admin Dashboard</h1>
+                        <div className="flex flex-col">
+                            <div className="flex items-center gap-3">
+                                <h1 className="text-2xl font-bold tracking-tight">Admin Dashboard</h1>
+                                <SessionTimerBadge />
+                            </div>
                             <p className="text-slate-400 font-medium text-xs uppercase tracking-widest">
                                 R:new Design Studio &copy; Management (Cloudflare D1/R2)
                             </p>
