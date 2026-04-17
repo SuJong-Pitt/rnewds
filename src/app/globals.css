@@ -67,16 +67,18 @@
 
   * {
     @apply border-border;
+    font-family: inherit;
   }
 
   body {
     @apply bg-background text-foreground antialiased selection:bg-blue-100 selection:text-blue-900;
     overflow-x: hidden;
+    font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
   }
 
   /* Global Headings */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif !important;
     @apply tracking-tighter;
   }
 
