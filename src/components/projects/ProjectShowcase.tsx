@@ -97,7 +97,7 @@ export function ProjectShowcase() {
                                 <div className="mb-2 md:mb-6 text-transparent bg-clip-text bg-gradient-to-br from-slate-950 via-slate-800 to-slate-950 leading-[1.3] md:leading-tight">보이는 디자인이 아니라,</div>
                                 <div className="flex flex-wrap items-center leading-[1.3] md:leading-tight">
                                     <span className="relative inline-block italic flex-shrink-0">
-                                        <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-700 bg-[length:200%_auto] animate-gradient-x px-1">구매 흐름</span>
+                                        <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-700 bg-[length:200%_auto] animate-gradient-x px-1 pr-4">구매 흐름</span>
                                         {/* Sophisticated Architectural Underglow */}
                                         <div className="absolute -bottom-1 sm:-bottom-3 left-0 w-full h-[3px] sm:h-[10px] bg-blue-500/10 blur-[4px] rounded-full" />
                                         <div className="absolute -bottom-1 sm:-bottom-3 left-0 w-full h-[1px] sm:h-[4px] bg-gradient-to-r from-blue-400 via-indigo-400 to-transparent rounded-full" />

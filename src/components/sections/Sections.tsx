@@ -190,118 +190,129 @@ export function StrategySection() {
 
 export function ContactSection() {
     return (
-        <section id="contact" className="py-32 md:py-48 px-6 bg-slate-50 relative overflow-hidden">
-            {/* Cinematic Atmospheric Background */}
-            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.05)_0%,transparent_50%)]"></div>
-                <div className="absolute bottom-0 right-0 w-[80%] h-full bg-[radial-gradient(circle_at_100%_100%,rgba(139,92,246,0.03)_0%,transparent_50%)]"></div>
-
-                {/* Subtle Floating Light Leaks */}
-                <motion.div
-                    animate={{
-                        opacity: [0.3, 0.5, 0.3],
-                        scale: [1, 1.2, 1],
-                        rotate: [0, 45, 0]
-                    }}
-                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                    className="absolute -top-[10%] -left-[10%] w-[60%] h-[60%] bg-blue-100/30 blur-[150px] rounded-full"
-                />
+        <section id="contact" className="py-16 md:py-32 px-4 md:px-10 bg-slate-50 relative overflow-hidden">
+            <div className="absolute inset-0 pointer-events-none z-0">
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,rgba(37,99,235,0.06)_0%,transparent_60%)]" />
+                <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,rgba(139,92,246,0.05)_0%,transparent_60%)]" />
             </div>
 
-            <div className="container mx-auto max-w-7xl relative z-10">
+            <div className="w-full max-w-6xl mx-auto relative z-10">
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="bg-white/40 backdrop-blur-xl rounded-[40px] md:rounded-[100px] border border-slate-100 p-8 md:p-32 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.05)] relative overflow-hidden"
+                    transition={{ duration: 0.8 }}
+                    className="bg-slate-950 rounded-3xl md:rounded-[56px] shadow-[0_40px_100px_rgba(0,0,0,0.3)] relative overflow-hidden"
                 >
-                    {/* Top Lighting Effect */}
-                    <div className="absolute -top-[10%] left-1/2 -translate-x-1/2 w-[60%] h-[30%] bg-blue-500/5 blur-[120px] rounded-full"></div>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[70%] h-px bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-32 bg-blue-500/10 blur-[80px] rounded-full pointer-events-none" />
 
-                    <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-                        <div className="space-y-10 md:space-y-12">
-                            <div className="space-y-6 md:space-y-10 text-center lg:text-left">
-                                <span className="inline-block text-[10px] font-black tracking-[0.4em] text-blue-600 uppercase italic bg-blue-50/50 px-3 py-1 rounded-full w-fit mx-auto lg:mx-0">Elevate Your Performance</span>
+                    <div className="p-6 sm:p-10 md:p-16 lg:p-20">
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 }}
+                            className="flex items-center gap-2 mb-8 md:mb-14"
+                        >
+                            <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse shrink-0" />
+                            <span className="text-[9px] md:text-xs font-black tracking-[0.4em] text-blue-400 uppercase">Elevate Your Performance</span>
+                        </motion.div>
 
-                                <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-7xl font-heading font-black text-slate-950 tracking-tighter leading-[1.3] md:leading-tight text-balance break-keep">
-                                    <div className="mb-1 md:mb-4">제품이 <span className="text-slate-950">꼭 팔리길</span></div>
-                                    <div className="mb-1 md:mb-4">바라는 마음,</div>
-                                    <div className="h-4 md:h-10" />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-[length:200%_auto] animate-gradient-x italic inline-block pb-1 lg:mt-2 text-3xl sm:text-5xl md:text-8xl lg:text-[7rem] leading-[1.2] md:leading-[1.1]">
-                                        <div className="md:hidden whitespace-nowrap">결과로 보답합니다.</div>
-                                        <div className="hidden md:block">
-                                            <div className="mb-2 md:mb-4">결과로</div>
-                                            <div>보답합니다.</div>
-                                        </div>
+                        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-end">
+                            {/* Left: Copy */}
+                            <div>
+                                <motion.h2
+                                    initial={{ opacity: 0, y: 24 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.2, duration: 0.8 }}
+                                    className="text-white font-heading font-black tracking-tighter leading-[1.2] text-3xl sm:text-4xl md:text-6xl lg:text-7xl break-keep"
+                                >
+                                    제품이 꼭<br />팔리길<br />바라는 마음,
+                                </motion.h2>
+
+                                <motion.div
+                                    initial={{ opacity: 0, y: 24 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.35, duration: 0.8 }}
+                                    className="mt-4 md:mt-8"
+                                >
+                                    <span className="font-heading font-black tracking-tighter leading-[1.15] text-4xl sm:text-5xl md:text-7xl lg:text-8xl italic text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 pr-4 inline-block">
+                                        결과로<br />보답합니다.
                                     </span>
-                                </h2>
+                                </motion.div>
 
-                                <div className="h-6 md:h-8" />
-
-                                <div className="text-[14px] md:text-xl lg:text-2xl text-slate-500 font-medium max-w-lg mx-auto lg:mx-0 leading-[1.5] md:leading-tight break-keep tracking-tight text-balance">
-                                    <div className="mb-1 md:mb-4">
-                                        <span className="text-slate-500 font-bold">소비자 심리</span>를 기준으로 상품이 팔리게
-                                    </div>
-                                    <div className="mb-2 md:mb-5">
-                                        완벽히 정리합니다. 복잡한 고민은 내려놓고
-                                    </div>
-                                    <span className="text-slate-950 font-black italic border-b border-blue-500/30 pb-0.5 md:mt-2 md:inline-block">이제 믿고 맡기시면 됩니다.</span>
-                                </div>
+                                <motion.p
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.5 }}
+                                    className="mt-6 md:mt-10 text-slate-400 text-sm md:text-base leading-relaxed break-keep"
+                                >
+                                    <span className="text-white font-semibold">소비자 심리</span>를 기준으로 상품이 팔리게 완벽히 정리합니다.{" "}
+                                    복잡한 고민은 내려놓고{" "}
+                                    <span className="text-white font-black italic">이제 믿고 맡기시면 됩니다.</span>
+                                </motion.p>
                             </div>
 
-                            <div className="flex flex-col items-center lg:items-start gap-3 text-slate-400 font-mono text-[9px] tracking-[0.2em] uppercase opacity-40">
-                                <span className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></div>
-                                    R:NEW DESIGN STUDIO / OFFICIAL CHANNEL
-                                </span>
-                                <span className="lg:pl-3.5">ESTABLISHED FOR STRATEGIC PARTNERS</span>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col items-center lg:items-end w-full relative pt-4 lg:pt-0">
-                            {/* Magnetic Luxury Hub */}
+                            {/* Right: CTA */}
                             <motion.div
-                                className="w-full max-w-md lg:max-w-xl relative group/suite"
-                                whileHover={{ scale: 1.01 }}
-                                transition={{ type: "spring", stiffness: 100 }}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.4, duration: 0.8 }}
+                                className="flex flex-col gap-4"
                             >
-                                <div className="absolute -inset-10 bg-gradient-to-r from-blue-500/5 to-indigo-500/5 blur-[100px] opacity-0 group-hover/suite:opacity-100 transition-opacity duration-1000"></div>
-
+                                {/* Kakao CTA */}
                                 <a
                                     href="https://pf.kakao.com/_xaxgJdX/chat"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="relative flex flex-col items-center lg:items-end w-full group/btn"
+                                    className="group flex items-center justify-between gap-3 w-full bg-yellow-400 active:bg-yellow-300 text-slate-950 rounded-2xl px-5 md:px-8 py-5 md:py-7 transition-all duration-300 shadow-[0_20px_60px_rgba(250,204,21,0.2)]"
                                 >
-                                    <div className="relative mb-6 md:mb-12">
-                                        <div className="absolute inset-0 bg-yellow-400 opacity-10 blur-[50px] rounded-full scale-150 animate-pulse"></div>
-                                        <LuxuryKakaoIcon size={100} className="md:w-[140px] md:h-[140px]" />
-                                    </div>
-
-                                    <div className="w-full h-auto py-6 md:py-12 px-6 md:px-16 rounded-[2rem] md:rounded-[60px] bg-slate-950 text-white flex items-center justify-between group-hover/btn:bg-yellow-400 group-hover/btn:text-slate-950 transition-all duration-500 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] group-hover/btn:shadow-[0_40px_100px_-20px_rgba(250,204,21,0.3)]">
-                                        <span className="text-xl md:text-3xl font-black tracking-tighter whitespace-nowrap">프로젝트 문의하기</span>
-                                        <div className="w-10 h-10 md:w-14 md:h-14 rounded-full border border-white/20 group-hover/btn:border-slate-950/20 flex items-center justify-center group-hover/btn:border-slate-950 transition-all shrink-0 ml-4">
-                                            <ArrowRight size={20} className="md:w-7 md:h-7 group-hover/btn:translate-x-3 transition-transform duration-500" />
+                                    <div className="flex items-center gap-3 md:gap-5 min-w-0">
+                                        <LuxuryKakaoIcon size={40} className="shrink-0" />
+                                        <div className="min-w-0">
+                                            <div className="text-[9px] font-bold tracking-[0.3em] uppercase opacity-60 mb-0.5">KakaoTalk</div>
+                                            <div className="text-base md:text-xl font-black tracking-tighter whitespace-nowrap">프로젝트 문의하기</div>
                                         </div>
+                                    </div>
+                                    <div className="w-9 h-9 md:w-11 md:h-11 rounded-full bg-slate-950/10 flex items-center justify-center shrink-0">
+                                        <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform duration-300" />
                                     </div>
                                 </a>
 
-                                <div className="mt-16 pt-16 border-t border-slate-100 flex flex-col items-center lg:items-end w-full group/contact">
-                                    <div className="flex items-center gap-3 mb-2">
-                                        <span className="text-[10px] font-black text-blue-600 tracking-[0.5em] uppercase italic">Signature Collaboration</span>
-                                    </div>
-
-                                    <a href="mailto:admin@rnewds.com" className="group/mail">
-                                        <div className="text-xl md:text-3xl lg:text-4xl font-black text-slate-900 tracking-tighter flex items-center gap-4 hover:scale-[1.02] transition-all duration-500 break-all border-b-8 border-blue-50/50 hover:border-blue-100 group-hover/mail:text-blue-600">
-                                            admin@rnewds.com
+                                {/* Email CTA */}
+                                <a
+                                    href="mailto:admin@rnewds.com"
+                                    className="group flex items-center justify-between gap-3 w-full bg-white/5 border border-white/10 text-white rounded-2xl px-5 md:px-8 py-4 md:py-5 transition-all duration-300"
+                                >
+                                    <div className="flex items-center gap-3 md:gap-4 min-w-0">
+                                        <div className="w-9 h-9 rounded-xl bg-blue-500/20 flex items-center justify-center shrink-0">
+                                            <Mail size={16} className="text-blue-400" />
                                         </div>
-                                    </a>
-                                </div>
+                                        <div className="min-w-0">
+                                            <div className="text-[9px] font-bold tracking-[0.3em] uppercase text-slate-400 mb-0.5">Email</div>
+                                            <div className="text-sm md:text-base font-black tracking-tight truncate">admin@rnewds.com</div>
+                                        </div>
+                                    </div>
+                                    <ArrowRight size={14} className="text-slate-500 group-hover:translate-x-0.5 group-hover:text-white transition-all duration-300 shrink-0" />
+                                </a>
+
+                                {/* Footnote */}
+                                <p className="text-center text-slate-600 text-[9px] md:text-[11px] tracking-widest uppercase pt-1">
+                                    R:NEW DESIGN STUDIO &middot; Established for Strategic Partners
+                                </p>
                             </motion.div>
                         </div>
                     </div>
+
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[60%] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
                 </motion.div>
             </div>
         </section>
     );
 }
+
