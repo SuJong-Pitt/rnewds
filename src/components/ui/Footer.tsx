@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Mail, Instagram, MessageCircle, ArrowRight } from "lucide-react";
 
 export function Footer() {
@@ -71,8 +72,7 @@ export function Footer() {
                         © 2026 R:new Design Studio. All rights reserved.
                     </p>
                     <div className="flex gap-8">
-                        <a href="#" className="text-slate-500 text-[11px] md:text-xs font-medium hover:text-blue-500 transition-colors uppercase tracking-widest">Privacy Policy</a>
-                        <a href="#" className="text-slate-500 text-[11px] md:text-xs font-medium hover:text-blue-500 transition-colors uppercase tracking-widest">Terms of Service</a>
+                        <Link href="/admin/login" className="text-slate-500 text-[11px] md:text-xs font-medium hover:text-blue-500 transition-colors uppercase tracking-widest">Admin</Link>
                     </div>
                 </div>
             </div>
