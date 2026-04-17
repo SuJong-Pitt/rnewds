@@ -1,8 +1,27 @@
 import type { Metadata } from "next";
-import { Inter, Nanum_Pen_Script } from "next/font/google";
+import { Montserrat, Noto_Sans_KR, Gowun_Batang, Nanum_Pen_Script } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ 
+    subsets: ["latin"],
+    variable: "--font-montserrat",
+    display: "swap",
+});
+
+const notoProject = Noto_Sans_KR({ 
+    subsets: ["latin"],
+    weight: ["400", "500", "700", "900"],
+    variable: "--font-noto",
+    display: "swap",
+});
+
+const gowunBatang = Gowun_Batang({
+    subsets: ["latin"],
+    weight: ["400", "700"],
+    variable: "--font-gowun",
+    display: "swap",
+});
+
 const nanumPen = Nanum_Pen_Script({ 
     weight: "400", 
     subsets: ["latin"],
@@ -127,8 +146,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="ko" className={`scroll-smooth ${nanumPen.variable}`} suppressHydrationWarning>
-            <body className={inter.className}>
+        <html lang="ko" className={`scroll-smooth ${notoProject.variable} ${montserrat.variable} ${gowunBatang.variable} ${nanumPen.variable}`} suppressHydrationWarning>
+            <body className={`${notoProject.className} font-sans`}>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

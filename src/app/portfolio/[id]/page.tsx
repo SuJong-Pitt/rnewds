@@ -65,7 +65,7 @@ export default function ProjectDetail() {
                         className="flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors group"
                     >
                         <ArrowLeft className="group-hover:-translate-x-2 transition-transform" />
-                        <span className="text-xs font-bold uppercase tracking-[0.2em]">Close Project</span>
+                        <span className="text-[10px] font-black uppercase tracking-[0.2em] font-mono">Close Project</span>
                     </button>
 
                     <Image src="/images/icons/logo.svg" alt="R:new Logo" width={36} height={36} className="rounded-xl shadow-lg" priority />
@@ -85,10 +85,10 @@ export default function ProjectDetail() {
                                 </span>
                                 <span className="text-slate-400 font-bold text-xs">/ {new Date(project.created_at).getFullYear()}</span>
                             </div>
-                            <h1 className="text-5xl md:text-8xl font-bold tracking-tight leading-[1.0] mb-10 text-slate-900">
+                            <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-[1.1] mb-8 text-slate-900 text-balance">
                                 {project.title}
                             </h1>
-                            <p className="text-xl md:text-2xl text-slate-500 leading-relaxed font-medium">
+                            <p className="text-lg md:text-xl text-slate-500 leading-relaxed font-medium text-balance">
                                 {project.description}
                             </p>
                         </motion.div>
@@ -117,7 +117,7 @@ export default function ProjectDetail() {
                         <div className="space-y-8">
                             <span className="text-[10px] font-bold text-blue-600 uppercase tracking-[0.3em] block">The Brief</span>
                             <div className="space-y-4">
-                                <p className="text-slate-600 font-medium leading-relaxed text-lg italic">
+                                <p className="text-slate-600 font-medium leading-[1.6] text-lg md:text-xl font-pretty italic">
                                     "데이터의 설계로 비즈니스의 가치를 증명합니다."
                                 </p>
                                 <p className="text-slate-500 leading-relaxed">
@@ -182,7 +182,7 @@ export default function ProjectDetail() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-7xl font-bold mb-16 tracking-tight text-slate-900 leading-[1.1] text-balance break-keep"
+                        className="text-2xl md:text-5xl font-bold mb-12 tracking-tight text-slate-900 leading-[1.2] text-balance break-keep"
                     >
                         당신의 가치를 만드는 <br className="hidden md:block" /> <span className="text-blue-600">마지막 퍼즐 조각</span>, R:new.
                     </motion.h2>
@@ -198,9 +198,9 @@ export default function ProjectDetail() {
                             href="https://pf.kakao.com/_xaxgJdX/chat"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group relative flex items-center justify-between gap-8 md:gap-16 px-8 md:px-16 py-6 md:py-10 bg-slate-950 text-white rounded-full hover:bg-yellow-400 hover:text-slate-950 transition-all duration-500 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_45px_90px_-20px_rgba(250,204,21,0.4)]"
+                            className="group relative flex items-center justify-between gap-8 md:gap-12 px-8 md:px-12 py-5 md:py-8 bg-slate-950 text-white rounded-full hover:bg-yellow-400 hover:text-slate-950 transition-all duration-500 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_45px_90px_-20px_rgba(250,204,21,0.4)]"
                         >
-                            <span className="text-lg md:text-3xl font-black tracking-tighter">카톡 상담으로 프로젝트 시작하기</span>
+                            <span className="text-lg md:text-2xl font-black tracking-tighter">카톡 상담으로 프로젝트 시작하기</span>
                             <div className="w-10 h-10 md:w-16 md:h-16 rounded-full border border-white/20 group-hover:border-slate-950/20 flex items-center justify-center transition-all group-hover:rotate-45">
                                 <ArrowRight size={20} className="md:w-8 md:h-8" />
                             </div>
