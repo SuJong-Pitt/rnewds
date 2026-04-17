@@ -1,33 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Noto_Sans_KR, Gowun_Batang, Nanum_Pen_Script } from "next/font/google";
 import "./globals.css";
-
-const montserrat = Montserrat({ 
-    subsets: ["latin"],
-    variable: "--font-montserrat",
-    display: "swap",
-});
-
-const notoProject = Noto_Sans_KR({ 
-    weight: ["400", "500", "700", "900"],
-    variable: "--font-noto",
-    display: "swap",
-    preload: false,
-});
-
-const gowunBatang = Gowun_Batang({
-    weight: ["400", "700"],
-    variable: "--font-gowun",
-    display: "swap",
-    preload: false,
-});
-
-const nanumPen = Nanum_Pen_Script({ 
-    weight: "400", 
-    variable: "--font-nanum-pen",
-    display: "swap",
-    preload: false,
-});
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://rnewds.com"),
@@ -146,7 +118,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="ko" className={`scroll-smooth ${notoProject.variable} ${montserrat.variable} ${gowunBatang.variable} ${nanumPen.variable}`} suppressHydrationWarning>
+        <html lang="ko" className="scroll-smooth" suppressHydrationWarning>
+            <head>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&family=Gowun+Batang:wght@400;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet" />
+            </head>
             <body className="font-sans antialiased">
                 <script
                     type="application/ld+json"

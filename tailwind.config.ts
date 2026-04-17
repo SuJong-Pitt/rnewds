@@ -44,10 +44,10 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-noto)", "ui-sans-serif", "system-ui", "-apple-system", "sans-serif"],
-        heading: ["var(--font-montserrat)", "var(--font-noto)", "sans-serif"],
-        serif: ["var(--font-gowun)", "ui-serif", "Georgia", "serif"],
-        cursive: ["var(--font-nanum-pen)", "cursive"],
+        sans: ["'Noto Sans KR'", "sans-serif"],
+        heading: ["'Montserrat'", "'Noto Sans KR'", "sans-serif"],
+        serif: ["'Gowun Batang'", "serif"],
+        cursive: ["'Nanum Pen Script'", "cursive"],
       },
       borderRadius: {
         lg: "var(--radius)",

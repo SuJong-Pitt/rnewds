@@ -76,7 +76,7 @@
 
   /* Global Headings */
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-montserrat), var(--font-noto), sans-serif;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
     @apply tracking-tighter;
   }
 
@@ -125,11 +125,11 @@
   }
 
   .font-cursive {
-    font-family: var(--font-nanum-pen), cursive;
+    font-family: 'Nanum Pen Script', cursive;
   }
 
   .font-pretty {
-    font-family: var(--font-gowun), serif;
+    font-family: 'Gowun Batang', serif;
   }
 }
 
