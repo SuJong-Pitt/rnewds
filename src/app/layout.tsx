@@ -9,24 +9,24 @@ const montserrat = Montserrat({
 });
 
 const notoProject = Noto_Sans_KR({ 
-    subsets: ["latin"],
     weight: ["400", "500", "700", "900"],
     variable: "--font-noto",
     display: "swap",
+    preload: false,
 });
 
 const gowunBatang = Gowun_Batang({
-    subsets: ["latin"],
     weight: ["400", "700"],
     variable: "--font-gowun",
     display: "swap",
+    preload: false,
 });
 
 const nanumPen = Nanum_Pen_Script({ 
     weight: "400", 
-    subsets: ["latin"],
     variable: "--font-nanum-pen",
     display: "swap",
+    preload: false,
 });
 
 export const metadata: Metadata = {
