@@ -71,7 +71,7 @@ export default function Home() {
                                 className="relative group"
                             >
                                 <h2 className="text-[1.5rem] xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-medium text-slate-800 tracking-tight px-2 pb-1 break-keep text-balance">
-                                    상세페이지 만들었는데,
+                                    제품은 괜찮은데,
                                 </h2>
                             </motion.div>
 
@@ -82,8 +82,8 @@ export default function Home() {
                                 transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                                 className="relative py-2 md:py-4 mt-0"
                             >
-                                <h1 className="text-[2.8rem] xs:text-[3.8rem] sm:text-6xl md:text-8xl lg:text-9xl font-heading font-black tracking-tighter leading-none px-2 prism-text whitespace-nowrap">
-                                    왜 안팔릴까요?
+                                <h1 className="text-[1.8rem] xs:text-[2.4rem] sm:text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter leading-tight md:leading-none px-2 prism-text break-keep text-balance sm:whitespace-nowrap">
+                                    왜 시선을 끌지 못할까요?
                                 </h1>
                                 <motion.div
                                     initial={{ width: 0 }}
@@ -99,16 +99,16 @@ export default function Home() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1, delay: 0.2 }}
                                 viewport={{ once: true }}
-                                className="mt-12 md:mt-14 text-center px-6 flex flex-col items-center"
+                                className="mt-8 md:mt-14 text-center px-4 md:px-6 flex flex-col items-center"
                             >
                                 <div className="flex flex-col items-center">
                                     <span className="text-[1.15rem] md:text-2xl lg:text-3xl text-slate-400 font-medium tracking-tight leading-none px-1 text-balance break-keep">
-                                        예쁘기만 한 디자인이 아니라
+                                        보여주는 방식이 달라지면
                                     </span>
 
-                                    <div className="mt-5 md:mt-6 px-1">
-                                        <span className="text-[1.6rem] md:text-4xl lg:text-5xl text-slate-900 font-black relative group inline-block tracking-tighter leading-none text-balance break-keep">
-                                            <span className="whitespace-nowrap">구매까지 이어지게 만듭니다.</span>
+                                    <div className="mt-4 md:mt-6 px-1">
+                                        <span className="text-[1.5rem] xs:text-[1.8rem] sm:text-4xl lg:text-5xl text-slate-900 font-black relative group inline-block tracking-tighter leading-none text-balance break-keep">
+                                            <span className="break-keep sm:whitespace-nowrap">선택도 달라집니다.</span>
                                         </span>
                                     </div>
                                 </div>

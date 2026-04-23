@@ -364,7 +364,7 @@ export function ProcessSection() {
         { icon: <MessageCircle />, title: "브랜드 맞춤 1:1 상담", desc: "제품 컨셉 설정 및 디자인 방향 제시", color: "text-blue-400", bg: "bg-blue-600", shadow: "shadow-blue-500/20", glow: "from-blue-600/20" },
         { icon: <FileText />, title: "견적서 전달 & 일정 안내", desc: "상세 견적 확정 및 전체 작업 일정 안내", color: "text-indigo-400", bg: "bg-indigo-600", shadow: "shadow-indigo-500/20", glow: "from-indigo-600/20" },
         { icon: <Zap />, title: "결제 & 작업 시작", desc: "결제 확인 후 즉시 전문 작업 착수", color: "get-amber-400", bg: "bg-amber-600", shadow: "shadow-amber-500/20", glow: "from-amber-600/20" },
-        { icon: <PenTool />, title: "상세페이지 기획(피그마)", desc: "피그마 시안 제작", color: "text-rose-400", bg: "bg-rose-600", shadow: "shadow-rose-500/20", glow: "from-rose-600/20" },
+        { icon: <PenTool />, title: "맞춤형 콘텐츠 기획", desc: "상세페이지 또는 AI 연출 시안 제작 (피그마)", color: "text-rose-400", bg: "bg-rose-600", shadow: "shadow-rose-500/20", glow: "from-rose-600/20" },
         { icon: <Palette />, title: "디자인 시안 전달 및 수정", desc: "디자인 시안 공유 및 피드백 반영", color: "text-purple-400", bg: "bg-purple-600", shadow: "shadow-purple-500/20", glow: "from-purple-600/20" },
         { icon: <CheckCircle2 />, title: "최종 파일 전달", desc: "피그마 파일 전달", color: "text-emerald-400", bg: "bg-emerald-600", shadow: "shadow-emerald-500/20", glow: "from-emerald-600/20" }
     ];
