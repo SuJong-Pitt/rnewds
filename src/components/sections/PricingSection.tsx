@@ -19,13 +19,13 @@ const plans = [
         title: "기본형 상세페이지",
         subtitle: "Essential Sales Strategy",
         description: [
-            "3~4섹션 고밀도 구성",
-            "구매에 필요한 핵심 구성 제작",
-            "기획 + 디자인 포함",
-            "처음 시작 하시는 분들께 추천"
+            "2000px 내외",
+            "1섹션 고밀도 구성",
+            "이벤트, 배너 페이지",
+            "간단 홍보 페이지"
         ],
-        price: "99,000",
-        period: "3 DAYS",
+        price: "45,000",
+        period: "2 DAYS",
         revisions: "1회",
         drafts: "1개",
         draftsLabel: "Drafts",
@@ -199,7 +199,7 @@ export function PricingSection() {
                             <PricingCard key={plan.name} plan={plan} index={i} />
                         ))}
                     </div>
-                    
+
                     {/* Additional Options */}
                     <div className="bg-white border border-slate-200 rounded-3xl p-6 md:p-8 flex flex-col lg:flex-row gap-6 lg:items-center justify-between shadow-sm relative overflow-hidden group">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-purple-100 rounded-full blur-[60px] opacity-50 group-hover:opacity-100 transition-opacity"></div>
